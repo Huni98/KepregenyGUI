@@ -8,6 +8,18 @@ package MainDashboard;
  *
  * @author hunor
  */
+import javax.swing.table.DefaultTableModel;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import newpackage.EditionEditor;
+import newpackage.CharacterEditor;
+import newpackage.ComicBookEditor;
+import newpackage.CreatorEditor;
+import ro.madarash.kepregeny_project.*;
+
+
 public class MainDashboard extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MainDashboard.class.getName());
@@ -17,6 +29,16 @@ public class MainDashboard extends javax.swing.JFrame {
      */
     public MainDashboard() {
         initComponents();
+        
+        // Set the window to appear in the center of the screen
+        setLocationRelativeTo(null);
+
+        // --- Demo Data ---
+        // Let's add some sample data to the table to see how it looks
+        DefaultTableModel model = (DefaultTableModel) MainTable.getModel();
+        model.addRow(new Object[]{"Action Comics #1", "Comic Book", "DC Comics"});
+        model.addRow(new Object[]{"Amazing Fantasy #15", "Comic Book", "Marvel"});
+        model.addRow(new Object[]{"Spider-Man", "Character", "Peter Parker"});
     }
 
     /**
@@ -28,53 +50,178 @@ public class MainDashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel = new javax.swing.JPanel();
+        MainPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable = new javax.swing.JTable();
-        jMenuBar = new javax.swing.JMenuBar();
-        jFile = new javax.swing.JMenu();
-        jEdit = new javax.swing.JMenu();
+        MainTable = new javax.swing.JTable();
+        DetailsPanel = new javax.swing.JPanel();
+        ButtomPanel = new javax.swing.JPanel();
+        AddNewCharacterButton = new javax.swing.JButton();
+        EditSelectedItemButton = new javax.swing.JButton();
+        DeleteSelectedItemButton = new javax.swing.JButton();
+        AddNewComicBookButton = new javax.swing.JButton();
+        MenuBar = new javax.swing.JMenuBar();
+        FileMenu = new javax.swing.JMenu();
+        MenuItemExit = new javax.swing.JMenuItem();
+        AddMenu = new javax.swing.JMenu();
+        MenuItemAddComic = new javax.swing.JMenuItem();
+        menuItemAddCharacter = new javax.swing.JMenuItem();
+        menuItemAddCreator = new javax.swing.JMenuItem();
+        menuItemAddPublisher = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Comic Book Database Dashboard");
+        setMinimumSize(new java.awt.Dimension(700, 500));
 
-        jTable.setModel(new javax.swing.table.DefaultTableModel(
+        MainPanel.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        MainTable.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        MainTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Title / Name", "Type", "Publisher / Affiliation"
             }
-        ));
-        jTable.setVerifyInputWhenFocusTarget(false);
-        jScrollPane1.setViewportView(jTable);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
 
-        javax.swing.GroupLayout jPanelLayout = new javax.swing.GroupLayout(jPanel);
-        jPanel.setLayout(jPanelLayout);
-        jPanelLayout.setHorizontalGroup(
-            jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelLayout.createSequentialGroup()
-                .addGap(101, 101, 101)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(151, Short.MAX_VALUE))
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        MainTable.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
+        MainTable.setVerifyInputWhenFocusTarget(false);
+        jScrollPane1.setViewportView(MainTable);
+
+        javax.swing.GroupLayout DetailsPanelLayout = new javax.swing.GroupLayout(DetailsPanel);
+        DetailsPanel.setLayout(DetailsPanelLayout);
+        DetailsPanelLayout.setHorizontalGroup(
+            DetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
         );
-        jPanelLayout.setVerticalGroup(
-            jPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelLayout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(70, Short.MAX_VALUE))
+        DetailsPanelLayout.setVerticalGroup(
+            DetailsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
-        jFile.setText("File");
-        jMenuBar.add(jFile);
+        AddNewCharacterButton.setText("Add New Character");
+        AddNewCharacterButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddNewCharacterButtonActionPerformed(evt);
+            }
+        });
 
-        jEdit.setText("Edit");
-        jMenuBar.add(jEdit);
+        EditSelectedItemButton.setText("Edit Selected Item");
 
-        setJMenuBar(jMenuBar);
+        DeleteSelectedItemButton.setText("Delete Selected Item");
+
+        AddNewComicBookButton.setText("Add New Comic Book");
+        AddNewComicBookButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddNewComicBookButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout ButtomPanelLayout = new javax.swing.GroupLayout(ButtomPanel);
+        ButtomPanel.setLayout(ButtomPanelLayout);
+        ButtomPanelLayout.setHorizontalGroup(
+            ButtomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ButtomPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(AddNewComicBookButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(AddNewCharacterButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(EditSelectedItemButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(DeleteSelectedItemButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        ButtomPanelLayout.setVerticalGroup(
+            ButtomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ButtomPanelLayout.createSequentialGroup()
+                .addGap(24, 24, 24)
+                .addGroup(ButtomPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AddNewComicBookButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(AddNewCharacterButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(EditSelectedItemButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(DeleteSelectedItemButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(36, 36, 36))
+        );
+
+        AddNewCharacterButton.getAccessibleContext().setAccessibleName("jAddNewCharacterButton");
+        EditSelectedItemButton.getAccessibleContext().setAccessibleName("jEditSelectedItemButton");
+        DeleteSelectedItemButton.getAccessibleContext().setAccessibleName("jDeleteSelectedItemButton");
+        AddNewComicBookButton.getAccessibleContext().setAccessibleName("jComicBookEditorButton");
+
+        javax.swing.GroupLayout MainPanelLayout = new javax.swing.GroupLayout(MainPanel);
+        MainPanel.setLayout(MainPanelLayout);
+        MainPanelLayout.setHorizontalGroup(
+            MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MainPanelLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(ButtomPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(DetailsPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        MainPanelLayout.setVerticalGroup(
+            MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(MainPanelLayout.createSequentialGroup()
+                .addGroup(MainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(MainPanelLayout.createSequentialGroup()
+                        .addGap(55, 55, 55)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(ButtomPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(MainPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(DetailsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+
+        DetailsPanel.getAccessibleContext().setAccessibleName("JDetailsPanel");
+
+        FileMenu.setText("File");
+        FileMenu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FileMenuActionPerformed(evt);
+            }
+        });
+
+        MenuItemExit.setText("Exit");
+        MenuItemExit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MenuItemExitActionPerformed(evt);
+            }
+        });
+        FileMenu.add(MenuItemExit);
+
+        MenuBar.add(FileMenu);
+        FileMenu.getAccessibleContext().setAccessibleName("jExit");
+
+        AddMenu.setText("Add New");
+
+        MenuItemAddComic.setText("Add Comic");
+        AddMenu.add(MenuItemAddComic);
+
+        menuItemAddCharacter.setText("Add Character");
+        AddMenu.add(menuItemAddCharacter);
+
+        menuItemAddCreator.setText("Add Creator");
+        AddMenu.add(menuItemAddCreator);
+
+        menuItemAddPublisher.setText("Add Publisher");
+        AddMenu.add(menuItemAddPublisher);
+
+        MenuBar.add(AddMenu);
+        AddMenu.getAccessibleContext().setAccessibleName("jAddNew");
+
+        setJMenuBar(MenuBar);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -82,19 +229,58 @@ public class MainDashboard extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(MainPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        MainPanel.getAccessibleContext().setAccessibleName("jPanel");
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void AddNewCharacterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddNewCharacterButtonActionPerformed
+        // TODO add your handling code here:
+        System.out.println("Opening Character Editor...");
+        
+        CharacterEditor charEditor = new CharacterEditor(this, true);
+        charEditor.setVisible(true);
+        EditionEditor edti = new EditionEditor(this,true);
+        
+                
+        // After the dialog closes, you would refresh the table:
+        //refreshTableData();
+    }//GEN-LAST:event_AddNewCharacterButtonActionPerformed
+
+    private void AddNewComicBookButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddNewComicBookButtonActionPerformed
+        // TODO add your handling code here:
+        // 1. Create an instance of your editor dialog
+    // The 'this' and 'true' make it a "modal" dialog,
+    // which blocks the main window until you close the pop-up.
+    ComicBookEditor comicEditor = new ComicBookEditor(this, true);
+
+    // 2. Make the dialog visible
+    comicEditor.setVisible(true);
+
+    // 3. (After the user clicks 'Save' or 'Cancel' and the dialog closes)
+    // You can add code here to refresh your main JTable
+    // to show the new comic that was added.
+    }//GEN-LAST:event_AddNewComicBookButtonActionPerformed
+
+    private void FileMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FileMenuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FileMenuActionPerformed
+
+    private void MenuItemExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MenuItemExitActionPerformed
+        // TODO add your handling code here:
+        System.exit(0);
+    }//GEN-LAST:event_MenuItemExitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -122,11 +308,22 @@ public class MainDashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jEdit;
-    private javax.swing.JMenu jFile;
-    private javax.swing.JMenuBar jMenuBar;
-    private javax.swing.JPanel jPanel;
+    private javax.swing.JMenu AddMenu;
+    private javax.swing.JButton AddNewCharacterButton;
+    private javax.swing.JButton AddNewComicBookButton;
+    private javax.swing.JPanel ButtomPanel;
+    private javax.swing.JButton DeleteSelectedItemButton;
+    private javax.swing.JPanel DetailsPanel;
+    private javax.swing.JButton EditSelectedItemButton;
+    private javax.swing.JMenu FileMenu;
+    private javax.swing.JPanel MainPanel;
+    private javax.swing.JTable MainTable;
+    private javax.swing.JMenuBar MenuBar;
+    private javax.swing.JMenuItem MenuItemAddComic;
+    private javax.swing.JMenuItem MenuItemExit;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable;
+    private javax.swing.JMenuItem menuItemAddCharacter;
+    private javax.swing.JMenuItem menuItemAddCreator;
+    private javax.swing.JMenuItem menuItemAddPublisher;
     // End of variables declaration//GEN-END:variables
 }
