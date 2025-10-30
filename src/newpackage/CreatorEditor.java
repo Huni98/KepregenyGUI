@@ -11,6 +11,9 @@ package newpackage;
  */
 
 import ro.madarash.kepregeny_project.*;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
 
 public class CreatorEditor extends javax.swing.JDialog {
     
@@ -32,65 +35,156 @@ public class CreatorEditor extends javax.swing.JDialog {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
-        jCreatorEditorSaveButton = new javax.swing.JButton();
-        jCreatorEditorCancelButton = new javax.swing.JButton();
+        typeButtonGroup = new javax.swing.ButtonGroup();
+        buttonPanel = new javax.swing.JPanel();
+        saveButton = new javax.swing.JButton();
+        cancelButton = new javax.swing.JButton();
+        mainFormPanel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jNameTextField = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jNationalityTextField = new javax.swing.JTextField();
+        nameLabel = new javax.swing.JLabel();
+        nameField = new javax.swing.JTextField();
+        nationalityLabel = new javax.swing.JLabel();
+        nationalityField = new javax.swing.JTextField();
+        radioPanel = new javax.swing.JPanel();
+        writerRadioButton = new javax.swing.JRadioButton();
+        artistRadioButton = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Creator Editor");
 
-        jCreatorEditorSaveButton.setText("Save");
+        buttonPanel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
 
-        jCreatorEditorCancelButton.setText("Cancel");
+        saveButton.setText("Save");
+        saveButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveButtonActionPerformed(evt);
+            }
+        });
+        buttonPanel.add(saveButton);
 
-        jLabel1.setText("Name");
+        cancelButton.setText("Cancel");
+        cancelButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelButtonActionPerformed(evt);
+            }
+        });
+        buttonPanel.add(cancelButton);
 
-        jLabel2.setText("Nationality");
+        getContentPane().add(buttonPanel, java.awt.BorderLayout.SOUTH);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(107, Short.MAX_VALUE)
-                .addComponent(jCreatorEditorSaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(159, 159, 159)
-                .addComponent(jCreatorEditorCancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(84, 84, 84))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(181, 181, 181)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jNameTextField, javax.swing.GroupLayout.DEFAULT_SIZE, 220, Short.MAX_VALUE)
-                    .addComponent(jNationalityTextField))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(120, 120, 120)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jNationalityTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(180, 180, 180)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCreatorEditorSaveButton, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                    .addComponent(jCreatorEditorCancelButton, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
-                .addGap(51, 51, 51))
-        );
+        mainFormPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        mainFormPanel.setLayout(new java.awt.GridBagLayout());
+
+        jLabel1.setText("Creator Type: ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        mainFormPanel.add(jLabel1, gridBagConstraints);
+
+        nameLabel.setText("Name:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        mainFormPanel.add(nameLabel, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        mainFormPanel.add(nameField, gridBagConstraints);
+
+        nationalityLabel.setText("Nationality:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        mainFormPanel.add(nationalityLabel, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        mainFormPanel.add(nationalityField, gridBagConstraints);
+
+        radioPanel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
+
+        typeButtonGroup.add(writerRadioButton);
+        writerRadioButton.setText("Writer");
+        radioPanel.add(writerRadioButton);
+
+        typeButtonGroup.add(artistRadioButton);
+        artistRadioButton.setText("Artist");
+        radioPanel.add(artistRadioButton);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        mainFormPanel.add(radioPanel, gridBagConstraints);
+
+        getContentPane().add(mainFormPanel, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
+        // TODO add your handling code here:
+        // 1. Get the data from the form
+        String name = nameField.getText();
+        String nationality = nationalityField.getText();
+
+        // 2. Validate the data
+        if (name.isBlank()) {
+            JOptionPane.showMessageDialog(this, // 'this' refers to the dialog itself
+                    "Creator Name cannot be empty.",
+                    "Validation Error",
+                    JOptionPane.ERROR_MESSAGE);
+            return; // Stop and don't close the dialog
+        }
+
+        // 3. Check which radio button is selected and create the correct object
+        if (writerRadioButton.isSelected()) {
+            
+            // TODO: Create a new Writer object from your logic JAR
+            // Writer newWriter = new Writer(name, nationality);
+            System.out.println("Saving new Writer: " + name + " (" + nationality + ")");
+            
+            // TODO: Add this newWriter object to your main data list in MainDashboard
+
+        } else if (artistRadioButton.isSelected()) {
+            
+            // TODO: Create a new Artist object from your logic JAR
+            // Artist newArtist = new Artist(name, nationality);
+            System.out.println("Saving new Artist: " + name + " (" + nationality + ")");
+
+            // TODO: Add this newArtist object to your main data list in MainDashboard
+            
+        } else {
+            // This case should be rare since we select one by default, but it's good practice
+            JOptionPane.showMessageDialog(this,
+                    "Please select a Creator Type (Writer or Artist).",
+                    "Validation Error",
+                    JOptionPane.ERROR_MESSAGE);
+            return; // Stop
+        }
+
+        // 4. If save was successful, close the dialog
+        this.dispose();
+    }//GEN-LAST:event_saveButtonActionPerformed
+
+    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_cancelButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -130,11 +224,18 @@ public class CreatorEditor extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jCreatorEditorCancelButton;
-    private javax.swing.JButton jCreatorEditorSaveButton;
+    private javax.swing.JRadioButton artistRadioButton;
+    private javax.swing.JPanel buttonPanel;
+    private javax.swing.JButton cancelButton;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JTextField jNameTextField;
-    private javax.swing.JTextField jNationalityTextField;
+    private javax.swing.JPanel mainFormPanel;
+    private javax.swing.JTextField nameField;
+    private javax.swing.JLabel nameLabel;
+    private javax.swing.JTextField nationalityField;
+    private javax.swing.JLabel nationalityLabel;
+    private javax.swing.JPanel radioPanel;
+    private javax.swing.JButton saveButton;
+    private javax.swing.ButtonGroup typeButtonGroup;
+    private javax.swing.JRadioButton writerRadioButton;
     // End of variables declaration//GEN-END:variables
 }

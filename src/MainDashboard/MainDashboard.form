@@ -2,9 +2,9 @@
 
 <Form version="1.6" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
-    <Menu class="javax.swing.JMenuBar" name="MenuBar">
+    <Menu class="javax.swing.JMenuBar" name="menuBar">
       <SubComponents>
-        <Menu class="javax.swing.JMenu" name="FileMenu">
+        <Menu class="javax.swing.JMenu" name="fileMenu">
           <Properties>
             <Property name="text" type="java.lang.String" value="File"/>
           </Properties>
@@ -12,20 +12,20 @@
             <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="jExit"/>
           </AccessibilityProperties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FileMenuActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fileMenuActionPerformed"/>
           </Events>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="MenuItemExit">
+            <MenuItem class="javax.swing.JMenuItem" name="menuItemExit">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Exit"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="MenuItemExitActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuItemExitActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
-        <Menu class="javax.swing.JMenu" name="AddMenu">
+        <Menu class="javax.swing.JMenu" name="addMenu">
           <Properties>
             <Property name="text" type="java.lang.String" value="Add New"/>
           </Properties>
@@ -33,10 +33,13 @@
             <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="jAddNew"/>
           </AccessibilityProperties>
           <SubComponents>
-            <MenuItem class="javax.swing.JMenuItem" name="MenuItemAddComic">
+            <MenuItem class="javax.swing.JMenuItem" name="menuItemAddComic">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Add Comic"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="menuItemAddComicActionPerformed"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JMenuItem" name="menuItemAddCharacter">
               <Properties>
@@ -66,7 +69,7 @@
     </Property>
   </Properties>
   <SyntheticProperties>
-    <SyntheticProperty name="menuBar" type="java.lang.String" value="MenuBar"/>
+    <SyntheticProperty name="menuBar" type="java.lang.String" value="menuBar"/>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
     <SyntheticProperty name="generateCenter" type="boolean" value="false"/>
   </SyntheticProperties>
@@ -87,7 +90,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="MainPanel" max="32767" attributes="0"/>
+              <Component id="mainPanel" max="32767" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -96,14 +99,14 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="MainPanel" max="32767" attributes="0"/>
+              <Component id="mainPanel" max="32767" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="MainPanel">
+    <Container class="javax.swing.JPanel" name="mainPanel">
       <Properties>
         <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
           <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
@@ -122,10 +125,10 @@
                   <EmptySpace max="32767" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
-                      <Component id="ButtomPanel" max="32767" attributes="0"/>
+                      <Component id="buttomButtonPanel" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="DetailsPanel" min="-2" max="-2" attributes="0"/>
+                  <Component id="detailsPanel" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -138,11 +141,11 @@
                           <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                           <Component id="jScrollPane1" min="-2" pref="275" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="ButtomPanel" max="32767" attributes="0"/>
+                          <Component id="buttomButtonPanel" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="DetailsPanel" max="32767" attributes="0"/>
+                          <Component id="detailsPanel" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -158,7 +161,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="MainTable">
+            <Component class="javax.swing.JTable" name="mainItemTable">
               <Properties>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
@@ -180,7 +183,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="DetailsPanel">
+        <Container class="javax.swing.JPanel" name="detailsPanel">
           <AccessibilityProperties>
             <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="JDetailsPanel"/>
           </AccessibilityProperties>
@@ -188,30 +191,46 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="100" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="detailsTitleLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="28" max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="detailsTitleLabel" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
           </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="detailsTitleLabel">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Select an item to see details"/>
+              </Properties>
+            </Component>
+          </SubComponents>
         </Container>
-        <Container class="javax.swing.JPanel" name="ButtomPanel">
+        <Container class="javax.swing.JPanel" name="buttomButtonPanel">
 
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="AddNewComicBookButton" max="32767" attributes="0"/>
+                      <Component id="addComicBookButton" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="AddNewCharacterButton" max="32767" attributes="0"/>
+                      <Component id="addCharacterButton" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="EditSelectedItemButton" max="32767" attributes="0"/>
+                      <Component id="editButton" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="DeleteSelectedItemButton" max="32767" attributes="0"/>
+                      <Component id="deleteButton" max="32767" attributes="0"/>
                       <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -221,10 +240,10 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="AddNewComicBookButton" alignment="3" max="32767" attributes="0"/>
-                          <Component id="AddNewCharacterButton" alignment="3" max="32767" attributes="0"/>
-                          <Component id="EditSelectedItemButton" alignment="3" max="32767" attributes="0"/>
-                          <Component id="DeleteSelectedItemButton" alignment="3" max="32767" attributes="0"/>
+                          <Component id="addComicBookButton" alignment="3" max="32767" attributes="0"/>
+                          <Component id="addCharacterButton" alignment="3" max="32767" attributes="0"/>
+                          <Component id="editButton" alignment="3" max="32767" attributes="0"/>
+                          <Component id="deleteButton" alignment="3" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
                   </Group>
@@ -232,7 +251,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JButton" name="AddNewCharacterButton">
+            <Component class="javax.swing.JButton" name="addCharacterButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Add New Character"/>
               </Properties>
@@ -240,10 +259,10 @@
                 <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="jAddNewCharacterButton"/>
               </AccessibilityProperties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddNewCharacterButtonActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addCharacterButtonActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="EditSelectedItemButton">
+            <Component class="javax.swing.JButton" name="editButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Edit Selected Item"/>
               </Properties>
@@ -251,7 +270,7 @@
                 <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="jEditSelectedItemButton"/>
               </AccessibilityProperties>
             </Component>
-            <Component class="javax.swing.JButton" name="DeleteSelectedItemButton">
+            <Component class="javax.swing.JButton" name="deleteButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Delete Selected Item"/>
               </Properties>
@@ -259,7 +278,7 @@
                 <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="jDeleteSelectedItemButton"/>
               </AccessibilityProperties>
             </Component>
-            <Component class="javax.swing.JButton" name="AddNewComicBookButton">
+            <Component class="javax.swing.JButton" name="addComicBookButton">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Add New Comic Book"/>
               </Properties>
@@ -267,7 +286,7 @@
                 <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="jComicBookEditorButton"/>
               </AccessibilityProperties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AddNewComicBookButtonActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addComicBookButtonActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

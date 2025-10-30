@@ -10,6 +10,20 @@ package newpackage;
  * @author hunor
  */
 
+import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.Insets;
+import javax.swing.BorderFactory;
+import javax.swing.DefaultListCellRenderer;
+import javax.swing.DefaultListModel;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.JButton;
+import javax.swing.JList;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import ro.madarash.kepregeny_project.*;
 
 public class CharacterEditor extends javax.swing.JDialog {
@@ -22,6 +36,67 @@ public class CharacterEditor extends javax.swing.JDialog {
     public CharacterEditor(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        
+        setupListModels();
+        
+        loadAvailableListsData();
+        
+        setLocationRelativeTo(parent);
+    }
+    
+    private void setupListModels() {
+        // Create models
+        allPowersModel = new DefaultListModel<>();
+        charPowersModel = new DefaultListModel<>();
+        allAffiliationsModel = new DefaultListModel<>();
+        charAffiliationsModel = new DefaultListModel<>();
+        allCreatorsModel = new DefaultListModel<>();
+        charCreatorsModel = new DefaultListModel<>();
+        allAppearancesModel = new DefaultListModel<>();
+        charAppearancesModel = new DefaultListModel<>();
+        
+        // Set models to lists
+        allPowersList.setModel(allPowersModel);
+        charPowersList.setModel(charPowersModel);
+        allAffiliationsList.setModel(allAffiliationsModel);
+        charAffiliationsList.setModel(charAffiliationsModel);
+        allCreatorsList.setModel(allCreatorsModel);
+        charCreatorsList.setModel(charCreatorsModel);
+        allAppearancesList.setModel(allAppearancesModel);
+        charAppearancesList.setModel(charAppearancesModel);
+        
+        // --- NEW: Set the custom renderer ---
+        // This tells the lists HOW to display your objects
+        ComicObjectRenderer renderer = new ComicObjectRenderer();
+        allAffiliationsList.setCellRenderer(renderer);
+        charAffiliationsList.setCellRenderer(renderer);
+        allCreatorsList.setCellRenderer(renderer);
+        charCreatorsList.setCellRenderer(renderer);
+        allAppearancesList.setCellRenderer(renderer);
+        charAppearancesList.setCellRenderer(renderer);
+    }
+    
+    private void loadAvailableListsData() {
+        // --- Dummy Power Data ---
+        allPowersModel.addElement("Flight");
+        allPowersModel.addElement("Super Strength");
+        allPowersModel.addElement("Telepathy");
+        allPowersModel.addElement("Gadgets");
+        
+        // --- Dummy Affiliation (Character) Data ---
+        // We are creating new "dummy" objects. You would get these from your main list.
+        allAffiliationsModel.addElement(new Superhero("Peter Parker", "...", "Spider-Man"));
+        allAffiliationsModel.addElement(new Civilian("Mary Jane Watson", "..."));
+        allAffiliationsModel.addElement(new Villain("Norman Osborn", "...", "Green Goblin"));
+        
+        // --- Dummy Creator Data ---
+        // allCreatorsModel.addElement(new Writer("Stan Lee", "USA"));
+        // allCreatorsModel.addElement(new Artist("Steve Ditko", "USA"));
+        // allCreatorsModel.addElement(new Writer("Alan Moore", "UK"));
+        
+        // --- Dummy Appearance (ComicBook) Data ---
+        // allAppearancesModel.addElement(new ComicBook("Amazing Fantasy #15", "Superhero"));
+        // allAppearancesModel.addElement(new ComicBook("The Killing Joke", "Superhero"));
     }
 
     /**
@@ -32,276 +107,549 @@ public class CharacterEditor extends javax.swing.JDialog {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel2 = new javax.swing.JPanel();
-        jCreatorsComboBox = new javax.swing.JComboBox<>();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jRoleTextField = new javax.swing.JTextField();
-        jAddCreatorButton = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jAnotherCharacterComboBox = new javax.swing.JComboBox<>();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jRelationshipTypeTextField = new javax.swing.JTextField();
-        jAddAffiliationButton = new javax.swing.JButton();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
-        jLabel10 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jRealNameTextField = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jAliasTextField = new javax.swing.JTextField();
-        jTypeComboBox = new javax.swing.JComboBox<>();
+        buttonPanel = new javax.swing.JPanel();
+        saveButton = new javax.swing.JButton();
+        cancelButton = new javax.swing.JButton();
+        mainPanel = new javax.swing.JPanel();
+        topInfoPanel = new javax.swing.JPanel();
+        realNameLabel = new javax.swing.JLabel();
+        realNameField = new javax.swing.JTextField();
+        aliasLabel = new javax.swing.JLabel();
+        aliasField = new javax.swing.JTextField();
+        aligmentLabel = new javax.swing.JLabel();
+        alignmentComboBox = new javax.swing.JComboBox<>();
+        originLabel = new javax.swing.JLabel();
+        originScrollPane = new javax.swing.JScrollPane();
+        originTextArea = new javax.swing.JTextArea();
+        tabbedPane = new javax.swing.JTabbedPane();
+        powersPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jOriginStoryTextArea = new javax.swing.JTextArea();
-        jCharacterEditorSaveButton = new javax.swing.JButton();
-        jCharacterEditorCancelButton = new javax.swing.JButton();
+        allPowersList = new javax.swing.JList<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        charPowersList = new javax.swing.JList<>();
+        powersButtonPanel = new javax.swing.JPanel();
+        addPowerButton = new javax.swing.JButton();
+        removePowerButton = new javax.swing.JButton();
+        affiliationsPanel = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        allAffiliationsList = new javax.swing.JList<>();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        charAffiliationsList = new javax.swing.JList<>();
+        affiliationsButtonPanel = new javax.swing.JPanel();
+        addAffiliationButton = new javax.swing.JButton();
+        removeAffiliationButton = new javax.swing.JButton();
+        creatorsPanel = new javax.swing.JPanel();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        allCreatorsList = new javax.swing.JList<>();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        charCreatorsList = new javax.swing.JList<>();
+        creatorsButtonPanel = new javax.swing.JPanel();
+        addCreatorButton = new javax.swing.JButton();
+        removeCreatorButton = new javax.swing.JButton();
+        appearancesPanel = new javax.swing.JPanel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        allAppearancesList = new javax.swing.JList<>();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        charAppearancesList = new javax.swing.JList<>();
+        appearancesButtonPanel = new javax.swing.JPanel();
+        addAppearanceButton = new javax.swing.JButton();
+        removeAppearanceButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Character Editor");
 
-        jTabbedPane1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jTabbedPane1.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
+        buttonPanel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        jCreatorsComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+        saveButton.setText("Save");
+        saveButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveButtonActionPerformed(evt);
+            }
         });
-        jScrollPane2.setViewportView(jList1);
+        buttonPanel.add(saveButton);
 
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Creators of this Character");
-
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("Select Creators");
-
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Role");
-
-        jAddCreatorButton.setText("Add Creator");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(36, 36, 36)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jCreatorsComboBox, 0, 140, Short.MAX_VALUE)
-                            .addComponent(jRoleTextField)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(99, 99, 99)
-                        .addComponent(jAddCreatorButton)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 42, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                    .addComponent(jScrollPane2))
-                .addGap(41, 41, 41))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jCreatorsComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel7)
-                            .addComponent(jRoleTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jAddCreatorButton)
-                        .addGap(0, 28, Short.MAX_VALUE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-
-        jTabbedPane1.addTab("Creators", jPanel2);
-
-        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        jAnotherCharacterComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Select a Character");
-
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("Relationship Type");
-
-        jAddAffiliationButton.setText("Add Affiliation");
-
-        jList2.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+        cancelButton.setText("Cancel");
+        cancelButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelButtonActionPerformed(evt);
+            }
         });
-        jScrollPane3.setViewportView(jList2);
+        buttonPanel.add(cancelButton);
 
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("Affiliations");
+        getContentPane().add(buttonPanel, java.awt.BorderLayout.SOUTH);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 102, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jAnotherCharacterComboBox, 0, 140, Short.MAX_VALUE)
-                            .addComponent(jRelationshipTypeTextField)))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addComponent(jAddAffiliationButton)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 56, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE)
-                    .addComponent(jScrollPane3))
-                .addGap(30, 30, 30))
+        mainPanel.setLayout(new java.awt.BorderLayout());
+
+        topInfoPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        topInfoPanel.setLayout(new java.awt.GridBagLayout());
+
+        realNameLabel.setText("Real Name:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        topInfoPanel.add(realNameLabel, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        topInfoPanel.add(realNameField, gridBagConstraints);
+
+        aliasLabel.setText("Alias:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        topInfoPanel.add(aliasLabel, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        topInfoPanel.add(aliasField, gridBagConstraints);
+
+        aligmentLabel.setText("Alignment:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        topInfoPanel.add(aligmentLabel, gridBagConstraints);
+
+        alignmentComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SUPERHERO", "VILLAIN", "CIVILIAN" }));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        topInfoPanel.add(alignmentComboBox, gridBagConstraints);
+
+        originLabel.setText("Origin Story:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        topInfoPanel.add(originLabel, gridBagConstraints);
+
+        originTextArea.setColumns(20);
+        originTextArea.setLineWrap(true);
+        originTextArea.setRows(5);
+        originTextArea.setWrapStyleWord(true);
+        originScrollPane.setViewportView(originTextArea);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        topInfoPanel.add(originScrollPane, gridBagConstraints);
+
+        mainPanel.add(topInfoPanel, java.awt.BorderLayout.NORTH);
+
+        powersPanel.setLayout(new java.awt.BorderLayout());
+
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(250, 100));
+
+        allPowersList.setBorder(javax.swing.BorderFactory.createTitledBorder("Available Powers"));
+        jScrollPane1.setViewportView(allPowersList);
+
+        powersPanel.add(jScrollPane1, java.awt.BorderLayout.WEST);
+
+        jScrollPane2.setPreferredSize(new java.awt.Dimension(250, 100));
+
+        charPowersList.setBorder(javax.swing.BorderFactory.createTitledBorder("Character Powers"));
+        jScrollPane2.setViewportView(charPowersList);
+
+        powersPanel.add(jScrollPane2, java.awt.BorderLayout.EAST);
+
+        addPowerButton.setText("->");
+        addPowerButton.setPreferredSize(new java.awt.Dimension(70, 25));
+        addPowerButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addPowerButtonActionPerformed(evt);
+            }
+        });
+
+        removePowerButton.setText("<-");
+        removePowerButton.setPreferredSize(new java.awt.Dimension(70, 25));
+        removePowerButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removePowerButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout powersButtonPanelLayout = new javax.swing.GroupLayout(powersButtonPanel);
+        powersButtonPanel.setLayout(powersButtonPanelLayout);
+        powersButtonPanelLayout.setHorizontalGroup(
+            powersButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(powersButtonPanelLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(powersButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(removePowerButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addPowerButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jAnotherCharacterComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9)
-                    .addComponent(jRelationshipTypeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jAddAffiliationButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addComponent(jLabel10)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE))
+        powersButtonPanelLayout.setVerticalGroup(
+            powersButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, powersButtonPanelLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(addPowerButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addComponent(removePowerButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75))
         );
 
-        jTabbedPane1.addTab("Affiliations", jPanel3);
+        powersPanel.add(powersButtonPanel, java.awt.BorderLayout.CENTER);
 
-        jLabel1.setText("Real Name");
+        tabbedPane.addTab("Powers", powersPanel);
 
-        jLabel2.setText("Alias");
+        affiliationsPanel.setLayout(new java.awt.BorderLayout());
 
-        jLabel3.setText("Type");
+        jScrollPane3.setPreferredSize(new java.awt.Dimension(250, 100));
 
-        jLabel4.setText("Origin Story");
+        allAffiliationsList.setBorder(javax.swing.BorderFactory.createTitledBorder("All Characters"));
+        jScrollPane3.setViewportView(allAffiliationsList);
 
-        jTypeComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        affiliationsPanel.add(jScrollPane3, java.awt.BorderLayout.WEST);
 
-        jOriginStoryTextArea.setColumns(20);
-        jOriginStoryTextArea.setRows(5);
-        jScrollPane1.setViewportView(jOriginStoryTextArea);
+        jScrollPane4.setPreferredSize(new java.awt.Dimension(250, 100));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jRealNameTextField)
-                    .addComponent(jAliasTextField)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jTypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(151, 151, 151))
+        charAffiliationsList.setBorder(javax.swing.BorderFactory.createTitledBorder("Affiliated Characters"));
+        jScrollPane4.setViewportView(charAffiliationsList);
+
+        affiliationsPanel.add(jScrollPane4, java.awt.BorderLayout.EAST);
+
+        addAffiliationButton.setText("->");
+        addAffiliationButton.setPreferredSize(new java.awt.Dimension(70, 25));
+        addAffiliationButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addAffiliationButtonActionPerformed(evt);
+            }
+        });
+
+        removeAffiliationButton.setText("<-");
+        removeAffiliationButton.setPreferredSize(new java.awt.Dimension(70, 25));
+        removeAffiliationButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeAffiliationButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout affiliationsButtonPanelLayout = new javax.swing.GroupLayout(affiliationsButtonPanel);
+        affiliationsButtonPanel.setLayout(affiliationsButtonPanelLayout);
+        affiliationsButtonPanelLayout.setHorizontalGroup(
+            affiliationsButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(affiliationsButtonPanelLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(affiliationsButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(removeAffiliationButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addAffiliationButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(jRealNameTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jAliasTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        affiliationsButtonPanelLayout.setVerticalGroup(
+            affiliationsButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, affiliationsButtonPanelLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(addAffiliationButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addComponent(removeAffiliationButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75))
         );
 
-        jCharacterEditorSaveButton.setText("Save");
+        affiliationsPanel.add(affiliationsButtonPanel, java.awt.BorderLayout.CENTER);
 
-        jCharacterEditorCancelButton.setText("Cancel");
+        tabbedPane.addTab("Affiliations", affiliationsPanel);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(72, 72, 72)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jCharacterEditorSaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(181, 181, 181)
-                                .addComponent(jCharacterEditorCancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 72, Short.MAX_VALUE)))
-                .addContainerGap())
+        creatorsPanel.setLayout(new java.awt.BorderLayout());
+
+        jScrollPane5.setPreferredSize(new java.awt.Dimension(250, 100));
+
+        allCreatorsList.setBorder(javax.swing.BorderFactory.createTitledBorder("All Writers / Artists"));
+        jScrollPane5.setViewportView(allCreatorsList);
+
+        creatorsPanel.add(jScrollPane5, java.awt.BorderLayout.LINE_START);
+
+        jScrollPane6.setPreferredSize(new java.awt.Dimension(250, 100));
+
+        charCreatorsList.setBorder(javax.swing.BorderFactory.createTitledBorder("Creators"));
+        jScrollPane6.setViewportView(charCreatorsList);
+
+        creatorsPanel.add(jScrollPane6, java.awt.BorderLayout.LINE_END);
+
+        addCreatorButton.setText("->");
+        addCreatorButton.setPreferredSize(new java.awt.Dimension(70, 25));
+        addCreatorButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addCreatorButtonActionPerformed(evt);
+            }
+        });
+
+        removeCreatorButton.setText("<-");
+        removeCreatorButton.setPreferredSize(new java.awt.Dimension(70, 25));
+        removeCreatorButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeCreatorButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout creatorsButtonPanelLayout = new javax.swing.GroupLayout(creatorsButtonPanel);
+        creatorsButtonPanel.setLayout(creatorsButtonPanelLayout);
+        creatorsButtonPanelLayout.setHorizontalGroup(
+            creatorsButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(creatorsButtonPanelLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(creatorsButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(removeCreatorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addCreatorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 196, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCharacterEditorSaveButton, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                    .addComponent(jCharacterEditorCancelButton, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
-                .addGap(24, 24, 24))
+        creatorsButtonPanelLayout.setVerticalGroup(
+            creatorsButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, creatorsButtonPanelLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(addCreatorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addComponent(removeCreatorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75))
         );
+
+        creatorsPanel.add(creatorsButtonPanel, java.awt.BorderLayout.CENTER);
+
+        tabbedPane.addTab("Creators", creatorsPanel);
+
+        appearancesPanel.setLayout(new java.awt.BorderLayout());
+
+        jScrollPane7.setPreferredSize(new java.awt.Dimension(250, 100));
+
+        allAppearancesList.setBorder(javax.swing.BorderFactory.createTitledBorder("All Comic Books"));
+        jScrollPane7.setViewportView(allAppearancesList);
+
+        appearancesPanel.add(jScrollPane7, java.awt.BorderLayout.LINE_START);
+
+        jScrollPane8.setPreferredSize(new java.awt.Dimension(250, 100));
+
+        charAppearancesList.setBorder(javax.swing.BorderFactory.createTitledBorder("Appearances"));
+        jScrollPane8.setViewportView(charAppearancesList);
+
+        appearancesPanel.add(jScrollPane8, java.awt.BorderLayout.LINE_END);
+
+        addAppearanceButton.setText("->");
+        addAppearanceButton.setPreferredSize(new java.awt.Dimension(70, 25));
+        addAppearanceButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addAppearanceButtonActionPerformed(evt);
+            }
+        });
+
+        removeAppearanceButton.setText("<-");
+        removeAppearanceButton.setPreferredSize(new java.awt.Dimension(70, 25));
+        removeAppearanceButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeAppearanceButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout appearancesButtonPanelLayout = new javax.swing.GroupLayout(appearancesButtonPanel);
+        appearancesButtonPanel.setLayout(appearancesButtonPanelLayout);
+        appearancesButtonPanelLayout.setHorizontalGroup(
+            appearancesButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(appearancesButtonPanelLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(appearancesButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(removeAppearanceButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addAppearanceButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(40, Short.MAX_VALUE))
+        );
+        appearancesButtonPanelLayout.setVerticalGroup(
+            appearancesButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, appearancesButtonPanelLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(addAppearanceButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addComponent(removeAppearanceButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75))
+        );
+
+        appearancesPanel.add(appearancesButtonPanel, java.awt.BorderLayout.CENTER);
+
+        tabbedPane.addTab("Appearances", appearancesPanel);
+
+        mainPanel.add(tabbedPane, java.awt.BorderLayout.CENTER);
+
+        getContentPane().add(mainPanel, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    
+    
+    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
+        // 1. Get data from the top form
+        String realName = realNameField.getText();
+        String alias = aliasField.getText();
+        String alignmentString = (String) alignmentComboBox.getSelectedItem();
+        String origin = originTextArea.getText();
+
+        // 2. Validate data
+        if (realName.isBlank()) {
+            JOptionPane.showMessageDialog(this, "Real Name cannot be empty.", "Validation Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (alignmentString.equals("HERO") || alignmentString.equals("VILLAIN") || alignmentString.equals("ANTIHERO")) {
+            if (alias.isBlank()) {
+                JOptionPane.showMessageDialog(this, "Alias cannot be empty for a Hero, Villain, or Anti-Hero.", "Validation Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+        }
+
+        // 3. Create the correct Character subclass
+        ComicCharacter newCharacter = null; 
+        
+        switch (alignmentString) {
+            case "HERO":
+            case "ANTIHERO": 
+                newCharacter = new Superhero(realName, origin, alias);
+                System.out.println("Saving new Superhero: " + alias);
+                break;
+            case "VILLAIN":
+                newCharacter = new Villain(realName, origin, alias);
+                System.out.println("Saving new Villain: " + alias);
+                break;
+            case "CIVILIAN":
+            case "NEUTRAL":
+            default:
+                newCharacter = new Civilian(realName, origin);
+                System.out.println("Saving new Civilian: " + realName);
+                break;
+        }
+
+        // 4. --- NEW: Save the list data using the 'newCharacter' object ---
+        
+        // -- Save Powers --
+        // Powers are only on Superhero/Villain, so we must cast
+        if (newCharacter instanceof Superhero) {
+            for (int i = 0; i < charPowersModel.getSize(); i++) {
+                String powerName = charPowersModel.getElementAt(i);
+                ((Superhero) newCharacter).addPower(powerName);
+            }
+        } else if (newCharacter instanceof Villain) {
+            for (int i = 0; i < charPowersModel.getSize(); i++) {
+                String powerName = charPowersModel.getElementAt(i);
+                ((Villain) newCharacter).addPower(powerName);
+            }
+        }
+        
+        // -- Save Affiliations --
+        for (int i = 0; i < charAffiliationsModel.getSize(); i++) {
+            ComicCharacter affiliatedChar = charAffiliationsModel.getElementAt(i);
+            // TODO: You need a way to define the relationship type!
+            // This is a design decision. For now, I'll hardcode "Ally".
+            // You could add a text field next to the list for this.
+            newCharacter.addAffiliation(affiliatedChar, "Ally");
+        }
+        
+        // -- Save Creators --
+        for (int i = 0; i < charCreatorsModel.getSize(); i++) {
+            Object creator = charCreatorsModel.getElementAt(i);
+            // TODO: Also need to define the relationship type, e.g., "Co-creator"
+            if (creator instanceof Writer) {
+                newCharacter.addCreator((Writer) creator, "Co-creator");
+            } else if (creator instanceof Artist) {
+                newCharacter.addCreator((Artist) creator, "Co-creator");
+            }
+        }
+        
+        // -- Save Appearances --
+        for (int i = 0; i < charAppearancesModel.getSize(); i++) {
+            ComicBook comic = charAppearancesModel.getElementAt(i);
+            newCharacter.addAppearance(comic);
+        }
+        
+        // 5. TODO: Add the 'newCharacter' to your main data list in MainDashboard
+        // ((MainDashboard) getParent()).addCharacterToList(newCharacter);
+        
+        // 6. Close the dialog
+        this.dispose();
+    }//GEN-LAST:event_saveButtonActionPerformed
+
+    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+    }//GEN-LAST:event_cancelButtonActionPerformed
+
+    private <T> void moveItems(JList<T> sourceList, JList<T> destList) {
+        // Get the models for both lists
+        DefaultListModel<T> sourceModel = (DefaultListModel<T>) sourceList.getModel();
+        DefaultListModel<T> destModel = (DefaultListModel<T>) destList.getModel();
+        
+        // Get all selected items from the source list
+        java.util.List<T> selectedItems = sourceList.getSelectedValuesList();
+        
+        if (selectedItems.isEmpty()) {
+            return; // Nothing selected, do nothing
+        }
+
+        // Add items to the destination model
+        for (T item : selectedItems) {
+            destModel.addElement(item);
+        }
+        
+        // Remove items from the source model (in reverse to avoid index issues)
+        for (int i = selectedItems.size() - 1; i >= 0; i--) {
+            sourceModel.removeElement(selectedItems.get(i));
+        }
+    }
+    
+    private void removeAppearanceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeAppearanceButtonActionPerformed
+        // TODO add your handling code here:
+        moveItems(charAppearancesList, allAppearancesList);
+    }//GEN-LAST:event_removeAppearanceButtonActionPerformed
+
+    private void addAppearanceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addAppearanceButtonActionPerformed
+        // TODO add your handling code here:
+        moveItems(allAppearancesList, charAppearancesList);
+    }//GEN-LAST:event_addAppearanceButtonActionPerformed
+
+    private void removeCreatorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeCreatorButtonActionPerformed
+        // TODO add your handling code here:
+        moveItems(charCreatorsList, allCreatorsList);
+    }//GEN-LAST:event_removeCreatorButtonActionPerformed
+
+    private void addCreatorButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCreatorButtonActionPerformed
+        // TODO add your handling code here:
+        moveItems(allCreatorsList, charCreatorsList);
+    }//GEN-LAST:event_addCreatorButtonActionPerformed
+
+    private void removeAffiliationButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeAffiliationButtonActionPerformed
+        // TODO add your handling code here:
+        moveItems(charAffiliationsList, allAffiliationsList);
+    }//GEN-LAST:event_removeAffiliationButtonActionPerformed
+
+    private void addAffiliationButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addAffiliationButtonActionPerformed
+        // TODO add your handling code here:
+        moveItems(allAffiliationsList, charAffiliationsList);
+    }//GEN-LAST:event_addAffiliationButtonActionPerformed
+
+    private void removePowerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removePowerButtonActionPerformed
+        // TODO add your handling code here:
+        moveItems(charPowersList, allPowersList);
+    }//GEN-LAST:event_removePowerButtonActionPerformed
+
+    private void addPowerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPowerButtonActionPerformed
+        // TODO add your handling code here:
+        moveItems(allPowersList, charPowersList);
+    }//GEN-LAST:event_addPowerButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -339,38 +687,84 @@ public class CharacterEditor extends javax.swing.JDialog {
             }
         });
     }
+    class ComicObjectRenderer extends DefaultListCellRenderer {
+        @Override
+        public Component getListCellRendererComponent(JList<?> list, Object value, int index,
+                                                      boolean isSelected, boolean cellHasFocus) {
+            // Get the default component (a JLabel)
+            Component c = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+            
+            // Check the type of the object and set the text accordingly
+            if (value instanceof Writer) {
+                setText(((Writer) value).getName());
+            } else if (value instanceof Artist) {
+                setText(((Artist) value).getName());
+            } else if (value instanceof Character) {
+                setText(((ComicCharacter) value).getDisplayName());
+            } else if (value instanceof ComicBook) {
+                setText(((ComicBook) value).getTitle());
+            }
+            // (It already handles String, so 'powers' list will work fine)
+            
+            return c;
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jAddAffiliationButton;
-    private javax.swing.JButton jAddCreatorButton;
-    private javax.swing.JTextField jAliasTextField;
-    private javax.swing.JComboBox<String> jAnotherCharacterComboBox;
-    private javax.swing.JButton jCharacterEditorCancelButton;
-    private javax.swing.JButton jCharacterEditorSaveButton;
-    private javax.swing.JComboBox<String> jCreatorsComboBox;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JList<String> jList2;
-    private javax.swing.JTextArea jOriginStoryTextArea;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jRealNameTextField;
-    private javax.swing.JTextField jRelationshipTypeTextField;
-    private javax.swing.JTextField jRoleTextField;
+    private javax.swing.JButton addAffiliationButton;
+    private javax.swing.JButton addAppearanceButton;
+    private javax.swing.JButton addCreatorButton;
+    private javax.swing.JButton addPowerButton;
+    private javax.swing.JPanel affiliationsButtonPanel;
+    private javax.swing.JPanel affiliationsPanel;
+    private javax.swing.JTextField aliasField;
+    private javax.swing.JLabel aliasLabel;
+    private javax.swing.JLabel aligmentLabel;
+    private javax.swing.JComboBox<String> alignmentComboBox;
+    private javax.swing.JList<ComicCharacter> allAffiliationsList;
+    private javax.swing.JList<ComicBook> allAppearancesList;
+    private javax.swing.JList<Object> allCreatorsList;
+    private javax.swing.JList<String> allPowersList;
+    private javax.swing.JPanel appearancesButtonPanel;
+    private javax.swing.JPanel appearancesPanel;
+    private javax.swing.JPanel buttonPanel;
+    private javax.swing.JButton cancelButton;
+    private javax.swing.JList<ComicCharacter> charAffiliationsList;
+    private javax.swing.JList<ComicBook> charAppearancesList;
+    private javax.swing.JList<Object> charCreatorsList;
+    private javax.swing.JList<String> charPowersList;
+    private javax.swing.JPanel creatorsButtonPanel;
+    private javax.swing.JPanel creatorsPanel;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JComboBox<String> jTypeComboBox;
+    private javax.swing.JScrollPane jScrollPane4;
+    private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JPanel mainPanel;
+    private javax.swing.JLabel originLabel;
+    private javax.swing.JScrollPane originScrollPane;
+    private javax.swing.JTextArea originTextArea;
+    private javax.swing.JPanel powersButtonPanel;
+    private javax.swing.JPanel powersPanel;
+    private javax.swing.JTextField realNameField;
+    private javax.swing.JLabel realNameLabel;
+    private javax.swing.JButton removeAffiliationButton;
+    private javax.swing.JButton removeAppearanceButton;
+    private javax.swing.JButton removeCreatorButton;
+    private javax.swing.JButton removePowerButton;
+    private javax.swing.JButton saveButton;
+    private javax.swing.JTabbedPane tabbedPane;
+    private javax.swing.JPanel topInfoPanel;
     // End of variables declaration//GEN-END:variables
+    private DefaultListModel<String> allPowersModel;
+    private DefaultListModel<String> charPowersModel;
+    private DefaultListModel<ComicCharacter> allAffiliationsModel;
+    private DefaultListModel<ComicCharacter> charAffiliationsModel;
+    private DefaultListModel<Object> allCreatorsModel;
+    private DefaultListModel<Object> charCreatorsModel;
+    private DefaultListModel<ComicBook> allAppearancesModel;
+    private DefaultListModel<ComicBook> charAppearancesModel;
 }

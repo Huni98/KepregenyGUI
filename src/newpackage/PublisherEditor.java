@@ -1,27 +1,35 @@
-package newpackage;
-
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
+package newpackage;
 
 /**
  *
  * @author hunor
  */
-//import *;
-import ro.madarash.kepregeny_project.*;
+import javax.swing.*;
+import java.awt.*;
 
-public class EditionEditor extends javax.swing.JDialog {
+public class PublisherEditor extends javax.swing.JDialog {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(EditionEditor.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(PublisherEditor.class.getName());
 
     /**
-     * Creates new form EditionEditor
+     * Creates new form PublisherEditor
      */
-    public EditionEditor(java.awt.Frame parent, boolean modal) {
+    
+    
+    
+    public PublisherEditor(java.awt.Frame parent, boolean modal) {
+        // Call the parent JDialog's constructor
         super(parent, modal);
+
+        // This method builds the form's layout and components
         initComponents();
+
+        // Center the dialog on top of its parent (MainDashboard)
+        setLocationRelativeTo(parent);
     }
 
     /**
@@ -38,25 +46,18 @@ public class EditionEditor extends javax.swing.JDialog {
         saveButton = new javax.swing.JButton();
         cancelButton = new javax.swing.JButton();
         mainFormPanel = new javax.swing.JPanel();
-        editionNameLabel = new javax.swing.JLabel();
-        editionNameField = new javax.swing.JTextField();
-        publisherLabel = new javax.swing.JLabel();
+        nameLabel = new javax.swing.JLabel();
+        nameField = new javax.swing.JTextField();
+        countryLabel = new javax.swing.JLabel();
         countryField = new javax.swing.JTextField();
-        publisherComboBox = new javax.swing.JComboBox<>();
-        isbnLabel = new javax.swing.JLabel();
-        publicationDateSpinner = new javax.swing.JSpinner();
-        publicationDateLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Publisher Editor");
+        getContentPane().setLayout(new java.awt.BorderLayout(50, 50));
 
         buttonPanel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
 
         saveButton.setText("Save");
-        saveButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                saveButtonActionPerformed(evt);
-            }
-        });
         buttonPanel.add(saveButton);
 
         cancelButton.setText("Cancel");
@@ -72,67 +73,35 @@ public class EditionEditor extends javax.swing.JDialog {
         mainFormPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
         mainFormPanel.setLayout(new java.awt.GridBagLayout());
 
-        editionNameLabel.setText("Edition Name:");
+        nameLabel.setText("Publisher Name:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        mainFormPanel.add(editionNameLabel, gridBagConstraints);
+        mainFormPanel.add(nameLabel, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        mainFormPanel.add(editionNameField, gridBagConstraints);
+        mainFormPanel.add(nameField, gridBagConstraints);
 
-        publisherLabel.setText("Publisher:");
+        countryLabel.setText("Country of Origin:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        mainFormPanel.add(publisherLabel, gridBagConstraints);
+        mainFormPanel.add(countryLabel, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         mainFormPanel.add(countryField, gridBagConstraints);
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 1;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        mainFormPanel.add(publisherComboBox, gridBagConstraints);
-
-        isbnLabel.setText("ISBN:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        mainFormPanel.add(isbnLabel, gridBagConstraints);
-
-        publicationDateSpinner.setModel(new javax.swing.SpinnerDateModel());
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        mainFormPanel.add(publicationDateSpinner, gridBagConstraints);
-
-        publicationDateLabel.setText("Publication Date:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        mainFormPanel.add(publicationDateLabel, gridBagConstraints);
 
         getContentPane().add(mainFormPanel, java.awt.BorderLayout.CENTER);
 
@@ -141,12 +110,40 @@ public class EditionEditor extends javax.swing.JDialog {
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         // TODO add your handling code here:
-        this.dispose();
     }//GEN-LAST:event_cancelButtonActionPerformed
 
-    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_saveButtonActionPerformed
+    /**
+     * Called when the "Save" button is clicked.
+     */
+    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        // 1. Get the data from the text fields
+        String publisherName = nameField.getText();
+        String country = countryField.getText();
+
+        // 2. TODO: Validate the data (e.g., check if name is empty)
+        if (publisherName.isBlank()) {
+            JOptionPane.showMessageDialog(this,
+                    "Publisher Name cannot be empty.",
+                    "Validation Error",
+                    JOptionPane.ERROR_MESSAGE);
+            return; // Stop and don't close the dialog
+        }
+
+        // 3. TODO: Create a new Publisher object (from your logic JAR)
+        // Publisher newPublisher = new Publisher(publisherName, country);
+        System.out.println("Saving new publisher: " + publisherName + " (" + country + ")");
+
+        // 4. TODO: Add the new publisher to your main data list
+        // (This requires a method in MainDashboard to pass the list,
+        // or using a central data controller)
+
+        // 5. Close the dialog
+        this.dispose();
+    }
+
+    /**
+     * Called when the "Cancel" button is clicked.
+     */
 
     /**
      * @param args the command line arguments
@@ -154,9 +151,6 @@ public class EditionEditor extends javax.swing.JDialog {
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -164,16 +158,16 @@ public class EditionEditor extends javax.swing.JDialog {
                     break;
                 }
             }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            java.util.logging.Logger.getLogger(PublisherEditor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
-        /* Create and display the dialog */
+        /* Create and display the dialog for testing */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
             public void run() {
-                EditionEditor dialog = new EditionEditor(new javax.swing.JFrame(), true);
+                // Create a dialog with a 'null' parent and 'true' modality
+                PublisherEditor dialog = new PublisherEditor(new javax.swing.JFrame(), true);
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -189,14 +183,10 @@ public class EditionEditor extends javax.swing.JDialog {
     private javax.swing.JPanel buttonPanel;
     private javax.swing.JButton cancelButton;
     private javax.swing.JTextField countryField;
-    private javax.swing.JTextField editionNameField;
-    private javax.swing.JLabel editionNameLabel;
-    private javax.swing.JLabel isbnLabel;
+    private javax.swing.JLabel countryLabel;
     private javax.swing.JPanel mainFormPanel;
-    private javax.swing.JLabel publicationDateLabel;
-    private javax.swing.JSpinner publicationDateSpinner;
-    private javax.swing.JComboBox<String> publisherComboBox;
-    private javax.swing.JLabel publisherLabel;
+    private javax.swing.JTextField nameField;
+    private javax.swing.JLabel nameLabel;
     private javax.swing.JButton saveButton;
     // End of variables declaration//GEN-END:variables
 }

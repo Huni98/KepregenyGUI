@@ -32,41 +32,48 @@ public class ComicBookEditor extends javax.swing.JDialog {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jScrollPane3 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
-        jTitleLabel = new javax.swing.JLabel();
-        jTitleTextField = new javax.swing.JTextField();
-        jGenreLabel = new javax.swing.JLabel();
-        jGenreTextField = new javax.swing.JTextField();
-        jComicBookTabbedPane = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jAvailableCreatorList = new javax.swing.JList<>();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jAssignedCreatorList = new javax.swing.JList<>();
-        jCreativeAddButton = new javax.swing.JButton();
-        jCreativeRemoveButton = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        buttonPanel = new javax.swing.JPanel();
+        saveButton = new javax.swing.JButton();
+        cancelButton = new javax.swing.JButton();
+        mainPanel = new javax.swing.JPanel();
+        topInfoPanel = new javax.swing.JPanel();
+        titleLabel = new javax.swing.JLabel();
+        titleField = new javax.swing.JTextField();
+        genreLabel = new javax.swing.JLabel();
+        genreField = new javax.swing.JTextField();
+        publisherLabel = new javax.swing.JLabel();
+        publisherComboBox = new javax.swing.JComboBox<>();
+        editionLabel = new javax.swing.JLabel();
+        editionField = new javax.swing.JTextField();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        writersPanel = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jAvailableCharacterList = new javax.swing.JList<>();
+        allWritersList = new javax.swing.JList<>();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        thisComicBookWriterList = new javax.swing.JList<>();
+        writersButtonPanel = new javax.swing.JPanel();
+        addWriterButton = new javax.swing.JButton();
+        removeWriterButton = new javax.swing.JButton();
+        artistsPanel = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        allArtistsList = new javax.swing.JList<>();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jFeaturedCharacterList = new javax.swing.JList<>();
-        jAvailableCharacterLabel = new javax.swing.JLabel();
-        jFeaturedCharacterLabel = new javax.swing.JLabel();
-        jFeaturedAddButton = new javax.swing.JButton();
-        jFeaturedRemoveButton = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
+        thisComicBookArtistList = new javax.swing.JList<>();
+        artistsButtonPanel = new javax.swing.JPanel();
+        addArtistButton = new javax.swing.JButton();
+        removeArtistButton = new javax.swing.JButton();
+        featuredCharactersPanel = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jList2 = new javax.swing.JList<>();
-        jAllEditionsLabel = new javax.swing.JLabel();
-        jAddNewEditionButton = new javax.swing.JButton();
-        jEditEditionButton = new javax.swing.JButton();
-        jDeleteEditionButton = new javax.swing.JButton();
-        jComicBookEditorSaveButton = new javax.swing.JButton();
-        jComicBookEditorCancelButton = new javax.swing.JButton();
+        allCharactersList = new javax.swing.JList<>();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        featuredCharactersList = new javax.swing.JList<>();
+        powersButtonPanel2 = new javax.swing.JPanel();
+        addCharacterButton = new javax.swing.JButton();
+        removeCharacterButton = new javax.swing.JButton();
 
         jList1.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -77,293 +84,333 @@ public class ComicBookEditor extends javax.swing.JDialog {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jTitleLabel.setText("Title");
+        buttonPanel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
 
-        jGenreLabel.setText("Genre");
-
-        jComicBookTabbedPane.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jComicBookTabbedPane.setTabLayoutPolicy(javax.swing.JTabbedPane.SCROLL_TAB_LAYOUT);
-        jComicBookTabbedPane.setName("Creative Team"); // NOI18N
-
-        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        jAvailableCreatorList.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane2.setViewportView(jAvailableCreatorList);
-
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Available");
-
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Assigned");
-
-        jAssignedCreatorList.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane4.setViewportView(jAssignedCreatorList);
-
-        jCreativeAddButton.setText("Add ->");
-
-        jCreativeRemoveButton.setText("<- Remove");
-        jCreativeRemoveButton.addActionListener(new java.awt.event.ActionListener() {
+        saveButton.setText("Save");
+        saveButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCreativeRemoveButtonActionPerformed(evt);
+                saveButtonActionPerformed(evt);
+            }
+        });
+        buttonPanel.add(saveButton);
+
+        cancelButton.setText("Cancel");
+        cancelButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cancelButtonActionPerformed(evt);
+            }
+        });
+        buttonPanel.add(cancelButton);
+
+        getContentPane().add(buttonPanel, java.awt.BorderLayout.SOUTH);
+
+        mainPanel.setLayout(new java.awt.BorderLayout());
+
+        topInfoPanel.setBorder(javax.swing.BorderFactory.createEmptyBorder(10, 10, 10, 10));
+        topInfoPanel.setLayout(new java.awt.GridBagLayout());
+
+        titleLabel.setText("Title:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        topInfoPanel.add(titleLabel, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        topInfoPanel.add(titleField, gridBagConstraints);
+
+        genreLabel.setText("Genre:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        topInfoPanel.add(genreLabel, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        topInfoPanel.add(genreField, gridBagConstraints);
+
+        publisherLabel.setText("Publisher:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        topInfoPanel.add(publisherLabel, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        topInfoPanel.add(publisherComboBox, gridBagConstraints);
+
+        editionLabel.setText("Edition:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        topInfoPanel.add(editionLabel, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        topInfoPanel.add(editionField, gridBagConstraints);
+
+        mainPanel.add(topInfoPanel, java.awt.BorderLayout.NORTH);
+
+        writersPanel.setLayout(new java.awt.BorderLayout());
+
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(250, 100));
+
+        allWritersList.setBorder(javax.swing.BorderFactory.createTitledBorder("All Writers"));
+        allWritersList.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(allWritersList);
+
+        writersPanel.add(jScrollPane1, java.awt.BorderLayout.WEST);
+
+        jScrollPane2.setPreferredSize(new java.awt.Dimension(250, 100));
+
+        thisComicBookWriterList.setBorder(javax.swing.BorderFactory.createTitledBorder("This Comic Books Writers"));
+        thisComicBookWriterList.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane2.setViewportView(thisComicBookWriterList);
+
+        writersPanel.add(jScrollPane2, java.awt.BorderLayout.EAST);
+
+        addWriterButton.setText("->");
+        addWriterButton.setPreferredSize(new java.awt.Dimension(70, 25));
+        addWriterButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addWriterButtonActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCreativeAddButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jCreativeRemoveButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(37, 37, 37))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(26, 26, 26)
-                                .addComponent(jCreativeAddButton)
-                                .addGap(18, 18, 18)
-                                .addComponent(jCreativeRemoveButton))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(26, Short.MAX_VALUE))
-        );
-
-        jCreativeAddButton.getAccessibleContext().setAccessibleName("jAddButton");
-        jCreativeRemoveButton.getAccessibleContext().setAccessibleName("jRemoveButton");
-
-        jComicBookTabbedPane.addTab("Creative Team", jPanel1);
-
-        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
-        jAvailableCharacterList.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
+        removeWriterButton.setText("<-");
+        removeWriterButton.setPreferredSize(new java.awt.Dimension(70, 25));
+        removeWriterButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeWriterButtonActionPerformed(evt);
+            }
         });
-        jScrollPane1.setViewportView(jAvailableCharacterList);
 
-        jFeaturedCharacterList.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
-        jScrollPane5.setViewportView(jFeaturedCharacterList);
-
-        jAvailableCharacterLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jAvailableCharacterLabel.setText("Available");
-
-        jFeaturedCharacterLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jFeaturedCharacterLabel.setText("Featured");
-
-        jFeaturedAddButton.setText("Add ->");
-
-        jFeaturedRemoveButton.setText("<- Remove");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout writersButtonPanelLayout = new javax.swing.GroupLayout(writersButtonPanel);
+        writersButtonPanel.setLayout(writersButtonPanelLayout);
+        writersButtonPanelLayout.setHorizontalGroup(
+            writersButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(writersButtonPanelLayout.createSequentialGroup()
                 .addGap(40, 40, 40)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jAvailableCharacterLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jFeaturedRemoveButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jFeaturedAddButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                    .addComponent(jFeaturedCharacterLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(33, 33, 33))
+                .addGroup(writersButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(removeWriterButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addWriterButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(10, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jAvailableCharacterLabel)
-                    .addComponent(jFeaturedCharacterLabel))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane5))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(24, 24, 24)
-                        .addComponent(jFeaturedAddButton)
-                        .addGap(35, 35, 35)
-                        .addComponent(jFeaturedRemoveButton))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1)))
-                .addGap(22, 22, 22))
+        writersButtonPanelLayout.setVerticalGroup(
+            writersButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, writersButtonPanelLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(addWriterButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(removeWriterButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75))
         );
 
-        jComicBookTabbedPane.addTab("Featured Characters", jPanel2);
+        writersPanel.add(writersButtonPanel, java.awt.BorderLayout.CENTER);
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jTabbedPane1.addTab("Writers", writersPanel);
 
-        jList2.setModel(new javax.swing.AbstractListModel<String>() {
+        artistsPanel.setLayout(new java.awt.BorderLayout());
+
+        jScrollPane4.setPreferredSize(new java.awt.Dimension(250, 100));
+
+        allArtistsList.setBorder(javax.swing.BorderFactory.createTitledBorder("All Artists"));
+        allArtistsList.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane6.setViewportView(jList2);
+        jScrollPane4.setViewportView(allArtistsList);
 
-        jAllEditionsLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jAllEditionsLabel.setText("All editions");
+        artistsPanel.add(jScrollPane4, java.awt.BorderLayout.WEST);
 
-        jAddNewEditionButton.setText("Add New Edition");
+        jScrollPane5.setPreferredSize(new java.awt.Dimension(250, 100));
 
-        jEditEditionButton.setText("Edit Edition");
+        thisComicBookArtistList.setBorder(javax.swing.BorderFactory.createTitledBorder("This Comic Books Artists"));
+        thisComicBookArtistList.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane5.setViewportView(thisComicBookArtistList);
 
-        jDeleteEditionButton.setText("Delete Edition");
+        artistsPanel.add(jScrollPane5, java.awt.BorderLayout.EAST);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(57, 57, 57)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane6)
-                    .addComponent(jAllEditionsLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE))
-                .addGap(52, 52, 52)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jEditEditionButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jAddNewEditionButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jDeleteEditionButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(64, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(10, Short.MAX_VALUE)
-                .addComponent(jAllEditionsLabel)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jAddNewEditionButton)
-                        .addGap(22, 22, 22)
-                        .addComponent(jEditEditionButton)
-                        .addGap(22, 22, 22)
-                        .addComponent(jDeleteEditionButton)))
-                .addGap(22, 22, 22))
-        );
-
-        jComicBookTabbedPane.addTab("Editions", jPanel3);
-
-        jComicBookEditorSaveButton.setText("Save");
-        jComicBookEditorSaveButton.addActionListener(new java.awt.event.ActionListener() {
+        addArtistButton.setText("->");
+        addArtistButton.setPreferredSize(new java.awt.Dimension(70, 25));
+        addArtistButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComicBookEditorSaveButtonActionPerformed(evt);
+                addArtistButtonActionPerformed(evt);
             }
         });
 
-        jComicBookEditorCancelButton.setText("Cancel");
+        removeArtistButton.setText("<-");
+        removeArtistButton.setPreferredSize(new java.awt.Dimension(70, 25));
+        removeArtistButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeArtistButtonActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(226, 226, 226)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jGenreLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jTitleLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTitleTextField)
-                            .addComponent(jGenreTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(115, 115, 115)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jComicBookTabbedPane, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jComicBookEditorSaveButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jComicBookEditorCancelButton, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(135, Short.MAX_VALUE))
+        javax.swing.GroupLayout artistsButtonPanelLayout = new javax.swing.GroupLayout(artistsButtonPanel);
+        artistsButtonPanel.setLayout(artistsButtonPanelLayout);
+        artistsButtonPanelLayout.setHorizontalGroup(
+            artistsButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(artistsButtonPanelLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(artistsButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(removeArtistButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addArtistButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTitleLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jTitleTextField))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jGenreTextField)
-                    .addComponent(jGenreLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(jComicBookTabbedPane, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComicBookEditorSaveButton, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE)
-                    .addComponent(jComicBookEditorCancelButton, javax.swing.GroupLayout.DEFAULT_SIZE, 40, Short.MAX_VALUE))
-                .addContainerGap(47, Short.MAX_VALUE))
+        artistsButtonPanelLayout.setVerticalGroup(
+            artistsButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, artistsButtonPanelLayout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(addArtistButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(removeArtistButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75))
         );
 
-        jTitleLabel.getAccessibleContext().setAccessibleName("jTitelLabel");
-        jTitleTextField.getAccessibleContext().setAccessibleName("jTitelTextField");
-        jGenreLabel.getAccessibleContext().setAccessibleName("jGenreLabel");
-        jGenreTextField.getAccessibleContext().setAccessibleName("jGenreTextField");
-        jComicBookTabbedPane.getAccessibleContext().setAccessibleName("");
-        jComicBookEditorSaveButton.getAccessibleContext().setAccessibleName("jSaveButton");
-        jComicBookEditorCancelButton.getAccessibleContext().setAccessibleName("jCancelButton");
+        artistsPanel.add(artistsButtonPanel, java.awt.BorderLayout.CENTER);
+
+        jTabbedPane1.addTab("Artists", artistsPanel);
+
+        featuredCharactersPanel.setLayout(new java.awt.BorderLayout());
+
+        jScrollPane6.setPreferredSize(new java.awt.Dimension(250, 100));
+
+        allCharactersList.setBorder(javax.swing.BorderFactory.createTitledBorder("All Characters"));
+        allCharactersList.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane6.setViewportView(allCharactersList);
+
+        featuredCharactersPanel.add(jScrollPane6, java.awt.BorderLayout.WEST);
+
+        jScrollPane7.setPreferredSize(new java.awt.Dimension(250, 100));
+
+        featuredCharactersList.setBorder(javax.swing.BorderFactory.createTitledBorder("Featured Characters"));
+        featuredCharactersList.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane7.setViewportView(featuredCharactersList);
+
+        featuredCharactersPanel.add(jScrollPane7, java.awt.BorderLayout.EAST);
+
+        addCharacterButton.setText("->");
+        addCharacterButton.setPreferredSize(new java.awt.Dimension(70, 25));
+        addCharacterButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addCharacterButtonActionPerformed(evt);
+            }
+        });
+
+        removeCharacterButton.setText("<-");
+        removeCharacterButton.setPreferredSize(new java.awt.Dimension(70, 25));
+        removeCharacterButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                removeCharacterButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout powersButtonPanel2Layout = new javax.swing.GroupLayout(powersButtonPanel2);
+        powersButtonPanel2.setLayout(powersButtonPanel2Layout);
+        powersButtonPanel2Layout.setHorizontalGroup(
+            powersButtonPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(powersButtonPanel2Layout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(powersButtonPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(removeCharacterButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(addCharacterButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        powersButtonPanel2Layout.setVerticalGroup(
+            powersButtonPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, powersButtonPanel2Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(addCharacterButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(removeCharacterButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(75, 75, 75))
+        );
+
+        featuredCharactersPanel.add(powersButtonPanel2, java.awt.BorderLayout.CENTER);
+
+        jTabbedPane1.addTab("Feautred Characters", featuredCharactersPanel);
+
+        mainPanel.add(jTabbedPane1, java.awt.BorderLayout.CENTER);
+
+        getContentPane().add(mainPanel, java.awt.BorderLayout.CENTER);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jCreativeRemoveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCreativeRemoveButtonActionPerformed
+    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jCreativeRemoveButtonActionPerformed
+    }//GEN-LAST:event_saveButtonActionPerformed
 
-    private void jComicBookEditorSaveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComicBookEditorSaveButtonActionPerformed
+    private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         // TODO add your handling code here:
-        String title = jTitleTextField.getText();
-        String genre = jGenreTextField.getText();
-        
-        ComicBook newComic = new ComicBook(title, genre);
-        
         this.dispose();
-    }//GEN-LAST:event_jComicBookEditorSaveButtonActionPerformed
+    }//GEN-LAST:event_cancelButtonActionPerformed
+
+    private void addWriterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addWriterButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addWriterButtonActionPerformed
+
+    private void removeWriterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeWriterButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_removeWriterButtonActionPerformed
+
+    private void addArtistButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addArtistButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addArtistButtonActionPerformed
+
+    private void removeArtistButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeArtistButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_removeArtistButtonActionPerformed
+
+    private void addCharacterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCharacterButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addCharacterButtonActionPerformed
+
+    private void removeCharacterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeCharacterButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_removeCharacterButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -403,39 +450,45 @@ public class ComicBookEditor extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jAddNewEditionButton;
-    private javax.swing.JLabel jAllEditionsLabel;
-    private javax.swing.JList<String> jAssignedCreatorList;
-    private javax.swing.JLabel jAvailableCharacterLabel;
-    private javax.swing.JList<String> jAvailableCharacterList;
-    private javax.swing.JList<String> jAvailableCreatorList;
-    private javax.swing.JButton jComicBookEditorCancelButton;
-    private javax.swing.JButton jComicBookEditorSaveButton;
-    private javax.swing.JTabbedPane jComicBookTabbedPane;
-    private javax.swing.JButton jCreativeAddButton;
-    private javax.swing.JButton jCreativeRemoveButton;
-    private javax.swing.JButton jDeleteEditionButton;
-    private javax.swing.JButton jEditEditionButton;
-    private javax.swing.JButton jFeaturedAddButton;
-    private javax.swing.JLabel jFeaturedCharacterLabel;
-    private javax.swing.JList<String> jFeaturedCharacterList;
-    private javax.swing.JButton jFeaturedRemoveButton;
-    private javax.swing.JLabel jGenreLabel;
-    private javax.swing.JTextField jGenreTextField;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton addArtistButton;
+    private javax.swing.JButton addCharacterButton;
+    private javax.swing.JButton addWriterButton;
+    private javax.swing.JList<String> allArtistsList;
+    private javax.swing.JList<String> allCharactersList;
+    private javax.swing.JList<String> allWritersList;
+    private javax.swing.JPanel artistsButtonPanel;
+    private javax.swing.JPanel artistsPanel;
+    private javax.swing.JPanel buttonPanel;
+    private javax.swing.JButton cancelButton;
+    private javax.swing.JTextField editionField;
+    private javax.swing.JLabel editionLabel;
+    private javax.swing.JList<String> featuredCharactersList;
+    private javax.swing.JPanel featuredCharactersPanel;
+    private javax.swing.JTextField genreField;
+    private javax.swing.JLabel genreLabel;
     private javax.swing.JList<String> jList1;
-    private javax.swing.JList<String> jList2;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JLabel jTitleLabel;
-    private javax.swing.JTextField jTitleTextField;
+    private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JPanel mainPanel;
+    private javax.swing.JPanel powersButtonPanel2;
+    private javax.swing.JComboBox<String> publisherComboBox;
+    private javax.swing.JLabel publisherLabel;
+    private javax.swing.JButton removeArtistButton;
+    private javax.swing.JButton removeCharacterButton;
+    private javax.swing.JButton removeWriterButton;
+    private javax.swing.JButton saveButton;
+    private javax.swing.JList<String> thisComicBookArtistList;
+    private javax.swing.JList<String> thisComicBookWriterList;
+    private javax.swing.JTextField titleField;
+    private javax.swing.JLabel titleLabel;
+    private javax.swing.JPanel topInfoPanel;
+    private javax.swing.JPanel writersButtonPanel;
+    private javax.swing.JPanel writersPanel;
     // End of variables declaration//GEN-END:variables
 }

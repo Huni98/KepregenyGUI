@@ -5,10 +5,11 @@
         <group>
             <file>file:/C:/HUNI98/GIT%20Projektek/OOP-labor-feladatok/Kepregeny_GUI/KepregenyGUI/src/kepregenygui/KepregenyGUI.java</file>
             <file>file:/C:/HUNI98/GIT%20Projektek/OOP-labor-feladatok/Kepregeny_GUI/KepregenyGUI/src/MainDashboard/MainDashboard.java</file>
-            <file>file:/C:/HUNI98/GIT%20Projektek/OOP-labor-feladatok/Kepregeny_GUI/KepregenyGUI/src/newpackage/EditionEditor.java</file>
-            <file>file:/C:/HUNI98/GIT%20Projektek/OOP-labor-feladatok/Kepregeny_GUI/KepregenyGUI/src/newpackage/CreatorEditor.java</file>
             <file>file:/C:/HUNI98/GIT%20Projektek/OOP-labor-feladatok/Kepregeny_GUI/KepregenyGUI/src/newpackage/ComicBookEditor.java</file>
             <file>file:/C:/HUNI98/GIT%20Projektek/OOP-labor-feladatok/Kepregeny_GUI/KepregenyGUI/src/newpackage/CharacterEditor.java</file>
+            <file>file:/C:/HUNI98/GIT%20Projektek/OOP-labor-feladatok/Kepregeny_GUI/KepregenyGUI/src/newpackage/CreatorEditor.java</file>
+            <file>file:/C:/HUNI98/GIT%20Projektek/OOP-labor-feladatok/Kepregeny_GUI/KepregenyGUI/src/newpackage/PublisherEditor.java</file>
+            <file>file:/C:/HUNI98/GIT%20Projektek/OOP-labor-feladatok/Kepregeny_GUI/KepregenyGUI/src/newpackage/EditionEditor.java</file>
         </group>
     </open-files>
 </project-private>
