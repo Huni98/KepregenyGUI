@@ -8,6 +8,8 @@ package newpackage;
  *
  * @author hunor
  */
+
+import ro.madarash.kepregeny_project.*;
 import javax.swing.*;
 import java.awt.*;
 
@@ -130,7 +132,7 @@ public class PublisherEditor extends javax.swing.JDialog {
         }
 
         // 3. TODO: Create a new Publisher object (from your logic JAR)
-        // Publisher newPublisher = new Publisher(publisherName, country);
+        Publisher newPublisher = new Publisher(publisherName, country);
         System.out.println("Saving new publisher: " + publisherName + " (" + country + ")");
 
         // 4. TODO: Add the new publisher to your main data list

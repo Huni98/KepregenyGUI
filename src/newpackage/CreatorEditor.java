@@ -155,7 +155,7 @@ public class CreatorEditor extends javax.swing.JDialog {
         if (writerRadioButton.isSelected()) {
             
             // TODO: Create a new Writer object from your logic JAR
-            // Writer newWriter = new Writer(name, nationality);
+            Writer newWriter = new Writer(name, nationality);
             System.out.println("Saving new Writer: " + name + " (" + nationality + ")");
             
             // TODO: Add this newWriter object to your main data list in MainDashboard
@@ -163,7 +163,7 @@ public class CreatorEditor extends javax.swing.JDialog {
         } else if (artistRadioButton.isSelected()) {
             
             // TODO: Create a new Artist object from your logic JAR
-            // Artist newArtist = new Artist(name, nationality);
+            Artist newArtist = new Artist(name, nationality);
             System.out.println("Saving new Artist: " + name + " (" + nationality + ")");
 
             // TODO: Add this newArtist object to your main data list in MainDashboard

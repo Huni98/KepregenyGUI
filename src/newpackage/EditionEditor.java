@@ -10,6 +10,12 @@ package newpackage;
  * @author hunor
  */
 //import *;
+import java.awt.Component;
+import java.util.List;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.DefaultListCellRenderer;
+import javax.swing.JList;
+import newpackage.CharacterEditor.ComicObjectRenderer;
 import ro.madarash.kepregeny_project.*;
 
 public class EditionEditor extends javax.swing.JDialog {
@@ -22,6 +28,33 @@ public class EditionEditor extends javax.swing.JDialog {
     public EditionEditor(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        
+        // --- NEW: Setup the ComboBox ---
+        
+        // 1. Set the custom renderer to display names correctly
+        publisherComboBox.setRenderer(new ComicObjectRenderer());
+        
+        // 2. Populate the combo box with the list of publishers
+        populatePublisherComboBox(availablePublishers);
+
+        // Center the dialog on top of its parent (MainDashboard)
+        setLocationRelativeTo(parent);
+    }
+    
+    /**
+     * Helper method to load the list of publishers into the ComboBox.
+     */
+    private void populatePublisherComboBox(List<Publisher> publishers) {
+        // Create a model that will hold our Publisher objects
+        DefaultComboBoxModel<Publisher> model = new DefaultComboBoxModel<>();
+        
+        // Add all available publishers from the list
+        for (Publisher pub : publishers) {
+            model.addElement(pub);
+        }
+        
+        // Set this model on our combo box
+        publisherComboBox.setModel(model);
     }
 
     /**
@@ -184,6 +217,24 @@ public class EditionEditor extends javax.swing.JDialog {
             }
         });
     }
+    class ComicObjectRenderer extends DefaultListCellRenderer {
+        @Override
+        public Component getListCellRendererComponent(JList<?> list, Object value, int index,
+                                                      boolean isSelected, boolean cellHasFocus) {
+            // Get the default component (a JLabel)
+            Component c = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
+            
+            // Check the type of the object and set the text accordingly
+            if (value instanceof Publisher) {
+                setText(((Publisher) value).getName());
+            } else if (value instanceof ComicBook) {
+                setText(((ComicBook) value).getTitle());
+            } 
+            // (Add other 'else if' for Writer, Artist, Character as needed)
+            
+            return c;
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel buttonPanel;
@@ -195,7 +246,7 @@ public class EditionEditor extends javax.swing.JDialog {
     private javax.swing.JPanel mainFormPanel;
     private javax.swing.JLabel publicationDateLabel;
     private javax.swing.JSpinner publicationDateSpinner;
-    private javax.swing.JComboBox<String> publisherComboBox;
+    private javax.swing.JComboBox<Publisher> publisherComboBox;
     private javax.swing.JLabel publisherLabel;
     private javax.swing.JButton saveButton;
     // End of variables declaration//GEN-END:variables
