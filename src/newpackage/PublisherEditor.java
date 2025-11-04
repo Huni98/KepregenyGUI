@@ -17,12 +17,9 @@ import java.awt.*;
 public class PublisherEditor extends javax.swing.JDialog {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(PublisherEditor.class.getName());
-
-    /**
-     * Creates new form PublisherEditor
-     */
     
-    
+    // --- NEW: Field to store the publisher being edited ---
+    private Publisher publisherToEdit;
     
     public PublisherEditor(java.awt.Frame parent, boolean modal) {
         // Call the parent JDialog's constructor
@@ -35,6 +32,37 @@ public class PublisherEditor extends javax.swing.JDialog {
 
         // Center the dialog on top of its parent (MainDashboard)
         setLocationRelativeTo(parent);
+        
+        // publisherToEdit is null, so we are in "Create" mode
+        this.publisherToEdit = null;
+    }
+    
+    /**
+     * --- NEW: "EDIT MODE" Constructor ---
+     * Creates new form PublisherEditor to edit an existing publisher.
+     */
+    public PublisherEditor(java.awt.Frame parent, boolean modal, Publisher publisherToEdit) {
+        // Call the other constructor
+        this(parent, modal); 
+        
+        // Set the publisher to edit
+        this.publisherToEdit = publisherToEdit;
+        
+        // Change the window title
+        setTitle("Edit Publisher");
+        
+        // Load its data into the form
+        loadDataForEdit();
+    }
+    
+    /**
+     * --- NEW: Helper method to load data into fields ---
+     */
+    private void loadDataForEdit() {
+        if (this.publisherToEdit != null) {
+            nameField.setText(this.publisherToEdit.getName());
+            countryField.setText(this.publisherToEdit.getCountry());
+        }
     }
 
     /**
@@ -126,25 +154,34 @@ public class PublisherEditor extends javax.swing.JDialog {
         String publisherName = nameField.getText();
         String country = countryField.getText();
 
-        // 2. TODO: Validate the data (e.g., check if name is empty)
+        // 2. Validate the data
         if (publisherName.isBlank()) {
             JOptionPane.showMessageDialog(this,
                     "Publisher Name cannot be empty.",
                     "Validation Error",
                     JOptionPane.ERROR_MESSAGE);
-            return; // Stop and don't close the dialog
+            return; // Stop
         }
 
-        // 3. TODO: Create a new Publisher object (from your logic JAR)
-        Publisher newPublisher = new Publisher(publisherName, country);
-        System.out.println("Saving new publisher: " + publisherName + " (" + country + ")");
+        // 3. Check if we are in "Edit Mode" or "Create Mode"
+        if (publisherToEdit != null) {
+            // --- EDIT MODE ---
+            logger.info("Updating publisher: " + publisherToEdit.getName());
+            // Update the existing object's properties
+            publisherToEdit.setName(publisherName);
+            publisherToEdit.setCountry(country);
+            
+        } else {
+            // --- CREATE MODE ---
+            // Create a new Publisher object
+            Publisher newPublisher = new Publisher(publisherName, country);
+            logger.info("Saving new publisher: " + publisherName);
 
-        // 4. TODO: Add the new publisher to your main data list
-        // (This requires a method in MainDashboard to pass the list,
-        // or using a central data controller)
-        ((MainDashboard) getParent()).addPublisher(newPublisher);
+            // Add the new publisher to the main list
+            ((MainDashboard) getParent()).addPublisher(newPublisher);
+        }
 
-        // 5. Close the dialog
+        // 4. Close the dialog
         this.dispose();
     }
 

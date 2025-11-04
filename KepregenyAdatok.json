@@ -1,4194 +1,3217 @@
 {
-  "characters": [
-    {
-      "appearances": [
-        "Hellboy: Seed of Destruction #1"
-      ],
-      "realName": "Abe Sapien",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Mike Mignola"
-        }
-      ],
-      "origin": "Aquatic paranormal investigator.",
-      "alias": "Abe Sapien",
-      "affiliations": [],
-      "type": "OTHER",
-      "powers": [
-        "Amphibious",
-        "Telepathy"
-      ]
-    },
-    {
-      "appearances": [
-        "Marvel Comics #1"
-      ],
-      "realName": "Adam Warlock",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Adam Warlock",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Akira #1"
-      ],
-      "realName": "Akira",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Katsuhiro Otomo"
-        }
-      ],
-      "origin": "Psychic experiment subject.",
-      "alias": "Akira",
-      "affiliations": [],
-      "type": "VILLAIN",
-      "powers": [
-        "Reality Manipulation",
-        "Telepathy"
-      ]
-    },
-    {
-      "appearances": [
-        "Spawn #1"
-      ],
-      "realName": "Al Simmons",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Todd McFarlane"
-        }
-      ],
-      "origin": "Resurrected assassin.",
-      "alias": "Spawn",
-      "affiliations": [],
-      "type": "ANTIHERO",
-      "powers": [
-        "Necroplasmic powers",
-        "Regeneration"
-      ]
-    },
-    {
-      "appearances": [
-        "Saga #3"
-      ],
-      "realName": "Alana",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Brian K. Vaughan"
-        },
-        {
-          "role": "Co-creator",
-          "creatorName": "Fiona Staples"
-        }
-      ],
-      "origin": "Soldier from Landfall.",
-      "alias": "",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "Flight",
-        "Combat"
-      ]
-    },
-    {
-      "appearances": [
-        "Swamp Thing #1"
-      ],
-      "realName": "Alec Holland",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Len Wein"
-        }
-      ],
-      "origin": "Transformed into plant elemental.",
-      "alias": "Swamp Thing",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "Plant control",
-        "Regeneration"
-      ]
-    },
-    {
-      "appearances": [
-        "Detective Comics #27"
-      ],
-      "realName": "Alfred Pennyworth",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Bob Kane"
-        }
-      ],
-      "origin": "Wayne family butler.",
-      "alias": "Alfred",
-      "affiliations": [],
-      "type": "OTHER",
-      "powers": [
-        "Medical knowledge",
-        "Butler skills"
-      ]
-    },
-    {
-      "appearances": [
-        "Detective Comics #359"
-      ],
-      "realName": "Barbara Gordon",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Gardner Fox"
-        }
-      ],
-      "origin": "GCPD's daughter and Batgirl.",
-      "alias": "Batgirl",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "Martial arts",
-        "Computer skills"
-      ]
-    },
-    {
-      "appearances": [
-        "Detective Comics #100"
-      ],
-      "realName": "Barnaby Jones",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Barnaby Jones",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "The Flash #110"
-      ],
-      "realName": "Barry Allen",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Robert Kanigher"
-        }
-      ],
-      "origin": "Forensic scientist turned speedster.",
-      "alias": "The Flash",
-      "affiliations": [
-        "Justice League"
-      ],
-      "type": "SUPERHERO",
-      "powers": [
-        "Super speed"
-      ]
-    },
-    {
-      "appearances": [
-        "Detective Comics #27"
-      ],
-      "realName": "Batman",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Bob Kane"
-        }
-      ],
-      "origin": "Gotham vigilante.",
-      "alias": "Batman",
-      "affiliations": [
-        "Justice League"
-      ],
-      "type": "SUPERHERO",
-      "powers": [
-        "Peak human conditioning",
-        "Martial arts",
-        "Genius intellect"
-      ]
-    },
-    {
-      "appearances": [
-        "The New Teen Titans #13"
-      ],
-      "realName": "Beast Boy",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Arnold Drake"
-        }
-      ],
-      "origin": "Shape-shifting teen.",
-      "alias": "Beast Boy",
-      "affiliations": [
-        "Teen Titans"
-      ],
-      "type": "SUPERHERO",
-      "powers": [
-        "Animal transformation"
-      ]
-    },
-    {
-      "appearances": [
-        "The Incredible Hulk #1"
-      ],
-      "realName": "Betty Ross",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Stan Lee"
-        }
-      ],
-      "origin": "Scientist and love interest.",
-      "alias": "Betty Ross",
-      "affiliations": [],
-      "type": "OTHER",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Fables #1"
-      ],
-      "realName": "Bigby Wolf",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Bill Willingham"
-        }
-      ],
-      "origin": "Big bad wolf in exile.",
-      "alias": "Bigby Wolf",
-      "affiliations": [
-        "Fables"
-      ],
-      "type": "OTHER",
-      "powers": [
-        "Shape shifting"
-      ]
-    },
-    {
-      "appearances": [
-        "The Marvel Family #1"
-      ],
-      "realName": "Black Adam",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Black Adam",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Flash Comics #86"
-      ],
-      "realName": "Black Canary",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Black Canary",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Mystery Men Comics #1"
-      ],
-      "realName": "Blue Beetle",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Blue Beetle",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Booster Gold #1"
-      ],
-      "realName": "Booster Gold",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Booster Gold",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "The Incredible Hulk #1"
-      ],
-      "realName": "Bruce Banner",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Stan Lee"
-        }
-      ],
-      "origin": "Gamma radiation accident.",
-      "alias": "Hulk",
-      "affiliations": [
-        "Avengers"
-      ],
-      "type": "SUPERHERO",
-      "powers": [
-        "Super strength",
-        "Regeneration"
-      ]
-    },
-    {
-      "appearances": [
-        "Captain America Comics #1"
-      ],
-      "realName": "Bucky Barnes",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Bucky Barnes",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "X-Force #1"
-      ],
-      "realName": "Cable",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Rob Liefeld"
-        }
-      ],
-      "origin": "Time-traveling soldier.",
-      "alias": "Cable",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "Telepathy",
-        "Telekinesis",
-        "Cybernetics"
-      ]
-    },
-    {
-      "appearances": [
-        "Marvel Family #1"
-      ],
-      "realName": "Captain Marvel",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Captain Marvel",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Hawkeye #1"
-      ],
-      "realName": "Clint Barton",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Stan Lee"
-        }
-      ],
-      "origin": "Archer turned hero.",
-      "alias": "Hawkeye",
-      "affiliations": [
-        "Avengers"
-      ],
-      "type": "SUPERHERO",
-      "powers": [
-        "Archery"
-      ]
-    },
-    {
-      "appearances": [
-        "The Saga of the Swamp Thing #37"
-      ],
-      "realName": "Constantine",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Constantine",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "X-Men #1"
-      ],
-      "realName": "Cyclops",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Stan Lee"
-        }
-      ],
-      "origin": "Mutant with optic blasts.",
-      "alias": "Cyclops",
-      "affiliations": [
-        "X-Men"
-      ],
-      "type": "SUPERHERO",
-      "powers": [
-        "Optic blasts"
-      ]
-    },
-    {
-      "appearances": [
-        "The Immortal Iron Fist #1"
-      ],
-      "realName": "Daniel Rand",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Roy Thomas"
-        }
-      ],
-      "origin": "Master of the Iron Fist.",
-      "alias": "Iron Fist",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "Chi-based martial arts"
-      ]
-    },
-    {
-      "appearances": [
-        "The Sandman #1"
-      ],
-      "realName": "Death",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Neil Gaiman"
-        }
-      ],
-      "origin": "One of the Endless.",
-      "alias": "Death",
-      "affiliations": [],
-      "type": "OTHER",
-      "powers": [
-        "Personification of death"
-      ]
-    },
-    {
-      "appearances": [
-        "The New Teen Titans #1"
-      ],
-      "realName": "Dick Grayson",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Bill Finger"
-        }
-      ],
-      "origin": "Former acrobat.",
-      "alias": "Nightwing",
-      "affiliations": [
-        "Titans"
-      ],
-      "type": "SUPERHERO",
-      "powers": [
-        "Acrobatics",
-        "Detective skills"
-      ]
-    },
-    {
-      "appearances": [
-        "Fantastic Four #5"
-      ],
-      "realName": "Doctor Doom",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Doctor Doom",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Amazing Spider-Man #3"
-      ],
-      "realName": "Doctor Octopus",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Doctor Octopus",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Sandman #2"
-      ],
-      "realName": "Dream",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Neil Gaiman"
-        }
-      ],
-      "origin": "One of the Endless.",
-      "alias": "Morpheus",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "Dream Manipulation",
-        "Immortality"
-      ]
-    },
-    {
-      "appearances": [
-        "Daredevil #181"
-      ],
-      "realName": "Elektra",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Frank Miller"
-        }
-      ],
-      "origin": "Assassin and lover of Daredevil.",
-      "alias": "Elektra",
-      "affiliations": [],
-      "type": "OTHER",
-      "powers": [
-        "Assassin skills"
-      ]
-    },
-    {
-      "appearances": [
-        "Planetary #1"
-      ],
-      "realName": "Elijah Snow",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Warren Ellis"
-        }
-      ],
-      "origin": "Member of Planetary.",
-      "alias": "Elijah Snow",
-      "affiliations": [
-        "Planetary"
-      ],
-      "type": "OTHER",
-      "powers": [
-        "Cryokinesis"
-      ]
-    },
-    {
-      "appearances": [
-        "Detective Comics #1"
-      ],
-      "realName": "Etrigan",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Etrigan",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "The Punisher #1"
-      ],
-      "realName": "Frank Castle",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Gerry Conway"
-        }
-      ],
-      "origin": "Vigilante driven by loss.",
-      "alias": "Punisher",
-      "affiliations": [],
-      "type": "ANTI-HERO",
-      "powers": [
-        "Tactical skill",
-        "Marksmanship"
-      ]
-    },
-    {
-      "appearances": [
-        "Uncanny X-Men #266"
-      ],
-      "realName": "Gambit",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Gambit",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "The Amazing Spider-Man #14"
-      ],
-      "realName": "Green Goblin",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Stan Lee"
-        }
-      ],
-      "origin": "Norman Osborn as a villain.",
-      "alias": "Green Goblin",
-      "affiliations": [],
-      "type": "VILLAIN",
-      "powers": [
-        "Genius intellect",
-        "Goblin serum"
-      ]
-    },
-    {
-      "appearances": [
-        "All-American Comics #16"
-      ],
-      "realName": "Green Lantern (Alan Scott)",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Green Lantern (Alan Scott)",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "The Amazing Spider-Man #1"
-      ],
-      "realName": "Gwen Stacy",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Stan Lee"
-        }
-      ],
-      "origin": "Peter Parker's love interest.",
-      "alias": "Gwen Stacy",
-      "affiliations": [],
-      "type": "OTHER",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Green Lantern #1"
-      ],
-      "realName": "Hal Jordan",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "John Broome"
-        }
-      ],
-      "origin": "Space pilot chosen by ring.",
-      "alias": "Green Lantern",
-      "affiliations": [
-        "Justice League"
-      ],
-      "type": "SUPERHERO",
-      "powers": [
-        "Power ring constructs"
-      ]
-    },
-    {
-      "appearances": [
-        "Tales to Astonish #27"
-      ],
-      "realName": "Hank Pym",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Hank Pym",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Batman #1"
-      ],
-      "realName": "Harvey Dent",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Bob Kane"
-        }
-      ],
-      "origin": "District attorney turned villain.",
-      "alias": "Two-Face",
-      "affiliations": [],
-      "type": "VILLAIN",
-      "powers": [
-        "Split personality",
-        "Genius intellect"
-      ]
-    },
-    {
-      "appearances": [
-        "Hellboy #1"
-      ],
-      "realName": "Hellboy",
-      "creators": [],
-      "origin": "Summoned from Hell.",
-      "alias": "Anung Un Rama",
-      "affiliations": [],
-      "type": "VILLAIN",
-      "powers": [
-        "Super Strength",
-        "Demon Physiology"
-      ]
-    },
-    {
-      "appearances": [
-        "Adventure into Fear #19"
-      ],
-      "realName": "Howard the Duck",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Howard the Duck",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Adventure Comics #247"
-      ],
-      "realName": "Invisible Kid",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Invisible Kid",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Detective Comics #475"
-      ],
-      "realName": "Jason Todd",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Jerry Robinson"
-        }
-      ],
-      "origin": "Robin who later became Red Hood.",
-      "alias": "Red Hood",
-      "affiliations": [],
-      "type": "OTHER",
-      "powers": [
-        "Skilled fighter"
-      ]
-    },
-    {
-      "appearances": [
-        "X-Men #1"
-      ],
-      "realName": "Jean Grey",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Stan Lee"
-        }
-      ],
-      "origin": "Mutant telepath/telekinetic.",
-      "alias": "Jean Grey",
-      "affiliations": [
-        "X-Men"
-      ],
-      "type": "SUPERHERO",
-      "powers": [
-        "Telepathy",
-        "Telekinesis"
-      ]
-    },
-    {
-      "appearances": [
-        "The Incredible Hulk #1"
-      ],
-      "realName": "Jennifer Walters",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Stan Lee"
-        }
-      ],
-      "origin": "Gamma-induced cousin of Hulk.",
-      "alias": "She-Hulk",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "Super strength",
-        "Legal expertise"
-      ]
-    },
-    {
-      "appearances": [
-        "The Authority #1"
-      ],
-      "realName": "Jenny Sparks",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Warren Ellis"
-        }
-      ],
-      "origin": "Spirit of the 20th century.",
-      "alias": "Jenny Sparks",
-      "affiliations": [
-        "The Authority"
-      ],
-      "type": "SUPERHERO",
-      "powers": [
-        "Electric manipulation"
-      ]
-    },
-    {
-      "appearances": [
-        "Jessica Jones #1"
-      ],
-      "realName": "Jessica Jones",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Brian Michael Bendis"
-        }
-      ],
-      "origin": "Private investigator with past trauma.",
-      "alias": "Jessica Jones",
-      "affiliations": [],
-      "type": "OTHER",
-      "powers": [
-        "Super strength"
-      ]
-    },
-    {
-      "appearances": [
-        "The Spectre #1"
-      ],
-      "realName": "Jim Corrigan",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Jerry Siegel"
-        }
-      ],
-      "origin": "Spirit of vengeance.",
-      "alias": "The Spectre",
-      "affiliations": [],
-      "type": "OTHER",
-      "powers": [
-        "Cosmic powers"
-      ]
-    },
-    {
-      "appearances": [
-        "The Sandman #1"
-      ],
-      "realName": "John Constantine",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Alan Moore"
-        }
-      ],
-      "origin": "Occult detective.",
-      "alias": "John Constantine",
-      "affiliations": [],
-      "type": "OTHER",
-      "powers": [
-        "Occult knowledge",
-        "Cunning"
-      ]
-    },
-    {
-      "appearances": [
-        "Green Lantern #22"
-      ],
-      "realName": "John Stewart",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "John Broome"
-        }
-      ],
-      "origin": "Marine turned Lantern.",
-      "alias": "John Stewart",
-      "affiliations": [
-        "Justice League"
-      ],
-      "type": "SUPERHERO",
-      "powers": [
-        "Power ring constructs"
-      ]
-    },
-    {
-      "appearances": [
-        "Ghost Rider #1"
-      ],
-      "realName": "Johnny Blaze",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Gary Friedrich"
-        }
-      ],
-      "origin": "Spirit of vengeance bonded to rider.",
-      "alias": "Ghost Rider",
-      "affiliations": [],
-      "type": "OTHER",
-      "powers": [
-        "Hellfire",
-        "Chain weaponry"
-      ]
-    },
-    {
-      "appearances": [
-        "The Fantastic Four #1"
-      ],
-      "realName": "Johnny Storm",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Stan Lee"
-        }
-      ],
-      "origin": "Flame-powered hero.",
-      "alias": "Human Torch",
-      "affiliations": [
-        "Fantastic Four"
-      ],
-      "type": "SUPERHERO",
-      "powers": [
-        "Pyrokinesis",
-        "Flight"
-      ]
-    },
-    {
-      "appearances": [
-        "Brave and the Bold #200"
-      ],
-      "realName": "Katana",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Katana",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "X-Men #129"
-      ],
-      "realName": "Kitty Pryde",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Kitty Pryde",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Richard Dragon #5"
-      ],
-      "realName": "Lady Shiva",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Lady Shiva",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Detective Comics #200"
-      ],
-      "realName": "Leatherwing",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Leatherwing",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Sandman #1"
-      ],
-      "realName": "Lucifer Morningstar",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Neil Gaiman"
-        }
-      ],
-      "origin": "Fallen angel.",
-      "alias": "Lucifer",
-      "affiliations": [],
-      "type": "OTHER",
-      "powers": [
-        "Cosmic powers"
-      ]
-    },
-    {
-      "appearances": [
-        "Power Man #1"
-      ],
-      "realName": "Luke Cage",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Ernie Colón"
-        }
-      ],
-      "origin": "Hero with unbreakable skin.",
-      "alias": "Luke Cage",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "Super strength",
-        "Durability"
-      ]
-    },
-    {
-      "appearances": [
-        "Uncanny X-Men #129"
-      ],
-      "realName": "Magneto",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Stan Lee"
-        }
-      ],
-      "origin": "Mutant with magnetic powers.",
-      "alias": "Magneto",
-      "affiliations": [],
-      "type": "VILLAIN",
-      "powers": [
-        "Magnetism"
-      ]
-    },
-    {
-      "appearances": [
-        "Moon Knight #1"
-      ],
-      "realName": "Marc Spector",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Doug Moench"
-        }
-      ],
-      "origin": "Avatar of Khonshu.",
-      "alias": "Moon Knight",
-      "affiliations": [],
-      "type": "ANTI-HERO",
-      "powers": [
-        "Combat skill",
-        "Multiple identities"
-      ]
-    },
-    {
-      "appearances": [
-        "Amazing Fantasy #15"
-      ],
-      "realName": "Mary Jane Watson",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Stan Lee"
-        }
-      ],
-      "origin": "Friend of Peter Parker.",
-      "alias": "Mary Jane",
-      "affiliations": [],
-      "type": "OTHER",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Daredevil #1"
-      ],
-      "realName": "Matt Murdock",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Stan Lee"
-        }
-      ],
-      "origin": "Blinded with heightened senses.",
-      "alias": "Daredevil",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "Enhanced senses",
-        "Acrobatics"
-      ]
-    },
-    {
-      "appearances": [
-        "The Walking Dead #1"
-      ],
-      "realName": "Michonne",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Robert Kirkman"
-        }
-      ],
-      "origin": "Survivor with katana.",
-      "alias": "Michonne",
-      "affiliations": [],
-      "type": "OTHER",
-      "powers": [
-        "Swordsmanship"
-      ]
-    },
-    {
-      "appearances": [
-        "Amazing Fantasy #15"
-      ],
-      "realName": "Miles Morales",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Brian Michael Bendis"
-        }
-      ],
-      "origin": "Alternate Spider-Man.",
-      "alias": "Miles Morales",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "Venom blast",
-        "Invisibility"
-      ]
-    },
-    {
-      "appearances": [
-        "Mr. Miracle #1"
-      ],
-      "realName": "Mister Miracle",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Mister Miracle",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Uncanny X-Men #221"
-      ],
-      "realName": "Mister Sinister",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Mister Sinister",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Moon Girl and Devil Dinosaur #1"
-      ],
-      "realName": "Moon Girl",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Moon Girl",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Strange Tales #111"
-      ],
-      "realName": "Mordo",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Mordo",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Batman #121"
-      ],
-      "realName": "Mr. Freeze",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Mr. Freeze",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Marvel Comics #1"
-      ],
-      "realName": "Namor",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Namor",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "The Avengers #1"
-      ],
-      "realName": "Natasha Romanoff",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Stan Lee"
-        }
-      ],
-      "origin": "Former spy.",
-      "alias": "Black Widow",
-      "affiliations": [
-        "Avengers"
-      ],
-      "type": "SUPERHERO",
-      "powers": [
-        "Espionage",
-        "Martial arts"
-      ]
-    },
-    {
-      "appearances": [
-        "Marvel Comics #1"
-      ],
-      "realName": "Nick Fury",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Jack Kirby"
-        }
-      ],
-      "origin": "S.H.I.E.L.D. director.",
-      "alias": "Nick Fury",
-      "affiliations": [
-        "S.H.I.E.L.D."
-      ],
-      "type": "OTHER",
-      "powers": [
-        "Tactical genius"
-      ]
-    },
-    {
-      "appearances": [
-        "Runaways #1"
-      ],
-      "realName": "Nico Minoru",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Brian K. Vaughan"
-        }
-      ],
-      "origin": "Teen with magic staff.",
-      "alias": "Nico Minoru",
-      "affiliations": [
-        "Runaways"
-      ],
-      "type": "OTHER",
-      "powers": [
-        "Magic"
-      ]
-    },
-    {
-      "appearances": [
-        "Amazing Fantasy #15"
-      ],
-      "realName": "Norman Osborn",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Stan Lee"
-        }
-      ],
-      "origin": "Industrialist turned villain.",
-      "alias": "Norman Osborn",
-      "affiliations": [],
-      "type": "VILLAIN",
-      "powers": [
-        "Genius intellect"
-      ]
-    },
-    {
-      "appearances": [
-        "Silver Surfer #1"
-      ],
-      "realName": "Norrin Radd",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Stan Lee"
-        }
-      ],
-      "origin": "Herald of Galactus.",
-      "alias": "Silver Surfer",
-      "affiliations": [],
-      "type": "OTHER",
-      "powers": [
-        "Cosmic power",
-        "Surfing the cosmos"
-      ]
-    },
-    {
-      "appearances": [
-        "Alpha Flight #1"
-      ],
-      "realName": "Northstar",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Chris Claremont"
-        }
-      ],
-      "origin": "Canadian mutant speedster.",
-      "alias": "Northstar",
-      "affiliations": [
-        "Alpha Flight"
-      ],
-      "type": "SUPERHERO",
-      "powers": [
-        "Flight",
-        "Super speed"
-      ]
-    },
-    {
-      "appearances": [
-        "Nova #1"
-      ],
-      "realName": "Nova (Richard Rider)",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Nova (Richard Rider)",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Green Arrow #1"
-      ],
-      "realName": "Oliver Queen",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Mort Weisinger"
-        }
-      ],
-      "origin": "Expert archer and vigilante.",
-      "alias": "Green Arrow",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "Archery",
-        "Tactics"
-      ]
-    },
-    {
-      "appearances": [
-        "Batman #357"
-      ],
-      "realName": "Oracle",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Oracle",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Amazing Fantasy #15"
-      ],
-      "realName": "Peter Parker",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Stan Lee"
-        }
-      ],
-      "origin": "Bitten by a radioactive spider.",
-      "alias": "Spider-Man",
-      "affiliations": [
-        "Avengers"
-      ],
-      "type": "SUPERHERO",
-      "powers": [
-        "Wall-crawling",
-        "Spider-sense",
-        "Super agility"
-      ]
-    },
-    {
-      "appearances": [
-        "Uncanny X-Men #129"
-      ],
-      "realName": "Professor X",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Stan Lee"
-        }
-      ],
-      "origin": "Mutant telepath and leader.",
-      "alias": "Charles Xavier",
-      "affiliations": [
-        "X-Men"
-      ],
-      "type": "SUPERHERO",
-      "powers": [
-        "Telepathy"
-      ]
-    },
-    {
-      "appearances": [
-        "Captain Britain #8"
-      ],
-      "realName": "Psylocke",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Psylocke",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "X-Men #4"
-      ],
-      "realName": "Quicksilver",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Quicksilver",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Detective Comics #400"
-      ],
-      "realName": "Ra's al Ghul",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Dennis O'Neil"
-        }
-      ],
-      "origin": "Eco-terrorist leader.",
-      "alias": "Ra's al Ghul",
-      "affiliations": [
-        "League of Assassins"
-      ],
-      "type": "VILLAIN",
-      "powers": [
-        "Longevity",
-        "Master tactician"
-      ]
-    },
-    {
-      "appearances": [
-        "The New Teen Titans #1"
-      ],
-      "realName": "Raven",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Marv Wolfman"
-        }
-      ],
-      "origin": "Daughter of a demon.",
-      "alias": "Raven",
-      "affiliations": [
-        "Teen Titans"
-      ],
-      "type": "SUPERHERO",
-      "powers": [
-        "Empathy",
-        "Darkness manipulation"
-      ]
-    },
-    {
-      "appearances": [
-        "Detective Comics #168"
-      ],
-      "realName": "Red Hood",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Red Hood",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "The Fantastic Four #1"
-      ],
-      "realName": "Reed Richards",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Stan Lee"
-        }
-      ],
-      "origin": "Stretchy genius.",
-      "alias": "Mr. Fantastic",
-      "affiliations": [
-        "Fantastic Four"
-      ],
-      "type": "SUPERHERO",
-      "powers": [
-        "Elasticity",
-        "Genius intellect"
-      ]
-    },
-    {
-      "appearances": [
-        "The Walking Dead #1"
-      ],
-      "realName": "Rick Grimes",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Robert Kirkman"
-        }
-      ],
-      "origin": "Post-apocalyptic sheriff.",
-      "alias": "Rick Grimes",
-      "affiliations": [],
-      "type": "OTHER",
-      "powers": [
-        "Leadership"
-      ]
-    },
-    {
-      "appearances": [
-        "Detective Comics #27"
-      ],
-      "realName": "Riddler",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Bill Finger"
-        }
-      ],
-      "origin": "Puzzle-obsessed villain.",
-      "alias": "Riddler",
-      "affiliations": [],
-      "type": "VILLAIN",
-      "powers": [
-        "Genius intellect"
-      ]
-    },
-    {
-      "appearances": [
-        "Batman #436"
-      ],
-      "realName": "Robin (Tim Drake)",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Robin (Tim Drake)",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Iron Fist #14"
-      ],
-      "realName": "Sabretooth",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Sabretooth",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Batman #1"
-      ],
-      "realName": "Selina Kyle",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Bob Kane"
-        }
-      ],
-      "origin": "Cat burglar turned ally.",
-      "alias": "Catwoman",
-      "affiliations": [],
-      "type": "ANTI-HERO",
-      "powers": [
-        "Acrobatics",
-        "Stealth"
-      ]
-    },
-    {
-      "appearances": [
-        "The Sentry #1"
-      ],
-      "realName": "Sentry",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Sentry",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Whiz Comics #2"
-      ],
-      "realName": "Shazam",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Shazam",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Captain Marvel Jr. #1"
-      ],
-      "realName": "Shazam Jr.",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Shazam Jr.",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Savage She-Hulk #1"
-      ],
-      "realName": "She-Hulk",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "She-Hulk",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Journey into Mystery #102"
-      ],
-      "realName": "Sif",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Sif",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Spawn #50"
-      ],
-      "realName": "Spawnerina",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Spawnerina",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Edge of Spider-Verse #2"
-      ],
-      "realName": "Spider-Gwen",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Spider-Gwen",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "The Mask #1"
-      ],
-      "realName": "Stanley Ipkiss",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "John Arcudi"
-        }
-      ],
-      "origin": "Finds a magical mask.",
-      "alias": "The Mask",
-      "affiliations": [],
-      "type": "OTHER",
-      "powers": [
-        "Reality warping"
-      ]
-    },
-    {
-      "appearances": [
-        "Static #1"
-      ],
-      "realName": "Static",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Static",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Doctor Strange #110"
-      ],
-      "realName": "Stephen Strange",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Stan Lee"
-        }
-      ],
-      "origin": "Sorcerer Supreme.",
-      "alias": "Doctor Strange",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "Mystic arts"
-      ]
-    },
-    {
-      "appearances": [
-        "Captain America Comics #1"
-      ],
-      "realName": "Steve Rogers",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Joe Simon"
-        }
-      ],
-      "origin": "Super-soldier serum.",
-      "alias": "Captain America",
-      "affiliations": [
-        "Avengers"
-      ],
-      "type": "SUPERHERO",
-      "powers": [
-        "Enhanced strength",
-        "Tactical genius"
-      ]
-    },
-    {
-      "appearances": [
-        "X-Men #1"
-      ],
-      "realName": "Storm",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Len Wein"
-        }
-      ],
-      "origin": "Weather-controlling mutant.",
-      "alias": "Ororo Munroe",
-      "affiliations": [
-        "X-Men"
-      ],
-      "type": "SUPERHERO",
-      "powers": [
-        "Weather control",
-        "Flight"
-      ]
-    },
-    {
-      "appearances": [
-        "Action Comics #1"
-      ],
-      "realName": "Superman",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Jerry Siegel"
-        }
-      ],
-      "origin": "Kryptonian refugee.",
-      "alias": "Superman",
-      "affiliations": [
-        "Justice League"
-      ],
-      "type": "SUPERHERO",
-      "powers": [
-        "Flight",
-        "Super strength",
-        "Heat vision"
-      ]
-    },
-    {
-      "appearances": [
-        "The Fantastic Four #1"
-      ],
-      "realName": "Susan Storm",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Stan Lee"
-        }
-      ],
-      "origin": "Invisible Force Field user.",
-      "alias": "Invisible Woman",
-      "affiliations": [
-        "Fantastic Four"
-      ],
-      "type": "SUPERHERO",
-      "powers": [
-        "Invisibility",
-        "Force fields"
-      ]
-    },
-    {
-      "appearances": [
-        "Black Panther #1"
-      ],
-      "realName": "T'Challa",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Stan Lee"
-        }
-      ],
-      "origin": "King of Wakanda.",
-      "alias": "Black Panther",
-      "affiliations": [
-        "Avengers"
-      ],
-      "type": "SUPERHERO",
-      "powers": [
-        "Enhanced strength",
-        "Vibranium suit"
-      ]
-    },
-    {
-      "appearances": [
-        "The Avengers #195"
-      ],
-      "realName": "Taskmaster",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Taskmaster",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Detective Comics #168"
-      ],
-      "realName": "The Joker",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Jerry Robinson"
-        }
-      ],
-      "origin": "Unknown criminal mastermind.",
-      "alias": "Joker",
-      "affiliations": [],
-      "type": "VILLAIN",
-      "powers": [
-        "Criminal genius",
-        "Anarchy"
-      ]
-    },
-    {
-      "appearances": [
-        "Fantastic Four #1"
-      ],
-      "realName": "Thing",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Thing",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Detective Comics #38"
-      ],
-      "realName": "Thomas Wayne",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Bob Kane"
-        }
-      ],
-      "origin": "Bruce Wayne's father.",
-      "alias": "Thomas Wayne",
-      "affiliations": [],
-      "type": "OTHER",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Journey into Mystery #83"
-      ],
-      "realName": "Thor Odinson",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Stan Lee"
-        }
-      ],
-      "origin": "Asgardian prince.",
-      "alias": "Thor",
-      "affiliations": [
-        "Avengers"
-      ],
-      "type": "SUPERHERO",
-      "powers": [
-        "Godlike strength",
-        "Weather manipulation"
-      ]
-    },
-    {
-      "appearances": [
-        "The Incredible Hulk #1"
-      ],
-      "realName": "Thunderbolt Ross",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Stan Lee"
-        }
-      ],
-      "origin": "Military general.",
-      "alias": "Red Hulk",
-      "affiliations": [],
-      "type": "VILLAIN",
-      "powers": [
-        "Enhanced strength"
-      ]
-    },
-    {
-      "appearances": [
-        "The Books of Magic #1"
-      ],
-      "realName": "Tim Hunter",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Tim Hunter",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Tales of Suspense #39"
-      ],
-      "realName": "Tony Stark",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Stan Lee"
-        }
-      ],
-      "origin": "Genius inventor.",
-      "alias": "Iron Man",
-      "affiliations": [
-        "Avengers"
-      ],
-      "type": "SUPERHERO",
-      "powers": [
-        "Powered armor suit",
-        "Genius intellect"
-      ]
-    },
-    {
-      "appearances": [
-        "Justice League #1"
-      ],
-      "realName": "Trinity",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Trinity",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Avengers #54"
-      ],
-      "realName": "Ultron",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Ultron",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "The Umbrella Academy #1"
-      ],
-      "realName": "Umbrella Academy characters",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Umbrella Academy characters",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Sailor Moon #1"
-      ],
-      "realName": "Usagi Tsukino",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Naoko Takeuchi"
-        }
-      ],
-      "origin": "Chosen by the Moon Kingdom.",
-      "alias": "Sailor Moon",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "Moon Tiara Magic",
-        "Healing",
-        "Transformation"
-      ]
-    },
-    {
-      "appearances": [
-        "The Amazing Spider-Man #300"
-      ],
-      "realName": "Venom",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "David Michelinie"
-        }
-      ],
-      "origin": "Alien symbiote.",
-      "alias": "Venom",
-      "affiliations": [],
-      "type": "VILLAIN",
-      "powers": [
-        "Symbiosis",
-        "Super strength"
-      ]
-    },
-    {
-      "appearances": [
-        "Justice League of America #1"
-      ],
-      "realName": "Vibe",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Vibe",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Avengers #57"
-      ],
-      "realName": "Vision",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Vision",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Marvel Premiere #1"
-      ],
-      "realName": "Warlock (Adam)",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Warlock (Adam)",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "Young Avengers #1"
-      ],
-      "realName": "Wiccan",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Wiccan",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    },
-    {
-      "appearances": [
-        "X-Men #1"
-      ],
-      "realName": "Wolverine",
-      "creators": [
-        {
-          "role": "Co-creator",
-          "creatorName": "Len Wein"
-        }
-      ],
-      "origin": "Mutant with healing factor.",
-      "alias": "Wolverine",
-      "affiliations": [
-        "X-Men"
-      ],
-      "type": "SUPERHERO",
-      "powers": [
-        "Regeneration",
-        "Adamantium claws"
-      ]
-    },
-    {
-      "appearances": [
-        "Hawkman #4"
-      ],
-      "realName": "Zatanna",
-      "creators": [
-        {
-          "role": "Creator",
-          "creatorName": "Various"
-        }
-      ],
-      "origin": "N/A",
-      "alias": "Zatanna",
-      "affiliations": [],
-      "type": "SUPERHERO",
-      "powers": [
-        "N/A"
-      ]
-    }
-  ],
-  "artists": [
-    {
-      "nationality": "USA",
-      "name": "Alex Ross"
-    },
-    {
-      "nationality": "USA",
-      "name": "Ben Templesmith"
-    },
-    {
-      "nationality": "USA",
-      "name": "Bill Sienkiewicz"
-    },
-    {
-      "nationality": "USA",
-      "name": "Bryan Hitch"
-    },
-    {
-      "nationality": "USA",
-      "name": "Chris Samnee"
-    },
-    {
-      "nationality": "USA",
-      "name": "Cliff Chiang"
-    },
-    {
-      "nationality": "USA",
-      "name": "Cully Hamner"
-    },
-    {
-      "nationality": "USA",
-      "name": "Darwyn Cooke"
-    },
-    {
-      "nationality": "UK",
-      "name": "Dave Gibbons"
-    },
-    {
-      "nationality": "USA",
-      "name": "Dave Johnson"
-    },
-    {
-      "nationality": "USA",
-      "name": "David Finch"
-    },
-    {
-      "nationality": "USA",
-      "name": "Dustin Nguyen"
-    },
-    {
-      "nationality": "USA",
-      "name": "Eduardo Risso"
-    },
-    {
-      "nationality": "Spain",
-      "name": "Emma Ríos"
-    },
-    {
-      "nationality": "USA",
-      "name": "Esad Ribić"
-    },
-    {
-      "nationality": "USA",
-      "name": "Ethan Van Sciver"
-    },
-    {
-      "nationality": "Canada",
-      "name": "Fiona Staples"
-    },
-    {
-      "nationality": "USA",
-      "name": "Frank Cho"
-    },
-    {
-      "nationality": "USA",
-      "name": "Frank Miller"
-    },
-    {
-      "nationality": "USA",
-      "name": "Frank Quietly"
-    },
-    {
-      "nationality": "USA",
-      "name": "Gary Frank"
-    },
-    {
-      "nationality": "USA",
-      "name": "George Pérez"
-    },
-    {
-      "nationality": "USA",
-      "name": "Goran Sudzuka"
-    },
-    {
-      "nationality": "USA",
-      "name": "Humberto Ramos"
-    },
-    {
-      "nationality": "USA",
-      "name": "Ivan Reis"
-    },
-    {
-      "nationality": "USA",
-      "name": "J.H. Williams III"
-    },
-    {
-      "nationality": "USA",
-      "name": "Jack Kirby"
-    },
-    {
-      "nationality": "South Korea",
-      "name": "Jim Lee"
-    },
-    {
-      "nationality": "USA",
-      "name": "Jock"
-    },
-    {
-      "nationality": "USA",
-      "name": "John Byrne"
-    },
-    {
-      "nationality": "USA",
-      "name": "John Romita Jr."
-    },
-    {
-      "nationality": "USA",
-      "name": "John Romita Sr."
-    },
-    {
-      "nationality": "Japan",
-      "name": "Katsuhiro Otomo"
-    },
-    {
-      "nationality": "USA",
-      "name": "Kris Anka"
-    },
-    {
-      "nationality": "USA",
-      "name": "Leinil Francis Yu"
-    },
-    {
-      "nationality": "USA",
-      "name": "Marc Silvestri"
-    },
-    {
-      "nationality": "USA",
-      "name": "Mike Mignola"
-    },
-    {
-      "nationality": "USA",
-      "name": "Olivier Coipel"
-    },
-    {
-      "nationality": "USA",
-      "name": "Paco Medina"
-    },
-    {
-      "nationality": "Japan",
-      "name": "Peach Momoko"
-    },
-    {
-      "nationality": "USA",
-      "name": "Phil Jimenez"
-    },
-    {
-      "nationality": "USA",
-      "name": "Rob Liefeld"
-    },
-    {
-      "nationality": "USA",
-      "name": "Ryan Ottley"
-    },
-    {
-      "nationality": "USA",
-      "name": "Ryan Sook"
-    },
-    {
-      "nationality": "USA",
-      "name": "Salvador Larroca"
-    },
-    {
-      "nationality": "Italy",
-      "name": "Sara Pichelli"
-    },
-    {
-      "nationality": "USA",
-      "name": "Sean Gordon Murphy"
-    },
-    {
-      "nationality": "USA",
-      "name": "Steve Ditko"
-    },
-    {
-      "nationality": "USA",
-      "name": "Steve Epting"
-    },
-    {
-      "nationality": "USA",
-      "name": "Steve McNiven"
-    },
-    {
-      "nationality": "USA",
-      "name": "Todd McFarlane"
-    },
-    {
-      "nationality": "USA",
-      "name": "Tony Daniel"
-    },
-    {
-      "nationality": "USA",
-      "name": "Travis Charest"
-    },
-    {
-      "nationality": "Japan",
-      "name": "Yoshitaka Amano"
-    }
-  ],
-  "comicBooks": [
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "100 Bullets #1"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Action Comics #1"
-    },
-    {
-      "artistNames": [
-        "Katsuhiro Otomo"
-      ],
-      "writerNames": [],
-      "editions": [
-        {
-          "editionName": "First Print",
-          "publisherName": "Shueisha",
-          "isbn": "978-1569714980",
-          "publicationDate": "1982-12-01"
-        }
-      ],
-      "genre": "Cyberpunk",
-      "title": "Akira #1"
-    },
-    {
-      "artistNames": [
-        "Steve Ditko"
-      ],
-      "writerNames": [
-        "Stan Lee"
-      ],
-      "editions": [
-        {
-          "editionName": "First Print",
-          "publisherName": "Marvel Comics",
-          "isbn": "N/A",
-          "publicationDate": "1962-11-01"
-        }
-      ],
-      "genre": "Superhero",
-      "title": "Amazing Fantasy #15"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Amazing Spider-Man #1"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "American Vampire #1"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Astro City #1"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Avengers #57"
-    },
-    {
-      "artistNames": [
-        "Neal Adams"
-      ],
-      "writerNames": [
-        "Len Wein"
-      ],
-      "editions": [
-        {
-          "editionName": "First Print",
-          "publisherName": "DC Comics",
-          "isbn": "N/A",
-          "publicationDate": "1970-02-01"
-        }
-      ],
-      "genre": "Superhero",
-      "title": "Batman #232"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Captain America Comics #1"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Civil War #1"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Daredevil #1"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Daredevil: Born Again #1"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Detective Comics #27"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Doctor Strange #1"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Elektra: Assassin #1"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Fables #1"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Fantastic Four #1"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Flash #110"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "From Hell #1"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Green Lantern #1"
-    },
-    {
-      "artistNames": [],
-      "writerNames": [],
-      "editions": [
-        {
-          "editionName": "First Print",
-          "publisherName": "Dark Horse Comics",
-          "isbn": "978-1593070948",
-          "publicationDate": "1994-03-01"
-        }
-      ],
-      "genre": "Horror",
-      "title": "Hellboy #1"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Hellboy: Seed of Destruction #1"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Identity Crisis #1"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Invincible #1"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Iron Man #1"
-    },
-    {
-      "artistNames": [
-        "Jim Lee"
-      ],
-      "writerNames": [
-        "Geoff Johns"
-      ],
-      "editions": [
-        {
-          "editionName": "First Print",
-          "publisherName": "DC Comics",
-          "isbn": "N/A",
-          "publicationDate": "2011-09-01"
-        }
-      ],
-      "genre": "Superhero",
-      "title": "Justice League #1"
-    },
-    {
-      "artistNames": [
-        "Alex Ross"
-      ],
-      "writerNames": [
-        "Mark Waid"
-      ],
-      "editions": [
-        {
-          "editionName": "Hardcover",
-          "publisherName": "DC Comics",
-          "isbn": "978-1401202299",
-          "publicationDate": "1996-04-01"
-        }
-      ],
-      "genre": "Superhero",
-      "title": "Kingdom Come #1"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "New Mutants #1"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Planetary #1"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Preacher #1"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Saga #1"
-    },
-    {
-      "artistNames": [
-        "Fiona Staples"
-      ],
-      "writerNames": [
-        "Brian K. Vaughan"
-      ],
-      "editions": [
-        {
-          "editionName": "First Print",
-          "publisherName": "Image Comics",
-          "isbn": "N/A",
-          "publicationDate": "2012-05-16"
-        }
-      ],
-      "genre": "Sci-Fi/Fantasy",
-      "title": "Saga #3"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Saga of the Swamp Thing #37"
-    },
-    {
-      "artistNames": [],
-      "writerNames": [
-        "Naoko Takeuchi"
-      ],
-      "editions": [
-        {
-          "editionName": "Tankōbon",
-          "publisherName": "Kodansha",
-          "isbn": "978-1632361523",
-          "publicationDate": "1991-07-01"
-        }
-      ],
-      "genre": "Magical Girl",
-      "title": "Sailor Moon #1"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Sandman #1"
-    },
-    {
-      "artistNames": [
-        "J.H. Williams III"
-      ],
-      "writerNames": [
-        "Neil Gaiman"
-      ],
-      "editions": [
-        {
-          "editionName": "Deluxe",
-          "publisherName": "DC Comics",
-          "isbn": "978-1401225755",
-          "publicationDate": "1990-02-01"
-        }
-      ],
-      "genre": "Fantasy",
-      "title": "Sandman #2"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Scott Pilgrim #1"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Secret Wars #1"
-    },
-    {
-      "artistNames": [
-        "Todd McFarlane"
-      ],
-      "writerNames": [
-        "Todd McFarlane"
-      ],
-      "editions": [
-        {
-          "editionName": "First Print",
-          "publisherName": "Image Comics",
-          "isbn": "N/A",
-          "publicationDate": "1992-03-01"
-        }
-      ],
-      "genre": "Superhero",
-      "title": "Spawn #1"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Spider-Man #300"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Swamp Thing #1"
-    },
-    {
-      "artistNames": [
-        "John Romita Sr."
-      ],
-      "writerNames": [
-        "Stan Lee"
-      ],
-      "editions": [
-        {
-          "editionName": "First Print",
-          "publisherName": "Marvel Comics",
-          "isbn": "N/A",
-          "publicationDate": "1964-06-01"
-        }
-      ],
-      "genre": "Superhero",
-      "title": "The Amazing Spider-Man #50"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "The Authority #1"
-    },
-    {
-      "artistNames": [
-        "Jack Kirby"
-      ],
-      "writerNames": [
-        "Stan Lee"
-      ],
-      "editions": [
-        {
-          "editionName": "First Print",
-          "publisherName": "Marvel Comics",
-          "isbn": "N/A",
-          "publicationDate": "1963-08-01"
-        }
-      ],
-      "genre": "Superhero",
-      "title": "The Avengers #1"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "The Boys #1"
-    },
-    {
-      "artistNames": [
-        "Frank Miller"
-      ],
-      "writerNames": [
-        "Frank Miller"
-      ],
-      "editions": [
-        {
-          "editionName": "Hardcover",
-          "publisherName": "DC Comics",
-          "isbn": "978-1401209731",
-          "publicationDate": "1986-02-01"
-        }
-      ],
-      "genre": "Superhero",
-      "title": "The Dark Knight Returns #1"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "The Incredible Hulk #1"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "The Mask #1"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "The Punisher #1"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "The Walking Dead #1"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Thor #126"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Transmetropolitan #1"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Uncanny X-Men #129"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "V for Vendetta #1"
-    },
-    {
-      "artistNames": [
-        "Dave Gibbons"
-      ],
-      "writerNames": [
-        "Alan Moore"
-      ],
-      "editions": [
-        {
-          "editionName": "Hardcover",
-          "publisherName": "DC Comics",
-          "isbn": "978-0930289232",
-          "publicationDate": "1987-02-01"
-        }
-      ],
-      "genre": "Superhero",
-      "title": "Watchmen #1"
-    },
-    {
-      "artistNames": [
-        "Dave Gibbons"
-      ],
-      "writerNames": [
-        "Alan Moore"
-      ],
-      "editions": [
-        {
-          "editionName": "Hardcover",
-          "publisherName": "DC Comics",
-          "isbn": "978-0930289232",
-          "publicationDate": "1987-02-01"
-        }
-      ],
-      "genre": "Superhero",
-      "title": "Watchmen #2"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "X-Men #1"
-    },
-    {
-      "artistNames": [
-        "Jim Lee"
-      ],
-      "writerNames": [
-        "Chris Claremont"
-      ],
-      "editions": [
-        {
-          "editionName": "First Print",
-          "publisherName": "Marvel Comics",
-          "isbn": "N/A",
-          "publicationDate": "1991-01-01"
-        }
-      ],
-      "genre": "Superhero",
-      "title": "X-Men #1 (1991)"
-    },
-    {
-      "artistNames": [
-        "Various"
-      ],
-      "writerNames": [
-        "Various"
-      ],
-      "editions": [
-        {
-          "editionName": "Collected",
-          "publisherName": "Various",
-          "isbn": "N/A",
-          "publicationDate": "N/A"
-        }
-      ],
-      "genre": "Various",
-      "title": "Y: The Last Man #1"
-    }
-  ],
   "publishers": [
     {
-      "country": "USA",
-      "name": "AfterShock Comics"
+      "name": "AfterShock Comics",
+      "country": "USA"
     },
     {
-      "country": "USA",
-      "name": "Archie Comics"
+      "name": "Archie Comics",
+      "country": "USA"
     },
     {
-      "country": "USA",
-      "name": "Atlas Comics"
+      "name": "Atlas Comics",
+      "country": "USA"
     },
     {
-      "country": "USA",
-      "name": "Black Mask Studios"
+      "name": "Black Mask Studios",
+      "country": "USA"
     },
     {
-      "country": "USA",
-      "name": "Boom! Studios"
+      "name": "Boom! Studios",
+      "country": "USA"
     },
     {
-      "country": "USA",
-      "name": "BOOM! Studios"
+      "name": "BOOM! Studios",
+      "country": "USA"
     },
     {
-      "country": "USA",
-      "name": "CrossGen"
+      "name": "CrossGen",
+      "country": "USA"
     },
     {
-      "country": "USA",
-      "name": "Dark Horse Comics"
+      "name": "Dark Horse Comics",
+      "country": "USA"
     },
     {
-      "country": "USA",
-      "name": "DC Comics"
+      "name": "DC Comics",
+      "country": "USA"
     },
     {
-      "country": "USA",
-      "name": "Dynamite Entertainment"
+      "name": "Dynamite Entertainment",
+      "country": "USA"
     },
     {
-      "country": "USA",
-      "name": "Harris Comics"
+      "name": "Harris Comics",
+      "country": "USA"
     },
     {
-      "country": "France",
-      "name": "Humanoids"
+      "name": "Humanoids",
+      "country": "France"
     },
     {
-      "country": "USA",
-      "name": "Icon Comics"
+      "name": "Icon Comics",
+      "country": "USA"
     },
     {
-      "country": "USA",
-      "name": "IDW Publishing"
+      "name": "IDW Publishing",
+      "country": "USA"
     },
     {
-      "country": "USA",
-      "name": "Image Comics"
+      "name": "Image Comics",
+      "country": "USA"
     },
     {
-      "country": "Japan",
-      "name": "Kodansha"
+      "name": "Kodansha",
+      "country": "Japan"
     },
     {
-      "country": "USA",
-      "name": "MAD Magazine"
+      "name": "MAD Magazine",
+      "country": "USA"
     },
     {
-      "country": "USA",
-      "name": "Malibu Comics"
+      "name": "Malibu Comics",
+      "country": "USA"
     },
     {
-      "country": "USA",
-      "name": "Marvel Comics"
+      "name": "Marvel Comics",
+      "country": "USA"
     },
     {
-      "country": "USA",
-      "name": "Milestone Media"
+      "name": "Milestone Media",
+      "country": "USA"
     },
     {
-      "country": "USA",
-      "name": "Oni Press"
+      "name": "Oni Press",
+      "country": "USA"
     },
     {
-      "country": "Japan",
-      "name": "Shueisha"
+      "name": "Shueisha",
+      "country": "Japan"
     },
     {
-      "country": "UK",
-      "name": "Titan Comics"
+      "name": "Titan Comics",
+      "country": "UK"
     },
     {
-      "country": "USA",
-      "name": "Top Cow"
+      "name": "Top Cow",
+      "country": "USA"
     },
     {
-      "country": "USA",
-      "name": "Valiant"
+      "name": "Valiant",
+      "country": "USA"
     },
     {
-      "country": "USA",
-      "name": "Vertigo"
+      "name": "Vertigo",
+      "country": "USA"
     },
     {
-      "country": "USA",
-      "name": "WildStorm"
+      "name": "WildStorm",
+      "country": "USA"
     }
   ],
   "writers": [
     {
-      "nationality": "USA",
-      "name": "Al Ewing"
+      "name": "Al Ewing",
+      "nationality": "USA"
     },
     {
-      "nationality": "UK",
-      "name": "Alan Moore"
+      "name": "Alan Moore",
+      "nationality": "UK"
     },
     {
-      "nationality": "USA",
-      "name": "Andy Diggle"
+      "name": "Andy Diggle",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Brian Azzarello"
+      "name": "Brian Azzarello",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Brian K. Vaughan"
+      "name": "Brian K. Vaughan",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Brian Michael Bendis"
+      "name": "Brian Michael Bendis",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Charles Soule"
+      "name": "Charles Soule",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Chip Zdarsky"
+      "name": "Chip Zdarsky",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Chris Burnham"
+      "name": "Chris Burnham",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Chris Claremont"
+      "name": "Chris Claremont",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Dan Slott"
+      "name": "Dan Slott",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Darren Aronofsky"
+      "name": "Darren Aronofsky",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Dennis O'Neil"
+      "name": "Dennis O\u0027Neil",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Ed Brubaker"
+      "name": "Ed Brubaker",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Eddie Berganza"
+      "name": "Eddie Berganza",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Frank Miller"
+      "name": "Frank Miller",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Frank Tieri"
+      "name": "Frank Tieri",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Gail Simone"
+      "name": "Gail Simone",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Garth Ennis"
+      "name": "Garth Ennis",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Geoff Johns"
+      "name": "Geoff Johns",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Gerry Conway"
+      "name": "Gerry Conway",
+      "nationality": "USA"
     },
     {
-      "nationality": "UK",
-      "name": "Grant Morrison"
+      "name": "Grant Morrison",
+      "nationality": "UK"
     },
     {
-      "nationality": "USA",
-      "name": "James Tynion IV"
+      "name": "James Tynion IV",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Jason Aaron"
+      "name": "Jason Aaron",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Jason Reynolds"
+      "name": "Jason Reynolds",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Jeff Johns"
+      "name": "Jeff Johns",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Jeff Lemire"
+      "name": "Jeff Lemire",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Jeph Loeb"
+      "name": "Jeph Loeb",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Joe Kelly"
+      "name": "Joe Kelly",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "John Ostrander"
+      "name": "John Ostrander",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Jonathan Hickman"
+      "name": "Jonathan Hickman",
+      "nationality": "USA"
     },
     {
-      "nationality": "Japan",
-      "name": "Katsuhiro Otomo"
+      "name": "Katsuhiro Otomo",
+      "nationality": "Japan"
     },
     {
-      "nationality": "USA",
-      "name": "Kelly Sue DeConnick"
+      "name": "Kelly Sue DeConnick",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Kelly Thompson"
+      "name": "Kelly Thompson",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Kieron Gillen"
+      "name": "Kieron Gillen",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Len Wein"
+      "name": "Len Wein",
+      "nationality": "USA"
     },
     {
-      "nationality": "Scotland",
-      "name": "Mark Millar"
+      "name": "Mark Millar",
+      "nationality": "Scotland"
     },
     {
-      "nationality": "USA",
-      "name": "Mark Waid"
+      "name": "Mark Waid",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Marv Wolfman"
+      "name": "Marv Wolfman",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Matt Fraction"
+      "name": "Matt Fraction",
+      "nationality": "USA"
     },
     {
-      "nationality": "Japan",
-      "name": "Naoko Takeuchi"
+      "name": "Naoko Takeuchi",
+      "nationality": "Japan"
     },
     {
-      "nationality": "UK",
-      "name": "Neil Gaiman"
+      "name": "Neil Gaiman",
+      "nationality": "UK"
     },
     {
-      "nationality": "USA",
-      "name": "Nick Spencer"
+      "name": "Nick Spencer",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Paul Dini"
+      "name": "Paul Dini",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Peter David"
+      "name": "Peter David",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Peter Milligan"
+      "name": "Peter Milligan",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Robert Kirkman"
+      "name": "Robert Kirkman",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Roy Thomas"
+      "name": "Roy Thomas",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Scott Lobdell"
+      "name": "Scott Lobdell",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Scott Snyder"
+      "name": "Scott Snyder",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Stan Lee"
+      "name": "Stan Lee",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Steve Englehart"
+      "name": "Steve Englehart",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Ta-Nehisi Coates"
+      "name": "Ta-Nehisi Coates",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Tom King"
+      "name": "Tom King",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Tom Taylor"
+      "name": "Tom Taylor",
+      "nationality": "USA"
     },
     {
-      "nationality": "USA",
-      "name": "Warren Ellis"
+      "name": "Warren Ellis",
+      "nationality": "USA"
+    }
+  ],
+  "artists": [
+    {
+      "name": "Alex Ross",
+      "nationality": "USA"
+    },
+    {
+      "name": "Ben Templesmith",
+      "nationality": "USA"
+    },
+    {
+      "name": "Bill Sienkiewicz",
+      "nationality": "USA"
+    },
+    {
+      "name": "Bryan Hitch",
+      "nationality": "USA"
+    },
+    {
+      "name": "Chris Samnee",
+      "nationality": "USA"
+    },
+    {
+      "name": "Cliff Chiang",
+      "nationality": "USA"
+    },
+    {
+      "name": "Cully Hamner",
+      "nationality": "USA"
+    },
+    {
+      "name": "Darwyn Cooke",
+      "nationality": "USA"
+    },
+    {
+      "name": "Dave Gibbons",
+      "nationality": "UK"
+    },
+    {
+      "name": "Dave Johnson",
+      "nationality": "USA"
+    },
+    {
+      "name": "David Finch",
+      "nationality": "USA"
+    },
+    {
+      "name": "Dustin Nguyen",
+      "nationality": "USA"
+    },
+    {
+      "name": "Eduardo Risso",
+      "nationality": "USA"
+    },
+    {
+      "name": "Emma Ríos",
+      "nationality": "Spain"
+    },
+    {
+      "name": "Esad Ribić",
+      "nationality": "USA"
+    },
+    {
+      "name": "Ethan Van Sciver",
+      "nationality": "USA"
+    },
+    {
+      "name": "Fiona Staples",
+      "nationality": "Canada"
+    },
+    {
+      "name": "Frank Cho",
+      "nationality": "USA"
+    },
+    {
+      "name": "Frank Miller",
+      "nationality": "USA"
+    },
+    {
+      "name": "Frank Quietly",
+      "nationality": "USA"
+    },
+    {
+      "name": "Gary Frank",
+      "nationality": "USA"
+    },
+    {
+      "name": "George Pérez",
+      "nationality": "USA"
+    },
+    {
+      "name": "Goran Sudzuka",
+      "nationality": "USA"
+    },
+    {
+      "name": "Humberto Ramos",
+      "nationality": "USA"
+    },
+    {
+      "name": "Ivan Reis",
+      "nationality": "USA"
+    },
+    {
+      "name": "J.H. Williams III",
+      "nationality": "USA"
+    },
+    {
+      "name": "Jack Kirby",
+      "nationality": "USA"
+    },
+    {
+      "name": "Jim Lee",
+      "nationality": "South Korea"
+    },
+    {
+      "name": "Jock",
+      "nationality": "USA"
+    },
+    {
+      "name": "John Byrne",
+      "nationality": "USA"
+    },
+    {
+      "name": "John Romita Jr.",
+      "nationality": "USA"
+    },
+    {
+      "name": "John Romita Sr.",
+      "nationality": "USA"
+    },
+    {
+      "name": "Katsuhiro Otomo",
+      "nationality": "Japan"
+    },
+    {
+      "name": "Kris Anka",
+      "nationality": "USA"
+    },
+    {
+      "name": "Leinil Francis Yu",
+      "nationality": "USA"
+    },
+    {
+      "name": "Marc Silvestri",
+      "nationality": "USA"
+    },
+    {
+      "name": "Mike Mignola",
+      "nationality": "USA"
+    },
+    {
+      "name": "Olivier Coipel",
+      "nationality": "USA"
+    },
+    {
+      "name": "Paco Medina",
+      "nationality": "USA"
+    },
+    {
+      "name": "Peach Momoko",
+      "nationality": "Japan"
+    },
+    {
+      "name": "Phil Jimenez",
+      "nationality": "USA"
+    },
+    {
+      "name": "Rob Liefeld",
+      "nationality": "USA"
+    },
+    {
+      "name": "Ryan Ottley",
+      "nationality": "USA"
+    },
+    {
+      "name": "Ryan Sook",
+      "nationality": "USA"
+    },
+    {
+      "name": "Salvador Larroca",
+      "nationality": "USA"
+    },
+    {
+      "name": "Sara Pichelli",
+      "nationality": "Italy"
+    },
+    {
+      "name": "Sean Gordon Murphy",
+      "nationality": "USA"
+    },
+    {
+      "name": "Steve Ditko",
+      "nationality": "USA"
+    },
+    {
+      "name": "Steve Epting",
+      "nationality": "USA"
+    },
+    {
+      "name": "Steve McNiven",
+      "nationality": "USA"
+    },
+    {
+      "name": "Todd McFarlane",
+      "nationality": "USA"
+    },
+    {
+      "name": "Tony Daniel",
+      "nationality": "USA"
+    },
+    {
+      "name": "Travis Charest",
+      "nationality": "USA"
+    },
+    {
+      "name": "Yoshitaka Amano",
+      "nationality": "Japan"
+    }
+  ],
+  "comicBooks": [
+    {
+      "title": "100 Bullets #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Action Comics #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Akira #1",
+      "genre": "Cyberpunk",
+      "writerNames": [],
+      "artistNames": [
+        "Katsuhiro Otomo"
+      ],
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1982-12-01",
+          "isbn": "978-1569714980",
+          "publisherName": "Shueisha"
+        }
+      ]
+    },
+    {
+      "title": "Amazing Fantasy #15",
+      "genre": "Superhero",
+      "writerNames": [
+        "Stan Lee"
+      ],
+      "artistNames": [
+        "Steve Ditko"
+      ],
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1962-11-01",
+          "isbn": "N/A",
+          "publisherName": "Marvel Comics"
+        }
+      ]
+    },
+    {
+      "title": "Amazing Spider-Man #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "American Vampire #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Astro City #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Avengers #57",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Batman #232",
+      "genre": "Superhero",
+      "writerNames": [
+        "Len Wein"
+      ],
+      "artistNames": [],
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1970-02-01",
+          "isbn": "N/A",
+          "publisherName": "DC Comics"
+        }
+      ]
+    },
+    {
+      "title": "Captain America Comics #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Civil War #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Daredevil #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Daredevil: Born Again #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Detective Comics #27",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Doctor Strange #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Elektra: Assassin #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Fables #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Fantastic Four #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Flash #110",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "From Hell #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Green Lantern #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Hellboy #1",
+      "genre": "Horror",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1994-03-01",
+          "isbn": "978-1593070948",
+          "publisherName": "Dark Horse Comics"
+        }
+      ]
+    },
+    {
+      "title": "Hellboy: Seed of Destruction #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Identity Crisis #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Invincible #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Iron Man #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Justice League #1",
+      "genre": "Superhero",
+      "writerNames": [
+        "Geoff Johns"
+      ],
+      "artistNames": [
+        "Jim Lee"
+      ],
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "2011-09-01",
+          "isbn": "N/A",
+          "publisherName": "DC Comics"
+        }
+      ]
+    },
+    {
+      "title": "Kingdom Come #1",
+      "genre": "Superhero",
+      "writerNames": [
+        "Mark Waid"
+      ],
+      "artistNames": [
+        "Alex Ross"
+      ],
+      "editions": [
+        {
+          "editionName": "Hardcover",
+          "publicationDate": "1996-04-01",
+          "isbn": "978-1401202299",
+          "publisherName": "DC Comics"
+        }
+      ]
+    },
+    {
+      "title": "New Mutants #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Planetary #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Preacher #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Saga #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Saga #3",
+      "genre": "Sci-Fi/Fantasy",
+      "writerNames": [
+        "Brian K. Vaughan"
+      ],
+      "artistNames": [
+        "Fiona Staples"
+      ],
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "2012-05-16",
+          "isbn": "N/A",
+          "publisherName": "Image Comics"
+        }
+      ]
+    },
+    {
+      "title": "Saga of the Swamp Thing #37",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Sailor Moon #1",
+      "genre": "Magical Girl",
+      "writerNames": [
+        "Naoko Takeuchi"
+      ],
+      "artistNames": [],
+      "editions": [
+        {
+          "editionName": "Tankōbon",
+          "publicationDate": "1991-07-01",
+          "isbn": "978-1632361523",
+          "publisherName": "Kodansha"
+        }
+      ]
+    },
+    {
+      "title": "Sandman #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Sandman #2",
+      "genre": "Fantasy",
+      "writerNames": [
+        "Neil Gaiman"
+      ],
+      "artistNames": [
+        "J.H. Williams III"
+      ],
+      "editions": [
+        {
+          "editionName": "Deluxe",
+          "publicationDate": "1990-02-01",
+          "isbn": "978-1401225755",
+          "publisherName": "DC Comics"
+        }
+      ]
+    },
+    {
+      "title": "Scott Pilgrim #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Secret Wars #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Spawn #1",
+      "genre": "Superhero",
+      "writerNames": [],
+      "artistNames": [
+        "Todd McFarlane"
+      ],
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1992-03-01",
+          "isbn": "N/A",
+          "publisherName": "Image Comics"
+        }
+      ]
+    },
+    {
+      "title": "Spider-Man #300",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Swamp Thing #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "The Amazing Spider-Man #50",
+      "genre": "Superhero",
+      "writerNames": [
+        "Stan Lee"
+      ],
+      "artistNames": [
+        "John Romita Sr."
+      ],
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1964-06-01",
+          "isbn": "N/A",
+          "publisherName": "Marvel Comics"
+        }
+      ]
+    },
+    {
+      "title": "The Authority #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "The Avengers #1",
+      "genre": "Superhero",
+      "writerNames": [
+        "Stan Lee"
+      ],
+      "artistNames": [
+        "Jack Kirby"
+      ],
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1963-08-01",
+          "isbn": "N/A",
+          "publisherName": "Marvel Comics"
+        }
+      ]
+    },
+    {
+      "title": "The Boys #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "The Dark Knight Returns #1",
+      "genre": "Superhero",
+      "writerNames": [],
+      "artistNames": [
+        "Frank Miller"
+      ],
+      "editions": [
+        {
+          "editionName": "Hardcover",
+          "publicationDate": "1986-02-01",
+          "isbn": "978-1401209731",
+          "publisherName": "DC Comics"
+        }
+      ]
+    },
+    {
+      "title": "The Incredible Hulk #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "The Mask #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "The Punisher #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "The Walking Dead #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Thor #126",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Transmetropolitan #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Uncanny X-Men #129",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "V for Vendetta #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "Watchmen #1",
+      "genre": "Superhero",
+      "writerNames": [
+        "Alan Moore"
+      ],
+      "artistNames": [
+        "Dave Gibbons"
+      ],
+      "editions": [
+        {
+          "editionName": "Hardcover",
+          "publicationDate": "1987-02-01",
+          "isbn": "978-0930289232",
+          "publisherName": "DC Comics"
+        }
+      ]
+    },
+    {
+      "title": "Watchmen #2",
+      "genre": "Superhero",
+      "writerNames": [
+        "Alan Moore"
+      ],
+      "artistNames": [
+        "Dave Gibbons"
+      ],
+      "editions": [
+        {
+          "editionName": "Hardcover",
+          "publicationDate": "1987-02-01",
+          "isbn": "978-0930289232",
+          "publisherName": "DC Comics"
+        }
+      ]
+    },
+    {
+      "title": "X-Men #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    },
+    {
+      "title": "X-Men #1 (1991)",
+      "genre": "Superhero",
+      "writerNames": [
+        "Chris Claremont"
+      ],
+      "artistNames": [
+        "Jim Lee"
+      ],
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1991-01-01",
+          "isbn": "N/A",
+          "publisherName": "Marvel Comics"
+        }
+      ]
+    },
+    {
+      "title": "Y: The Last Man #1",
+      "genre": "Various",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": []
+    }
+  ],
+  "characters": [
+    {
+      "type": "CIVILIAN",
+      "realName": "Abe Sapien",
+      "alias": "Abe Sapien",
+      "origin": "Aquatic paranormal investigator.",
+      "powers": [],
+      "creators": [
+        {
+          "creatorName": "Mike Mignola",
+          "role": "Creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": [
+        "Hellboy: Seed of Destruction #1"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Adam Warlock",
+      "alias": "Adam Warlock",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "VILLAIN",
+      "realName": "Akira",
+      "alias": "Akira",
+      "origin": "Psychic experiment subject.",
+      "powers": [
+        "Reality Manipulation",
+        "Telepathy"
+      ],
+      "creators": [
+        {
+          "creatorName": "Katsuhiro Otomo",
+          "role": "Creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": [
+        "Akira #1"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Al Simmons",
+      "alias": "Spawn",
+      "origin": "Resurrected assassin.",
+      "powers": [
+        "Necroplasmic powers",
+        "Regeneration"
+      ],
+      "creators": [
+        {
+          "creatorName": "Todd McFarlane",
+          "role": "Creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": [
+        "Spawn #1"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Alana",
+      "alias": "",
+      "origin": "Soldier from Landfall.",
+      "powers": [
+        "Flight",
+        "Combat"
+      ],
+      "creators": [
+        {
+          "creatorName": "Brian K. Vaughan",
+          "role": "Co-creator"
+        },
+        {
+          "creatorName": "Fiona Staples",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": [
+        "Saga #3"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Alec Holland",
+      "alias": "Swamp Thing",
+      "origin": "Transformed into plant elemental.",
+      "powers": [
+        "Plant control",
+        "Regeneration"
+      ],
+      "creators": [
+        {
+          "creatorName": "Len Wein",
+          "role": "Creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": [
+        "Swamp Thing #1"
+      ]
+    },
+    {
+      "type": "CIVILIAN",
+      "realName": "Alfred Pennyworth",
+      "alias": "Alfred Pennyworth",
+      "origin": "Wayne family butler.",
+      "powers": [],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": [
+        "Detective Comics #27"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Barbara Gordon",
+      "alias": "Batgirl",
+      "origin": "GCPD\u0027s daughter and Batgirl.",
+      "powers": [
+        "Martial arts",
+        "Computer skills"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Barnaby Jones",
+      "alias": "Barnaby Jones",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Barry Allen",
+      "alias": "The Flash",
+      "origin": "Forensic scientist turned speedster.",
+      "powers": [
+        "Super speed"
+      ],
+      "creators": [],
+      "affiliations": [
+        "Justice League"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Batman",
+      "alias": "Batman",
+      "origin": "Gotham vigilante.",
+      "powers": [
+        "Peak human conditioning",
+        "Martial arts",
+        "Genius intellect"
+      ],
+      "creators": [],
+      "affiliations": [
+        "Justice League"
+      ],
+      "characterAffiliations": [],
+      "appearances": [
+        "Detective Comics #27"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Beast Boy",
+      "alias": "Beast Boy",
+      "origin": "Shape-shifting teen.",
+      "powers": [
+        "Animal transformation"
+      ],
+      "creators": [],
+      "affiliations": [
+        "Teen Titans"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "CIVILIAN",
+      "realName": "Betty Ross",
+      "alias": "Betty Ross",
+      "origin": "Scientist and love interest.",
+      "powers": [],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": [
+        "The Incredible Hulk #1"
+      ]
+    },
+    {
+      "type": "CIVILIAN",
+      "realName": "Bigby Wolf",
+      "alias": "Bigby Wolf",
+      "origin": "Big bad wolf in exile.",
+      "powers": [],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": [
+        "Fables #1"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Black Adam",
+      "alias": "Black Adam",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Black Canary",
+      "alias": "Black Canary",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Blue Beetle",
+      "alias": "Blue Beetle",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Booster Gold",
+      "alias": "Booster Gold",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Bruce Banner",
+      "alias": "Hulk",
+      "origin": "Gamma radiation accident.",
+      "powers": [
+        "Super strength",
+        "Regeneration"
+      ],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Avengers"
+      ],
+      "characterAffiliations": [],
+      "appearances": [
+        "The Incredible Hulk #1"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Bucky Barnes",
+      "alias": "Bucky Barnes",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": [
+        "Captain America Comics #1"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Cable",
+      "alias": "Cable",
+      "origin": "Time-traveling soldier.",
+      "powers": [
+        "Telepathy",
+        "Telekinesis",
+        "Cybernetics"
+      ],
+      "creators": [
+        {
+          "creatorName": "Rob Liefeld",
+          "role": "Creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Captain Marvel",
+      "alias": "Captain Marvel",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Clint Barton",
+      "alias": "Hawkeye",
+      "origin": "Archer turned hero.",
+      "powers": [
+        "Archery"
+      ],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Avengers"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Constantine",
+      "alias": "Constantine",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Cyclops",
+      "alias": "Cyclops",
+      "origin": "Mutant with optic blasts.",
+      "powers": [
+        "Optic blasts"
+      ],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "X-Men"
+      ],
+      "characterAffiliations": [],
+      "appearances": [
+        "X-Men #1"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Daniel Rand",
+      "alias": "Iron Fist",
+      "origin": "Master of the Iron Fist.",
+      "powers": [
+        "Chi-based martial arts"
+      ],
+      "creators": [
+        {
+          "creatorName": "Roy Thomas",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "CIVILIAN",
+      "realName": "Death",
+      "alias": "Death",
+      "origin": "One of the Endless.",
+      "powers": [],
+      "creators": [
+        {
+          "creatorName": "Neil Gaiman",
+          "role": "Creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Dick Grayson",
+      "alias": "Nightwing",
+      "origin": "Former acrobat.",
+      "powers": [
+        "Acrobatics",
+        "Detective skills"
+      ],
+      "creators": [],
+      "affiliations": [
+        "Titans"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Doctor Doom",
+      "alias": "Doctor Doom",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Doctor Octopus",
+      "alias": "Doctor Octopus",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Dream",
+      "alias": "Morpheus",
+      "origin": "One of the Endless.",
+      "powers": [
+        "Dream Manipulation",
+        "Immortality"
+      ],
+      "creators": [
+        {
+          "creatorName": "Neil Gaiman",
+          "role": "Creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": [
+        "Sandman #2"
+      ]
+    },
+    {
+      "type": "CIVILIAN",
+      "realName": "Elektra",
+      "alias": "Elektra",
+      "origin": "Assassin and lover of Daredevil.",
+      "powers": [],
+      "creators": [
+        {
+          "creatorName": "Frank Miller",
+          "role": "Creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "CIVILIAN",
+      "realName": "Elijah Snow",
+      "alias": "Elijah Snow",
+      "origin": "Member of Planetary.",
+      "powers": [],
+      "creators": [
+        {
+          "creatorName": "Warren Ellis",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": [
+        "Planetary #1"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Etrigan",
+      "alias": "Etrigan",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Frank Castle",
+      "alias": "Punisher",
+      "origin": "Vigilante driven by loss.",
+      "powers": [
+        "Tactical skill",
+        "Marksmanship"
+      ],
+      "creators": [
+        {
+          "creatorName": "Gerry Conway",
+          "role": "Creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": [
+        "The Punisher #1"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Gambit",
+      "alias": "Gambit",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "VILLAIN",
+      "realName": "Green Goblin",
+      "alias": "Green Goblin",
+      "origin": "Norman Osborn as a villain.",
+      "powers": [
+        "Genius intellect",
+        "Goblin serum"
+      ],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Green Lantern (Alan Scott)",
+      "alias": "Green Lantern (Alan Scott)",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "CIVILIAN",
+      "realName": "Gwen Stacy",
+      "alias": "Gwen Stacy",
+      "origin": "Peter Parker\u0027s love interest.",
+      "powers": [],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Hal Jordan",
+      "alias": "Green Lantern",
+      "origin": "Space pilot chosen by ring.",
+      "powers": [
+        "Power ring constructs"
+      ],
+      "creators": [],
+      "affiliations": [
+        "Justice League"
+      ],
+      "characterAffiliations": [],
+      "appearances": [
+        "Green Lantern #1"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Hank Pym",
+      "alias": "Hank Pym",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "VILLAIN",
+      "realName": "Harvey Dent",
+      "alias": "Two-Face",
+      "origin": "District attorney turned villain.",
+      "powers": [
+        "Split personality",
+        "Genius intellect"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "VILLAIN",
+      "realName": "Hellboy",
+      "alias": "Anung Un Rama",
+      "origin": "Summoned from Hell.",
+      "powers": [
+        "Super Strength",
+        "Demon Physiology"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": [
+        "Hellboy #1"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Howard the Duck",
+      "alias": "Howard the Duck",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Invisible Kid",
+      "alias": "Invisible Kid",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "CIVILIAN",
+      "realName": "Jason Todd",
+      "alias": "Jason Todd",
+      "origin": "Robin who later became Red Hood.",
+      "powers": [],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Jean Grey",
+      "alias": "Jean Grey",
+      "origin": "Mutant telepath/telekinetic.",
+      "powers": [
+        "Telepathy",
+        "Telekinesis"
+      ],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "X-Men"
+      ],
+      "characterAffiliations": [],
+      "appearances": [
+        "X-Men #1"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Jennifer Walters",
+      "alias": "She-Hulk",
+      "origin": "Gamma-induced cousin of Hulk.",
+      "powers": [
+        "Super strength",
+        "Legal expertise"
+      ],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": [
+        "The Incredible Hulk #1"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Jenny Sparks",
+      "alias": "Jenny Sparks",
+      "origin": "Spirit of the 20th century.",
+      "powers": [
+        "Electric manipulation"
+      ],
+      "creators": [
+        {
+          "creatorName": "Warren Ellis",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "The Authority"
+      ],
+      "characterAffiliations": [],
+      "appearances": [
+        "The Authority #1"
+      ]
+    },
+    {
+      "type": "CIVILIAN",
+      "realName": "Jessica Jones",
+      "alias": "Jessica Jones",
+      "origin": "Private investigator with past trauma.",
+      "powers": [],
+      "creators": [
+        {
+          "creatorName": "Brian Michael Bendis",
+          "role": "Creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "CIVILIAN",
+      "realName": "Jim Corrigan",
+      "alias": "Jim Corrigan",
+      "origin": "Spirit of vengeance.",
+      "powers": [],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "CIVILIAN",
+      "realName": "John Constantine",
+      "alias": "John Constantine",
+      "origin": "Occult detective.",
+      "powers": [],
+      "creators": [
+        {
+          "creatorName": "Alan Moore",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "John Stewart",
+      "alias": "John Stewart",
+      "origin": "Marine turned Lantern.",
+      "powers": [
+        "Power ring constructs"
+      ],
+      "creators": [],
+      "affiliations": [
+        "Justice League"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "CIVILIAN",
+      "realName": "Johnny Blaze",
+      "alias": "Johnny Blaze",
+      "origin": "Spirit of vengeance bonded to rider.",
+      "powers": [],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Johnny Storm",
+      "alias": "Human Torch",
+      "origin": "Flame-powered hero.",
+      "powers": [
+        "Pyrokinesis",
+        "Flight"
+      ],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Fantastic Four"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Katana",
+      "alias": "Katana",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Kitty Pryde",
+      "alias": "Kitty Pryde",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Lady Shiva",
+      "alias": "Lady Shiva",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Leatherwing",
+      "alias": "Leatherwing",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "CIVILIAN",
+      "realName": "Lucifer Morningstar",
+      "alias": "Lucifer Morningstar",
+      "origin": "Fallen angel.",
+      "powers": [],
+      "creators": [
+        {
+          "creatorName": "Neil Gaiman",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": [
+        "Sandman #1"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Luke Cage",
+      "alias": "Luke Cage",
+      "origin": "Hero with unbreakable skin.",
+      "powers": [
+        "Super strength",
+        "Durability"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "VILLAIN",
+      "realName": "Magneto",
+      "alias": "Magneto",
+      "origin": "Mutant with magnetic powers.",
+      "powers": [
+        "Magnetism"
+      ],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": [
+        "Uncanny X-Men #129"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Marc Spector",
+      "alias": "Moon Knight",
+      "origin": "Avatar of Khonshu.",
+      "powers": [
+        "Combat skill",
+        "Multiple identities"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "CIVILIAN",
+      "realName": "Mary Jane Watson",
+      "alias": "Mary Jane Watson",
+      "origin": "Friend of Peter Parker.",
+      "powers": [],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": [
+        "Amazing Fantasy #15"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Matt Murdock",
+      "alias": "Daredevil",
+      "origin": "Blinded with heightened senses.",
+      "powers": [
+        "Enhanced senses",
+        "Acrobatics"
+      ],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": [
+        "Daredevil #1"
+      ]
+    },
+    {
+      "type": "CIVILIAN",
+      "realName": "Michonne",
+      "alias": "Michonne",
+      "origin": "Survivor with katana.",
+      "powers": [],
+      "creators": [
+        {
+          "creatorName": "Robert Kirkman",
+          "role": "Creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": [
+        "The Walking Dead #1"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Miles Morales",
+      "alias": "Miles Morales",
+      "origin": "Alternate Spider-Man.",
+      "powers": [
+        "Venom blast",
+        "Invisibility"
+      ],
+      "creators": [
+        {
+          "creatorName": "Brian Michael Bendis",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": [
+        "Amazing Fantasy #15"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Mister Miracle",
+      "alias": "Mister Miracle",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Mister Sinister",
+      "alias": "Mister Sinister",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Moon Girl",
+      "alias": "Moon Girl",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Mordo",
+      "alias": "Mordo",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Mr. Freeze",
+      "alias": "Mr. Freeze",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Namor",
+      "alias": "Namor",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Natasha Romanoff",
+      "alias": "Black Widow",
+      "origin": "Former spy.",
+      "powers": [
+        "Espionage",
+        "Martial arts"
+      ],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Avengers"
+      ],
+      "characterAffiliations": [],
+      "appearances": [
+        "The Avengers #1"
+      ]
+    },
+    {
+      "type": "CIVILIAN",
+      "realName": "Nick Fury",
+      "alias": "Nick Fury",
+      "origin": "S.H.I.E.L.D. director.",
+      "powers": [],
+      "creators": [
+        {
+          "creatorName": "Jack Kirby",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "CIVILIAN",
+      "realName": "Nico Minoru",
+      "alias": "Nico Minoru",
+      "origin": "Teen with magic staff.",
+      "powers": [],
+      "creators": [
+        {
+          "creatorName": "Brian K. Vaughan",
+          "role": "Creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "VILLAIN",
+      "realName": "Norman Osborn",
+      "alias": "Norman Osborn",
+      "origin": "Industrialist turned villain.",
+      "powers": [
+        "Genius intellect"
+      ],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": [
+        "Amazing Fantasy #15"
+      ]
+    },
+    {
+      "type": "CIVILIAN",
+      "realName": "Norrin Radd",
+      "alias": "Norrin Radd",
+      "origin": "Herald of Galactus.",
+      "powers": [],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Northstar",
+      "alias": "Northstar",
+      "origin": "Canadian mutant speedster.",
+      "powers": [
+        "Flight",
+        "Super speed"
+      ],
+      "creators": [
+        {
+          "creatorName": "Chris Claremont",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Alpha Flight"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Nova (Richard Rider)",
+      "alias": "Nova (Richard Rider)",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Oliver Queen",
+      "alias": "Green Arrow",
+      "origin": "Expert archer and vigilante.",
+      "powers": [
+        "Archery",
+        "Tactics"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Oracle",
+      "alias": "Oracle",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Peter Parker",
+      "alias": "Spider-Man",
+      "origin": "Bitten by a radioactive spider.",
+      "powers": [
+        "Wall-crawling",
+        "Spider-sense",
+        "Super agility"
+      ],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Avengers"
+      ],
+      "characterAffiliations": [],
+      "appearances": [
+        "Amazing Fantasy #15"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Professor X",
+      "alias": "Charles Xavier",
+      "origin": "Mutant telepath and leader.",
+      "powers": [
+        "Telepathy"
+      ],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "X-Men"
+      ],
+      "characterAffiliations": [],
+      "appearances": [
+        "Uncanny X-Men #129"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Psylocke",
+      "alias": "Psylocke",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Quicksilver",
+      "alias": "Quicksilver",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "VILLAIN",
+      "realName": "Ra\u0027s al Ghul",
+      "alias": "Ra\u0027s al Ghul",
+      "origin": "Eco-terrorist leader.",
+      "powers": [
+        "Longevity",
+        "Master tactician"
+      ],
+      "creators": [
+        {
+          "creatorName": "Dennis O\u0027Neil",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "League of Assassins"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Raven",
+      "alias": "Raven",
+      "origin": "Daughter of a demon.",
+      "powers": [
+        "Empathy",
+        "Darkness manipulation"
+      ],
+      "creators": [
+        {
+          "creatorName": "Marv Wolfman",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Teen Titans"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Red Hood",
+      "alias": "Red Hood",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Reed Richards",
+      "alias": "Mr. Fantastic",
+      "origin": "Stretchy genius.",
+      "powers": [
+        "Elasticity",
+        "Genius intellect"
+      ],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Fantastic Four"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "CIVILIAN",
+      "realName": "Rick Grimes",
+      "alias": "Rick Grimes",
+      "origin": "Post-apocalyptic sheriff.",
+      "powers": [],
+      "creators": [
+        {
+          "creatorName": "Robert Kirkman",
+          "role": "Creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": [
+        "The Walking Dead #1"
+      ]
+    },
+    {
+      "type": "VILLAIN",
+      "realName": "Riddler",
+      "alias": "Riddler",
+      "origin": "Puzzle-obsessed villain.",
+      "powers": [
+        "Genius intellect"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": [
+        "Detective Comics #27"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Robin (Tim Drake)",
+      "alias": "Robin (Tim Drake)",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Sabretooth",
+      "alias": "Sabretooth",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Selina Kyle",
+      "alias": "Catwoman",
+      "origin": "Cat burglar turned ally.",
+      "powers": [
+        "Acrobatics",
+        "Stealth"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Sentry",
+      "alias": "Sentry",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Shazam",
+      "alias": "Shazam",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Shazam Jr.",
+      "alias": "Shazam Jr.",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "She-Hulk",
+      "alias": "She-Hulk",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Sif",
+      "alias": "Sif",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Spawnerina",
+      "alias": "Spawnerina",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Spider-Gwen",
+      "alias": "Spider-Gwen",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "CIVILIAN",
+      "realName": "Stanley Ipkiss",
+      "alias": "Stanley Ipkiss",
+      "origin": "Finds a magical mask.",
+      "powers": [],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": [
+        "The Mask #1"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Static",
+      "alias": "Static",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Stephen Strange",
+      "alias": "Doctor Strange",
+      "origin": "Sorcerer Supreme.",
+      "powers": [
+        "Mystic arts"
+      ],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Steve Rogers",
+      "alias": "Captain America",
+      "origin": "Super-soldier serum.",
+      "powers": [
+        "Enhanced strength",
+        "Tactical genius"
+      ],
+      "creators": [],
+      "affiliations": [
+        "Avengers"
+      ],
+      "characterAffiliations": [],
+      "appearances": [
+        "Captain America Comics #1"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Storm",
+      "alias": "Ororo Munroe",
+      "origin": "Weather-controlling mutant.",
+      "powers": [
+        "Weather control",
+        "Flight"
+      ],
+      "creators": [
+        {
+          "creatorName": "Len Wein",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "X-Men"
+      ],
+      "characterAffiliations": [],
+      "appearances": [
+        "X-Men #1"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Superman",
+      "alias": "Superman",
+      "origin": "Kryptonian refugee.",
+      "powers": [
+        "Flight",
+        "Super strength",
+        "Heat vision"
+      ],
+      "creators": [],
+      "affiliations": [
+        "Justice League"
+      ],
+      "characterAffiliations": [],
+      "appearances": [
+        "Action Comics #1"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Susan Storm",
+      "alias": "Invisible Woman",
+      "origin": "Invisible Force Field user.",
+      "powers": [
+        "Invisibility",
+        "Force fields"
+      ],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Fantastic Four"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "T\u0027Challa",
+      "alias": "Black Panther",
+      "origin": "King of Wakanda.",
+      "powers": [
+        "Enhanced strength",
+        "Vibranium suit"
+      ],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Avengers"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Taskmaster",
+      "alias": "Taskmaster",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "VILLAIN",
+      "realName": "The Joker",
+      "alias": "Joker",
+      "origin": "Unknown criminal mastermind.",
+      "powers": [
+        "Criminal genius",
+        "Anarchy"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Thing",
+      "alias": "Thing",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": [
+        "Fantastic Four #1"
+      ]
+    },
+    {
+      "type": "CIVILIAN",
+      "realName": "Thomas Wayne",
+      "alias": "Thomas Wayne",
+      "origin": "Bruce Wayne\u0027s father.",
+      "powers": [],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Thor Odinson",
+      "alias": "Thor",
+      "origin": "Asgardian prince.",
+      "powers": [
+        "Godlike strength",
+        "Weather manipulation"
+      ],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Avengers"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "VILLAIN",
+      "realName": "Thunderbolt Ross",
+      "alias": "Red Hulk",
+      "origin": "Military general.",
+      "powers": [
+        "Enhanced strength"
+      ],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": [
+        "The Incredible Hulk #1"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Tim Hunter",
+      "alias": "Tim Hunter",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Tony Stark",
+      "alias": "Iron Man",
+      "origin": "Genius inventor.",
+      "powers": [
+        "Powered armor suit",
+        "Genius intellect"
+      ],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Avengers"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Trinity",
+      "alias": "Trinity",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": [
+        "Justice League #1"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Ultron",
+      "alias": "Ultron",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Umbrella Academy characters",
+      "alias": "Umbrella Academy characters",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Usagi Tsukino",
+      "alias": "Sailor Moon",
+      "origin": "Chosen by the Moon Kingdom.",
+      "powers": [
+        "Moon Tiara Magic",
+        "Healing",
+        "Transformation"
+      ],
+      "creators": [
+        {
+          "creatorName": "Naoko Takeuchi",
+          "role": "Creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": [
+        "Sailor Moon #1"
+      ]
+    },
+    {
+      "type": "VILLAIN",
+      "realName": "Venom",
+      "alias": "Venom",
+      "origin": "Alien symbiote.",
+      "powers": [
+        "Symbiosis",
+        "Super strength"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Vibe",
+      "alias": "Vibe",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Vision",
+      "alias": "Vision",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": [
+        "Avengers #57"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Warlock (Adam)",
+      "alias": "Warlock (Adam)",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Wiccan",
+      "alias": "Wiccan",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Wolverine",
+      "alias": "Wolverine",
+      "origin": "Mutant with healing factor.",
+      "powers": [
+        "Regeneration",
+        "Adamantium claws"
+      ],
+      "creators": [
+        {
+          "creatorName": "Len Wein",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "X-Men"
+      ],
+      "characterAffiliations": [],
+      "appearances": [
+        "X-Men #1"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Zatanna",
+      "alias": "Zatanna",
+      "origin": "N/A",
+      "powers": [
+        "N/A"
+      ],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
     }
   ]
 }

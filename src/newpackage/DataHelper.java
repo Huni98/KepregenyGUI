@@ -59,6 +59,7 @@ public class DataHelper {
      * Loads all comic book data from the hardcoded JSON file.
      * @return A ComicDataContainer object holding all the lists.
      */
+    @SuppressWarnings("unchecked")
     public static ComicDataContainer loadDataFromJSON() {
         ComicDataContainer data = new ComicDataContainer();
         Gson gson = new Gson(); // Create a Gson object
