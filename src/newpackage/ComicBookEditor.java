@@ -41,6 +41,8 @@ public class ComicBookEditor extends javax.swing.JDialog {
         
         initComponents();
         
+        this.setSize(700, 600);
+        
         setLocationRelativeTo(parent);
         
         // --- NEW: Call helper methods to set up the form ---
@@ -292,6 +294,8 @@ public class ComicBookEditor extends javax.swing.JDialog {
 
         writersPanel.add(jScrollPane2, java.awt.BorderLayout.EAST);
 
+        writersButtonPanel.setLayout(new java.awt.BorderLayout());
+
         addWriterButton.setText("->");
         addWriterButton.setPreferredSize(new java.awt.Dimension(70, 25));
         addWriterButton.addActionListener(new java.awt.event.ActionListener() {
@@ -299,6 +303,7 @@ public class ComicBookEditor extends javax.swing.JDialog {
                 addWriterButtonActionPerformed(evt);
             }
         });
+        writersButtonPanel.add(addWriterButton, java.awt.BorderLayout.NORTH);
 
         removeWriterButton.setText("<-");
         removeWriterButton.setPreferredSize(new java.awt.Dimension(70, 25));
@@ -307,27 +312,7 @@ public class ComicBookEditor extends javax.swing.JDialog {
                 removeWriterButtonActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout writersButtonPanelLayout = new javax.swing.GroupLayout(writersButtonPanel);
-        writersButtonPanel.setLayout(writersButtonPanelLayout);
-        writersButtonPanelLayout.setHorizontalGroup(
-            writersButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(writersButtonPanelLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(writersButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(removeWriterButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(addWriterButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        writersButtonPanelLayout.setVerticalGroup(
-            writersButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, writersButtonPanelLayout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(addWriterButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(removeWriterButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75))
-        );
+        writersButtonPanel.add(removeWriterButton, java.awt.BorderLayout.SOUTH);
 
         writersPanel.add(writersButtonPanel, java.awt.BorderLayout.CENTER);
 

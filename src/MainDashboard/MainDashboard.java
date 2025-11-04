@@ -58,18 +58,21 @@ public class MainDashboard extends javax.swing.JFrame {
     public MainDashboard() {
         initComponents();
         
+        this.setSize(1050, 700);
+        
         // Set the window to appear in the center of the screen
         setLocationRelativeTo(null);
         
         setupDataAndTable();
-        /*
-        // --- Demo Data ---
-        // Let's add some sample data to the table to see how it looks
-        DefaultTableModel model = (DefaultTableModel) mainItemTable.getModel();
-        model.addRow(new Object[]{"Action Comics #1", "Comic Book", "DC Comics"});
-        model.addRow(new Object[]{"Amazing Fantasy #15", "Comic Book", "Marvel"});
-        model.addRow(new Object[]{"Spider-Man", "Character", "Peter Parker"});
-        */
+        
+        // --- ADD THIS CODE TO SAVE ON EXIT ---
+        this.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent e) {
+                // Call our new save method
+                saveDataOnExit();
+            }
+        });
     }
     
     
@@ -164,6 +167,28 @@ public class MainDashboard extends javax.swing.JFrame {
                     JOptionPane.ERROR_MESSAGE);
             // The app will continue with empty lists
         }
+    }
+    
+    /**
+     * Gathers all master data lists and tells DataHelper to save them.
+     */
+    private void saveDataOnExit() {
+        logger.info("Saving data to JSON file...");
+        
+        // 1. Create a container to hold all our lists
+        ComicDataContainer dataToSave = new ComicDataContainer();
+        
+        // 2. Populate the container with our master lists
+        dataToSave.publishers = this.allPublishers;
+        dataToSave.writers = this.allWriters;
+        dataToSave.artists = this.allArtists;
+        dataToSave.characters = this.allCharacters;
+        dataToSave.comicBooks = this.allComicBooks;
+        
+        // 3. Call the static save method in DataHelper
+        DataHelper.saveDataToJSON(dataToSave);
+        
+        logger.info("Data saved. Exiting.");
     }
     
     /**

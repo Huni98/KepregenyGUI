@@ -1,206 +1,121 @@
 {
-  "publishers": [
+  "characters": [
     {
-      "name": "Marvel Comics",
-      "country": "USA"
+      "appearances": [
+        "Amazing Fantasy #15"
+      ],
+      "realName": "Peter Parker",
+      "creators": [
+        {
+          "role": "Co-creator",
+          "creatorName": "Stan Lee"
+        },
+        {
+          "role": "Co-creator",
+          "creatorName": "Steve Ditko"
+        }
+      ],
+      "origin": "Bitten by a radioactive spider.",
+      "alias": "Spider-Man",
+      "affiliations": [],
+      "type": "SUPERHERO",
+      "powers": [
+        "Wall-Crawling",
+        "Super Strength",
+        "Spider-Sense"
+      ]
     },
     {
-      "name": "DC Comics",
-      "country": "USA"
-    }
-  ],
-  "writers": [
-    {
-      "name": "Stan Lee",
-      "nationality": "USA"
-    },
-    {
-      "name": "Alan Moore",
-      "nationality": "UK"
-    },
-    {
-      "name": "Gerry Conway",
-      "nationality": "USA"
-    },
-    {
-      "name": "Grant Morrison",
-      "nationality": "UK"
+      "appearances": [
+        "Fantastic Four #1"
+      ],
+      "realName": "Reed Richards",
+      "creators": [
+        {
+          "role": "Co-creator",
+          "creatorName": "Stan Lee"
+        }
+      ],
+      "origin": "Cosmic rays.",
+      "alias": "Mister Fantastic",
+      "affiliations": [
+        {
+          "characterRealName": "Peter Parker",
+          "relationship": "Friend"
+        }
+      ],
+      "type": "SUPERHERO",
+      "powers": [
+        "Elasticity"
+      ]
     }
   ],
   "artists": [
     {
-      "name": "Jack Kirby",
-      "nationality": "USA"
+      "nationality": "USA",
+      "name": "Jack Kirby"
     },
     {
-      "name": "Steve Ditko",
-      "nationality": "USA"
-    },
-    {
-      "name": "John Romita Sr.",
-      "nationality": "USA"
-    },
-    {
-      "name": "Dave Gibbons",
-      "nationality": "UK"
+      "nationality": "USA",
+      "name": "Steve Ditko"
     }
   ],
   "comicBooks": [
     {
-      "title": "Amazing Fantasy #15",
-      "genre": "Superhero",
-      "writerNames": [
-        "Stan Lee"
-      ],
       "artistNames": [
         "Steve Ditko"
       ],
+      "writerNames": [
+        "Stan Lee"
+      ],
       "editions": [
         {
           "editionName": "First Print",
-          "publicationDate": "1962-08-10",
+          "publisherName": "Marvel Comics",
           "isbn": "N/A",
-          "publisherName": "Marvel Comics"
-        },
-        {
-          "editionName": "Reprint",
-          "publicationDate": "1997-03-01",
-          "isbn": "978-0785105743",
-          "publisherName": "Marvel Comics"
+          "publicationDate": "1962-08-10"
         }
-      ]
+      ],
+      "genre": "Superhero",
+      "title": "Amazing Fantasy #15"
     },
     {
-      "title": "The Amazing Spider-Man #121",
-      "genre": "Superhero",
-      "writerNames": [
-        "Gerry Conway"
-      ],
       "artistNames": [
-        "John Romita Sr."
+        "Jack Kirby"
+      ],
+      "writerNames": [
+        "Stan Lee"
       ],
       "editions": [
         {
           "editionName": "First Print",
-          "publicationDate": "1973-06-01",
+          "publisherName": "Marvel Comics",
           "isbn": "N/A",
-          "publisherName": "Marvel Comics"
+          "publicationDate": "1961-11-08"
         }
-      ]
-    },
-    {
-      "title": "Watchmen #1",
+      ],
       "genre": "Superhero",
-      "writerNames": [
-        "Alan Moore"
-      ],
-      "artistNames": [
-        "Dave Gibbons"
-      ],
-      "editions": [
-        {
-          "editionName": "First Print",
-          "publicationDate": "1986-09-01",
-          "isbn": "N/A",
-          "publisherName": "DC Comics"
-        }
-      ]
+      "title": "Fantastic Four #1"
     }
   ],
-  "characters": [
+  "publishers": [
     {
-      "type": "SUPERHERO",
-      "realName": "Peter Parker",
-      "alias": "Spider-Man",
-      "origin": "Bitten by a radioactive spider.",
-      "powers": [
-        "Wall-Crawling",
-        "Super Strength",
-        "Super Speed",
-        "Healing Factor (Regeneration)"
-      ],
-      "creators": [
-        {
-          "creatorName": "Stan Lee",
-          "role": "Co-creator"
-        },
-        {
-          "creatorName": "Steve Ditko",
-          "role": "Co-creator"
-        }
-      ],
-      "affiliations": [],
-      "appearances": [
-        "Amazing Fantasy #15",
-        "The Amazing Spider-Man #121"
-      ]
+      "country": "USA",
+      "name": "Marvel Comics"
     },
     {
-      "type": "CIVILIAN",
-      "realName": "Gwen Stacy",
-      "alias": "",
-      "origin": "Civilian, daughter of George Stacy.",
-      "powers": [],
-      "creators": [
-        {
-          "creatorName": "Stan Lee",
-          "role": "Co-creator"
-        },
-        {
-          "creatorName": "Steve Ditko",
-          "role": "Co-creator"
-        }
-      ],
-      "affiliations": [
-        {
-          "characterRealName": "Peter Parker",
-          "relationship": "Girlfriend"
-        }
-      ],
-      "appearances": [
-        "The Amazing Spider-Man #121"
-      ]
+      "country": "USA",
+      "name": "DC Comics"
+    }
+  ],
+  "writers": [
+    {
+      "nationality": "USA",
+      "name": "Stan Lee"
     },
     {
-      "type": "VILLAIN",
-      "realName": "Norman Osborn",
-      "alias": "Green Goblin",
-      "origin": "Experimental formula exploded.",
-      "powers": [
-        "Super Strength",
-        "Healing Factor (Regeneration)",
-        "Gadgets (High-Tech)"
-      ],
-      "creators": [
-        {
-          "creatorName": "Stan Lee",
-          "role": "Co-creator"
-        }
-      ],
-      "affiliations": [],
-      "appearances": [
-        "The Amazing Spider-Man #121"
-      ]
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Walter Kovacs",
-      "alias": "Rorschach",
-      "origin": "Troubled childhood, vigilante.",
-      "powers": [
-        "Marksmanship (Superhuman)",
-        "Gadgets (High-Tech)"
-      ],
-      "creators": [
-        {
-          "creatorName": "Alan Moore",
-          "role": "Creator"
-        }
-      ],
-      "affiliations": [],
-      "appearances": [
-        "Watchmen #1"
-      ]
+      "nationality": "UK",
+      "name": "Alan Moore"
     }
   ]
 }

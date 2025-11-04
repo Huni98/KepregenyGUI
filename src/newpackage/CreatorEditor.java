@@ -27,6 +27,8 @@ public class CreatorEditor extends javax.swing.JDialog {
         super(parent, modal);
         setLocationRelativeTo(parent);
         initComponents();
+        
+        this.setSize(700, 600);
     }
 
     /**

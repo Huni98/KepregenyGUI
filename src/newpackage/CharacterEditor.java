@@ -70,6 +70,8 @@ public class CharacterEditor extends javax.swing.JDialog {
         
         initComponents();
         
+        this.setSize(700, 600);
+        
         setupListModels();
         
         // This will now use the real data
@@ -380,6 +382,8 @@ public class CharacterEditor extends javax.swing.JDialog {
 
         powersPanel.add(jScrollPane2, java.awt.BorderLayout.EAST);
 
+        powersButtonPanel.setLayout(new java.awt.BorderLayout());
+
         addPowerButton.setText("->");
         addPowerButton.setPreferredSize(new java.awt.Dimension(70, 25));
         addPowerButton.addActionListener(new java.awt.event.ActionListener() {
@@ -387,6 +391,7 @@ public class CharacterEditor extends javax.swing.JDialog {
                 addPowerButtonActionPerformed(evt);
             }
         });
+        powersButtonPanel.add(addPowerButton, java.awt.BorderLayout.NORTH);
 
         removePowerButton.setText("<-");
         removePowerButton.setPreferredSize(new java.awt.Dimension(70, 25));
@@ -395,27 +400,7 @@ public class CharacterEditor extends javax.swing.JDialog {
                 removePowerButtonActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout powersButtonPanelLayout = new javax.swing.GroupLayout(powersButtonPanel);
-        powersButtonPanel.setLayout(powersButtonPanelLayout);
-        powersButtonPanelLayout.setHorizontalGroup(
-            powersButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(powersButtonPanelLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(powersButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(removePowerButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(addPowerButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(40, Short.MAX_VALUE))
-        );
-        powersButtonPanelLayout.setVerticalGroup(
-            powersButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, powersButtonPanelLayout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(addPowerButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addComponent(removePowerButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75))
-        );
+        powersButtonPanel.add(removePowerButton, java.awt.BorderLayout.SOUTH);
 
         powersPanel.add(powersButtonPanel, java.awt.BorderLayout.CENTER);
 

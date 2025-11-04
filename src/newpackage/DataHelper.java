@@ -11,6 +11,7 @@ import org.json.simple.*;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+
 // Import all your project's data models
 import ro.madarash.kepregeny_project.*;
 
@@ -274,6 +275,163 @@ public class DataHelper {
             e.printStackTrace(); // Print the full error to see where it fails
         }
         return null; // Return null if loading failed
+    }
+    
+    
+    /**
+     * Saves all the application's data back to the JSON file
+     * in a "pretty-printed" (indented) format.
+     * @param data A ComicDataContainer holding the 5 master lists from MainDashboard.
+     */
+    public static void saveDataToJSON(ComicDataContainer data) {
+        // This is the file we will write to
+        File file = new File(DATA_FILE);
+        
+        // 1. Create the root JSON object (still using json-simple)
+        // This part is identical to your old method.
+        JSONObject root = new JSONObject();
+        
+        // 2. Convert Publishers List
+        JSONArray publishersArray = new JSONArray();
+        for (Publisher p : data.publishers) {
+            JSONObject pObj = new JSONObject();
+            pObj.put("name", p.getName());
+            pObj.put("country", p.getCountry());
+            publishersArray.add(pObj);
+        }
+        root.put("publishers", publishersArray);
+
+        // 3. Convert Writers List
+        JSONArray writersArray = new JSONArray();
+        for (Writer w : data.writers) {
+            JSONObject wObj = new JSONObject();
+            wObj.put("name", w.getName());
+            wObj.put("nationality", w.getNationality());
+            writersArray.add(wObj);
+        }
+        root.put("writers", writersArray);
+
+        // 4. Convert Artists List
+        JSONArray artistsArray = new JSONArray();
+        for (Artist a : data.artists) {
+            JSONObject aObj = new JSONObject();
+            aObj.put("name", a.getName());
+            aObj.put("nationality", a.getNationality());
+            artistsArray.add(aObj);
+        }
+        root.put("artists", artistsArray);
+
+        // 5. Convert ComicBooks List (Complex)
+        JSONArray comicBooksArray = new JSONArray();
+        for (ComicBook c : data.comicBooks) {
+            JSONObject cObj = new JSONObject();
+            cObj.put("title", c.getTitle());
+            cObj.put("genre", c.getGenre());
+            
+            JSONArray writerNames = new JSONArray();
+            for (Writer w : c.getWriters()) {
+                writerNames.add(w.getName());
+            }
+            cObj.put("writerNames", writerNames);
+            
+            JSONArray artistNames = new JSONArray();
+            for (Artist a : c.getArtists()) {
+                artistNames.add(a.getName());
+            }
+            cObj.put("artistNames", artistNames);
+            
+            JSONArray editionsArray = new JSONArray();
+            for (Edition e : c.getEditions()) {
+                JSONObject eObj = new JSONObject();
+                eObj.put("editionName", e.getEditionName());
+                eObj.put("publicationDate", new SimpleDateFormat("yyyy-MM-dd").format(e.getPublicationDate()));
+                eObj.put("isbn", e.getIsbn());
+                eObj.put("publisherName", e.getPublisher().getName());
+                editionsArray.add(eObj);
+            }
+            cObj.put("editions", editionsArray);
+            
+            comicBooksArray.add(cObj);
+        }
+        root.put("comicBooks", comicBooksArray);
+
+        // 6. Convert Characters List (Most Complex)
+        JSONArray charactersArray = new JSONArray();
+        for (ComicCharacter ch : data.characters) {
+            JSONObject chObj = new JSONObject();
+            chObj.put("type", ch.getClass().getSimpleName().toUpperCase());
+            chObj.put("realName", ch.getRealName());
+            chObj.put("origin", ch.getOrigin());
+
+            if (ch instanceof Superhero) {
+                chObj.put("alias", ((Superhero) ch).getDisplayName());
+            } else if (ch instanceof Villain) {
+                chObj.put("alias", ((Villain) ch).getDisplayName());
+            } else {
+                chObj.put("alias", ""); 
+            }
+
+            JSONArray powersArray = new JSONArray();
+            if (ch instanceof Superhero) {
+                powersArray.addAll(((Superhero) ch).getPowers());
+            } else if (ch instanceof Villain) {
+                powersArray.addAll(((Villain) ch).getPowers());
+            }
+            chObj.put("powers", powersArray);
+
+            JSONArray creatorsArray = new JSONArray();
+            for (java.util.Map.Entry<Writer, String> entry : ch.getCreatorWriters().entrySet()) {
+                JSONObject crObj = new JSONObject();
+                crObj.put("creatorName", entry.getKey().getName());
+                crObj.put("role", entry.getValue());
+                creatorsArray.add(crObj);
+            }
+            for (java.util.Map.Entry<Artist, String> entry : ch.getCreatorArtists().entrySet()) {
+                JSONObject crObj = new JSONObject();
+                crObj.put("creatorName", entry.getKey().getName());
+                crObj.put("role", entry.getValue());
+                creatorsArray.add(crObj);
+            }
+            chObj.put("creators", creatorsArray);
+
+            JSONArray affArray = new JSONArray();
+            for (java.util.Map.Entry<ComicCharacter, String> entry : ch.getAffiliations().entrySet()) {
+                JSONObject afObj = new JSONObject();
+                afObj.put("characterRealName", entry.getKey().getRealName());
+                afObj.put("relationship", entry.getValue());
+                affArray.add(afObj);
+            }
+            chObj.put("affiliations", affArray);
+
+            JSONArray appArray = new JSONArray();
+            for (ComicBook book : ch.getComicBookAppearances()) {
+                appArray.add(book.getTitle());
+            }
+            chObj.put("appearances", appArray);
+            
+            charactersArray.add(chObj);
+        }
+        root.put("characters", charactersArray);
+
+        // 7. --- THIS IS THE ONLY PART THAT CHANGES ---
+        //    We use Gson to format and write the file.
+        try (java.io.FileWriter fileWriter = new java.io.FileWriter(file)) {
+            
+            // 1. Create a Gson object with pretty printing enabled
+            com.google.gson.Gson gson = new com.google.gson.GsonBuilder().setPrettyPrinting().create();
+            
+            // 2. Convert the 'root' (a json-simple object) to a beautiful string
+            String jsonOutput = gson.toJson(root);
+            
+            // 3. Write that beautiful string to the file
+            fileWriter.write(jsonOutput);
+            fileWriter.flush();
+            
+            System.out.println("Data saved with pretty-printing!");
+
+        } catch (java.io.IOException e) {
+            e.printStackTrace();
+        }
     }
 
     // Example test in main()

@@ -48,6 +48,8 @@ public class EditionEditor extends javax.swing.JDialog {
         
         // This method builds the form's layout and components
         initComponents();
+        
+        this.setSize(700, 600);
 
         // --- NEW: Set the Custom Renderer for the JComboBox ---
         publisherComboBox.setRenderer(new ComicObjectRenderer());

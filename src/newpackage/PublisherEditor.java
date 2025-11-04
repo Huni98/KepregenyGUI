@@ -30,6 +30,8 @@ public class PublisherEditor extends javax.swing.JDialog {
 
         // This method builds the form's layout and components
         initComponents();
+        
+        this.setSize(700, 600);
 
         // Center the dialog on top of its parent (MainDashboard)
         setLocationRelativeTo(parent);
