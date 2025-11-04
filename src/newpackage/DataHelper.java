@@ -23,6 +23,7 @@ import java.util.Date;
  */
 public class DataHelper {
 
+    private static final String DATA_FILE = "KepregenyAdatok.json";
     /**
      * A simple public class to hold all the data lists loaded from the JSON.
      */
@@ -34,24 +35,21 @@ public class DataHelper {
         public List<ComicBook> comicBooks = new ArrayList<>();
     }
 
-    /**
-     * Loads all comic book data from a single JSON file.
-     * @param filePath The path to the comics_data.json file.
-     * @return A ComicDataContainer object holding all the lists.
-     */
-    public static ComicDataContainer loadDataFromJSON(String filePath) {
+    
+    public static ComicDataContainer loadDataFromJSON() {
         JSONParser parser = new JSONParser();
         ComicDataContainer data = new ComicDataContainer();
 
-        // Create Maps to link objects by their ID
+        // Create Maps to link objects by their NAME or TITLE
         Map<String, Publisher> publisherMap = new HashMap<>();
         Map<String, Object> creatorMap = new HashMap<>(); // Holds both Writers and Artists
         Map<String, ComicBook> comicBookMap = new HashMap<>();
-        Map<String, ComicCharacter> characterMap = new HashMap<>();
+        Map<String, ComicCharacter> characterMap = new HashMap<>(); // We will use realName as the key
 
         try {
             // 1. Read JSON file
-            File file = new File(filePath);
+            File file = new File(DATA_FILE);
+            
             Scanner sc = new Scanner(file);
             StringBuilder jsonContent = new StringBuilder();
             while (sc.hasNextLine()) {
@@ -63,8 +61,7 @@ public class DataHelper {
             JSONObject root = (JSONObject) parser.parse(jsonContent.toString());
 
             // --- PASS 1: Create all objects ---
-            // First, we create every object with its base properties (name, title, etc.)
-            // and store them in maps. This lets us link them in Pass 2.
+            
 
             // 3. Create Publishers
             JSONArray publishersArray = (JSONArray) root.get("publishers");
@@ -141,8 +138,7 @@ public class DataHelper {
             }
 
             // --- PASS 2: Link all objects ---
-            // Now that all objects exist in our maps, we loop through the JSON
-            // again to build their relationships.
+            // --- THIS SECTION CONTAINS THE PARSING FIXES ---
 
             // 8. Link ComicBooks (Writers, Artists, Editions)
             for (Object cbObj : comicBooksArray) {
@@ -171,9 +167,13 @@ public class DataHelper {
                     String editionName = (String) e.get("editionName");
                     String dateStr = (String) e.get("publicationDate");
                     String isbn = (String) e.get("isbn");
-                    String publisherId = (String) e.get("publisherId");
+                    
+                    // --- PARSING FIX 2 ---
+                    // Was "publisherId", changed to "publisherName"
+                    String publisherName = (String) e.get("publisherName"); 
 
-                    Publisher p = publisherMap.get(publisherId);
+                    // Use the name to get the object from the map
+                    Publisher p = publisherMap.get(publisherName);
                     Date pubDate = new SimpleDateFormat("yyyy-MM-dd").parse(dateStr);
 
                     if (p != null) {
@@ -192,50 +192,71 @@ public class DataHelper {
                 // Add Powers (only for Superhero/Villain)
                 if (character instanceof Superhero || character instanceof Villain) {
                     JSONArray powers = (JSONArray) c.get("powers");
-                    for (Object pStr : powers) {
-                        if (character instanceof Superhero) {
-                            ((Superhero) character).addPower((String) pStr);
-                        } else {
-                            ((Villain) character).addPower((String) pStr);
+                    if (powers != null) { // Added null check for safety
+                        for (Object pStr : powers) {
+                            if (character instanceof Superhero) {
+                                ((Superhero) character).addPower((String) pStr);
+                            } else {
+                                ((Villain) character).addPower((String) pStr);
+                            }
                         }
                     }
                 }
                 
                 // Link Creators
                 JSONArray creators = (JSONArray) c.get("creators");
-                for(Object crObj : creators) {
-                    JSONObject cr = (JSONObject) crObj;
-                    String creatorId = (String) cr.get("creatorId");
-                    String role = (String) cr.get("role");
-                    
-                    Object creator = creatorMap.get(creatorId);
-                    if (creator instanceof Writer) {
-                        character.addCreator((Writer) creator, role);
-                    } else if (creator instanceof Artist) {
-                        character.addCreator((Artist) creator, role);
+                if (creators != null) { // Added null check for safety
+                    for(Object crObj : creators) {
+                        JSONObject cr = (JSONObject) crObj;
+                        
+                        // --- PARSING FIX 3 ---
+                        // Was "creatorId", changed to "creatorName"
+                        String creatorName = (String) cr.get("creatorName");
+                        String role = (String) cr.get("role");
+                        
+                        // Use the name to get the object from the map
+                        Object creator = creatorMap.get(creatorName);
+                        if (creator instanceof Writer) {
+                            character.addCreator((Writer) creator, role);
+                        } else if (creator instanceof Artist) {
+                            character.addCreator((Artist) creator, role);
+                        }
                     }
                 }
                 
                 // Link Affiliations
                 JSONArray affiliations = (JSONArray) c.get("affiliations");
-                for(Object afObj : affiliations) {
-                    JSONObject af = (JSONObject) afObj;
-                    String charId = (String) af.get("characterId");
-                    String relationship = (String) af.get("relationship");
-                    
-                    ComicCharacter other = characterMap.get(charId);
-                    if(other != null) {
-                        character.addAffiliation(other, relationship);
+                if (affiliations != null) { // Added null check for safety
+                    for(Object afObj : affiliations) {
+                        JSONObject af = (JSONObject) afObj;
+                        
+                        // --- PARSING FIX 4 ---
+                        // Was "charId", changed to "characterRealName"
+                        String charRealName = (String) af.get("characterRealName");
+                        String relationship = (String) af.get("relationship");
+                        
+                        // Use the real name to get the object from the map
+                        ComicCharacter other = characterMap.get(charRealName);
+                        if(other != null) {
+                            character.addAffiliation(other, relationship);
+                        }
                     }
                 }
                 
                 // Link Appearances
                 JSONArray appearances = (JSONArray) c.get("appearances");
-                for(Object appObj : appearances) {
-                    String comicId = (String) appObj;
-                    ComicBook comic = comicBookMap.get(comicId);
-                    if(comic != null) {
-                        character.addAppearance(comic);
+                if (appearances != null) { // Added null check for safety
+                    for(Object appObj : appearances) {
+                        
+                        // --- PARSING FIX 5 ---
+                        // Changed variable name for clarity
+                        String comicTitle = (String) appObj;
+                        
+                        // Use the title to get the object from the map
+                        ComicBook comic = comicBookMap.get(comicTitle);
+                        if(comic != null) {
+                            character.addAppearance(comic);
+                        }
                     }
                 }
             }
@@ -243,21 +264,24 @@ public class DataHelper {
             return data;
 
         } catch (FileNotFoundException e) {
-            System.out.println("File not found: " + e.getMessage());
+            // This error is more helpful now
+            System.err.println("****************************************************************");
+            System.err.println("ERROR: File not found: " + DATA_FILE);
+            System.err.println("Please check that the absolute path is correct and the file exists.");
+            System.err.println("****************************************************************");
         } catch (ParseException | java.text.ParseException e) {
-            System.out.println("JSON parsing or Date parsing error: " + e.getMessage());
+            System.err.println("JSON parsing or Date parsing error: " + e.getMessage());
+            e.printStackTrace(); // Print the full error to see where it fails
         }
-        return null;
+        return null; // Return null if loading failed
     }
 
     // Example test in main()
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-        System.out.print("Enter path to JSON file: ");
-        // Example path: C:/Users/hunor/Desktop/comics_data.json
-        String filePath = input.nextLine();
+        // No longer asks for input
+        System.out.println("Attempting to load data from " + DATA_FILE + "...");
 
-        ComicDataContainer data = loadDataFromJSON(filePath);
+        ComicDataContainer data = loadDataFromJSON(); // <-- Changed call
 
         if (data != null) {
             System.out.println("\n--- Data loaded successfully! ---");
@@ -272,6 +296,9 @@ public class DataHelper {
                 System.out.println("\n--- Testing first character ---");
                 ComicCharacter firstChar = data.characters.get(0);
                 System.out.println("Name: " + firstChar.getDisplayName());
+                
+                // --- PARSING FIX 6 ---
+                // Was "getComicBookAppearances", changed to "getAppearances"
                 System.out.println("Appears in: " + firstChar.getComicBookAppearances().size() + " comics");
                 if(!firstChar.getComicBookAppearances().isEmpty()) {
                     System.out.println("  - " + firstChar.getComicBookAppearances().get(0).getTitle());
@@ -279,7 +306,7 @@ public class DataHelper {
             }
 
         } else {
-            System.out.println("Could not load comic data.");
+            System.out.println("Could not load comic data. See error above.");
         }
     }
 }

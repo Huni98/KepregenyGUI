@@ -23,6 +23,7 @@ import newpackage.CreatorEditor;
 import newpackage.PublisherEditor;
 import newpackage.DataHelper;
 import newpackage.DataHelper.ComicDataContainer;
+import javax.swing.JOptionPane;
 import javax.swing.JFileChooser; // For picking the file
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.File;
@@ -127,50 +128,41 @@ public class MainDashboard extends javax.swing.JFrame {
         publishersTable.clearSelection();
     }
     
+    /**
+     * MODIFIED: This method now loads data from a hardcoded JSON file
+     * automatically on startup.
+     */
     private void loadInitialData() {
         
-        // --- This code opens a file picker dialog ---
-        JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setDialogTitle("Select your comics_data.json file");
-        fileChooser.setFileFilter(new FileNameExtensionFilter("JSON Files", "json"));
-        
-        // Set default directory (optional, but helpful)
-        fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
-        
-        int result = fileChooser.showOpenDialog(this);
-        if (result == JFileChooser.APPROVE_OPTION) {
-            File selectedFile = fileChooser.getSelectedFile();
-            String filePath = selectedFile.getAbsolutePath();
-            
-            // --- Call the DataHelper ---
-            logger.info("Loading data from: " + filePath);
-            ComicDataContainer data = DataHelper.loadDataFromJSON(filePath);
+        // --- Call the DataHelper ---
+        // It will look for "KepregenyAdatok.json" in your project's root folder
+        logger.info("Loading data from KepregenyAdatok.json...");
+        ComicDataContainer data = DataHelper.loadDataFromJSON(); // No path needed
 
-            if (data != null) {
-                // Assign the loaded lists to this dashboard's master lists
-                this.allPublishers = data.publishers;
-                this.allWriters = data.writers;
-                this.allArtists = data.artists;
-                this.allCharacters = data.characters;
-                this.allComicBooks = data.comicBooks;
-                
-                logger.info("Data loaded successfully!");
-                
-                // This call is in setupDataAndTable, but we call it
-                // again here to be safe, since loading is complete.
-                refreshAllTables();
-                
-            } else {
-                logger.severe("Failed to load data from JSON.");
-                JOptionPane.showMessageDialog(this, 
-                        "Could not load data from " + filePath, 
-                        "Load Error", 
-                        JOptionPane.ERROR_MESSAGE);
-            }
+        if (data != null) {
+            // Assign the loaded lists to this dashboard's master lists
+            this.allPublishers = data.publishers;
+            this.allWriters = data.writers;
+            this.allArtists = data.artists;
+            this.allCharacters = data.characters;
+            this.allComicBooks = data.comicBooks;
+            
+            logger.info("Data loaded successfully!");
+            
+            // This call is in setupDataAndTable, but we call it
+            // again here to be safe, since loading is complete.
+            refreshAllTables();
+            
         } else {
-            logger.warning("No file selected. Starting with empty data.");
-            // You can decide to exit or just continue with an empty app
-            // System.exit(0); 
+            logger.severe("Failed to load data from JSON.");
+            // This is the error message you saw, which will appear if the
+            // file is missing or has an error.
+            JOptionPane.showMessageDialog(this, 
+                    "Could not load data from 'KepregenyAdatok.json'.\n" +
+                    "Please make sure the file exists in the project's root folder.", 
+                    "Load Error", 
+                    JOptionPane.ERROR_MESSAGE);
+            // The app will continue with empty lists
         }
     }
     
@@ -188,23 +180,166 @@ public class MainDashboard extends javax.swing.JFrame {
         // ONLY enable the "Add Edition" button if a ComicBook is selected
         addEditionButton.setEnabled(selectedObject instanceof ComicBook);
         
-        // Update the details panel (simple implementation)
-        if (selectedObject != null) {
-            if (selectedObject instanceof ComicBook) {
-                detailsTitleLabel.setText(((ComicBook) selectedObject).getTitle());
-            } else if (selectedObject instanceof ComicCharacter) {
-                detailsTitleLabel.setText(((ComicCharacter) selectedObject).getDisplayName());
-            } else if (selectedObject instanceof Writer) {
-                detailsTitleLabel.setText(((Writer) selectedObject).getName());
-            } else if (selectedObject instanceof Artist) {
-                detailsTitleLabel.setText(((Artist) selectedObject).getName());
-            } else if (selectedObject instanceof Publisher) {
-                detailsTitleLabel.setText(((Publisher) selectedObject).getName());
-            }
+        // --- NEW Details Panel Logic ---
+        if (selectedObject == null) {
+            detailsTextArea.setText("Select an item to see details.");
+        } else if (selectedObject instanceof ComicBook) {
+            // Call the helper for Comic Books
+            detailsTextArea.setText(buildComicBookDetails((ComicBook) selectedObject));
+        } else if (selectedObject instanceof ComicCharacter) {
+            // Call the helper for Characters
+            detailsTextArea.setText(buildCharacterDetails((ComicCharacter) selectedObject));
+        } else if (selectedObject instanceof Writer) {
+            // Call the generic helper for Creators
+            detailsTextArea.setText(buildCreatorDetails(selectedObject));
+        } else if (selectedObject instanceof Artist) {
+            // Call the generic helper for Creators
+            detailsTextArea.setText(buildCreatorDetails(selectedObject));
+        } else if (selectedObject instanceof Publisher) {
+            // Call the helper for Publishers
+            detailsTextArea.setText(buildPublisherDetails((Publisher) selectedObject));
         } else {
-            detailsTitleLabel.setText("Select an item to see details");
+            detailsTextArea.setText("Unknown item selected.");
         }
+        
+        // Reset scrollbar to the top after changing text
+        detailsTextArea.setCaretPosition(0);
     }
+    
+    // --- NEW HELPER METHODS (Add these to your class) ---
+
+    /**
+     * Builds a formatted string for a ComicBook object.
+     * @param comic The ComicBook to display.
+     * @return A formatted string of its details.
+     */
+    private String buildComicBookDetails(ComicBook comic) {
+        StringBuilder sb = new StringBuilder();
+        
+        sb.append("--- COMIC BOOK ---\n");
+        sb.append("Title: ").append(comic.getTitle()).append("\n");
+        sb.append("Genre: ").append(comic.getGenre()).append("\n");
+        
+        sb.append("\nWRITERS:\n");
+        if (comic.getWriters().isEmpty()) {
+            sb.append("  (None listed)\n");
+        } else {
+            for (Writer w : comic.getWriters()) {
+                sb.append("  - ").append(w.getName()).append("\n");
+            }
+        }
+        
+        sb.append("\nARTISTS:\n");
+        if (comic.getArtists().isEmpty()) {
+            sb.append("  (None listed)\n");
+        } else {
+            for (Artist a : comic.getArtists()) {
+                sb.append("  - ").append(a.getName()).append("\n");
+            }
+        }
+        
+        sb.append("\nEDITIONS:\n");
+        if (comic.getEditions().isEmpty()) {
+            sb.append("  (None listed)\n");
+        } else {
+            for (Edition e : comic.getEditions()) {
+                sb.append("  - ").append(e.getEditionName());
+                sb.append(" (").append(e.getPublisher().getName()).append(")\n");
+            }
+        }
+
+        return sb.toString();
+    }
+    
+    /**
+     * Builds a formatted string for a ComicCharacter object.
+     * @param character The ComicCharacter to display.
+     * @return A formatted string of its details.
+     */
+    private String buildCharacterDetails(ComicCharacter character) {
+        StringBuilder sb = new StringBuilder();
+        
+        sb.append("--- CHARACTER ---\n");
+        sb.append("Alias: ").append(character.getDisplayName()).append("\n");
+        sb.append("Real Name: ").append(character.getRealName()).append("\n");
+        sb.append("Type: ").append(character.getClass().getSimpleName()).append("\n");
+        
+        sb.append("\nORIGIN:\n");
+        sb.append(character.getOrigin().isEmpty() ? "  (N/A)" : "  " + character.getOrigin()).append("\n");
+        
+        // Handle powers for Superheroes and Villains
+        if (character instanceof Superhero) {
+            Superhero s = (Superhero) character;
+            sb.append("\nPOWERS:\n");
+            if (s.getPowers().isEmpty()) {
+                sb.append("  (None listed)\n");
+            } else {
+                for (String power : s.getPowers()) {
+                    sb.append("  - ").append(power).append("\n");
+                }
+            }
+        } else if (character instanceof Villain) {
+            Villain v = (Villain) character;
+            sb.append("\nPOWERS:\n");
+            if (v.getPowers().isEmpty()) {
+                sb.append("  (None listed)\n");
+            } else {
+                for (String power : v.getPowers()) {
+                    sb.append("  - ").append(power).append("\n");
+                }
+            }
+        }
+
+        sb.append("\nAPPEARANCES:\n");
+        if (character.getComicBookAppearances().isEmpty()) {
+            sb.append("  (None listed)\n");
+        } else {
+            for (ComicBook c : character.getComicBookAppearances()) {
+                sb.append("  - ").append(c.getTitle()).append("\n");
+            }
+        }
+        
+        return sb.toString();
+    }
+    
+    /**
+     * Builds a formatted string for a Writer or Artist object.
+     * @param creator The Writer or Artist object.
+     * @return A formatted string of their details.
+     */
+    private String buildCreatorDetails(Object creator) {
+        StringBuilder sb = new StringBuilder();
+        
+        if (creator instanceof Writer) {
+            Writer w = (Writer) creator;
+            sb.append("--- WRITER ---\n");
+            sb.append("Name: ").append(w.getName()).append("\n");
+            sb.append("Nationality: ").append(w.getNationality()).append("\n");
+        } else if (creator instanceof Artist) {
+            Artist a = (Artist) creator;
+            sb.append("--- ARTIST ---\n");
+            sb.append("Name: ").append(a.getName()).append("\n");
+            sb.append("Nationality: ").append(a.getNationality()).append("\n");
+        }
+        
+        return sb.toString();
+    }
+    
+    /**
+     * Builds a formatted string for a Publisher object.
+     * @param pub The Publisher to display.
+     * @return A formatted string of its details.
+     */
+    private String buildPublisherDetails(Publisher pub) {
+        StringBuilder sb = new StringBuilder();
+        
+        sb.append("--- PUBLISHER ---\n");
+        sb.append("Name: ").append(pub.getName()).append("\n");
+        sb.append("Country: ").append(pub.getCountry()).append("\n");
+        
+        return sb.toString();
+    }
+    
     
     /**
      * Helper method to get a displayable publisher name for a ComicBook.
@@ -393,7 +528,8 @@ public class MainDashboard extends javax.swing.JFrame {
         jScrollPane4 = new javax.swing.JScrollPane();
         publishersTable = new javax.swing.JTable();
         detailsPanel = new javax.swing.JPanel();
-        detailsTitleLabel = new javax.swing.JLabel();
+        detailsScrollPane = new javax.swing.JScrollPane();
+        detailsTextArea = new javax.swing.JTextArea();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
         menuItemExit = new javax.swing.JMenuItem();
@@ -485,13 +621,13 @@ public class MainDashboard extends javax.swing.JFrame {
 
         comicBooksTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"", null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {"", null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Title", "Genre", "Publisher", "Edition"
+                "Title", "Genre", "Publisher"
             }
         ));
         comicBookTableScrollPanel.setViewportView(comicBooksTable);
@@ -619,8 +755,14 @@ public class MainDashboard extends javax.swing.JFrame {
 
         detailsPanel.setLayout(new java.awt.BorderLayout());
 
-        detailsTitleLabel.setText("Select an item to see details");
-        detailsPanel.add(detailsTitleLabel, java.awt.BorderLayout.NORTH);
+        detailsTextArea.setEditable(false);
+        detailsTextArea.setColumns(20);
+        detailsTextArea.setLineWrap(true);
+        detailsTextArea.setRows(5);
+        detailsTextArea.setWrapStyleWord(true);
+        detailsScrollPane.setViewportView(detailsTextArea);
+
+        detailsPanel.add(detailsScrollPane, java.awt.BorderLayout.CENTER);
 
         fileMenu.setText("File");
         fileMenu.addActionListener(new java.awt.event.ActionListener() {
@@ -690,7 +832,7 @@ public class MainDashboard extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(mainPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 527, Short.MAX_VALUE)
+            .addComponent(mainPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(detailsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -919,7 +1061,8 @@ public class MainDashboard extends javax.swing.JFrame {
     private javax.swing.JTable comicBooksTable;
     private javax.swing.JButton deleteButton;
     private javax.swing.JPanel detailsPanel;
-    private javax.swing.JLabel detailsTitleLabel;
+    private javax.swing.JScrollPane detailsScrollPane;
+    private javax.swing.JTextArea detailsTextArea;
     private javax.swing.JButton editButton;
     private javax.swing.JMenu fileMenu;
     private javax.swing.JScrollPane jScrollPane1;
