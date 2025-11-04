@@ -10,6 +10,7 @@ package newpackage;
  * @author hunor
  */
 
+import MainDashboard.MainDashboard;
 import ro.madarash.kepregeny_project.*;
 import javax.swing.*;
 import java.awt.*;
@@ -24,6 +25,7 @@ public class CreatorEditor extends javax.swing.JDialog {
      */
     public CreatorEditor(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
+        setLocationRelativeTo(parent);
         initComponents();
     }
 
@@ -156,6 +158,7 @@ public class CreatorEditor extends javax.swing.JDialog {
             
             // TODO: Create a new Writer object from your logic JAR
             Writer newWriter = new Writer(name, nationality);
+            ((MainDashboard) getParent()).addWriter(newWriter);
             System.out.println("Saving new Writer: " + name + " (" + nationality + ")");
             
             // TODO: Add this newWriter object to your main data list in MainDashboard
@@ -164,6 +167,7 @@ public class CreatorEditor extends javax.swing.JDialog {
             
             // TODO: Create a new Artist object from your logic JAR
             Artist newArtist = new Artist(name, nationality);
+            ((MainDashboard) getParent()).addArtist(newArtist);
             System.out.println("Saving new Artist: " + name + " (" + nationality + ")");
 
             // TODO: Add this newArtist object to your main data list in MainDashboard

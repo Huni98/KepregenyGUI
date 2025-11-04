@@ -10,11 +10,18 @@ package newpackage;
  * @author hunor
  */
 //import *;
+import MainDashboard.MainDashboard;
 import java.awt.Component;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.DefaultListCellRenderer;
+import javax.swing.JFrame;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import newpackage.CharacterEditor.ComicObjectRenderer;
 import ro.madarash.kepregeny_project.*;
 
@@ -25,17 +32,33 @@ public class EditionEditor extends javax.swing.JDialog {
     /**
      * Creates new form EditionEditor
      */
-    public EditionEditor(java.awt.Frame parent, boolean modal) {
+    
+    private ComicBook parentComicBook;
+    
+    public EditionEditor(java.awt.Frame parent, boolean modal, 
+                         ComicBook parentComic, List<Publisher> allPublishers) {
+        
         super(parent, modal);
+        
+        // --- NEW: Save the parent comic ---
+        if (parentComic == null) {
+            throw new IllegalArgumentException("parentComic cannot be null.");
+        }
+        this.parentComicBook = parentComic;
+        
+        // This method builds the form's layout and components
         initComponents();
-        
-        // --- NEW: Setup the ComboBox ---
-        
-        // 1. Set the custom renderer to display names correctly
+
+        // --- NEW: Set the Custom Renderer for the JComboBox ---
         publisherComboBox.setRenderer(new ComicObjectRenderer());
         
-        // 2. Populate the combo box with the list of publishers
-        populatePublisherComboBox(availablePublishers);
+        // --- NEW: Populate the JComboBox ---
+        publisherComboBox.setModel(new DefaultComboBoxModel<>(
+                allPublishers.toArray(new Publisher[0])
+        ));
+
+        // Set the title to show which comic is being edited
+        setTitle("Add Edition for: " + parentComicBook.getTitle());
 
         // Center the dialog on top of its parent (MainDashboard)
         setLocationRelativeTo(parent);
@@ -74,11 +97,11 @@ public class EditionEditor extends javax.swing.JDialog {
         editionNameLabel = new javax.swing.JLabel();
         editionNameField = new javax.swing.JTextField();
         publisherLabel = new javax.swing.JLabel();
-        countryField = new javax.swing.JTextField();
+        isbnField = new javax.swing.JTextField();
         publisherComboBox = new javax.swing.JComboBox<>();
         isbnLabel = new javax.swing.JLabel();
-        publicationDateSpinner = new javax.swing.JSpinner();
-        publicationDateLabel = new javax.swing.JLabel();
+        dateLabel = new javax.swing.JLabel();
+        dateField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -133,7 +156,7 @@ public class EditionEditor extends javax.swing.JDialog {
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        mainFormPanel.add(countryField, gridBagConstraints);
+        mainFormPanel.add(isbnField, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 1;
@@ -150,22 +173,20 @@ public class EditionEditor extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         mainFormPanel.add(isbnLabel, gridBagConstraints);
 
-        publicationDateSpinner.setModel(new javax.swing.SpinnerDateModel());
+        dateLabel.setText("Publication Date:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        mainFormPanel.add(dateLabel, gridBagConstraints);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 3;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        mainFormPanel.add(publicationDateSpinner, gridBagConstraints);
-
-        publicationDateLabel.setText("Publication Date:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 3;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
-        mainFormPanel.add(publicationDateLabel, gridBagConstraints);
+        mainFormPanel.add(dateField, gridBagConstraints);
 
         getContentPane().add(mainFormPanel, java.awt.BorderLayout.CENTER);
 
@@ -179,17 +200,59 @@ public class EditionEditor extends javax.swing.JDialog {
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
         // TODO add your handling code here:
+        String editionName = editionNameField.getText();
+        String isbn = isbnField.getText();
+        String dateStr = dateField.getText();
+        
+        // Get the *selected objects* from the dropdown
+        Publisher selectedPublisher = (Publisher) publisherComboBox.getSelectedItem();
+
+        // 2. Validate data
+        if (editionName.isBlank()) {
+            JOptionPane.showMessageDialog(this, "Edition Name cannot be empty.", "Validation Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (selectedPublisher == null) {
+            JOptionPane.showMessageDialog(this, "You must select a Publisher.", "Validation Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        // 3. Parse the date (this is a simple, strict parser)
+        Date pubDate;
+        try {
+            // Force the user to use YYYY-MM-DD format
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            sdf.setLenient(false); // Don't allow "2023-02-30"
+            pubDate = sdf.parse(dateStr);
+        } catch (ParseException e) {
+            JOptionPane.showMessageDialog(this, 
+                    "Invalid date format. Please use YYYY-MM-DD.", 
+                    "Validation Error", 
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // 4. Create a new Edition object (from your logic JAR)
+        // ** NEW: We use this.parentComicBook instead of getting from a dropdown **
+        Edition newEdition = new Edition(editionName, pubDate, isbn, selectedPublisher, this.parentComicBook);
+        
+        // 5. Link the edition to its parent comic
+        this.parentComicBook.addEdition(newEdition);
+        
+        System.out.println("Saving new edition: " + newEdition.getEditionName() + " for comic " + this.parentComicBook.getTitle());
+
+        // 6. TODO: Add the 'newEdition' to your main data list in MainDashboard
+        // ((MainDashboard) getParent()).addEditionToList(newEdition);
+        //((MainDashboard) getParent()).refreshTable();
+        
+        // 7. Close the dialog
+        this.dispose();
     }//GEN-LAST:event_saveButtonActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -197,16 +260,36 @@ public class EditionEditor extends javax.swing.JDialog {
                     break;
                 }
             }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (Exception ex) {
+            java.util.logging.Logger.getLogger(EditionEditor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
 
-        /* Create and display the dialog */
+        /* Create and display the dialog for testing */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            @Override
             public void run() {
-                EditionEditor dialog = new EditionEditor(new javax.swing.JFrame(), true);
+                
+                // --- Create Dummy Data for Testing ---
+                
+                // ** NEW: We must create a parent comic to pass to the constructor **
+                ComicBook testComic = new ComicBook("The Killing Joke", "Superhero");
+                //ComicBook testComic = null; // Replace with a real object to test
+                
+                List<Publisher> testPublishers = new ArrayList<>();
+                testPublishers.add(new Publisher("DC Comics", "USA"));
+                testPublishers.add(new Publisher("Marvel Comics", "USA"));
+                
+                // --- Create the dialog and pass the test data ---
+                // The main frame (parent)
+                JFrame testFrame = new javax.swing.JFrame();
+                
+                // Check if testComic is null before creating
+                if (testComic == null) {
+                    System.err.println("Cannot run test: testComic is null. Please instantiate it in the main method.");
+                    System.exit(1);
+                }
+                
+                EditionEditor dialog = new EditionEditor(testFrame, true, testComic, testPublishers);
+                
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -239,13 +322,13 @@ public class EditionEditor extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel buttonPanel;
     private javax.swing.JButton cancelButton;
-    private javax.swing.JTextField countryField;
+    private javax.swing.JTextField dateField;
+    private javax.swing.JLabel dateLabel;
     private javax.swing.JTextField editionNameField;
     private javax.swing.JLabel editionNameLabel;
+    private javax.swing.JTextField isbnField;
     private javax.swing.JLabel isbnLabel;
     private javax.swing.JPanel mainFormPanel;
-    private javax.swing.JLabel publicationDateLabel;
-    private javax.swing.JSpinner publicationDateSpinner;
     private javax.swing.JComboBox<Publisher> publisherComboBox;
     private javax.swing.JLabel publisherLabel;
     private javax.swing.JButton saveButton;

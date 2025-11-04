@@ -9,6 +9,7 @@ package newpackage;
  * @author hunor
  */
 
+import MainDashboard.MainDashboard;
 import ro.madarash.kepregeny_project.*;
 import javax.swing.*;
 import java.awt.*;
@@ -112,6 +113,7 @@ public class PublisherEditor extends javax.swing.JDialog {
 
     private void cancelButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelButtonActionPerformed
         // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_cancelButtonActionPerformed
 
     /**
@@ -138,6 +140,7 @@ public class PublisherEditor extends javax.swing.JDialog {
         // 4. TODO: Add the new publisher to your main data list
         // (This requires a method in MainDashboard to pass the list,
         // or using a central data controller)
+        ((MainDashboard) getParent()).addPublisher(newPublisher);
 
         // 5. Close the dialog
         this.dispose();

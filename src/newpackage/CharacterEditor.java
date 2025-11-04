@@ -10,11 +10,13 @@ package newpackage;
  * @author hunor
  */
 
+import MainDashboard.MainDashboard;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.util.List;
 import javax.swing.BorderFactory;
 import javax.swing.DefaultListCellRenderer;
 import javax.swing.DefaultListModel;
@@ -30,6 +32,14 @@ public class CharacterEditor extends javax.swing.JDialog {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CharacterEditor.class.getName());
 
+    
+    // --- NEW: Add fields to store the master lists ---
+    private List<ComicCharacter> allCharacters;
+    private List<Writer> allWriters;
+    private List<Artist> allArtists;
+    private List<ComicBook> allComicBooks;
+    
+    
     /**
      * Creates new form CharacterEditor
      */
@@ -39,6 +49,30 @@ public class CharacterEditor extends javax.swing.JDialog {
         
         setupListModels();
         
+        loadAvailableListsData();
+        
+        setLocationRelativeTo(parent);
+    }
+    
+    public CharacterEditor(java.awt.Frame parent, boolean modal,
+                           List<ComicCharacter> allCharacters,
+                           List<Writer> allWriters,
+                           List<Artist> allArtists,
+                           List<ComicBook> allComicBooks) {
+        
+        super(parent, modal);
+        
+        // --- NEW: Save the passed-in lists ---
+        this.allCharacters = allCharacters;
+        this.allWriters = allWriters;
+        this.allArtists = allArtists;
+        this.allComicBooks = allComicBooks;
+        
+        initComponents();
+        
+        setupListModels();
+        
+        // This will now use the real data
         loadAvailableListsData();
         
         setLocationRelativeTo(parent);
@@ -78,25 +112,98 @@ public class CharacterEditor extends javax.swing.JDialog {
     
     private void loadAvailableListsData() {
         // --- Dummy Power Data ---
+        allPowersModel.clear();
+        
+        allPowersModel.addElement("Acid Spit");
+        allPowersModel.addElement("Agility (Superhuman)");
+        allPowersModel.addElement("Animal Communication");
+        allPowersModel.addElement("Astral Projection");
+        allPowersModel.addElement("Atmokinesis (Weather Control)");
+        allPowersModel.addElement("Camouflage/Invisibility");
+        allPowersModel.addElement("Cryokinesis (Ice Control)");
+        allPowersModel.addElement("Density Control");
+        allPowersModel.addElement("Durability (Superhuman)");
+        allPowersModel.addElement("Elasticity");
+        allPowersModel.addElement("Electrokinesis (Electricity Control)");
+        allPowersModel.addElement("Energy Absorption");
+        allPowersModel.addElement("Energy Blasts");
+        allPowersModel.addElement("Explosion Manipulation");
         allPowersModel.addElement("Flight");
+        allPowersModel.addElement("Force Fields");
+        allPowersModel.addElement("Gadgets (High-Tech)");
+        allPowersModel.addElement("Geokinesis (Earth Control)");
+        allPowersModel.addElement("Gravity Manipulation");
+        allPowersModel.addElement("Healing Factor (Regeneration)");
+        allPowersModel.addElement("Heat Vision");
+        allPowersModel.addElement("Hydrokinesis (Water Control)");
+        allPowersModel.addElement("Illusion Casting");
+        allPowersModel.addElement("Intangibility (Phasing)");
+        allPowersModel.addElement("Invisibility");
+        allPowersModel.addElement("Invulnerability");
+        allPowersModel.addElement("Light Manipulation (Photokinesis)");
+        allPowersModel.addElement("Magic/Sorcery");
+        allPowersModel.addElement("Magnetism Manipulation");
+        allPowersModel.addElement("Marksmanship (Superhuman)");
+        allPowersModel.addElement("Mind Control");
+        allPowersModel.addElement("Pheromone Control");
+        allPowersModel.addElement("Plant Control");
+        allPowersModel.addElement("Power Absorption");
+        allPowersModel.addElement("Power Mimicry");
+        allPowersModel.addElement("Precognition (Future Sight)");
+        allPowersModel.addElement("Psychic Blasts");
+        allPowersModel.addElement("Pyrokinesis (Fire Control)");
+        allPowersModel.addElement("Reality Warping");
+        allPowersModel.addElement("Reflexes (Superhuman)");
+        allPowersModel.addElement("Shadow Manipulation (Umbrakinesis)");
+        allPowersModel.addElement("Shapeshifting");
+        allPowersModel.addElement("Shrinking / Size Alteration");
+        allPowersModel.addElement("Sonic Scream");
+        allPowersModel.addElement("Stamina (Superhuman)");
+        allPowersModel.addElement("Super Senses");
+        allPowersModel.addElement("Super Speed");
         allPowersModel.addElement("Super Strength");
+        allPowersModel.addElement("Technopathy (Machine Control)");
+        allPowersModel.addElement("Telekinesis");
         allPowersModel.addElement("Telepathy");
-        allPowersModel.addElement("Gadgets");
+        allPowersModel.addElement("Teleportation");
+        allPowersModel.addElement("Time Manipulation");
+        allPowersModel.addElement("Toxicity/Poison Generation");
+        allPowersModel.addElement("Wall-Crawling");
+        allPowersModel.addElement("X-Ray Vision");
         
-        // --- Dummy Affiliation (Character) Data ---
-        // We are creating new "dummy" objects. You would get these from your main list.
-        allAffiliationsModel.addElement(new Superhero("Peter Parker", "...", "Spider-Man"));
-        allAffiliationsModel.addElement(new Civilian("Mary Jane Watson", "..."));
-        allAffiliationsModel.addElement(new Villain("Norman Osborn", "...", "Green Goblin"));
         
-        // --- Dummy Creator Data ---
-        // allCreatorsModel.addElement(new Writer("Stan Lee", "USA"));
-        // allCreatorsModel.addElement(new Artist("Steve Ditko", "USA"));
-        // allCreatorsModel.addElement(new Writer("Alan Moore", "UK"));
+        allAffiliationsModel.clear();
+        if (allCharacters != null) {
+            for (ComicCharacter character : allCharacters) {
+                // TODO: Add a check here if you are in "Edit" mode
+                // to prevent a character from being affiliated with itself.
+                // if (characterToEdit != null && character.equals(characterToEdit)) {
+                //    continue; // Skip
+                // }
+                allAffiliationsModel.addElement(character);
+            }
+        }
         
-        // --- Dummy Appearance (ComicBook) Data ---
-        // allAppearancesModel.addElement(new ComicBook("Amazing Fantasy #15", "Superhero"));
-        // allAppearancesModel.addElement(new ComicBook("The Killing Joke", "Superhero"));
+        
+        allCreatorsModel.clear();
+        if (allWriters != null) {
+            for (Writer writer : allWriters) {
+                allCreatorsModel.addElement(writer);
+            }
+        }
+        if (allArtists != null) {
+            for (Artist artist : allArtists) {
+                allCreatorsModel.addElement(artist);
+            }
+        }
+        
+        
+        allAppearancesModel.clear(); 
+        if (allComicBooks != null) {
+            for (ComicBook comic : allComicBooks) {
+                allAppearancesModel.addElement(comic);
+            }
+        }
     }
 
     /**
@@ -506,9 +613,9 @@ public class CharacterEditor extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(this, "Real Name cannot be empty.", "Validation Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        if (alignmentString.equals("HERO") || alignmentString.equals("VILLAIN") || alignmentString.equals("ANTIHERO")) {
+        if (alignmentString.equals("SUPERHERO") || alignmentString.equals("VILLAIN")) {
             if (alias.isBlank()) {
-                JOptionPane.showMessageDialog(this, "Alias cannot be empty for a Hero, Villain, or Anti-Hero.", "Validation Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Alias cannot be empty for a Superhero or Villain.", "Validation Error", JOptionPane.ERROR_MESSAGE);
                 return;
             }
         }
@@ -517,8 +624,7 @@ public class CharacterEditor extends javax.swing.JDialog {
         ComicCharacter newCharacter = null; 
         
         switch (alignmentString) {
-            case "HERO":
-            case "ANTIHERO": 
+            case "SUPERHERO":
                 newCharacter = new Superhero(realName, origin, alias);
                 System.out.println("Saving new Superhero: " + alias);
                 break;
@@ -527,7 +633,6 @@ public class CharacterEditor extends javax.swing.JDialog {
                 System.out.println("Saving new Villain: " + alias);
                 break;
             case "CIVILIAN":
-            case "NEUTRAL":
             default:
                 newCharacter = new Civilian(realName, origin);
                 System.out.println("Saving new Civilian: " + realName);
@@ -553,20 +658,16 @@ public class CharacterEditor extends javax.swing.JDialog {
         // -- Save Affiliations --
         for (int i = 0; i < charAffiliationsModel.getSize(); i++) {
             ComicCharacter affiliatedChar = charAffiliationsModel.getElementAt(i);
-            // TODO: You need a way to define the relationship type!
-            // This is a design decision. For now, I'll hardcode "Ally".
-            // You could add a text field next to the list for this.
-            newCharacter.addAffiliation(affiliatedChar, "Ally");
+            newCharacter.addAffiliation(affiliatedChar, "Ally"); // Hardcoded "Ally"
         }
         
         // -- Save Creators --
         for (int i = 0; i < charCreatorsModel.getSize(); i++) {
             Object creator = charCreatorsModel.getElementAt(i);
-            // TODO: Also need to define the relationship type, e.g., "Co-creator"
             if (creator instanceof Writer) {
-                newCharacter.addCreator((Writer) creator, "Co-creator");
+                newCharacter.addCreator((Writer) creator, "Co-creator"); // Hardcoded "Co-creator"
             } else if (creator instanceof Artist) {
-                newCharacter.addCreator((Artist) creator, "Co-creator");
+                newCharacter.addCreator((Artist) creator, "Co-creator"); // Hardcoded "Co-creator"
             }
         }
         
@@ -578,6 +679,7 @@ public class CharacterEditor extends javax.swing.JDialog {
         
         // 5. TODO: Add the 'newCharacter' to your main data list in MainDashboard
         // ((MainDashboard) getParent()).addCharacterToList(newCharacter);
+        ((MainDashboard) getParent()).addCharacter(newCharacter);
         
         // 6. Close the dialog
         this.dispose();
@@ -699,7 +801,7 @@ public class CharacterEditor extends javax.swing.JDialog {
                 setText(((Writer) value).getName());
             } else if (value instanceof Artist) {
                 setText(((Artist) value).getName());
-            } else if (value instanceof Character) {
+            } else if (value instanceof ComicCharacter) {
                 setText(((ComicCharacter) value).getDisplayName());
             } else if (value instanceof ComicBook) {
                 setText(((ComicBook) value).getTitle());
