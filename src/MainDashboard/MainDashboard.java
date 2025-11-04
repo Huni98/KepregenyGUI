@@ -324,6 +324,23 @@ public class MainDashboard extends javax.swing.JFrame {
             }
         }
         
+        // --- NEW: Display Affiliations (Team Names) ---
+        sb.append("\nAFFILIATIONS:\n");
+        List<String> teamAffiliations = null;
+        if (character instanceof Superhero) {
+            teamAffiliations = ((Superhero) character).getAffiliations();
+        } else if (character instanceof Villain) {
+            teamAffiliations = ((Villain) character).getAffiliations();
+        }
+
+        if (teamAffiliations == null || teamAffiliations.isEmpty()) {
+            sb.append("  (None listed)\n");
+        } else {
+            for (String team : teamAffiliations) {
+                sb.append("  - ").append(team).append("\n");
+            }
+        }
+        
         return sb.toString();
     }
     

@@ -643,7 +643,7 @@ public class CharacterEditor extends javax.swing.JDialog {
         // -- Save Affiliations --
         for (int i = 0; i < charAffiliationsModel.getSize(); i++) {
             ComicCharacter affiliatedChar = charAffiliationsModel.getElementAt(i);
-            newCharacter.addAffiliation(affiliatedChar, "Ally"); // Hardcoded "Ally"
+            newCharacter.addCharacterAffiliation(affiliatedChar, "Ally"); // Hardcoded "Ally"
         }
         
         // -- Save Creators --
