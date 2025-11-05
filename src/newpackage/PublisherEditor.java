@@ -13,6 +13,9 @@ import MainDashboard.MainDashboard;
 import ro.madarash.kepregeny_project.*;
 import javax.swing.*;
 import java.awt.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class PublisherEditor extends javax.swing.JDialog {
     
@@ -62,6 +65,12 @@ public class PublisherEditor extends javax.swing.JDialog {
         if (this.publisherToEdit != null) {
             nameField.setText(this.publisherToEdit.getName());
             countryField.setText(this.publisherToEdit.getCountry());
+            
+            
+            if (this.publisherToEdit.getFoundationYear() != null) {
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                foundationTextField.setText(sdf.format(this.publisherToEdit.getFoundationYear()));
+            }
         }
     }
 
@@ -83,6 +92,8 @@ public class PublisherEditor extends javax.swing.JDialog {
         nameField = new javax.swing.JTextField();
         countryLabel = new javax.swing.JLabel();
         countryField = new javax.swing.JTextField();
+        foundationLabel = new javax.swing.JLabel();
+        foundationTextField = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Publisher Editor");
@@ -91,6 +102,11 @@ public class PublisherEditor extends javax.swing.JDialog {
         buttonPanel.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.RIGHT));
 
         saveButton.setText("Save");
+        saveButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                saveButtonActionPerformed(evt);
+            }
+        });
         buttonPanel.add(saveButton);
 
         cancelButton.setText("Cancel");
@@ -136,6 +152,19 @@ public class PublisherEditor extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         mainFormPanel.add(countryField, gridBagConstraints);
 
+        foundationLabel.setText("Foundation Year");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        mainFormPanel.add(foundationLabel, gridBagConstraints);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
+        mainFormPanel.add(foundationTextField, gridBagConstraints);
+
         getContentPane().add(mainFormPanel, java.awt.BorderLayout.CENTER);
 
         pack();
@@ -146,13 +175,12 @@ public class PublisherEditor extends javax.swing.JDialog {
         this.dispose();
     }//GEN-LAST:event_cancelButtonActionPerformed
 
-    /**
-     * Called when the "Save" button is clicked.
-     */
-    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {
+    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
+        // TODO add your handling code here:
         // 1. Get the data from the text fields
         String publisherName = nameField.getText();
         String country = countryField.getText();
+        String dateStr = foundationTextField.getText();
 
         // 2. Validate the data
         if (publisherName.isBlank()) {
@@ -162,6 +190,20 @@ public class PublisherEditor extends javax.swing.JDialog {
                     JOptionPane.ERROR_MESSAGE);
             return; // Stop
         }
+        
+        Date foundDate;
+        try {
+            // Force the user to use YYYY-MM-DD format
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            sdf.setLenient(false); // Don't allow "2023-02-30"
+            foundDate = sdf.parse(dateStr);
+        } catch (ParseException e) {
+            JOptionPane.showMessageDialog(this, 
+                    "Invalid date format. Please use YYYY-MM-DD.", 
+                    "Validation Error", 
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
 
         // 3. Check if we are in "Edit Mode" or "Create Mode"
         if (publisherToEdit != null) {
@@ -170,11 +212,67 @@ public class PublisherEditor extends javax.swing.JDialog {
             // Update the existing object's properties
             publisherToEdit.setName(publisherName);
             publisherToEdit.setCountry(country);
+            publisherToEdit.setFoundationYear(foundDate);
             
         } else {
             // --- CREATE MODE ---
             // Create a new Publisher object
-            Publisher newPublisher = new Publisher(publisherName, country);
+            Publisher newPublisher = new Publisher(publisherName, country, foundDate);
+            logger.info("Saving new publisher: " + publisherName);
+
+            // Add the new publisher to the main list
+            ((MainDashboard) getParent()).addPublisher(newPublisher);
+        }
+
+        // 4. Close the dialog
+        this.dispose();
+    }//GEN-LAST:event_saveButtonActionPerformed
+
+    /**
+     * Called when the "Save" button is clicked.
+     
+    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {
+        // 1. Get the data from the text fields
+        String publisherName = nameField.getText();
+        String country = countryField.getText();
+        String dateStr = foundationTextField.getText();
+
+        // 2. Validate the data
+        if (publisherName.isBlank()) {
+            JOptionPane.showMessageDialog(this,
+                    "Publisher Name cannot be empty.",
+                    "Validation Error",
+                    JOptionPane.ERROR_MESSAGE);
+            return; // Stop
+        }
+        
+        Date foundDate;
+        try {
+            // Force the user to use YYYY-MM-DD format
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            sdf.setLenient(false); // Don't allow "2023-02-30"
+            foundDate = sdf.parse(dateStr);
+        } catch (ParseException e) {
+            JOptionPane.showMessageDialog(this, 
+                    "Invalid date format. Please use YYYY-MM-DD.", 
+                    "Validation Error", 
+                    JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+        // 3. Check if we are in "Edit Mode" or "Create Mode"
+        if (publisherToEdit != null) {
+            // --- EDIT MODE ---
+            logger.info("Updating publisher: " + publisherToEdit.getName());
+            // Update the existing object's properties
+            publisherToEdit.setName(publisherName);
+            publisherToEdit.setCountry(country);
+            publisherToEdit.setFoundationYear(foundDate);
+            
+        } else {
+            // --- CREATE MODE ---
+            // Create a new Publisher object
+            Publisher newPublisher = new Publisher(publisherName, country, foundDate);
             logger.info("Saving new publisher: " + publisherName);
 
             // Add the new publisher to the main list
@@ -184,10 +282,8 @@ public class PublisherEditor extends javax.swing.JDialog {
         // 4. Close the dialog
         this.dispose();
     }
-
-    /**
-     * Called when the "Cancel" button is clicked.
-     */
+*/
+    
 
     /**
      * @param args the command line arguments
@@ -228,6 +324,8 @@ public class PublisherEditor extends javax.swing.JDialog {
     private javax.swing.JButton cancelButton;
     private javax.swing.JTextField countryField;
     private javax.swing.JLabel countryLabel;
+    private javax.swing.JLabel foundationLabel;
+    private javax.swing.JTextField foundationTextField;
     private javax.swing.JPanel mainFormPanel;
     private javax.swing.JTextField nameField;
     private javax.swing.JLabel nameLabel;

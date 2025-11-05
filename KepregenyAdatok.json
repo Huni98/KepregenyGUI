@@ -658,7 +658,14 @@
       "genre": "Various",
       "writerNames": [],
       "artistNames": [],
-      "editions": []
+      "editions": [
+        {
+          "editionName": "First Edition",
+          "publicationDate": "2026-02-20",
+          "isbn": "",
+          "publisherName": "AfterShock Comics"
+        }
+      ]
     },
     {
       "title": "Daredevil #1",
@@ -1135,6 +1142,20 @@
       "writerNames": [],
       "artistNames": [],
       "editions": []
+    },
+    {
+      "title": "Batman Returns",
+      "genre": "superhero",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": [
+        {
+          "editionName": "Hardback",
+          "publicationDate": "2025-11-05",
+          "isbn": "N/A",
+          "publisherName": "DC Comics"
+        }
+      ]
     }
   ],
   "characters": [
@@ -1328,7 +1349,8 @@
       ],
       "characterAffiliations": [],
       "appearances": [
-        "Detective Comics #27"
+        "Detective Comics #27",
+        "Batman Returns"
       ]
     },
     {
@@ -2652,7 +2674,9 @@
       "creators": [],
       "affiliations": [],
       "characterAffiliations": [],
-      "appearances": []
+      "appearances": [
+        "Batman Returns"
+      ]
     },
     {
       "type": "SUPERHERO",
@@ -2679,7 +2703,9 @@
       "creators": [],
       "affiliations": [],
       "characterAffiliations": [],
-      "appearances": []
+      "appearances": [
+        "Batman Returns"
+      ]
     },
     {
       "type": "SUPERHERO",
@@ -2873,7 +2899,8 @@
       ],
       "characterAffiliations": [],
       "appearances": [
-        "Action Comics #1"
+        "Action Comics #1",
+        "Batman Returns"
       ]
     },
     {
@@ -2943,7 +2970,9 @@
       "creators": [],
       "affiliations": [],
       "characterAffiliations": [],
-      "appearances": []
+      "appearances": [
+        "Batman Returns"
+      ]
     },
     {
       "type": "SUPERHERO",

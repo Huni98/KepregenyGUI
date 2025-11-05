@@ -378,6 +378,7 @@ public class MainDashboard extends javax.swing.JFrame {
         sb.append("--- PUBLISHER ---\n");
         sb.append("Name: ").append(pub.getName()).append("\n");
         sb.append("Country: ").append(pub.getCountry()).append("\n");
+        sb.append("Foundation Year:").append(pub.getFoundationYear()).append("\n");
         
         return sb.toString();
     }
