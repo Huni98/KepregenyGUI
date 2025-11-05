@@ -378,6 +378,7 @@ public class MainDashboard extends javax.swing.JFrame {
         sb.append("--- PUBLISHER ---\n");
         sb.append("Name: ").append(pub.getName()).append("\n");
         sb.append("Country: ").append(pub.getCountry()).append("\n");
+        sb.append("Foundation Year:").append(pub.getFoundationYear()).append("\n");
         
         return sb.toString();
     }
@@ -937,20 +938,62 @@ public class MainDashboard extends javax.swing.JFrame {
     }//GEN-LAST:event_menuItemAddComicActionPerformed
 
     private void editButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_editButtonActionPerformed
-        // TODO add your handling code here:
         Object selectedObject = getSelectedObject();
-        if (selectedObject == null) return;
+        if (selectedObject == null) {
+            return; // Nothing selected
+        }
+
+        // --- NEW EDIT LOGIC ---
         
-        // TODO: Implement Edit Logic
-        // To do this, you would need to create new constructors for your
-        // editors that accept an object to edit, for example:
-        // new PublisherEditor(this, true, publisherToEdit)
-        //
-        // Your current editors are only designed to create *new* items.
+        // 1. Determine which editor to open
+        if (selectedObject instanceof Publisher) {
+            // Open PublisherEditor in "edit mode"
+            PublisherEditor pubEditor = new PublisherEditor(this, true, (Publisher) selectedObject);
+            pubEditor.setVisible(true);
+            
+        } else if (selectedObject instanceof Writer) {
+            // Open CreatorEditor in "edit mode" for a Writer
+            CreatorEditor creatorEditor = new CreatorEditor(this, true, (Writer) selectedObject);
+            creatorEditor.setVisible(true);
+            
+        } else if (selectedObject instanceof Artist) {
+            // Open CreatorEditor in "edit mode" for an Artist
+            CreatorEditor creatorEditor = new CreatorEditor(this, true, (Artist) selectedObject);
+            creatorEditor.setVisible(true);
+            
+        } else if (selectedObject instanceof ComicCharacter) {
+            // Open CharacterEditor in "edit mode"
+            CharacterEditor charEditor = new CharacterEditor(
+                this, 
+                true, 
+                allCharacters,
+                allWriters,
+                allArtists,
+                allComicBooks,
+                (ComicCharacter) selectedObject // <-- Pass the character to edit
+            );
+            charEditor.setVisible(true);
+            
+        } else if (selectedObject instanceof ComicBook) {
+            // Open ComicBookEditor in "edit mode"
+            ComicBookEditor comicEditor = new ComicBookEditor(
+                this, 
+                true, 
+                allWriters, 
+                allArtists,
+                allCharacters,
+                allPublishers,
+                (ComicBook) selectedObject // <-- Pass the comic to edit
+            );
+            comicEditor.setVisible(true);
+        }
         
-        JOptionPane.showMessageDialog(this, "Edit functionality is not yet implemented.");
+        // 2. After the editor dialog closes, refresh all tables
+        // This will show any changes that were saved.
+        refreshAllTables();
         
-        logger.warning("Edit button clicked, but no edit logic is implemented.");
+        // 3. Refresh the details panel to show the updated info
+        onTableSelectionChanged();
     }//GEN-LAST:event_editButtonActionPerformed
 
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed

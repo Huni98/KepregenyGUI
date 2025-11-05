@@ -39,8 +39,8 @@ import java.text.ParseException; // Added for the try/catch
  */
 public class DataHelper {
 
-    // This is your absolute path to the file
-    private static final String DATA_FILE = "C:\\HUNI98\\GIT Projektek\\OOP-labor-feladatok\\Kepregeny_GUI\\KepregenyGUI\\KepregenyAdatok.json";
+    
+    private static final String DATA_FILE = "KepregenyAdatok.json";
     
     /**
      * A simple public class to hold all the data lists loaded from the JSON.
@@ -56,9 +56,9 @@ public class DataHelper {
     
     /**
      * --- FULLY CORRECTED GSON LOADER ---
-     * Loads all comic book data from the hardcoded JSON file.
      * @return A ComicDataContainer object holding all the lists.
      */
+    @SuppressWarnings("unchecked")
     public static ComicDataContainer loadDataFromJSON() {
         ComicDataContainer data = new ComicDataContainer();
         Gson gson = new Gson(); // Create a Gson object

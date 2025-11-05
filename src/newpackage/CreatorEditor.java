@@ -20,15 +20,67 @@ public class CreatorEditor extends javax.swing.JDialog {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CreatorEditor.class.getName());
 
+    // --- NEW: Fields to store the creator being edited ---
+    private Writer writerToEdit;
+    private Artist artistToEdit;
+    
     /**
-     * Creates new form CreatorEditor
+     * "CREATE NEW" Constructor
      */
     public CreatorEditor(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
-        setLocationRelativeTo(parent);
         initComponents();
+        this.setSize(700, 600); // Set standard size
+        setLocationRelativeTo(parent);
         
-        this.setSize(700, 600);
+        // Default to Writer selected
+        writerRadioButton.setSelected(true);
+    }
+    
+    /**
+     * --- NEW: "EDIT MODE" Constructor for WRITER ---
+     */
+    public CreatorEditor(java.awt.Frame parent, boolean modal, Writer writerToEdit) {
+        this(parent, modal); // Call base constructor
+        this.writerToEdit = writerToEdit;
+        setTitle("Edit Writer");
+        loadDataForEdit();
+    }
+    
+    /**
+     * --- NEW: "EDIT MODE" Constructor for ARTIST ---
+     */
+    public CreatorEditor(java.awt.Frame parent, boolean modal, Artist artistToEdit) {
+        this(parent, modal); // Call base constructor
+        this.artistToEdit = artistToEdit;
+        setTitle("Edit Artist");
+        loadDataForEdit();
+    }
+    
+    /**
+     * --- NEW: Helper method to load data into fields ---
+     */
+    private void loadDataForEdit() {
+        if (writerToEdit != null) {
+            // Load Writer data
+            nameField.setText(writerToEdit.getName());
+            nationalityField.setText(writerToEdit.getNationality());
+            writerRadioButton.setSelected(true);
+            
+            // Disable radio buttons so type can't be changed
+            writerRadioButton.setEnabled(false);
+            artistRadioButton.setEnabled(false);
+            
+        } else if (artistToEdit != null) {
+            // Load Artist data
+            nameField.setText(artistToEdit.getName());
+            nationalityField.setText(artistToEdit.getNationality());
+            artistRadioButton.setSelected(true);
+            
+            // Disable radio buttons
+            writerRadioButton.setEnabled(false);
+            artistRadioButton.setEnabled(false);
+        }
     }
 
     /**
@@ -155,32 +207,38 @@ public class CreatorEditor extends javax.swing.JDialog {
             return; // Stop and don't close the dialog
         }
 
-        // 3. Check which radio button is selected and create the correct object
-        if (writerRadioButton.isSelected()) {
+        // 3. Check mode (Edit or Create)
+        if (writerToEdit != null) {
+            // --- EDIT WRITER MODE ---
+            logger.info("Updating writer: " + writerToEdit.getName());
+            writerToEdit.setName(name);
+            writerToEdit.setNationality(nationality);
             
-            // TODO: Create a new Writer object from your logic JAR
-            Writer newWriter = new Writer(name, nationality);
-            ((MainDashboard) getParent()).addWriter(newWriter);
-            System.out.println("Saving new Writer: " + name + " (" + nationality + ")");
-            
-            // TODO: Add this newWriter object to your main data list in MainDashboard
-
-        } else if (artistRadioButton.isSelected()) {
-            
-            // TODO: Create a new Artist object from your logic JAR
-            Artist newArtist = new Artist(name, nationality);
-            ((MainDashboard) getParent()).addArtist(newArtist);
-            System.out.println("Saving new Artist: " + name + " (" + nationality + ")");
-
-            // TODO: Add this newArtist object to your main data list in MainDashboard
+        } else if (artistToEdit != null) {
+            // --- EDIT ARTIST MODE ---
+            logger.info("Updating artist: " + artistToEdit.getName());
+            artistToEdit.setName(name);
+            artistToEdit.setNationality(nationality);
             
         } else {
-            // This case should be rare since we select one by default, but it's good practice
-            JOptionPane.showMessageDialog(this,
-                    "Please select a Creator Type (Writer or Artist).",
-                    "Validation Error",
-                    JOptionPane.ERROR_MESSAGE);
-            return; // Stop
+            // --- CREATE NEW MODE ---
+            if (writerRadioButton.isSelected()) {
+                Writer newWriter = new Writer(name, nationality);
+                ((MainDashboard) getParent()).addWriter(newWriter);
+                logger.info("Saving new Writer: " + name);
+                
+            } else if (artistRadioButton.isSelected()) {
+                Artist newArtist = new Artist(name, nationality);
+                ((MainDashboard) getParent()).addArtist(newArtist);
+                logger.info("Saving new Artist: " + name);
+                
+            } else {
+                JOptionPane.showMessageDialog(this,
+                        "Please select a Creator Type (Writer or Artist).",
+                        "Validation Error",
+                        JOptionPane.ERROR_MESSAGE);
+                return; // Stop
+            }
         }
 
         // 4. If save was successful, close the dialog

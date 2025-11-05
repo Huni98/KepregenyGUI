@@ -16,6 +16,7 @@ import java.awt.Component;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.BorderFactory;
 import javax.swing.DefaultListCellRenderer;
@@ -39,21 +40,12 @@ public class CharacterEditor extends javax.swing.JDialog {
     private List<Artist> allArtists;
     private List<ComicBook> allComicBooks;
     
+    // --- NEW: Field to store the character being edited ---
+    private ComicCharacter characterToEdit;
     
-    /**
-     * Creates new form CharacterEditor
+   /**
+     * --- "CREATE NEW" Constructor ---
      */
-    public CharacterEditor(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
-        initComponents();
-        
-        setupListModels();
-        
-        loadAvailableListsData();
-        
-        setLocationRelativeTo(parent);
-    }
-    
     public CharacterEditor(java.awt.Frame parent, boolean modal,
                            List<ComicCharacter> allCharacters,
                            List<Writer> allWriters,
@@ -62,21 +54,56 @@ public class CharacterEditor extends javax.swing.JDialog {
         
         super(parent, modal);
         
-        // --- NEW: Save the passed-in lists ---
+        // Save the passed-in lists
         this.allCharacters = allCharacters;
         this.allWriters = allWriters;
         this.allArtists = allArtists;
         this.allComicBooks = allComicBooks;
         
-        initComponents();
+        // We are in "Create" mode
+        this.characterToEdit = null;
         
-        this.setSize(700, 600);
+        initComponents();
+        this.setSize(700, 600); // Set standard size
         
         setupListModels();
         
-        // This will now use the real data
+        // This will load all items into the "Available" lists
         loadAvailableListsData();
         
+        setLocationRelativeTo(parent);
+    }
+    
+    /**
+     * --- NEW: "EDIT MODE" Constructor ---
+     */
+    public CharacterEditor(java.awt.Frame parent, boolean modal,
+                           List<ComicCharacter> allCharacters,
+                           List<Writer> allWriters,
+                           List<Artist> allArtists,
+                           List<ComicBook> allComicBooks,
+                           ComicCharacter characterToEdit) { // <-- Extra parameter
+        
+        // Call the "Create" constructor to set everything up
+        this(parent, modal, allCharacters, allWriters, allArtists, allComicBooks);
+        
+        // Set the character to edit
+        this.characterToEdit = characterToEdit;
+        
+        // Change window title
+        setTitle("Edit Character: " + this.characterToEdit.getDisplayName());
+        
+        // Load this character's data into the form
+        loadDataForEdit();
+    }
+    
+    // This (older) constructor is now unused, but safe to keep.
+    public CharacterEditor(java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
+        initComponents();
+        this.setSize(700, 600); // Set standard size
+        setupListModels();
+        loadAvailableListsData(); // This would now use empty lists
         setLocationRelativeTo(parent);
     }
     
@@ -174,19 +201,20 @@ public class CharacterEditor extends javax.swing.JDialog {
         allPowersModel.addElement("X-Ray Vision");
         
         
+        // --- 2. Load Affiliations (Characters) ---
         allAffiliationsModel.clear();
         if (allCharacters != null) {
             for (ComicCharacter character : allCharacters) {
-                // TODO: Add a check here if you are in "Edit" mode
-                // to prevent a character from being affiliated with itself.
-                // if (characterToEdit != null && character.equals(characterToEdit)) {
-                //    continue; // Skip
-                // }
+                // In edit mode, don't list the character as affiliating with itself
+                if (characterToEdit != null && character.equals(characterToEdit)) {
+                   continue; // Skip
+                }
                 allAffiliationsModel.addElement(character);
             }
         }
         
         
+        // --- 3. Load Creators (Writers & Artists) ---
         allCreatorsModel.clear();
         if (allWriters != null) {
             for (Writer writer : allWriters) {
@@ -200,10 +228,99 @@ public class CharacterEditor extends javax.swing.JDialog {
         }
         
         
+        // --- 4. Load Appearances (ComicBooks) ---
         allAppearancesModel.clear(); 
         if (allComicBooks != null) {
             for (ComicBook comic : allComicBooks) {
                 allAppearancesModel.addElement(comic);
+            }
+        }
+    }
+    
+    /**
+     * --- NEW: Helper method to populate all fields for editing ---
+     */
+    private void loadDataForEdit() {
+        // 1. Populate simple text fields
+        realNameField.setText(characterToEdit.getRealName());
+        aliasField.setText(characterToEdit.getDisplayName().equals(characterToEdit.getRealName()) ? "" : characterToEdit.getDisplayName());
+        originTextArea.setText(characterToEdit.getOrigin());
+        
+        // 2. Set ComboBox
+        if (characterToEdit instanceof Superhero) {
+            alignmentComboBox.setSelectedItem("SUPERHERO");
+        } else if (characterToEdit instanceof Villain) {
+            alignmentComboBox.setSelectedItem("VILLAIN");
+        } else {
+            alignmentComboBox.setSelectedItem("CIVILIAN");
+        }
+        // Disable changing type (this is a complex operation)
+        alignmentComboBox.setEnabled(false);
+
+        // 3. Populate "Selected" lists and remove from "Available"
+        
+        // -- Powers --
+        if (characterToEdit instanceof Superhero) {
+            List<String> powers = ((Superhero) characterToEdit).getPowers();
+            if (powers != null) {
+                for (String power : powers) {
+                    if (allPowersModel.contains(power)) {
+                        allPowersModel.removeElement(power);
+                        charPowersModel.addElement(power);
+                    }
+                }
+            }
+        } else if (characterToEdit instanceof Villain) {
+            List<String> powers = ((Villain) characterToEdit).getPowers();
+             if (powers != null) {
+                for (String power : powers) {
+                    if (allPowersModel.contains(power)) {
+                        allPowersModel.removeElement(power);
+                        charPowersModel.addElement(power);
+                    }
+                }
+            }
+        }
+        
+        // -- Appearances --
+        if (characterToEdit.getComicBookAppearances() != null) {
+            // Need to copy list to avoid concurrent modification
+            List<ComicBook> appearances = new ArrayList<>(characterToEdit.getComicBookAppearances());
+            for (ComicBook comic : appearances) {
+                if (allAppearancesModel.contains(comic)) {
+                    allAppearancesModel.removeElement(comic);
+                    charAppearancesModel.addElement(comic);
+                }
+            }
+        }
+        
+        // -- Creators --
+        if (characterToEdit.getCreatorWriters() != null) {
+            // Get just the keys (Writer objects)
+            for (Writer w : characterToEdit.getCreatorWriters().keySet()) {
+                if (allCreatorsModel.contains(w)) {
+                    allCreatorsModel.removeElement(w);
+                    charCreatorsModel.addElement(w);
+                }
+            }
+        }
+        if (characterToEdit.getCreatorArtists() != null) {
+            // Get just the keys (Artist objects)
+            for (Artist a : characterToEdit.getCreatorArtists().keySet()) {
+                if (allCreatorsModel.contains(a)) {
+                    allCreatorsModel.removeElement(a);
+                    charCreatorsModel.addElement(a);
+                }
+            }
+        }
+        
+        // -- Character Affiliations --
+        if (characterToEdit.getCharacterAffiliations() != null) {
+            for (ComicCharacter c : characterToEdit.getCharacterAffiliations().keySet()) {
+                if (allAffiliationsModel.contains(c)) {
+                    allAffiliationsModel.removeElement(c);
+                    charAffiliationsModel.addElement(c);
+                }
             }
         }
     }
@@ -422,6 +539,8 @@ public class CharacterEditor extends javax.swing.JDialog {
 
         affiliationsPanel.add(jScrollPane4, java.awt.BorderLayout.EAST);
 
+        affiliationsButtonPanel.setLayout(new java.awt.BorderLayout());
+
         addAffiliationButton.setText("->");
         addAffiliationButton.setPreferredSize(new java.awt.Dimension(70, 25));
         addAffiliationButton.addActionListener(new java.awt.event.ActionListener() {
@@ -429,6 +548,7 @@ public class CharacterEditor extends javax.swing.JDialog {
                 addAffiliationButtonActionPerformed(evt);
             }
         });
+        affiliationsButtonPanel.add(addAffiliationButton, java.awt.BorderLayout.NORTH);
 
         removeAffiliationButton.setText("<-");
         removeAffiliationButton.setPreferredSize(new java.awt.Dimension(70, 25));
@@ -437,27 +557,7 @@ public class CharacterEditor extends javax.swing.JDialog {
                 removeAffiliationButtonActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout affiliationsButtonPanelLayout = new javax.swing.GroupLayout(affiliationsButtonPanel);
-        affiliationsButtonPanel.setLayout(affiliationsButtonPanelLayout);
-        affiliationsButtonPanelLayout.setHorizontalGroup(
-            affiliationsButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(affiliationsButtonPanelLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(affiliationsButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(removeAffiliationButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(addAffiliationButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(40, Short.MAX_VALUE))
-        );
-        affiliationsButtonPanelLayout.setVerticalGroup(
-            affiliationsButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, affiliationsButtonPanelLayout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(addAffiliationButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addComponent(removeAffiliationButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75))
-        );
+        affiliationsButtonPanel.add(removeAffiliationButton, java.awt.BorderLayout.SOUTH);
 
         affiliationsPanel.add(affiliationsButtonPanel, java.awt.BorderLayout.CENTER);
 
@@ -479,6 +579,8 @@ public class CharacterEditor extends javax.swing.JDialog {
 
         creatorsPanel.add(jScrollPane6, java.awt.BorderLayout.LINE_END);
 
+        creatorsButtonPanel.setLayout(new java.awt.BorderLayout());
+
         addCreatorButton.setText("->");
         addCreatorButton.setPreferredSize(new java.awt.Dimension(70, 25));
         addCreatorButton.addActionListener(new java.awt.event.ActionListener() {
@@ -486,6 +588,7 @@ public class CharacterEditor extends javax.swing.JDialog {
                 addCreatorButtonActionPerformed(evt);
             }
         });
+        creatorsButtonPanel.add(addCreatorButton, java.awt.BorderLayout.NORTH);
 
         removeCreatorButton.setText("<-");
         removeCreatorButton.setPreferredSize(new java.awt.Dimension(70, 25));
@@ -494,27 +597,7 @@ public class CharacterEditor extends javax.swing.JDialog {
                 removeCreatorButtonActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout creatorsButtonPanelLayout = new javax.swing.GroupLayout(creatorsButtonPanel);
-        creatorsButtonPanel.setLayout(creatorsButtonPanelLayout);
-        creatorsButtonPanelLayout.setHorizontalGroup(
-            creatorsButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(creatorsButtonPanelLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(creatorsButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(removeCreatorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(addCreatorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(40, Short.MAX_VALUE))
-        );
-        creatorsButtonPanelLayout.setVerticalGroup(
-            creatorsButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, creatorsButtonPanelLayout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(addCreatorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addComponent(removeCreatorButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75))
-        );
+        creatorsButtonPanel.add(removeCreatorButton, java.awt.BorderLayout.SOUTH);
 
         creatorsPanel.add(creatorsButtonPanel, java.awt.BorderLayout.CENTER);
 
@@ -536,6 +619,8 @@ public class CharacterEditor extends javax.swing.JDialog {
 
         appearancesPanel.add(jScrollPane8, java.awt.BorderLayout.LINE_END);
 
+        appearancesButtonPanel.setLayout(new java.awt.BorderLayout());
+
         addAppearanceButton.setText("->");
         addAppearanceButton.setPreferredSize(new java.awt.Dimension(70, 25));
         addAppearanceButton.addActionListener(new java.awt.event.ActionListener() {
@@ -543,6 +628,7 @@ public class CharacterEditor extends javax.swing.JDialog {
                 addAppearanceButtonActionPerformed(evt);
             }
         });
+        appearancesButtonPanel.add(addAppearanceButton, java.awt.BorderLayout.NORTH);
 
         removeAppearanceButton.setText("<-");
         removeAppearanceButton.setPreferredSize(new java.awt.Dimension(70, 25));
@@ -551,27 +637,7 @@ public class CharacterEditor extends javax.swing.JDialog {
                 removeAppearanceButtonActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout appearancesButtonPanelLayout = new javax.swing.GroupLayout(appearancesButtonPanel);
-        appearancesButtonPanel.setLayout(appearancesButtonPanelLayout);
-        appearancesButtonPanelLayout.setHorizontalGroup(
-            appearancesButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(appearancesButtonPanelLayout.createSequentialGroup()
-                .addGap(40, 40, 40)
-                .addGroup(appearancesButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(removeAppearanceButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(addAppearanceButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(40, Short.MAX_VALUE))
-        );
-        appearancesButtonPanelLayout.setVerticalGroup(
-            appearancesButtonPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, appearancesButtonPanelLayout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(addAppearanceButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
-                .addComponent(removeAppearanceButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(75, 75, 75))
-        );
+        appearancesButtonPanel.add(removeAppearanceButton, java.awt.BorderLayout.SOUTH);
 
         appearancesPanel.add(appearancesButtonPanel, java.awt.BorderLayout.CENTER);
 
@@ -605,66 +671,115 @@ public class CharacterEditor extends javax.swing.JDialog {
             }
         }
 
-        // 3. Create the correct Character subclass
-        ComicCharacter newCharacter = null; 
-        
-        switch (alignmentString) {
-            case "SUPERHERO":
-                newCharacter = new Superhero(realName, origin, alias);
-                System.out.println("Saving new Superhero: " + alias);
-                break;
-            case "VILLAIN":
-                newCharacter = new Villain(realName, origin, alias);
-                System.out.println("Saving new Villain: " + alias);
-                break;
-            case "CIVILIAN":
-            default:
-                newCharacter = new Civilian(realName, origin);
-                System.out.println("Saving new Civilian: " + realName);
-                break;
-        }
-
-        // 4. --- NEW: Save the list data using the 'newCharacter' object ---
-        
-        // -- Save Powers --
-        // Powers are only on Superhero/Villain, so we must cast
-        if (newCharacter instanceof Superhero) {
-            for (int i = 0; i < charPowersModel.getSize(); i++) {
-                String powerName = charPowersModel.getElementAt(i);
-                ((Superhero) newCharacter).addPower(powerName);
+        // 3. Check mode (Edit or Create)
+        if (characterToEdit != null) {
+            // --- EDIT MODE ---
+            logger.info("Updating character: " + characterToEdit.getDisplayName());
+            
+            // Update simple properties
+            // We can't change type (Superhero -> Civilian) or realName (our key)
+            characterToEdit.setOrigin(origin); // (Need to add setOrigin() to ComicCharacter.java)
+            if(characterToEdit instanceof Superhero) {
+                ((Superhero) characterToEdit).setAlias(alias); // (Need to add setAlias())
+            } else if (characterToEdit instanceof Villain) {
+                ((Villain) characterToEdit).setAlias(alias); // (Need to add setAlias())
             }
-        } else if (newCharacter instanceof Villain) {
-            for (int i = 0; i < charPowersModel.getSize(); i++) {
-                String powerName = charPowersModel.getElementAt(i);
-                ((Villain) newCharacter).addPower(powerName);
+            
+            // Update lists (clear old, add new)
+            
+            // -- Powers --
+            if (characterToEdit instanceof Superhero) {
+                ((Superhero) characterToEdit).getPowers().clear();
+                for (int i = 0; i < charPowersModel.getSize(); i++) {
+                    ((Superhero) characterToEdit).addPower(charPowersModel.getElementAt(i));
+                }
+            } else if (characterToEdit instanceof Villain) {
+                 ((Villain) characterToEdit).getPowers().clear();
+                for (int i = 0; i < charPowersModel.getSize(); i++) {
+                    ((Villain) characterToEdit).addPower(charPowersModel.getElementAt(i));
+                }
             }
-        }
-        
-        // -- Save Affiliations --
-        for (int i = 0; i < charAffiliationsModel.getSize(); i++) {
-            ComicCharacter affiliatedChar = charAffiliationsModel.getElementAt(i);
-            newCharacter.addCharacterAffiliation(affiliatedChar, "Ally"); // Hardcoded "Ally"
-        }
-        
-        // -- Save Creators --
-        for (int i = 0; i < charCreatorsModel.getSize(); i++) {
-            Object creator = charCreatorsModel.getElementAt(i);
-            if (creator instanceof Writer) {
-                newCharacter.addCreator((Writer) creator, "Co-creator"); // Hardcoded "Co-creator"
-            } else if (creator instanceof Artist) {
-                newCharacter.addCreator((Artist) creator, "Co-creator"); // Hardcoded "Co-creator"
+            
+            // -- Character Affiliations --
+            characterToEdit.getCharacterAffiliations().clear();
+            for (int i = 0; i < charAffiliationsModel.getSize(); i++) {
+                ComicCharacter affiliatedChar = charAffiliationsModel.getElementAt(i);
+                characterToEdit.addCharacterAffiliation(affiliatedChar, "Ally"); // Hardcoded "Ally"
             }
+            
+            // -- Creators --
+            characterToEdit.getCreatorWriters().clear();
+            characterToEdit.getCreatorArtists().clear();
+            for (int i = 0; i < charCreatorsModel.getSize(); i++) {
+                Object creator = charCreatorsModel.getElementAt(i);
+                if (creator instanceof Writer) {
+                    characterToEdit.addCreator((Writer) creator, "Co-creator"); 
+                } else if (creator instanceof Artist) {
+                    characterToEdit.addCreator((Artist) creator, "Co-creator"); 
+                }
+            }
+            
+            // -- Appearances --
+            characterToEdit.getComicBookAppearances().clear();
+            for (int i = 0; i < charAppearancesModel.getSize(); i++) {
+                ComicBook comic = charAppearancesModel.getElementAt(i);
+                characterToEdit.addAppearance(comic);
+            }
+            
+        } else {
+            // --- CREATE MODE ---
+            ComicCharacter newCharacter = null; 
+            switch (alignmentString) {
+                case "SUPERHERO":
+                    newCharacter = new Superhero(realName, origin, alias);
+                    break;
+                case "VILLAIN":
+                    newCharacter = new Villain(realName, origin, alias);
+                    break;
+                case "CIVILIAN":
+                default:
+                    newCharacter = new Civilian(realName, origin);
+                    break;
+            }
+            
+            // Save lists for the NEW character
+            
+            // -- Powers --
+            if (newCharacter instanceof Superhero) {
+                for (int i = 0; i < charPowersModel.getSize(); i++) {
+                    ((Superhero) newCharacter).addPower(charPowersModel.getElementAt(i));
+                }
+            } else if (newCharacter instanceof Villain) {
+                for (int i = 0; i < charPowersModel.getSize(); i++) {
+                    ((Villain) newCharacter).addPower(charPowersModel.getElementAt(i));
+                }
+            }
+            
+            // -- Character Affiliations --
+            for (int i = 0; i < charAffiliationsModel.getSize(); i++) {
+                ComicCharacter affiliatedChar = charAffiliationsModel.getElementAt(i);
+                newCharacter.addCharacterAffiliation(affiliatedChar, "Ally"); // Hardcoded "Ally"
+            }
+            
+            // -- Creators --
+            for (int i = 0; i < charCreatorsModel.getSize(); i++) {
+                Object creator = charCreatorsModel.getElementAt(i);
+                if (creator instanceof Writer) {
+                    newCharacter.addCreator((Writer) creator, "Co-creator"); 
+                } else if (creator instanceof Artist) {
+                    newCharacter.addCreator((Artist) creator, "Co-creator"); 
+                }
+            }
+            
+            // -- Appearances --
+            for (int i = 0; i < charAppearancesModel.getSize(); i++) {
+                ComicBook comic = charAppearancesModel.getElementAt(i);
+                newCharacter.addAppearance(comic);
+            }
+            
+            // Add the new character to the main list
+            ((MainDashboard) getParent()).addCharacter(newCharacter);
         }
-        
-        // -- Save Appearances --
-        for (int i = 0; i < charAppearancesModel.getSize(); i++) {
-            ComicBook comic = charAppearancesModel.getElementAt(i);
-            newCharacter.addAppearance(comic);
-        }
-        
-        // 5. TODO: Add the 'newCharacter' to your main data list in MainDashboard
-        // ((MainDashboard) getParent()).addCharacterToList(newCharacter);
-        ((MainDashboard) getParent()).addCharacter(newCharacter);
         
         // 6. Close the dialog
         this.dispose();
