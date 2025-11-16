@@ -2,111 +2,138 @@
   "publishers": [
     {
       "name": "AfterShock Comics",
-      "country": "USA"
+      "country": "USA",
+      "foundationYear": "N/A"
     },
     {
       "name": "Archie Comics",
-      "country": "USA"
+      "country": "USA",
+      "foundationYear": "N/A"
     },
     {
       "name": "Atlas Comics",
-      "country": "USA"
+      "country": "USA",
+      "foundationYear": "N/A"
     },
     {
       "name": "Black Mask Studios",
-      "country": "USA"
+      "country": "USA",
+      "foundationYear": "N/A"
     },
     {
       "name": "Boom! Studios",
-      "country": "USA"
+      "country": "USA",
+      "foundationYear": "N/A"
     },
     {
       "name": "BOOM! Studios",
-      "country": "USA"
+      "country": "USA",
+      "foundationYear": "N/A"
     },
     {
       "name": "CrossGen",
-      "country": "USA"
+      "country": "USA",
+      "foundationYear": "N/A"
     },
     {
       "name": "Dark Horse Comics",
-      "country": "USA"
+      "country": "USA",
+      "foundationYear": "N/A"
     },
     {
       "name": "DC Comics",
-      "country": "USA"
+      "country": "USA",
+      "foundationYear": "N/A"
     },
     {
       "name": "Dynamite Entertainment",
-      "country": "USA"
+      "country": "USA",
+      "foundationYear": "N/A"
     },
     {
       "name": "Harris Comics",
-      "country": "USA"
+      "country": "USA",
+      "foundationYear": "N/A"
     },
     {
       "name": "Humanoids",
-      "country": "France"
+      "country": "France",
+      "foundationYear": "N/A"
     },
     {
       "name": "Icon Comics",
-      "country": "USA"
+      "country": "USA",
+      "foundationYear": "N/A"
     },
     {
       "name": "IDW Publishing",
-      "country": "USA"
+      "country": "USA",
+      "foundationYear": "N/A"
     },
     {
       "name": "Image Comics",
-      "country": "USA"
+      "country": "USA",
+      "foundationYear": "N/A"
     },
     {
       "name": "Kodansha",
-      "country": "Japan"
+      "country": "Japan",
+      "foundationYear": "N/A"
     },
     {
       "name": "MAD Magazine",
-      "country": "USA"
+      "country": "USA",
+      "foundationYear": "N/A"
     },
     {
       "name": "Malibu Comics",
-      "country": "USA"
+      "country": "USA",
+      "foundationYear": "N/A"
     },
     {
       "name": "Marvel Comics",
-      "country": "USA"
+      "country": "USA",
+      "foundationYear": "N/A"
     },
     {
       "name": "Milestone Media",
-      "country": "USA"
+      "country": "USA",
+      "foundationYear": "N/A"
     },
     {
       "name": "Oni Press",
-      "country": "USA"
+      "country": "USA",
+      "foundationYear": "N/A"
     },
     {
       "name": "Shueisha",
-      "country": "Japan"
+      "country": "Japan",
+      "foundationYear": "N/A"
     },
     {
       "name": "Titan Comics",
-      "country": "UK"
+      "country": "UK",
+      "foundationYear": "N/A"
     },
     {
       "name": "Top Cow",
-      "country": "USA"
+      "country": "USA",
+      "foundationYear": "N/A"
     },
     {
       "name": "Valiant",
-      "country": "USA"
+      "country": "USA",
+      "foundationYear": "N/A"
     },
     {
       "name": "Vertigo",
-      "country": "USA"
+      "country": "USA",
+      "foundationYear": "N/A"
     },
     {
       "name": "WildStorm",
-      "country": "USA"
+      "country": "USA",
+      "foundationYear": "N/A"
     }
   ],
   "writers": [

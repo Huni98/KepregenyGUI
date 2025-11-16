@@ -41,9 +41,7 @@ public class DataHelper {
 
     private static final String DATA_FILE = "KepregenyAdatok.json";
 
-    /**
-     * A simple public class to hold all the data lists loaded from the JSON.
-     */
+    
     public static class ComicDataContainer {
 
         public List<Publisher> publishers = new ArrayList<>();
@@ -53,11 +51,7 @@ public class DataHelper {
         public List<ComicBook> comicBooks = new ArrayList<>();
     }
 
-    /**
-     * --- FULLY CORRECTED GSON LOADER ---
-     *
-     * @return A ComicDataContainer object holding all the lists.
-     */
+    
     @SuppressWarnings("unchecked")
     public static ComicDataContainer loadDataFromJSON() {
         ComicDataContainer data = new ComicDataContainer();
@@ -85,7 +79,21 @@ public class DataHelper {
                 for (Map<String, Object> p : publishersArray) {
                     String name = (String) p.get("name");
                     String country = (String) p.get("country");
-                    Publisher publisher = new Publisher(name, country);
+                    String dateStr = (String) p.get("foundationYear");
+                    Date foundDate = null;
+                    
+                    if (dateStr != null && !dateStr.equals("N/A")) {
+                        try {
+                            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                            sdf.setLenient(false);
+                            foundDate = sdf.parse(dateStr);
+                        } catch (ParseException e) {
+                            System.err.println("Warning: Could not parse date for publisher " + name);
+                            foundDate = new Date(0); // Use default epoch date on error
+                        }
+                    }
+                    
+                    Publisher publisher = new Publisher(name, country, foundDate);
 
                     data.publishers.add(publisher);
                     publisherMap.put(publisher.getName(), publisher);
@@ -347,6 +355,13 @@ public class DataHelper {
                 Map<String, Object> pObj = new LinkedHashMap<>();
                 pObj.put("name", p.getName());
                 pObj.put("country", p.getCountry());
+                Date foundDate = p.getFoundationYear();
+                if (foundDate == null || foundDate.getTime() == 0) {
+                    pObj.put("foundationYear", "N/A");
+                } else {
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                    pObj.put("foundationYear", sdf.format(foundDate));
+                }
                 publishersArray.add(pObj);
             }
         }
