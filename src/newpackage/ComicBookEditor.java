@@ -4,12 +4,10 @@ package newpackage;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-
 /**
  *
  * @author hunor
  */
-
 import MainDashboard.MainDashboard;
 import java.util.List;
 import javax.swing.DefaultListModel;
@@ -21,7 +19,7 @@ import java.util.List; // For List
 import java.util.ArrayList; // For main method test
 
 public class ComicBookEditor extends javax.swing.JDialog {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(ComicBookEditor.class.getName());
 
     // --- Master Lists ---
@@ -29,59 +27,58 @@ public class ComicBookEditor extends javax.swing.JDialog {
     private List<Artist> allArtists;
     private List<ComicCharacter> allCharacters;
     private List<Publisher> allPublishers;
-    
+
     // --- NEW: Field to store the comic being edited ---
     private ComicBook comicToEdit;
-    
-    
+
     /**
      * --- "CREATE NEW" Constructor ---
      */
     public ComicBookEditor(java.awt.Frame parent, boolean modal,
-                           List<Writer> allWriters, List<Artist> allArtists,
-                           List<ComicCharacter> allCharacters, List<Publisher> allPublishers) {
+            List<Writer> allWriters, List<Artist> allArtists,
+            List<ComicCharacter> allCharacters, List<Publisher> allPublishers) {
         super(parent, modal);
-        
+
         // Store the passed-in lists
         this.allWriters = allWriters;
         this.allArtists = allArtists;
         this.allCharacters = allCharacters;
         this.allPublishers = allPublishers;
-        
+
         // "Create" mode
         this.comicToEdit = null;
-        
+
         initComponents();
         this.setSize(700, 600); // Set standard size
-        
+
         setLocationRelativeTo(parent);
-        
+
         setupListModels();
         populateAvailableLists();
         setupRenderers();
     }
-    
+
     /**
      * --- NEW: "EDIT MODE" Constructor ---
      */
     public ComicBookEditor(java.awt.Frame parent, boolean modal,
-                           List<Writer> allWriters, List<Artist> allArtists,
-                           List<ComicCharacter> allCharacters, List<Publisher> allPublishers,
-                           ComicBook comicToEdit) { // <-- Extra parameter
-        
+            List<Writer> allWriters, List<Artist> allArtists,
+            List<ComicCharacter> allCharacters, List<Publisher> allPublishers,
+            ComicBook comicToEdit) { // <-- Extra parameter
+
         // Call the "Create" constructor
         this(parent, modal, allWriters, allArtists, allCharacters, allPublishers);
-        
+
         // Set the comic to edit
         this.comicToEdit = comicToEdit;
-        
+
         // Change window title
         setTitle("Edit Comic Book: " + this.comicToEdit.getTitle());
-        
+
         // Load this comic's data into the form
         loadDataForEdit();
     }
-    
+
     private void setupListModels() {
         // Create the models
         allWritersModel = new DefaultListModel<>();
@@ -90,7 +87,7 @@ public class ComicBookEditor extends javax.swing.JDialog {
         thisComicBookArtistModel = new DefaultListModel<>();
         allCharactersModel = new DefaultListModel<>();
         featuredCharactersModel = new DefaultListModel<>();
-        
+
         // Set the models to their JLists
         // This REPLACES the "Item 1, Item 2..." placeholder models
         allWritersList.setModel(allWritersModel);
@@ -99,19 +96,19 @@ public class ComicBookEditor extends javax.swing.JDialog {
         thisComicBookArtistList.setModel(thisComicBookArtistModel);
         allCharactersList.setModel(allCharactersModel);
         featuredCharactersList.setModel(featuredCharactersModel);
-        
+
         // Set up the Publisher ComboBox
         publisherComboBox.setModel(new DefaultComboBoxModel<>(
                 allPublishers.toArray(new Publisher[0])
         ));
     }
-    
+
     private void populateAvailableLists() {
         // Clear any old data
         allWritersModel.removeAllElements();
         allArtistsModel.removeAllElements();
         allCharactersModel.removeAllElements();
-        
+
         // Add all items from the main lists
         for (Writer w : allWriters) {
             allWritersModel.addElement(w);
@@ -123,10 +120,10 @@ public class ComicBookEditor extends javax.swing.JDialog {
             allCharactersModel.addElement(c);
         }
     }
-    
+
     private void setupRenderers() {
         ComicObjectRenderer renderer = new ComicObjectRenderer();
-        
+
         // Set renderer for all JLists
         allWritersList.setCellRenderer(renderer);
         thisComicBookWriterList.setCellRenderer(renderer);
@@ -134,11 +131,11 @@ public class ComicBookEditor extends javax.swing.JDialog {
         thisComicBookArtistList.setCellRenderer(renderer);
         allCharactersList.setCellRenderer(renderer);
         featuredCharactersList.setCellRenderer(renderer);
-        
+
         // Set renderer for the ComboBox
         publisherComboBox.setRenderer(renderer);
     }
-    
+
     /**
      * --- NEW: Helper method to populate all fields for editing ---
      */
@@ -146,7 +143,7 @@ public class ComicBookEditor extends javax.swing.JDialog {
         // 1. Populate simple text fields
         titleField.setText(comicToEdit.getTitle());
         genreField.setText(comicToEdit.getGenre());
-        
+
         // 2. Set ComboBox and Edition field
         // This will load the *first* edition's details
         if (comicToEdit.getEditions() != null && !comicToEdit.getEditions().isEmpty()) {
@@ -154,9 +151,8 @@ public class ComicBookEditor extends javax.swing.JDialog {
             editionField.setText(firstEdition.getEditionName());
             publisherComboBox.setSelectedItem(firstEdition.getPublisher());
         }
-        
+
         // 3. Populate "Selected" lists
-        
         // -- Writers --
         if (comicToEdit.getWriters() != null) {
             List<Writer> writers = new ArrayList<>(comicToEdit.getWriters());
@@ -167,7 +163,7 @@ public class ComicBookEditor extends javax.swing.JDialog {
                 }
             }
         }
-        
+
         // -- Artists --
         if (comicToEdit.getArtists() != null) {
             List<Artist> artists = new ArrayList<>(comicToEdit.getArtists());
@@ -178,7 +174,7 @@ public class ComicBookEditor extends javax.swing.JDialog {
                 }
             }
         }
-        
+
         // -- Characters --
         if (comicToEdit.getFeaturedCharacters() != null) {
             List<ComicCharacter> characters = new ArrayList<>(comicToEdit.getFeaturedCharacters());
@@ -190,15 +186,15 @@ public class ComicBookEditor extends javax.swing.JDialog {
             }
         }
     }
-    
+
     private <T> void moveItems(JList<T> sourceList, JList<T> destList) {
         // Get the models for both lists
         DefaultListModel<T> sourceModel = (DefaultListModel<T>) sourceList.getModel();
         DefaultListModel<T> destModel = (DefaultListModel<T>) destList.getModel();
-        
+
         // Get all selected items from the source list
         List<T> selectedItems = sourceList.getSelectedValuesList();
-        
+
         if (selectedItems.isEmpty()) {
             return; // Nothing selected, do nothing
         }
@@ -207,7 +203,7 @@ public class ComicBookEditor extends javax.swing.JDialog {
         for (T item : selectedItems) {
             destModel.addElement(item);
         }
-        
+
         // Remove items from the source model (in reverse to avoid index issues)
         for (int i = selectedItems.size() - 1; i >= 0; i--) {
             sourceModel.removeElement(selectedItems.get(i));
@@ -497,7 +493,7 @@ public class ComicBookEditor extends javax.swing.JDialog {
         String genre = genreField.getText();
         String editionName = editionField.getText();
         Publisher selectedPublisher = (Publisher) publisherComboBox.getSelectedItem();
-        
+
         // 2. Validate data
         if (title.isBlank()) {
             JOptionPane.showMessageDialog(this, "Title cannot be empty.", "Validation Error", JOptionPane.ERROR_MESSAGE);
@@ -516,42 +512,42 @@ public class ComicBookEditor extends javax.swing.JDialog {
         if (comicToEdit != null) {
             // --- EDIT MODE ---
             logger.info("Updating comic: " + comicToEdit.getTitle());
-            
+
             // Update simple properties
             comicToEdit.setTitle(title);
             comicToEdit.setGenre(genre); // (Need to add setGenre() to ComicBook.java)
-            
+
             // Update the *first* edition's details
             if (comicToEdit.getEditions() != null && !comicToEdit.getEditions().isEmpty()) {
                 Edition firstEdition = comicToEdit.getEditions().get(0);
                 firstEdition.setEditionName(editionName); // (Need to add setEditionName())
                 firstEdition.setPublisher(selectedPublisher); // (Need to add setPublisher())
             }
-            
+
             // Update lists (clear old, add new)
             comicToEdit.getWriters().clear();
             for (int i = 0; i < thisComicBookWriterModel.getSize(); i++) {
                 comicToEdit.addWriter(thisComicBookWriterModel.getElementAt(i));
             }
-            
+
             comicToEdit.getArtists().clear();
             for (int i = 0; i < thisComicBookArtistModel.getSize(); i++) {
                 comicToEdit.addArtist(thisComicBookArtistModel.getElementAt(i));
             }
-            
+
             comicToEdit.getFeaturedCharacters().clear(); // (Need to add getCharacters() and clear() to ComicBook.java)
             for (int i = 0; i < featuredCharactersModel.getSize(); i++) {
                 comicToEdit.addCharacter(featuredCharactersModel.getElementAt(i));
             }
-            
+
         } else {
             // --- CREATE MODE ---
             ComicBook newComic = new ComicBook(title, genre);
-            
+
             // Create a default Edition
             Edition newEdition = new Edition(editionName, new java.util.Date(), "N/A", selectedPublisher, newComic);
             newComic.addEdition(newEdition);
-            
+
             // Add all selected items from the lists
             for (int i = 0; i < thisComicBookWriterModel.getSize(); i++) {
                 newComic.addWriter(thisComicBookWriterModel.getElementAt(i));
@@ -562,7 +558,7 @@ public class ComicBookEditor extends javax.swing.JDialog {
             for (int i = 0; i < featuredCharactersModel.getSize(); i++) {
                 newComic.addCharacter(featuredCharactersModel.getElementAt(i));
             }
-            
+
             // Add the new comic to the main list
             ((MainDashboard) getParent()).addComicBook(newComic);
             logger.info("New Comic Created: " + newComic.getTitle());
@@ -579,7 +575,7 @@ public class ComicBookEditor extends javax.swing.JDialog {
 
     private void addWriterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addWriterButtonActionPerformed
         // TODO add your handling code here:
-         moveItems(allWritersList, thisComicBookWriterList);
+        moveItems(allWritersList, thisComicBookWriterList);
     }//GEN-LAST:event_addWriterButtonActionPerformed
 
     private void removeWriterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeWriterButtonActionPerformed
@@ -604,7 +600,7 @@ public class ComicBookEditor extends javax.swing.JDialog {
 
     private void removeCharacterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeCharacterButtonActionPerformed
         // TODO add your handling code here:
-         moveItems(featuredCharactersList, allCharactersList);
+        moveItems(featuredCharactersList, allCharactersList);
     }//GEN-LAST:event_removeCharacterButtonActionPerformed
 
     /**
@@ -635,19 +631,19 @@ public class ComicBookEditor extends javax.swing.JDialog {
                 // --- NEW: Dummy data for testing the dialog directly ---
                 List<Writer> testWriters = new ArrayList<>();
                 testWriters.add(new Writer("Stan Lee", "USA"));
-                
+
                 List<Artist> testArtists = new ArrayList<>();
                 testArtists.add(new Artist("Steve Ditko", "USA"));
-                
+
                 List<ComicCharacter> testChars = new ArrayList<>();
                 testChars.add(new Civilian("J. Jonah Jameson", "..."));
-                
+
                 List<Publisher> testPublishers = new ArrayList<>();
                 testPublishers.add(new Publisher("Marvel Comics", "USA"));
 
                 ComicBookEditor dialog = new ComicBookEditor(new javax.swing.JFrame(), true,
                         testWriters, testArtists, testChars, testPublishers);
-                
+
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -658,14 +654,15 @@ public class ComicBookEditor extends javax.swing.JDialog {
             }
         });
     }
-    
+
     class ComicObjectRenderer extends DefaultListCellRenderer {
+
         @Override
         public Component getListCellRendererComponent(JList<?> list, Object value, int index,
-                                                      boolean isSelected, boolean cellHasFocus) {
+                boolean isSelected, boolean cellHasFocus) {
             // Get the default component (a JLabel)
             Component c = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-            
+
             // Check the type of the object and set the text accordingly
             if (value instanceof Writer) {
                 setText(((Writer) value).getName());
@@ -676,7 +673,7 @@ public class ComicBookEditor extends javax.swing.JDialog {
             } else if (value instanceof Publisher) {
                 setText(((Publisher) value).getName());
             }
-            
+
             return c;
         }
     }
@@ -729,5 +726,5 @@ public class ComicBookEditor extends javax.swing.JDialog {
     private DefaultListModel<Artist> thisComicBookArtistModel;
     private DefaultListModel<ComicCharacter> allCharactersModel;
     private DefaultListModel<ComicCharacter> featuredCharactersModel;
-    
+
 }
