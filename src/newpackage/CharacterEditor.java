@@ -4,12 +4,10 @@ package newpackage;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-
 /**
  *
  * @author hunor
  */
-
 import MainDashboard.MainDashboard;
 import java.awt.BorderLayout;
 import java.awt.Component;
@@ -30,73 +28,76 @@ import javax.swing.JScrollPane;
 import ro.madarash.kepregeny_project.*;
 
 public class CharacterEditor extends javax.swing.JDialog {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CharacterEditor.class.getName());
 
-    
     // --- NEW: Add fields to store the master lists ---
     private List<ComicCharacter> allCharacters;
     private List<Writer> allWriters;
     private List<Artist> allArtists;
     private List<ComicBook> allComicBooks;
-    
+    private List<String> allPowers; // <-- NEW: Store master powers list
+
     // --- NEW: Field to store the character being edited ---
     private ComicCharacter characterToEdit;
-    
-   /**
+
+    /**
      * --- "CREATE NEW" Constructor ---
      */
     public CharacterEditor(java.awt.Frame parent, boolean modal,
-                           List<ComicCharacter> allCharacters,
-                           List<Writer> allWriters,
-                           List<Artist> allArtists,
-                           List<ComicBook> allComicBooks) {
-        
+            List<ComicCharacter> allCharacters,
+            List<Writer> allWriters,
+            List<Artist> allArtists,
+            List<ComicBook> allComicBooks,
+            List<String> allPowers) { // <-- NEW: Added allPowers parameter
+
         super(parent, modal);
-        
+
         // Save the passed-in lists
         this.allCharacters = allCharacters;
         this.allWriters = allWriters;
         this.allArtists = allArtists;
         this.allComicBooks = allComicBooks;
-        
+        this.allPowers = allPowers; // <-- NEW: Save the powers list
+
         // We are in "Create" mode
         this.characterToEdit = null;
-        
+
         initComponents();
         this.setSize(700, 600); // Set standard size
-        
+
         setupListModels();
-        
+
         // This will load all items into the "Available" lists
         loadAvailableListsData();
-        
+
         setLocationRelativeTo(parent);
     }
-    
+
     /**
      * --- NEW: "EDIT MODE" Constructor ---
      */
     public CharacterEditor(java.awt.Frame parent, boolean modal,
-                           List<ComicCharacter> allCharacters,
-                           List<Writer> allWriters,
-                           List<Artist> allArtists,
-                           List<ComicBook> allComicBooks,
-                           ComicCharacter characterToEdit) { // <-- Extra parameter
-        
+            List<ComicCharacter> allCharacters,
+            List<Writer> allWriters,
+            List<Artist> allArtists,
+            List<ComicBook> allComicBooks,
+            List<String> allPowers, // <-- NEW: Added allPowers parameter
+            ComicCharacter characterToEdit) { // <-- Extra parameter
+
         // Call the "Create" constructor to set everything up
-        this(parent, modal, allCharacters, allWriters, allArtists, allComicBooks);
-        
+        this(parent, modal, allCharacters, allWriters, allArtists, allComicBooks, allPowers); // <-- NEW: Pass powers
+
         // Set the character to edit
         this.characterToEdit = characterToEdit;
-        
+
         // Change window title
         setTitle("Edit Character: " + this.characterToEdit.getDisplayName());
-        
+
         // Load this character's data into the form
         loadDataForEdit();
     }
-    
+
     // This (older) constructor is now unused, but safe to keep.
     public CharacterEditor(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
@@ -106,7 +107,7 @@ public class CharacterEditor extends javax.swing.JDialog {
         loadAvailableListsData(); // This would now use empty lists
         setLocationRelativeTo(parent);
     }
-    
+
     private void setupListModels() {
         // Create models
         allPowersModel = new DefaultListModel<>();
@@ -117,7 +118,7 @@ public class CharacterEditor extends javax.swing.JDialog {
         charCreatorsModel = new DefaultListModel<>();
         allAppearancesModel = new DefaultListModel<>();
         charAppearancesModel = new DefaultListModel<>();
-        
+
         // Set models to lists
         allPowersList.setModel(allPowersModel);
         charPowersList.setModel(charPowersModel);
@@ -127,7 +128,7 @@ public class CharacterEditor extends javax.swing.JDialog {
         charCreatorsList.setModel(charCreatorsModel);
         allAppearancesList.setModel(allAppearancesModel);
         charAppearancesList.setModel(charAppearancesModel);
-        
+
         // --- NEW: Set the custom renderer ---
         // This tells the lists HOW to display your objects
         ComicObjectRenderer renderer = new ComicObjectRenderer();
@@ -138,82 +139,30 @@ public class CharacterEditor extends javax.swing.JDialog {
         allAppearancesList.setCellRenderer(renderer);
         charAppearancesList.setCellRenderer(renderer);
     }
-    
+
     private void loadAvailableListsData() {
-        // --- Dummy Power Data ---
+        // --- 1. Load Powers (from JSON) ---
         allPowersModel.clear();
-        
-        allPowersModel.addElement("Acid Spit");
-        allPowersModel.addElement("Agility (Superhuman)");
-        allPowersModel.addElement("Animal Communication");
-        allPowersModel.addElement("Astral Projection");
-        allPowersModel.addElement("Atmokinesis (Weather Control)");
-        allPowersModel.addElement("Camouflage/Invisibility");
-        allPowersModel.addElement("Cryokinesis (Ice Control)");
-        allPowersModel.addElement("Density Control");
-        allPowersModel.addElement("Durability (Superhuman)");
-        allPowersModel.addElement("Elasticity");
-        allPowersModel.addElement("Electrokinesis (Electricity Control)");
-        allPowersModel.addElement("Energy Absorption");
-        allPowersModel.addElement("Energy Blasts");
-        allPowersModel.addElement("Explosion Manipulation");
-        allPowersModel.addElement("Flight");
-        allPowersModel.addElement("Force Fields");
-        allPowersModel.addElement("Gadgets (High-Tech)");
-        allPowersModel.addElement("Geokinesis (Earth Control)");
-        allPowersModel.addElement("Gravity Manipulation");
-        allPowersModel.addElement("Healing Factor (Regeneration)");
-        allPowersModel.addElement("Heat Vision");
-        allPowersModel.addElement("Hydrokinesis (Water Control)");
-        allPowersModel.addElement("Illusion Casting");
-        allPowersModel.addElement("Intangibility (Phasing)");
-        allPowersModel.addElement("Invisibility");
-        allPowersModel.addElement("Invulnerability");
-        allPowersModel.addElement("Light Manipulation (Photokinesis)");
-        allPowersModel.addElement("Magic/Sorcery");
-        allPowersModel.addElement("Magnetism Manipulation");
-        allPowersModel.addElement("Marksmanship (Superhuman)");
-        allPowersModel.addElement("Mind Control");
-        allPowersModel.addElement("Pheromone Control");
-        allPowersModel.addElement("Plant Control");
-        allPowersModel.addElement("Power Absorption");
-        allPowersModel.addElement("Power Mimicry");
-        allPowersModel.addElement("Precognition (Future Sight)");
-        allPowersModel.addElement("Psychic Blasts");
-        allPowersModel.addElement("Pyrokinesis (Fire Control)");
-        allPowersModel.addElement("Reality Warping");
-        allPowersModel.addElement("Reflexes (Superhuman)");
-        allPowersModel.addElement("Shadow Manipulation (Umbrakinesis)");
-        allPowersModel.addElement("Shapeshifting");
-        allPowersModel.addElement("Shrinking / Size Alteration");
-        allPowersModel.addElement("Sonic Scream");
-        allPowersModel.addElement("Stamina (Superhuman)");
-        allPowersModel.addElement("Super Senses");
-        allPowersModel.addElement("Super Speed");
-        allPowersModel.addElement("Super Strength");
-        allPowersModel.addElement("Technopathy (Machine Control)");
-        allPowersModel.addElement("Telekinesis");
-        allPowersModel.addElement("Telepathy");
-        allPowersModel.addElement("Teleportation");
-        allPowersModel.addElement("Time Manipulation");
-        allPowersModel.addElement("Toxicity/Poison Generation");
-        allPowersModel.addElement("Wall-Crawling");
-        allPowersModel.addElement("X-Ray Vision");
-        
-        
+        if (allPowers != null) {
+            // This list now comes from MainDashboard, which got it from DataHelper
+            for (String power : allPowers) {
+                allPowersModel.addElement(power);
+            }
+        }
+        // --- End of (formerly) Dummy Power Data ---
+
         // --- 2. Load Affiliations (Characters) ---
         allAffiliationsModel.clear();
         if (allCharacters != null) {
             for (ComicCharacter character : allCharacters) {
                 // In edit mode, don't list the character as affiliating with itself
                 if (characterToEdit != null && character.equals(characterToEdit)) {
-                   continue; // Skip
+                    continue; // Skip
                 }
                 allAffiliationsModel.addElement(character);
             }
         }
-        
-        
+
         // --- 3. Load Creators (Writers & Artists) ---
         allCreatorsModel.clear();
         if (allWriters != null) {
@@ -226,17 +175,16 @@ public class CharacterEditor extends javax.swing.JDialog {
                 allCreatorsModel.addElement(artist);
             }
         }
-        
-        
+
         // --- 4. Load Appearances (ComicBooks) ---
-        allAppearancesModel.clear(); 
+        allAppearancesModel.clear();
         if (allComicBooks != null) {
             for (ComicBook comic : allComicBooks) {
                 allAppearancesModel.addElement(comic);
             }
         }
     }
-    
+
     /**
      * --- NEW: Helper method to populate all fields for editing ---
      */
@@ -245,7 +193,7 @@ public class CharacterEditor extends javax.swing.JDialog {
         realNameField.setText(characterToEdit.getRealName());
         aliasField.setText(characterToEdit.getDisplayName().equals(characterToEdit.getRealName()) ? "" : characterToEdit.getDisplayName());
         originTextArea.setText(characterToEdit.getOrigin());
-        
+
         // 2. Set ComboBox
         if (characterToEdit instanceof Superhero) {
             alignmentComboBox.setSelectedItem("SUPERHERO");
@@ -258,7 +206,6 @@ public class CharacterEditor extends javax.swing.JDialog {
         alignmentComboBox.setEnabled(false);
 
         // 3. Populate "Selected" lists and remove from "Available"
-        
         // -- Powers --
         if (characterToEdit instanceof Superhero) {
             List<String> powers = ((Superhero) characterToEdit).getPowers();
@@ -272,7 +219,7 @@ public class CharacterEditor extends javax.swing.JDialog {
             }
         } else if (characterToEdit instanceof Villain) {
             List<String> powers = ((Villain) characterToEdit).getPowers();
-             if (powers != null) {
+            if (powers != null) {
                 for (String power : powers) {
                     if (allPowersModel.contains(power)) {
                         allPowersModel.removeElement(power);
@@ -281,7 +228,7 @@ public class CharacterEditor extends javax.swing.JDialog {
                 }
             }
         }
-        
+
         // -- Appearances --
         if (characterToEdit.getComicBookAppearances() != null) {
             // Need to copy list to avoid concurrent modification
@@ -293,7 +240,7 @@ public class CharacterEditor extends javax.swing.JDialog {
                 }
             }
         }
-        
+
         // -- Creators --
         if (characterToEdit.getCreatorWriters() != null) {
             // Get just the keys (Writer objects)
@@ -313,7 +260,7 @@ public class CharacterEditor extends javax.swing.JDialog {
                 }
             }
         }
-        
+
         // -- Character Affiliations --
         if (characterToEdit.getCharacterAffiliations() != null) {
             for (ComicCharacter c : characterToEdit.getCharacterAffiliations().keySet()) {
@@ -650,8 +597,7 @@ public class CharacterEditor extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    
-    
+
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
         // 1. Get data from the top form
         String realName = realNameField.getText();
@@ -675,18 +621,17 @@ public class CharacterEditor extends javax.swing.JDialog {
         if (characterToEdit != null) {
             // --- EDIT MODE ---
             logger.info("Updating character: " + characterToEdit.getDisplayName());
-            
+
             // Update simple properties
             // We can't change type (Superhero -> Civilian) or realName (our key)
             characterToEdit.setOrigin(origin); // (Need to add setOrigin() to ComicCharacter.java)
-            if(characterToEdit instanceof Superhero) {
+            if (characterToEdit instanceof Superhero) {
                 ((Superhero) characterToEdit).setAlias(alias); // (Need to add setAlias())
             } else if (characterToEdit instanceof Villain) {
                 ((Villain) characterToEdit).setAlias(alias); // (Need to add setAlias())
             }
-            
+
             // Update lists (clear old, add new)
-            
             // -- Powers --
             if (characterToEdit instanceof Superhero) {
                 ((Superhero) characterToEdit).getPowers().clear();
@@ -694,41 +639,41 @@ public class CharacterEditor extends javax.swing.JDialog {
                     ((Superhero) characterToEdit).addPower(charPowersModel.getElementAt(i));
                 }
             } else if (characterToEdit instanceof Villain) {
-                 ((Villain) characterToEdit).getPowers().clear();
+                ((Villain) characterToEdit).getPowers().clear();
                 for (int i = 0; i < charPowersModel.getSize(); i++) {
                     ((Villain) characterToEdit).addPower(charPowersModel.getElementAt(i));
                 }
             }
-            
+
             // -- Character Affiliations --
             characterToEdit.getCharacterAffiliations().clear();
             for (int i = 0; i < charAffiliationsModel.getSize(); i++) {
                 ComicCharacter affiliatedChar = charAffiliationsModel.getElementAt(i);
                 characterToEdit.addCharacterAffiliation(affiliatedChar, "Ally"); // Hardcoded "Ally"
             }
-            
+
             // -- Creators --
             characterToEdit.getCreatorWriters().clear();
             characterToEdit.getCreatorArtists().clear();
             for (int i = 0; i < charCreatorsModel.getSize(); i++) {
                 Object creator = charCreatorsModel.getElementAt(i);
                 if (creator instanceof Writer) {
-                    characterToEdit.addCreator((Writer) creator, "Co-creator"); 
+                    characterToEdit.addCreator((Writer) creator, "Co-creator");
                 } else if (creator instanceof Artist) {
-                    characterToEdit.addCreator((Artist) creator, "Co-creator"); 
+                    characterToEdit.addCreator((Artist) creator, "Co-creator");
                 }
             }
-            
+
             // -- Appearances --
             characterToEdit.getComicBookAppearances().clear();
             for (int i = 0; i < charAppearancesModel.getSize(); i++) {
                 ComicBook comic = charAppearancesModel.getElementAt(i);
                 characterToEdit.addAppearance(comic);
             }
-            
+
         } else {
             // --- CREATE MODE ---
-            ComicCharacter newCharacter = null; 
+            ComicCharacter newCharacter = null;
             switch (alignmentString) {
                 case "SUPERHERO":
                     newCharacter = new Superhero(realName, origin, alias);
@@ -741,9 +686,8 @@ public class CharacterEditor extends javax.swing.JDialog {
                     newCharacter = new Civilian(realName, origin);
                     break;
             }
-            
+
             // Save lists for the NEW character
-            
             // -- Powers --
             if (newCharacter instanceof Superhero) {
                 for (int i = 0; i < charPowersModel.getSize(); i++) {
@@ -754,33 +698,33 @@ public class CharacterEditor extends javax.swing.JDialog {
                     ((Villain) newCharacter).addPower(charPowersModel.getElementAt(i));
                 }
             }
-            
+
             // -- Character Affiliations --
             for (int i = 0; i < charAffiliationsModel.getSize(); i++) {
                 ComicCharacter affiliatedChar = charAffiliationsModel.getElementAt(i);
                 newCharacter.addCharacterAffiliation(affiliatedChar, "Ally"); // Hardcoded "Ally"
             }
-            
+
             // -- Creators --
             for (int i = 0; i < charCreatorsModel.getSize(); i++) {
                 Object creator = charCreatorsModel.getElementAt(i);
                 if (creator instanceof Writer) {
-                    newCharacter.addCreator((Writer) creator, "Co-creator"); 
+                    newCharacter.addCreator((Writer) creator, "Co-creator");
                 } else if (creator instanceof Artist) {
-                    newCharacter.addCreator((Artist) creator, "Co-creator"); 
+                    newCharacter.addCreator((Artist) creator, "Co-creator");
                 }
             }
-            
+
             // -- Appearances --
             for (int i = 0; i < charAppearancesModel.getSize(); i++) {
                 ComicBook comic = charAppearancesModel.getElementAt(i);
                 newCharacter.addAppearance(comic);
             }
-            
+
             // Add the new character to the main list
             ((MainDashboard) getParent()).addCharacter(newCharacter);
         }
-        
+
         // 6. Close the dialog
         this.dispose();
     }//GEN-LAST:event_saveButtonActionPerformed
@@ -794,10 +738,10 @@ public class CharacterEditor extends javax.swing.JDialog {
         // Get the models for both lists
         DefaultListModel<T> sourceModel = (DefaultListModel<T>) sourceList.getModel();
         DefaultListModel<T> destModel = (DefaultListModel<T>) destList.getModel();
-        
+
         // Get all selected items from the source list
         java.util.List<T> selectedItems = sourceList.getSelectedValuesList();
-        
+
         if (selectedItems.isEmpty()) {
             return; // Nothing selected, do nothing
         }
@@ -806,13 +750,13 @@ public class CharacterEditor extends javax.swing.JDialog {
         for (T item : selectedItems) {
             destModel.addElement(item);
         }
-        
+
         // Remove items from the source model (in reverse to avoid index issues)
         for (int i = selectedItems.size() - 1; i >= 0; i--) {
             sourceModel.removeElement(selectedItems.get(i));
         }
     }
-    
+
     private void removeAppearanceButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_removeAppearanceButtonActionPerformed
         // TODO add your handling code here:
         moveItems(charAppearancesList, allAppearancesList);
@@ -889,13 +833,15 @@ public class CharacterEditor extends javax.swing.JDialog {
             }
         });
     }
+
     class ComicObjectRenderer extends DefaultListCellRenderer {
+
         @Override
         public Component getListCellRendererComponent(JList<?> list, Object value, int index,
-                                                      boolean isSelected, boolean cellHasFocus) {
+                boolean isSelected, boolean cellHasFocus) {
             // Get the default component (a JLabel)
             Component c = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-            
+
             // Check the type of the object and set the text accordingly
             if (value instanceof Writer) {
                 setText(((Writer) value).getName());
@@ -907,7 +853,7 @@ public class CharacterEditor extends javax.swing.JDialog {
                 setText(((ComicBook) value).getTitle());
             }
             // (It already handles String, so 'powers' list will work fine)
-            
+
             return c;
         }
     }

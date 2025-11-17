@@ -27,23 +27,24 @@ import javax.swing.JOptionPane;
 import javax.swing.JFileChooser; // For picking the file
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import ro.madarash.kepregeny_project.*;
 
-
 public class MainDashboard extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(MainDashboard.class.getName());
 
-    
     private List<ComicBook> allComicBooks = new ArrayList<>();
     private List<ComicCharacter> allCharacters = new ArrayList<>();
     private List<Writer> allWriters = new ArrayList<>();
     private List<Artist> allArtists = new ArrayList<>();
     private List<Publisher> allPublishers = new ArrayList<>();
-    
+    private List<String> allPowers = new ArrayList<>(); // <-- NEW: List for all powers
+
     private List<Object> allItemsInTable = new ArrayList<>();
-    
+
     // --- NEW: Table Models for each tab ---
     // We will store a reference to each table's model
     private DefaultTableModel comicBooksModel;
@@ -51,39 +52,36 @@ public class MainDashboard extends javax.swing.JFrame {
     private DefaultTableModel writersModel;
     private DefaultTableModel artistsModel;
     private DefaultTableModel publishersModel;
-    /**
-     * Creates new form MainDashboard
-     */
+
     
     public MainDashboard() {
         initComponents();
-        
+
         this.setSize(1050, 700);
-        
+
         // Set the window to appear in the center of the screen
         setLocationRelativeTo(null);
-        
+
         setupDataAndTable();
-        
-        // --- ADD THIS CODE TO SAVE ON EXIT ---
+
+        // --- CODE TO SAVE ON EXIT ---
         this.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosing(java.awt.event.WindowEvent e) {
-                // Call our new save method
+                // Call new save method
                 saveDataOnExit();
             }
         });
     }
-    
-    
+
     /**
-     * Initializes the application state, loads initial data,
-     * and sets up listeners.
+     * Initializes the application state, loads initial data, and sets up
+     * listeners.
      */
     private void setupDataAndTable() {
         // Set the window to appear in the center of the screen
         setLocationRelativeTo(null);
-        
+
         // --- NEW: Get the models from the 5 tables you created ---
         comicBooksModel = (DefaultTableModel) comicBooksTable.getModel();
         charactersModel = (DefaultTableModel) charactersTable.getModel();
@@ -94,21 +92,31 @@ public class MainDashboard extends javax.swing.JFrame {
         // --- NEW: Add a selection listener to EVERY table ---
         // All tables will call the SAME method when their selection changes.
         comicBooksTable.getSelectionModel().addListSelectionListener(e -> {
-            if (!e.getValueIsAdjusting()) onTableSelectionChanged();
+            if (!e.getValueIsAdjusting()) {
+                onTableSelectionChanged();
+            }
         });
         charactersTable.getSelectionModel().addListSelectionListener(e -> {
-            if (!e.getValueIsAdjusting()) onTableSelectionChanged();
+            if (!e.getValueIsAdjusting()) {
+                onTableSelectionChanged();
+            }
         });
         writersTable.getSelectionModel().addListSelectionListener(e -> {
-            if (!e.getValueIsAdjusting()) onTableSelectionChanged();
+            if (!e.getValueIsAdjusting()) {
+                onTableSelectionChanged();
+            }
         });
         artistsTable.getSelectionModel().addListSelectionListener(e -> {
-            if (!e.getValueIsAdjusting()) onTableSelectionChanged();
+            if (!e.getValueIsAdjusting()) {
+                onTableSelectionChanged();
+            }
         });
         publishersTable.getSelectionModel().addListSelectionListener(e -> {
-            if (!e.getValueIsAdjusting()) onTableSelectionChanged();
+            if (!e.getValueIsAdjusting()) {
+                onTableSelectionChanged();
+            }
         });
-        
+
         // --- NEW: Add a listener to the tab pane itself ---
         // This helps us clear selections when the user changes tabs
         mainTabbedPane.addChangeListener(e -> {
@@ -122,7 +130,7 @@ public class MainDashboard extends javax.swing.JFrame {
         // Set the initial state of the buttons
         onTableSelectionChanged();
     }
-    
+
     private void clearAllTableSelections() {
         comicBooksTable.clearSelection();
         charactersTable.clearSelection();
@@ -130,13 +138,10 @@ public class MainDashboard extends javax.swing.JFrame {
         artistsTable.clearSelection();
         publishersTable.clearSelection();
     }
+
     
-    /**
-     * MODIFIED: This method now loads data from a hardcoded JSON file
-     * automatically on startup.
-     */
     private void loadInitialData() {
-        
+
         // --- Call the DataHelper ---
         // It will look for "KepregenyAdatok.json" in your project's root folder
         logger.info("Loading data from KepregenyAdatok.json...");
@@ -149,62 +154,64 @@ public class MainDashboard extends javax.swing.JFrame {
             this.allArtists = data.artists;
             this.allCharacters = data.characters;
             this.allComicBooks = data.comicBooks;
-            
+            this.allPowers = data.allPowers;
+
             logger.info("Data loaded successfully!");
-            
+            logger.info("Loaded " + this.allPowers.size() + " unique powers.");
+
             // This call is in setupDataAndTable, but we call it
             // again here to be safe, since loading is complete.
             refreshAllTables();
-            
+
         } else {
             logger.severe("Failed to load data from JSON.");
             // This is the error message you saw, which will appear if the
             // file is missing or has an error.
-            JOptionPane.showMessageDialog(this, 
-                    "Could not load data from 'KepregenyAdatok.json'.\n" +
-                    "Please make sure the file exists in the project's root folder.", 
-                    "Load Error", 
+            JOptionPane.showMessageDialog(this,
+                    "Could not load data from 'KepregenyAdatok.json'.\n"
+                    + "Please make sure the file exists in the project's root folder.",
+                    "Load Error",
                     JOptionPane.ERROR_MESSAGE);
             // The app will continue with empty lists
         }
     }
-    
+
     /**
      * Gathers all master data lists and tells DataHelper to save them.
      */
     private void saveDataOnExit() {
         logger.info("Saving data to JSON file...");
-        
+
         // 1. Create a container to hold all our lists
         ComicDataContainer dataToSave = new ComicDataContainer();
-        
+
         // 2. Populate the container with our master lists
         dataToSave.publishers = this.allPublishers;
         dataToSave.writers = this.allWriters;
         dataToSave.artists = this.allArtists;
         dataToSave.characters = this.allCharacters;
         dataToSave.comicBooks = this.allComicBooks;
-        
+
         // 3. Call the static save method in DataHelper
         DataHelper.saveDataToJSON(dataToSave);
-        
+
         logger.info("Data saved. Exiting.");
     }
-    
+
     /**
-     * This method is called whenever the table selection changes.
-     * It enables/disables buttons based on the selected item.
+     * This method is called whenever the table selection changes. It
+     * enables/disables buttons based on the selected item.
      */
     private void onTableSelectionChanged() {
         Object selectedObject = getSelectedObject();
-        
+
         // Enable/disable the Edit and Delete buttons
         editButton.setEnabled(selectedObject != null);
         deleteButton.setEnabled(selectedObject != null);
-        
+
         // ONLY enable the "Add Edition" button if a ComicBook is selected
         addEditionButton.setEnabled(selectedObject instanceof ComicBook);
-        
+
         // --- NEW Details Panel Logic ---
         if (selectedObject == null) {
             detailsTextArea.setText("Select an item to see details.");
@@ -226,25 +233,25 @@ public class MainDashboard extends javax.swing.JFrame {
         } else {
             detailsTextArea.setText("Unknown item selected.");
         }
-        
+
         // Reset scrollbar to the top after changing text
         detailsTextArea.setCaretPosition(0);
     }
-    
-    // --- NEW HELPER METHODS (Add these to your class) ---
 
+    // --- NEW HELPER METHODS (Add these to your class) ---
     /**
      * Builds a formatted string for a ComicBook object.
+     *
      * @param comic The ComicBook to display.
      * @return A formatted string of its details.
      */
     private String buildComicBookDetails(ComicBook comic) {
         StringBuilder sb = new StringBuilder();
-        
+
         sb.append("--- COMIC BOOK ---\n");
         sb.append("Title: ").append(comic.getTitle()).append("\n");
         sb.append("Genre: ").append(comic.getGenre()).append("\n");
-        
+
         sb.append("\nWRITERS:\n");
         if (comic.getWriters().isEmpty()) {
             sb.append("  (None listed)\n");
@@ -253,7 +260,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 sb.append("  - ").append(w.getName()).append("\n");
             }
         }
-        
+
         sb.append("\nARTISTS:\n");
         if (comic.getArtists().isEmpty()) {
             sb.append("  (None listed)\n");
@@ -262,7 +269,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 sb.append("  - ").append(a.getName()).append("\n");
             }
         }
-        
+
         sb.append("\nEDITIONS:\n");
         if (comic.getEditions().isEmpty()) {
             sb.append("  (None listed)\n");
@@ -275,23 +282,24 @@ public class MainDashboard extends javax.swing.JFrame {
 
         return sb.toString();
     }
-    
+
     /**
      * Builds a formatted string for a ComicCharacter object.
+     *
      * @param character The ComicCharacter to display.
      * @return A formatted string of its details.
      */
     private String buildCharacterDetails(ComicCharacter character) {
         StringBuilder sb = new StringBuilder();
-        
+
         sb.append("--- CHARACTER ---\n");
         sb.append("Alias: ").append(character.getDisplayName()).append("\n");
         sb.append("Real Name: ").append(character.getRealName()).append("\n");
         sb.append("Type: ").append(character.getClass().getSimpleName()).append("\n");
-        
+
         sb.append("\nORIGIN:\n");
         sb.append(character.getOrigin().isEmpty() ? "  (N/A)" : "  " + character.getOrigin()).append("\n");
-        
+
         // Handle powers for Superheroes and Villains
         if (character instanceof Superhero) {
             Superhero s = (Superhero) character;
@@ -323,7 +331,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 sb.append("  - ").append(c.getTitle()).append("\n");
             }
         }
-        
+
         // --- NEW: Display Affiliations (Team Names) ---
         sb.append("\nAFFILIATIONS:\n");
         List<String> teamAffiliations = null;
@@ -340,18 +348,19 @@ public class MainDashboard extends javax.swing.JFrame {
                 sb.append("  - ").append(team).append("\n");
             }
         }
-        
+
         return sb.toString();
     }
-    
+
     /**
      * Builds a formatted string for a Writer or Artist object.
+     *
      * @param creator The Writer or Artist object.
      * @return A formatted string of their details.
      */
     private String buildCreatorDetails(Object creator) {
         StringBuilder sb = new StringBuilder();
-        
+
         if (creator instanceof Writer) {
             Writer w = (Writer) creator;
             sb.append("--- WRITER ---\n");
@@ -363,27 +372,42 @@ public class MainDashboard extends javax.swing.JFrame {
             sb.append("Name: ").append(a.getName()).append("\n");
             sb.append("Nationality: ").append(a.getNationality()).append("\n");
         }
-        
+
         return sb.toString();
     }
-    
+
+    /**
+     * MODIFICATION: New helper method to format dates cleanly.
+     *
+     * @param date The date to format.
+     * @return A string in "yyyy" format, or "N/A" if the date is null.
+     */
+    private String formatDate(Date date) {
+        if (date == null) {
+            return "N/A";
+        }
+        // Define the desired format
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
+        return sdf.format(date);
+    }
+
     /**
      * Builds a formatted string for a Publisher object.
+     *
      * @param pub The Publisher to display.
      * @return A formatted string of its details.
      */
     private String buildPublisherDetails(Publisher pub) {
         StringBuilder sb = new StringBuilder();
-        
+
         sb.append("--- PUBLISHER ---\n");
         sb.append("Name: ").append(pub.getName()).append("\n");
         sb.append("Country: ").append(pub.getCountry()).append("\n");
-        sb.append("Foundation Year:").append(pub.getFoundationYear()).append("\n");
-        
+        sb.append("Foundation Year: ").append(formatDate(pub.getFoundationYear())).append("\n");
+
         return sb.toString();
     }
-    
-    
+
     /**
      * Helper method to get a displayable publisher name for a ComicBook.
      */
@@ -397,15 +421,16 @@ public class MainDashboard extends javax.swing.JFrame {
         }
         return "N/A";
     }
-    
+
     /**
      * Helper method to get the currently selected object from the table.
+     *
      * @return The selected object, or null if no selection.
      */
     private Object getSelectedObject() {
         // Find out which tab is currently selected
         int selectedTabIndex = mainTabbedPane.getSelectedIndex();
-        
+
         switch (selectedTabIndex) {
             case 0: // Comic Books Tab
                 int comicRow = comicBooksTable.getSelectedRow();
@@ -438,42 +463,39 @@ public class MainDashboard extends javax.swing.JFrame {
                 }
                 break;
         }
-        
+
         return null; // No tab selected or no item selected in the active tab
     }
-    
+
     /**
-     * --- PUBLIC METHODS FOR EDITORS ---
-     * These methods are called by the editor dialogs to add
-     * new data to the main application lists.
+     * --- PUBLIC METHODS FOR EDITORS --- These methods are called by the editor
+     * dialogs to add new data to the main application lists.
      */
-    
     public void addPublisher(Publisher publisher) {
         this.allPublishers.add(publisher);
         refreshPublishersTable(); // More efficient
     }
-    
+
     public void addWriter(Writer writer) {
         this.allWriters.add(writer);
         refreshWritersTable(); // More efficient
     }
-    
+
     public void addArtist(Artist artist) {
         this.allArtists.add(artist);
         refreshArtistsTable(); // More efficient
     }
-    
+
     public void addCharacter(ComicCharacter character) {
         this.allCharacters.add(character);
         refreshCharactersTable(); // More efficient
     }
-    
+
     public void addComicBook(ComicBook comic) {
         this.allComicBooks.add(comic);
         refreshComicBooksTable(); // More efficient
     }
-    
-    
+
     public void refreshAllTables() {
         refreshPublishersTable();
         refreshWritersTable();
@@ -481,9 +503,8 @@ public class MainDashboard extends javax.swing.JFrame {
         refreshCharactersTable();
         refreshComicBooksTable();
     }
-    
+
     // --- NEW: Specific refresh methods for each table ---
-    
     public void refreshPublishersTable() {
         publishersModel.setRowCount(0); // Clear table
         for (Publisher pub : allPublishers) {
@@ -493,7 +514,7 @@ public class MainDashboard extends javax.swing.JFrame {
             });
         }
     }
-    
+
     public void refreshWritersTable() {
         writersModel.setRowCount(0); // Clear table
         for (Writer writer : allWriters) {
@@ -503,7 +524,7 @@ public class MainDashboard extends javax.swing.JFrame {
             });
         }
     }
-    
+
     public void refreshArtistsTable() {
         artistsModel.setRowCount(0); // Clear table
         for (Artist artist : allArtists) {
@@ -524,7 +545,7 @@ public class MainDashboard extends javax.swing.JFrame {
             });
         }
     }
-    
+
     public void refreshComicBooksTable() {
         comicBooksModel.setRowCount(0); // Clear table
         for (ComicBook comic : allComicBooks) {
@@ -535,7 +556,6 @@ public class MainDashboard extends javax.swing.JFrame {
             });
         }
     }
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -889,37 +909,37 @@ public class MainDashboard extends javax.swing.JFrame {
 
     private void addCharacterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addCharacterButtonActionPerformed
         logger.info("Opening Character Editor...");
-        
+
         // This opens the CharacterEditor.
-        
         CharacterEditor charEditor = new CharacterEditor(
-            this, 
-            true, 
-            allCharacters,  // <-- This is what you asked for
-            allWriters,       // <-- Also pass writers
-            allArtists,     // <-- Also pass artists
-            allComicBooks   // <-- Also pass comic books
+                this,
+                true,
+                allCharacters, // <-- This is what you asked for
+                allWriters, // <-- Also pass writers
+                allArtists, // <-- Also pass artists
+                allComicBooks, // <-- Also pass comic books
+                allPowers // <-- NEW: Pass the loaded powers list
         );
         charEditor.setVisible(true);
-        
+
         // The dialog will call public method addCharacter() on save,
         // which automatically calls refreshTable().
     }//GEN-LAST:event_addCharacterButtonActionPerformed
 
     private void addComicBookButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addComicBookButtonActionPerformed
         logger.info("Opening Comic Book Editor...");
-        
+
         // This is the correct way to open the ComicBookEditor,
         // passing all the required data lists to its constructor.
         ComicBookEditor comicEditor = new ComicBookEditor(
-            this, 
-            true, 
-            allWriters, 
-            allArtists,
-            allCharacters,
-            allPublishers
+                this,
+                true,
+                allWriters,
+                allArtists,
+                allCharacters,
+                allPublishers
         );
-        
+
         comicEditor.setVisible(true);
     }//GEN-LAST:event_addComicBookButtonActionPerformed
 
@@ -944,54 +964,54 @@ public class MainDashboard extends javax.swing.JFrame {
         }
 
         // --- NEW EDIT LOGIC ---
-        
         // 1. Determine which editor to open
         if (selectedObject instanceof Publisher) {
             // Open PublisherEditor in "edit mode"
             PublisherEditor pubEditor = new PublisherEditor(this, true, (Publisher) selectedObject);
             pubEditor.setVisible(true);
-            
+
         } else if (selectedObject instanceof Writer) {
             // Open CreatorEditor in "edit mode" for a Writer
             CreatorEditor creatorEditor = new CreatorEditor(this, true, (Writer) selectedObject);
             creatorEditor.setVisible(true);
-            
+
         } else if (selectedObject instanceof Artist) {
             // Open CreatorEditor in "edit mode" for an Artist
             CreatorEditor creatorEditor = new CreatorEditor(this, true, (Artist) selectedObject);
             creatorEditor.setVisible(true);
-            
+
         } else if (selectedObject instanceof ComicCharacter) {
             // Open CharacterEditor in "edit mode"
             CharacterEditor charEditor = new CharacterEditor(
-                this, 
-                true, 
-                allCharacters,
-                allWriters,
-                allArtists,
-                allComicBooks,
-                (ComicCharacter) selectedObject // <-- Pass the character to edit
+                    this,
+                    true,
+                    allCharacters,
+                    allWriters,
+                    allArtists,
+                    allComicBooks,
+                    allPowers,
+                    (ComicCharacter) selectedObject // <-- Pass the character to edit
             );
             charEditor.setVisible(true);
-            
+
         } else if (selectedObject instanceof ComicBook) {
             // Open ComicBookEditor in "edit mode"
             ComicBookEditor comicEditor = new ComicBookEditor(
-                this, 
-                true, 
-                allWriters, 
-                allArtists,
-                allCharacters,
-                allPublishers,
-                (ComicBook) selectedObject // <-- Pass the comic to edit
+                    this,
+                    true,
+                    allWriters,
+                    allArtists,
+                    allCharacters,
+                    allPublishers,
+                    (ComicBook) selectedObject // <-- Pass the comic to edit
             );
             comicEditor.setVisible(true);
         }
-        
+
         // 2. After the editor dialog closes, refresh all tables
         // This will show any changes that were saved.
         refreshAllTables();
-        
+
         // 3. Refresh the details panel to show the updated info
         onTableSelectionChanged();
     }//GEN-LAST:event_editButtonActionPerformed
@@ -999,23 +1019,31 @@ public class MainDashboard extends javax.swing.JFrame {
     private void deleteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteButtonActionPerformed
         // TODO add your handling code here:
         Object selectedObject = getSelectedObject();
-        if (selectedObject == null) return;
-        
+        if (selectedObject == null) {
+            return;
+        }
+
         // Get the name for the confirmation dialog
         String objectName = "this item";
-        if (selectedObject instanceof Publisher) objectName = ((Publisher)selectedObject).getName();
-        else if (selectedObject instanceof Writer) objectName = ((Writer)selectedObject).getName();
-        else if (selectedObject instanceof Artist) objectName = ((Artist)selectedObject).getName();
-        else if (selectedObject instanceof ComicCharacter) objectName = ((ComicCharacter)selectedObject).getDisplayName();
-        else if (selectedObject instanceof ComicBook) objectName = ((ComicBook)selectedObject).getTitle();
-        
+        if (selectedObject instanceof Publisher) {
+            objectName = ((Publisher) selectedObject).getName();
+        } else if (selectedObject instanceof Writer) {
+            objectName = ((Writer) selectedObject).getName();
+        } else if (selectedObject instanceof Artist) {
+            objectName = ((Artist) selectedObject).getName();
+        } else if (selectedObject instanceof ComicCharacter) {
+            objectName = ((ComicCharacter) selectedObject).getDisplayName();
+        } else if (selectedObject instanceof ComicBook) {
+            objectName = ((ComicBook) selectedObject).getTitle();
+        }
+
         int choice = JOptionPane.showConfirmDialog(
-                this, 
+                this,
                 "Are you sure you want to delete '" + objectName + "'?\nThis action cannot be undone.",
                 "Confirm Deletion",
                 JOptionPane.YES_NO_OPTION,
                 JOptionPane.WARNING_MESSAGE);
-        
+
         if (choice == JOptionPane.YES_OPTION) {
             // Remove the object from the correct list
             // AND call the correct refresh method
@@ -1035,7 +1063,7 @@ public class MainDashboard extends javax.swing.JFrame {
                 allComicBooks.remove(selectedObject);
                 refreshComicBooksTable();
             }
-            
+
             logger.info("Deleted object: " + objectName);
         }
     }//GEN-LAST:event_deleteButtonActionPerformed
@@ -1061,34 +1089,33 @@ public class MainDashboard extends javax.swing.JFrame {
 
     private void addEditionButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addEditionButtonActionPerformed
         // TODO add your handling code here:
-        
+
         Object selectedObject = getSelectedObject();
-        
+
         // Double-check that a ComicBook is selected
         if (selectedObject instanceof ComicBook) {
             logger.info("Opening Edition Editor...");
             ComicBook selectedComic = (ComicBook) selectedObject;
-            
+
             // Open the EditionEditor, passing the selected comic and all publishers
             EditionEditor editionEditor = new EditionEditor(
-                this, 
-                true, 
-                selectedComic, 
-                allPublishers
+                    this,
+                    true,
+                    selectedComic,
+                    allPublishers
             );
             editionEditor.setVisible(true);
-            
+
             // The EditionEditor itself will call refreshTable() on save.
         } else {
             // This should not happen if the button is enabled/disabled correctly
-            JOptionPane.showMessageDialog(this, 
+            JOptionPane.showMessageDialog(this,
                     "Please select a Comic Book to add an edition to.",
-                    "Error", 
+                    "Error",
                     JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_addEditionButtonActionPerformed
 
-    
     /**
      * @param args the command line arguments
      */

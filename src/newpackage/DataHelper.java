@@ -2,11 +2,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-/*
+ /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-/*
+ /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -39,29 +39,24 @@ import java.text.ParseException; // Added for the try/catch
  */
 public class DataHelper {
 
-    
     private static final String DATA_FILE = "KepregenyAdatok.json";
+
     
-    /**
-     * A simple public class to hold all the data lists loaded from the JSON.
-     */
     public static class ComicDataContainer {
+
         public List<Publisher> publishers = new ArrayList<>();
         public List<Writer> writers = new ArrayList<>();
         public List<Artist> artists = new ArrayList<>();
         public List<ComicCharacter> characters = new ArrayList<>();
         public List<ComicBook> comicBooks = new ArrayList<>();
+        public List<String> allPowers = new ArrayList<>(); // <-- NEW: List for all powers
     }
 
     
-    /**
-     * --- FULLY CORRECTED GSON LOADER ---
-     * @return A ComicDataContainer object holding all the lists.
-     */
     @SuppressWarnings("unchecked")
     public static ComicDataContainer loadDataFromJSON() {
         ComicDataContainer data = new ComicDataContainer();
-        Gson gson = new Gson(); // Create a Gson object
+        Gson gson = new Gson();
 
         // Create Maps to link objects by their NAME or TITLE
         Map<String, Publisher> publisherMap = new HashMap<>();
@@ -69,24 +64,51 @@ public class DataHelper {
         Map<String, ComicBook> comicBookMap = new HashMap<>();
         Map<String, ComicCharacter> characterMap = new HashMap<>(); // We will use realName as the key
 
+        // --- NEW: Set to store unique powers ---
+        Set<String> uniquePowers = new HashSet<>();
+        
         try (FileReader reader = new FileReader(DATA_FILE)) { // Use FileReader
-            
+
             // 1. Define the type we're parsing into: a Map of Strings to Objects
-            Type mapType = new TypeToken<Map<String, Object>>() {}.getType();
-            
+            Type mapType = new TypeToken<Map<String, Object>>() {
+            }.getType();
+
             // 2. Parse the entire JSON file into the 'root' map
             Map<String, Object> root = gson.fromJson(reader, mapType);
 
             // --- PASS 1: Create all objects ---
-            
             // 3. Create Publishers
             List<Map<String, Object>> publishersArray = (List<Map<String, Object>>) root.get("publishers");
             if (publishersArray != null) {
                 for (Map<String, Object> p : publishersArray) {
                     String name = (String) p.get("name");
                     String country = (String) p.get("country");
-                    Publisher publisher = new Publisher(name, country);
+                    String dateStr = (String) p.get("foundationYear");
+                    Date foundDate = null;
                     
+                    if (dateStr != null && !dateStr.equals("N/A") && !dateStr.isBlank()) {
+                        // Only try to parse if we have a real date string
+                        try {
+                            // First, try to parse the FULL date format
+                            SimpleDateFormat sdfFull = new SimpleDateFormat("yyyy");
+                            sdfFull.setLenient(false);
+                            foundDate = sdfFull.parse(dateStr);
+                        } catch (ParseException e) {
+                            // If that fails, try to parse the YEAR-ONLY format
+                            try {
+                                SimpleDateFormat sdfYear = new SimpleDateFormat("yyyy-MM-dd");
+                                sdfYear.setLenient(false);
+                                foundDate = sdfYear.parse(dateStr);
+                            } catch (ParseException e2) {
+                                // If both fail, log a warning and set to null
+                                System.err.println("Warning: Could not parse date '" + dateStr + "' for publisher " + name + ". Setting to null.");
+                                foundDate = null;
+                            }
+                        }
+                    }
+                    
+                    Publisher publisher = new Publisher(name, country, foundDate);
+
                     data.publishers.add(publisher);
                     publisherMap.put(publisher.getName(), publisher);
                 }
@@ -99,7 +121,7 @@ public class DataHelper {
                     String name = (String) w.get("name");
                     String nationality = (String) w.get("nationality");
                     Writer writer = new Writer(name, nationality);
-                    
+
                     data.writers.add(writer);
                     creatorMap.put(writer.getName(), writer);
                 }
@@ -112,7 +134,7 @@ public class DataHelper {
                     String name = (String) a.get("name");
                     String nationality = (String) a.get("nationality");
                     Artist artist = new Artist(name, nationality);
-                    
+
                     data.artists.add(artist);
                     creatorMap.put(artist.getName(), artist);
                 }
@@ -125,7 +147,7 @@ public class DataHelper {
                     String title = (String) cb.get("title");
                     String genre = (String) cb.get("genre");
                     ComicBook comic = new ComicBook(title, genre);
-                    
+
                     data.comicBooks.add(comic);
                     comicBookMap.put(comic.getTitle(), comic);
                 }
@@ -148,6 +170,7 @@ public class DataHelper {
                         case "ANTI-HERO":
                             character = new Superhero(realName, origin, alias);
                             break;
+                        case "SUPERVILLAIN":
                         case "VILLAIN":
                             character = new Villain(realName, origin, alias);
                             break;
@@ -163,14 +186,14 @@ public class DataHelper {
             }
 
             // --- PASS 2: Link all objects ---
-
             // 8. Link ComicBooks (Writers, Artists, Editions)
             if (comicBooksArray != null) {
                 for (Map<String, Object> cb : comicBooksArray) {
                     String title = (String) cb.get("title");
                     ComicBook comic = comicBookMap.get(title);
-                    if (comic == null) continue; // Skip if comic wasn't created
-
+                    if (comic == null) {
+                        continue; // Skip if comic wasn't created
+                    }
                     // --- THIS IS THE FIX ---
                     // Link Writers
                     Object writerNamesObj = cb.get("writerNames");
@@ -184,7 +207,7 @@ public class DataHelper {
                             }
                         }
                     }
-                    
+
                     // --- THIS IS THE FIX ---
                     // Link Artists
                     Object artistNamesObj = cb.get("artistNames");
@@ -198,7 +221,7 @@ public class DataHelper {
                             }
                         }
                     }
-                    
+
                     // Add Editions
                     Object editionsObj = cb.get("editions");
                     if (editionsObj instanceof List) {
@@ -207,10 +230,10 @@ public class DataHelper {
                             String editionName = (String) e.get("editionName");
                             String dateStr = (String) e.get("publicationDate");
                             String isbn = (String) e.get("isbn");
-                            String publisherName = (String) e.get("publisherName"); 
-        
+                            String publisherName = (String) e.get("publisherName");
+
                             Publisher p = publisherMap.get(publisherName);
-                            
+
                             // FIX FOR DATE N/A
                             Date pubDate;
                             if (dateStr == null || dateStr.equals("N/A")) {
@@ -218,7 +241,7 @@ public class DataHelper {
                             } else {
                                 pubDate = new SimpleDateFormat("yyyy-MM-dd").parse(dateStr);
                             }
-        
+
                             if (p != null) {
                                 Edition edition = new Edition(editionName, pubDate, isbn, p, comic);
                                 comic.addEdition(edition);
@@ -233,8 +256,9 @@ public class DataHelper {
                 for (Map<String, Object> c : charactersArray) {
                     String realName = (String) c.get("realName");
                     ComicCharacter character = characterMap.get(realName);
-                    if (character == null) continue; // Skip if character wasn't created
-    
+                    if (character == null) {
+                        continue; // Skip if character wasn't created
+                    }
                     // Add Powers
                     if (character instanceof Superhero || character instanceof Villain) {
                         // FIX FOR LIST N/A
@@ -247,18 +271,21 @@ public class DataHelper {
                                 } else {
                                     ((Villain) character).addPower(pStr);
                                 }
+                                if (pStr != null && !pStr.isBlank()) {
+                                    uniquePowers.add(pStr);
+                                }
                             }
                         }
                     }
-                    
+
                     // Link Creators
                     Object creatorsObj = c.get("creators");
-                    if (creatorsObj instanceof List) { 
+                    if (creatorsObj instanceof List) {
                         List<Map<String, Object>> creators = (List<Map<String, Object>>) creatorsObj;
-                        for(Map<String, Object> cr : creators) {
+                        for (Map<String, Object> cr : creators) {
                             String creatorName = (String) cr.get("creatorName");
                             String role = (String) cr.get("role");
-                            
+
                             Object creator = creatorMap.get(creatorName);
                             if (creator instanceof Writer) {
                                 character.addCreator((Writer) creator, role);
@@ -267,13 +294,13 @@ public class DataHelper {
                             }
                         }
                     }
-                    
+
                     // Link Affiliations (Team Names)
                     Object affObj = c.get("affiliations");
                     if (affObj instanceof List) {
                         // This is the correct cast for ["Justice League"]
                         List<String> affiliations = (List<String>) affObj;
-                        for(String teamName : affiliations) {
+                        for (String teamName : affiliations) {
                             if (character instanceof Superhero) {
                                 ((Superhero) character).addAffiliation(teamName);
                             } else if (character instanceof Villain) {
@@ -281,38 +308,62 @@ public class DataHelper {
                             }
                         }
                     }
-                    
+
                     // --- THIS IS THE MISSING FIX ---
                     // Link Character Affiliations (Relationships)
                     Object charAffObj = c.get("characterAffiliations");
                     if (charAffObj instanceof List) {
-                        List<Map<String, Object>> charAffs = (List<Map<String, Object>>) charAffObj;
-                        for (Map<String, Object> af : charAffs) {
-                            String charRealName = (String) af.get("characterRealName");
-                            String relationship = (String) af.get("relationship");
+                        List<?> charAffList = (List<?>) charAffObj; // Get it as a generic list
+                        
+                        if (!charAffList.isEmpty()) {
+                            Object firstElement = charAffList.get(0);
                             
-                            ComicCharacter other = characterMap.get(charRealName);
-                            if(other != null) {
-                                // Use the renamed method
-                                character.addCharacterAffiliation(other, relationship);
+                            if (firstElement instanceof String) {
+                                // --- Handle as List<String> ---
+                                @SuppressWarnings("unchecked")
+                                List<String> charAffNameList = (List<String>) charAffList; 
+                                for (String charRealName : charAffNameList) {
+                                    ComicCharacter other = characterMap.get(charRealName);
+                                    if(other != null) {
+                                        character.addCharacterAffiliation(other, "Affiliate"); // Default relationship
+                                    }
+                                }
+                            } else if (firstElement instanceof Map) {
+                                // --- Handle as List<Map<String, Object>> ---
+                                @SuppressWarnings("unchecked")
+                                List<Map<String, Object>> charAffs = (List<Map<String, Object>>) charAffList;
+                                for (Map<String, Object> af : charAffs) {
+                                    String charRealName = (String) af.get("characterRealName");
+                                    String relationship = (String) af.get("relationship");
+                                    
+                                    ComicCharacter other = characterMap.get(charRealName);
+                                    if(other != null && relationship != null) {
+                                        character.addCharacterAffiliation(other, relationship);
+                                    }
+                                }
                             }
                         }
                     }
                     // -----------------------------
-                    
+
                     // Link Appearances
                     Object appObj = c.get("appearances");
-                     if (appObj instanceof List) { 
+                    if (appObj instanceof List) {
                         List<String> appearances = (List<String>) appObj;
-                        for(String comicTitle : appearances) {
+                        for (String comicTitle : appearances) {
                             ComicBook comic = comicBookMap.get(comicTitle);
-                            if(comic != null) {
+                            if (comic != null) {
                                 character.addAppearance(comic);
                             }
                         }
                     }
                 }
             }
+            
+            // --- NEW: Finalize the powers list ---
+            data.allPowers.addAll(uniquePowers); // Add all unique powers
+            Collections.sort(data.allPowers);    // Sort them alphabetically
+            
             return data;
 
         } catch (FileNotFoundException e) {
@@ -327,18 +378,18 @@ public class DataHelper {
         return null; // Return null if loading failed
     }
 
-    
     /**
-     * --- FULLY CORRECTED GSON SAVER ---
-     * Saves all the application's data back to the JSON file
-     * in a "pretty-printed" (indented) format using Gson.
-     * @param data A ComicDataContainer holding the 5 master lists from MainDashboard.
+     * --- FULLY CORRECTED GSON SAVER --- Saves all the application's data back
+     * to the JSON file in a "pretty-printed" (indented) format using Gson.
+     *
+     * @param data A ComicDataContainer holding the 5 master lists from
+     * MainDashboard.
      */
     public static void saveDataToJSON(ComicDataContainer data) {
         File file = new File(DATA_FILE);
         // Use LinkedHashMap to preserve the order of the keys (publishers, writers, etc.)
         Map<String, Object> root = new LinkedHashMap<>();
-        
+
         // 2. Convert Publishers List
         List<Map<String, Object>> publishersArray = new ArrayList<>();
         if (data.publishers != null) {
@@ -346,6 +397,13 @@ public class DataHelper {
                 Map<String, Object> pObj = new LinkedHashMap<>();
                 pObj.put("name", p.getName());
                 pObj.put("country", p.getCountry());
+                Date foundDate = p.getFoundationYear();
+                if (foundDate == null || foundDate.getTime() == 0) {
+                    pObj.put("foundationYear", "N/A");
+                } else {
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
+                    pObj.put("foundationYear", sdf.format(foundDate));
+                }
                 publishersArray.add(pObj);
             }
         }
@@ -382,7 +440,7 @@ public class DataHelper {
                 Map<String, Object> cObj = new LinkedHashMap<>();
                 cObj.put("title", c.getTitle());
                 cObj.put("genre", c.getGenre());
-                
+
                 List<String> writerNames = new ArrayList<>();
                 if (c.getWriters() != null) { // Add null check
                     for (Writer w : c.getWriters()) {
@@ -390,7 +448,7 @@ public class DataHelper {
                     }
                 }
                 cObj.put("writerNames", writerNames);
-                
+
                 List<String> artistNames = new ArrayList<>();
                 if (c.getArtists() != null) { // Add null check
                     for (Artist a : c.getArtists()) {
@@ -398,7 +456,7 @@ public class DataHelper {
                     }
                 }
                 cObj.put("artistNames", artistNames);
-                
+
                 List<Map<String, Object>> editionsArray = new ArrayList<>();
                 if (c.getEditions() != null) { // Add null check
                     for (Edition e : c.getEditions()) {
@@ -407,7 +465,7 @@ public class DataHelper {
                         // Format date, handle default date
                         Date pubDate = e.getPublicationDate();
                         if (pubDate == null || pubDate.getTime() == 0) { // Check for null or default epoch date
-                             eObj.put("publicationDate", "N/A");
+                            eObj.put("publicationDate", "N/A");
                         } else {
                             eObj.put("publicationDate", new SimpleDateFormat("yyyy-MM-dd").format(pubDate));
                         }
@@ -417,7 +475,7 @@ public class DataHelper {
                     }
                 }
                 cObj.put("editions", editionsArray);
-                
+
                 comicBooksArray.add(cObj);
             }
         }
@@ -430,9 +488,9 @@ public class DataHelper {
                 Map<String, Object> chObj = new LinkedHashMap<>();
                 chObj.put("type", ch.getClass().getSimpleName().toUpperCase());
                 chObj.put("realName", ch.getRealName());
-                chObj.put("alias", ch.getDisplayName()); 
+                chObj.put("alias", ch.getDisplayName());
                 chObj.put("origin", ch.getOrigin());
-    
+
                 List<String> powersArray = new ArrayList<>();
                 if (ch instanceof Superhero && ((Superhero) ch).getPowers() != null) {
                     powersArray.addAll(((Superhero) ch).getPowers());
@@ -440,7 +498,7 @@ public class DataHelper {
                     powersArray.addAll(((Villain) ch).getPowers());
                 }
                 chObj.put("powers", powersArray);
-    
+
                 List<Map<String, Object>> creatorsArray = new ArrayList<>();
                 if (ch.getCreatorWriters() != null) {
                     for (java.util.Map.Entry<Writer, String> entry : ch.getCreatorWriters().entrySet()) {
@@ -459,7 +517,7 @@ public class DataHelper {
                     }
                 }
                 chObj.put("creators", creatorsArray);
-    
+
                 // Save affiliations (Team Names)
                 List<String> affArray = new ArrayList<>();
                 if (ch instanceof Superhero && ((Superhero) ch).getAffiliations() != null) {
@@ -480,7 +538,7 @@ public class DataHelper {
                     }
                 }
                 chObj.put("characterAffiliations", charAffArray);
-    
+
                 List<String> appArray = new ArrayList<>();
                 if (ch.getComicBookAppearances() != null) {
                     for (ComicBook book : ch.getComicBookAppearances()) {
@@ -488,7 +546,7 @@ public class DataHelper {
                     }
                 }
                 chObj.put("appearances", appArray);
-                
+
                 charactersArray.add(chObj);
             }
         }
@@ -505,12 +563,11 @@ public class DataHelper {
             e.printStackTrace();
         }
     }
-    
 
     // Example test in main()
     public static void main(String[] args) {
         System.out.println("Attempting to load data from " + DATA_FILE + "...");
-        ComicDataContainer data = loadDataFromJSON(); 
+        ComicDataContainer data = loadDataFromJSON();
         if (data != null) {
             System.out.println("\n--- Data loaded successfully! ---");
             System.out.println("Publishers: " + data.publishers.size());
@@ -518,13 +575,13 @@ public class DataHelper {
             System.out.println("Artists: " + data.artists.size());
             System.out.println("Characters: " + data.characters.size());
             System.out.println("Comic Books: " + data.comicBooks.size());
-            
+
             if (!data.characters.isEmpty()) {
                 System.out.println("\n--- Testing first character ---");
                 ComicCharacter firstChar = data.characters.get(0);
                 System.out.println("Name: " + firstChar.getDisplayName());
                 System.out.println("Appears in: " + firstChar.getComicBookAppearances().size() + " comics");
-                if(!firstChar.getComicBookAppearances().isEmpty()) {
+                if (!firstChar.getComicBookAppearances().isEmpty()) {
                     System.out.println("  - " + firstChar.getComicBookAppearances().get(0).getTitle());
                 }
             }

@@ -4,7 +4,6 @@ package newpackage;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-
 /**
  *
  * @author hunor
@@ -26,34 +25,33 @@ import newpackage.CharacterEditor.ComicObjectRenderer;
 import ro.madarash.kepregeny_project.*;
 
 public class EditionEditor extends javax.swing.JDialog {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(EditionEditor.class.getName());
 
     /**
      * Creates new form EditionEditor
      */
-    
     private ComicBook parentComicBook;
-    
-    public EditionEditor(java.awt.Frame parent, boolean modal, 
-                         ComicBook parentComic, List<Publisher> allPublishers) {
-        
+
+    public EditionEditor(java.awt.Frame parent, boolean modal,
+            ComicBook parentComic, List<Publisher> allPublishers) {
+
         super(parent, modal);
-        
+
         // --- NEW: Save the parent comic ---
         if (parentComic == null) {
             throw new IllegalArgumentException("parentComic cannot be null.");
         }
         this.parentComicBook = parentComic;
-        
+
         // This method builds the form's layout and components
         initComponents();
-        
+
         this.setSize(700, 600);
 
         // --- NEW: Set the Custom Renderer for the JComboBox ---
         publisherComboBox.setRenderer(new ComicObjectRenderer());
-        
+
         // --- NEW: Populate the JComboBox ---
         publisherComboBox.setModel(new DefaultComboBoxModel<>(
                 allPublishers.toArray(new Publisher[0])
@@ -65,19 +63,19 @@ public class EditionEditor extends javax.swing.JDialog {
         // Center the dialog on top of its parent (MainDashboard)
         setLocationRelativeTo(parent);
     }
-    
+
     /**
      * Helper method to load the list of publishers into the ComboBox.
      */
     private void populatePublisherComboBox(List<Publisher> publishers) {
         // Create a model that will hold our Publisher objects
         DefaultComboBoxModel<Publisher> model = new DefaultComboBoxModel<>();
-        
+
         // Add all available publishers from the list
         for (Publisher pub : publishers) {
             model.addElement(pub);
         }
-        
+
         // Set this model on our combo box
         publisherComboBox.setModel(model);
     }
@@ -205,7 +203,7 @@ public class EditionEditor extends javax.swing.JDialog {
         String editionName = editionNameField.getText();
         String isbn = isbnField.getText();
         String dateStr = dateField.getText();
-        
+
         // Get the *selected objects* from the dropdown
         Publisher selectedPublisher = (Publisher) publisherComboBox.getSelectedItem();
 
@@ -218,7 +216,7 @@ public class EditionEditor extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(this, "You must select a Publisher.", "Validation Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-        
+
         // 3. Parse the date (this is a simple, strict parser)
         Date pubDate;
         try {
@@ -227,9 +225,9 @@ public class EditionEditor extends javax.swing.JDialog {
             sdf.setLenient(false); // Don't allow "2023-02-30"
             pubDate = sdf.parse(dateStr);
         } catch (ParseException e) {
-            JOptionPane.showMessageDialog(this, 
-                    "Invalid date format. Please use YYYY-MM-DD.", 
-                    "Validation Error", 
+            JOptionPane.showMessageDialog(this,
+                    "Invalid date format. Please use YYYY-MM-DD.",
+                    "Validation Error",
                     JOptionPane.ERROR_MESSAGE);
             return;
         }
@@ -237,16 +235,15 @@ public class EditionEditor extends javax.swing.JDialog {
         // 4. Create a new Edition object (from your logic JAR)
         // ** NEW: We use this.parentComicBook instead of getting from a dropdown **
         Edition newEdition = new Edition(editionName, pubDate, isbn, selectedPublisher, this.parentComicBook);
-        
+
         // 5. Link the edition to its parent comic
         this.parentComicBook.addEdition(newEdition);
-        
+
         System.out.println("Saving new edition: " + newEdition.getEditionName() + " for comic " + this.parentComicBook.getTitle());
 
         // 6. TODO: Add the 'newEdition' to your main data list in MainDashboard
         // ((MainDashboard) getParent()).addEditionToList(newEdition);
         //((MainDashboard) getParent()).refreshTable();
-        
         // 7. Close the dialog
         this.dispose();
     }//GEN-LAST:event_saveButtonActionPerformed
@@ -269,29 +266,28 @@ public class EditionEditor extends javax.swing.JDialog {
         /* Create and display the dialog for testing */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                
+
                 // --- Create Dummy Data for Testing ---
-                
                 // ** NEW: We must create a parent comic to pass to the constructor **
                 ComicBook testComic = new ComicBook("The Killing Joke", "Superhero");
                 //ComicBook testComic = null; // Replace with a real object to test
-                
+
                 List<Publisher> testPublishers = new ArrayList<>();
                 testPublishers.add(new Publisher("DC Comics", "USA"));
                 testPublishers.add(new Publisher("Marvel Comics", "USA"));
-                
+
                 // --- Create the dialog and pass the test data ---
                 // The main frame (parent)
                 JFrame testFrame = new javax.swing.JFrame();
-                
+
                 // Check if testComic is null before creating
                 if (testComic == null) {
                     System.err.println("Cannot run test: testComic is null. Please instantiate it in the main method.");
                     System.exit(1);
                 }
-                
+
                 EditionEditor dialog = new EditionEditor(testFrame, true, testComic, testPublishers);
-                
+
                 dialog.addWindowListener(new java.awt.event.WindowAdapter() {
                     @Override
                     public void windowClosing(java.awt.event.WindowEvent e) {
@@ -302,21 +298,23 @@ public class EditionEditor extends javax.swing.JDialog {
             }
         });
     }
+
     class ComicObjectRenderer extends DefaultListCellRenderer {
+
         @Override
         public Component getListCellRendererComponent(JList<?> list, Object value, int index,
-                                                      boolean isSelected, boolean cellHasFocus) {
+                boolean isSelected, boolean cellHasFocus) {
             // Get the default component (a JLabel)
             Component c = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-            
+
             // Check the type of the object and set the text accordingly
             if (value instanceof Publisher) {
                 setText(((Publisher) value).getName());
             } else if (value instanceof ComicBook) {
                 setText(((ComicBook) value).getTitle());
-            } 
+            }
             // (Add other 'else if' for Writer, Artist, Character as needed)
-            
+
             return c;
         }
     }

@@ -4,12 +4,10 @@ package newpackage;
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
-
 /**
  *
  * @author hunor
  */
-
 import MainDashboard.MainDashboard;
 import ro.madarash.kepregeny_project.*;
 import javax.swing.*;
@@ -17,13 +15,13 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 
 public class CreatorEditor extends javax.swing.JDialog {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CreatorEditor.class.getName());
 
     // --- NEW: Fields to store the creator being edited ---
     private Writer writerToEdit;
     private Artist artistToEdit;
-    
+
     /**
      * "CREATE NEW" Constructor
      */
@@ -32,11 +30,11 @@ public class CreatorEditor extends javax.swing.JDialog {
         initComponents();
         this.setSize(700, 600); // Set standard size
         setLocationRelativeTo(parent);
-        
+
         // Default to Writer selected
         writerRadioButton.setSelected(true);
     }
-    
+
     /**
      * --- NEW: "EDIT MODE" Constructor for WRITER ---
      */
@@ -46,7 +44,7 @@ public class CreatorEditor extends javax.swing.JDialog {
         setTitle("Edit Writer");
         loadDataForEdit();
     }
-    
+
     /**
      * --- NEW: "EDIT MODE" Constructor for ARTIST ---
      */
@@ -56,7 +54,7 @@ public class CreatorEditor extends javax.swing.JDialog {
         setTitle("Edit Artist");
         loadDataForEdit();
     }
-    
+
     /**
      * --- NEW: Helper method to load data into fields ---
      */
@@ -66,17 +64,17 @@ public class CreatorEditor extends javax.swing.JDialog {
             nameField.setText(writerToEdit.getName());
             nationalityField.setText(writerToEdit.getNationality());
             writerRadioButton.setSelected(true);
-            
+
             // Disable radio buttons so type can't be changed
             writerRadioButton.setEnabled(false);
             artistRadioButton.setEnabled(false);
-            
+
         } else if (artistToEdit != null) {
             // Load Artist data
             nameField.setText(artistToEdit.getName());
             nationalityField.setText(artistToEdit.getNationality());
             artistRadioButton.setSelected(true);
-            
+
             // Disable radio buttons
             writerRadioButton.setEnabled(false);
             artistRadioButton.setEnabled(false);
@@ -213,25 +211,25 @@ public class CreatorEditor extends javax.swing.JDialog {
             logger.info("Updating writer: " + writerToEdit.getName());
             writerToEdit.setName(name);
             writerToEdit.setNationality(nationality);
-            
+
         } else if (artistToEdit != null) {
             // --- EDIT ARTIST MODE ---
             logger.info("Updating artist: " + artistToEdit.getName());
             artistToEdit.setName(name);
             artistToEdit.setNationality(nationality);
-            
+
         } else {
             // --- CREATE NEW MODE ---
             if (writerRadioButton.isSelected()) {
                 Writer newWriter = new Writer(name, nationality);
                 ((MainDashboard) getParent()).addWriter(newWriter);
                 logger.info("Saving new Writer: " + name);
-                
+
             } else if (artistRadioButton.isSelected()) {
                 Artist newArtist = new Artist(name, nationality);
                 ((MainDashboard) getParent()).addArtist(newArtist);
                 logger.info("Saving new Artist: " + name);
-                
+
             } else {
                 JOptionPane.showMessageDialog(this,
                         "Please select a Creator Type (Writer or Artist).",

@@ -11,14 +11,12 @@ package kepregenygui;
 import MainDashboard.MainDashboard;
 import ro.madarash.kepregeny_project.*;
 
-public class KepregenyGUI 
-{
+public class KepregenyGUI {
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) 
-    {
+    public static void main(String[] args) {
         /* Set the Nimbus look and feel (Optional but recommended) */
         // This code tries to set a more modern look and feel for the application.
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -34,7 +32,7 @@ public class KepregenyGUI
             java.util.logging.Logger.getLogger(MainDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
-        
+
         /* Create and display the main dashboard */
         // This runs the GUI on the Event Dispatch Thread (EDT),
         // which is the standard, thread-safe way to start any Swing application.
@@ -46,5 +44,5 @@ public class KepregenyGUI
             }
         });
     }
-    
+
 }

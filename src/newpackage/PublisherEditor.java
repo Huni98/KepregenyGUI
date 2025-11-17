@@ -8,7 +8,6 @@ package newpackage;
  *
  * @author hunor
  */
-
 import MainDashboard.MainDashboard;
 import ro.madarash.kepregeny_project.*;
 import javax.swing.*;
@@ -18,57 +17,47 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class PublisherEditor extends javax.swing.JDialog {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(PublisherEditor.class.getName());
-    
-    // --- NEW: Field to store the publisher being edited ---
+
     private Publisher publisherToEdit;
-    
+
     public PublisherEditor(java.awt.Frame parent, boolean modal) {
-        // Call the parent JDialog's constructor
+
         super(parent, modal);
 
-        // This method builds the form's layout and components
         initComponents();
-        
+
         this.setSize(700, 600);
 
-        // Center the dialog on top of its parent (MainDashboard)
         setLocationRelativeTo(parent);
-        
+
         // publisherToEdit is null, so we are in "Create" mode
         this.publisherToEdit = null;
     }
-    
+
     /**
-     * --- NEW: "EDIT MODE" Constructor ---
-     * Creates new form PublisherEditor to edit an existing publisher.
+     * --- NEW: "EDIT MODE" Constructor --- Creates new form PublisherEditor to
+     * edit an existing publisher.
      */
     public PublisherEditor(java.awt.Frame parent, boolean modal, Publisher publisherToEdit) {
-        // Call the other constructor
-        this(parent, modal); 
-        
-        // Set the publisher to edit
+
+        this(parent, modal);
+
         this.publisherToEdit = publisherToEdit;
-        
-        // Change the window title
+
         setTitle("Edit Publisher");
-        
-        // Load its data into the form
+
         loadDataForEdit();
     }
-    
-    /**
-     * --- NEW: Helper method to load data into fields ---
-     */
+
     private void loadDataForEdit() {
         if (this.publisherToEdit != null) {
             nameField.setText(this.publisherToEdit.getName());
             countryField.setText(this.publisherToEdit.getCountry());
-            
-            
+
             if (this.publisherToEdit.getFoundationYear() != null) {
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
                 foundationTextField.setText(sdf.format(this.publisherToEdit.getFoundationYear()));
             }
         }
@@ -177,113 +166,65 @@ public class PublisherEditor extends javax.swing.JDialog {
 
     private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveButtonActionPerformed
         // TODO add your handling code here:
-        // 1. Get the data from the text fields
-        String publisherName = nameField.getText();
-        String country = countryField.getText();
-        String dateStr = foundationTextField.getText();
+        try {
+            // 1. Get the data from the text fields
+            String publisherName = nameField.getText();
+            String country = countryField.getText();
+            String dateStr = foundationTextField.getText();
 
-        // 2. Validate the data
-        if (publisherName.isBlank()) {
+            // 2. Validate the data
+            if (publisherName.isBlank()) {
+
+                throw new DataValidationException("Publisher Name cannot be empty.");
+            }
+
+            Date foundDate;
+            if (dateStr.isBlank()) {
+
+                throw new DataValidationException("Foundation Year cannot be empty. Please use YYYY.");
+            }
+
+            try {
+                // Force the user to use YYYY format
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
+                sdf.setLenient(false);
+                foundDate = sdf.parse(dateStr);
+            } catch (ParseException e) {
+
+                throw new DataValidationException("Invalid date format. Please use YYYY.");
+            }
+
+            // 3. Check if we are in "Edit Mode" or "Create Mode"
+            if (publisherToEdit != null) {
+                // --- EDIT MODE ---
+                logger.info("Updating publisher: " + publisherToEdit.getName());
+                // Update the existing object's properties
+                publisherToEdit.setName(publisherName);
+                publisherToEdit.setCountry(country);
+                publisherToEdit.setFoundationYear(foundDate);
+
+            } else {
+                // --- CREATE MODE ---
+                // Create a new Publisher object
+                Publisher newPublisher = new Publisher(publisherName, country, foundDate);
+                logger.info("Saving new publisher: " + publisherName);
+
+                // Add the new publisher to the main list
+                ((MainDashboard) getParent()).addPublisher(newPublisher);
+            }
+
+            // 4. Close the dialog (only if successful)
+            this.dispose();
+
+        } catch (DataValidationException e) {
+
             JOptionPane.showMessageDialog(this,
-                    "Publisher Name cannot be empty.",
+                    e.getMessage(), // Get the message from the exception
                     "Validation Error",
                     JOptionPane.ERROR_MESSAGE);
-            return; // Stop
+            // Don't close the dialog, let the user fix the error
         }
-        
-        Date foundDate;
-        try {
-            // Force the user to use YYYY-MM-DD format
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            sdf.setLenient(false); // Don't allow "2023-02-30"
-            foundDate = sdf.parse(dateStr);
-        } catch (ParseException e) {
-            JOptionPane.showMessageDialog(this, 
-                    "Invalid date format. Please use YYYY-MM-DD.", 
-                    "Validation Error", 
-                    JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        // 3. Check if we are in "Edit Mode" or "Create Mode"
-        if (publisherToEdit != null) {
-            // --- EDIT MODE ---
-            logger.info("Updating publisher: " + publisherToEdit.getName());
-            // Update the existing object's properties
-            publisherToEdit.setName(publisherName);
-            publisherToEdit.setCountry(country);
-            publisherToEdit.setFoundationYear(foundDate);
-            
-        } else {
-            // --- CREATE MODE ---
-            // Create a new Publisher object
-            Publisher newPublisher = new Publisher(publisherName, country, foundDate);
-            logger.info("Saving new publisher: " + publisherName);
-
-            // Add the new publisher to the main list
-            ((MainDashboard) getParent()).addPublisher(newPublisher);
-        }
-
-        // 4. Close the dialog
-        this.dispose();
     }//GEN-LAST:event_saveButtonActionPerformed
-
-    /**
-     * Called when the "Save" button is clicked.
-     
-    private void saveButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        // 1. Get the data from the text fields
-        String publisherName = nameField.getText();
-        String country = countryField.getText();
-        String dateStr = foundationTextField.getText();
-
-        // 2. Validate the data
-        if (publisherName.isBlank()) {
-            JOptionPane.showMessageDialog(this,
-                    "Publisher Name cannot be empty.",
-                    "Validation Error",
-                    JOptionPane.ERROR_MESSAGE);
-            return; // Stop
-        }
-        
-        Date foundDate;
-        try {
-            // Force the user to use YYYY-MM-DD format
-            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            sdf.setLenient(false); // Don't allow "2023-02-30"
-            foundDate = sdf.parse(dateStr);
-        } catch (ParseException e) {
-            JOptionPane.showMessageDialog(this, 
-                    "Invalid date format. Please use YYYY-MM-DD.", 
-                    "Validation Error", 
-                    JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        // 3. Check if we are in "Edit Mode" or "Create Mode"
-        if (publisherToEdit != null) {
-            // --- EDIT MODE ---
-            logger.info("Updating publisher: " + publisherToEdit.getName());
-            // Update the existing object's properties
-            publisherToEdit.setName(publisherName);
-            publisherToEdit.setCountry(country);
-            publisherToEdit.setFoundationYear(foundDate);
-            
-        } else {
-            // --- CREATE MODE ---
-            // Create a new Publisher object
-            Publisher newPublisher = new Publisher(publisherName, country, foundDate);
-            logger.info("Saving new publisher: " + publisherName);
-
-            // Add the new publisher to the main list
-            ((MainDashboard) getParent()).addPublisher(newPublisher);
-        }
-
-        // 4. Close the dialog
-        this.dispose();
-    }
-*/
-    
 
     /**
      * @param args the command line arguments
