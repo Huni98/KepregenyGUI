@@ -49,13 +49,14 @@ public class DataHelper {
         public List<Artist> artists = new ArrayList<>();
         public List<ComicCharacter> characters = new ArrayList<>();
         public List<ComicBook> comicBooks = new ArrayList<>();
+        public List<String> allPowers = new ArrayList<>(); // <-- NEW: List for all powers
     }
 
     
     @SuppressWarnings("unchecked")
     public static ComicDataContainer loadDataFromJSON() {
         ComicDataContainer data = new ComicDataContainer();
-        Gson gson = new Gson(); // Create a Gson object
+        Gson gson = new Gson();
 
         // Create Maps to link objects by their NAME or TITLE
         Map<String, Publisher> publisherMap = new HashMap<>();
@@ -63,6 +64,9 @@ public class DataHelper {
         Map<String, ComicBook> comicBookMap = new HashMap<>();
         Map<String, ComicCharacter> characterMap = new HashMap<>(); // We will use realName as the key
 
+        // --- NEW: Set to store unique powers ---
+        Set<String> uniquePowers = new HashSet<>();
+        
         try (FileReader reader = new FileReader(DATA_FILE)) { // Use FileReader
 
             // 1. Define the type we're parsing into: a Map of Strings to Objects
@@ -82,14 +86,24 @@ public class DataHelper {
                     String dateStr = (String) p.get("foundationYear");
                     Date foundDate = null;
                     
-                    if (dateStr != null && !dateStr.equals("N/A")) {
+                    if (dateStr != null && !dateStr.equals("N/A") && !dateStr.isBlank()) {
+                        // Only try to parse if we have a real date string
                         try {
-                            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-                            sdf.setLenient(false);
-                            foundDate = sdf.parse(dateStr);
+                            // First, try to parse the FULL date format
+                            SimpleDateFormat sdfFull = new SimpleDateFormat("yyyy");
+                            sdfFull.setLenient(false);
+                            foundDate = sdfFull.parse(dateStr);
                         } catch (ParseException e) {
-                            System.err.println("Warning: Could not parse date for publisher " + name);
-                            foundDate = new Date(0); // Use default epoch date on error
+                            // If that fails, try to parse the YEAR-ONLY format
+                            try {
+                                SimpleDateFormat sdfYear = new SimpleDateFormat("yyyy-MM-dd");
+                                sdfYear.setLenient(false);
+                                foundDate = sdfYear.parse(dateStr);
+                            } catch (ParseException e2) {
+                                // If both fail, log a warning and set to null
+                                System.err.println("Warning: Could not parse date '" + dateStr + "' for publisher " + name + ". Setting to null.");
+                                foundDate = null;
+                            }
                         }
                     }
                     
@@ -156,6 +170,7 @@ public class DataHelper {
                         case "ANTI-HERO":
                             character = new Superhero(realName, origin, alias);
                             break;
+                        case "SUPERVILLAIN":
                         case "VILLAIN":
                             character = new Villain(realName, origin, alias);
                             break;
@@ -256,6 +271,9 @@ public class DataHelper {
                                 } else {
                                     ((Villain) character).addPower(pStr);
                                 }
+                                if (pStr != null && !pStr.isBlank()) {
+                                    uniquePowers.add(pStr);
+                                }
                             }
                         }
                     }
@@ -295,15 +313,34 @@ public class DataHelper {
                     // Link Character Affiliations (Relationships)
                     Object charAffObj = c.get("characterAffiliations");
                     if (charAffObj instanceof List) {
-                        List<Map<String, Object>> charAffs = (List<Map<String, Object>>) charAffObj;
-                        for (Map<String, Object> af : charAffs) {
-                            String charRealName = (String) af.get("characterRealName");
-                            String relationship = (String) af.get("relationship");
-
-                            ComicCharacter other = characterMap.get(charRealName);
-                            if (other != null) {
-                                // Use the renamed method
-                                character.addCharacterAffiliation(other, relationship);
+                        List<?> charAffList = (List<?>) charAffObj; // Get it as a generic list
+                        
+                        if (!charAffList.isEmpty()) {
+                            Object firstElement = charAffList.get(0);
+                            
+                            if (firstElement instanceof String) {
+                                // --- Handle as List<String> ---
+                                @SuppressWarnings("unchecked")
+                                List<String> charAffNameList = (List<String>) charAffList; 
+                                for (String charRealName : charAffNameList) {
+                                    ComicCharacter other = characterMap.get(charRealName);
+                                    if(other != null) {
+                                        character.addCharacterAffiliation(other, "Affiliate"); // Default relationship
+                                    }
+                                }
+                            } else if (firstElement instanceof Map) {
+                                // --- Handle as List<Map<String, Object>> ---
+                                @SuppressWarnings("unchecked")
+                                List<Map<String, Object>> charAffs = (List<Map<String, Object>>) charAffList;
+                                for (Map<String, Object> af : charAffs) {
+                                    String charRealName = (String) af.get("characterRealName");
+                                    String relationship = (String) af.get("relationship");
+                                    
+                                    ComicCharacter other = characterMap.get(charRealName);
+                                    if(other != null && relationship != null) {
+                                        character.addCharacterAffiliation(other, relationship);
+                                    }
+                                }
                             }
                         }
                     }
@@ -322,6 +359,11 @@ public class DataHelper {
                     }
                 }
             }
+            
+            // --- NEW: Finalize the powers list ---
+            data.allPowers.addAll(uniquePowers); // Add all unique powers
+            Collections.sort(data.allPowers);    // Sort them alphabetically
+            
             return data;
 
         } catch (FileNotFoundException e) {
@@ -359,7 +401,7 @@ public class DataHelper {
                 if (foundDate == null || foundDate.getTime() == 0) {
                     pObj.put("foundationYear", "N/A");
                 } else {
-                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                    SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
                     pObj.put("foundationYear", sdf.format(foundDate));
                 }
                 publishersArray.add(pObj);

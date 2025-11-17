@@ -41,6 +41,7 @@ public class MainDashboard extends javax.swing.JFrame {
     private List<Writer> allWriters = new ArrayList<>();
     private List<Artist> allArtists = new ArrayList<>();
     private List<Publisher> allPublishers = new ArrayList<>();
+    private List<String> allPowers = new ArrayList<>(); // <-- NEW: List for all powers
 
     private List<Object> allItemsInTable = new ArrayList<>();
 
@@ -153,8 +154,10 @@ public class MainDashboard extends javax.swing.JFrame {
             this.allArtists = data.artists;
             this.allCharacters = data.characters;
             this.allComicBooks = data.comicBooks;
+            this.allPowers = data.allPowers;
 
             logger.info("Data loaded successfully!");
+            logger.info("Loaded " + this.allPowers.size() + " unique powers.");
 
             // This call is in setupDataAndTable, but we call it
             // again here to be safe, since loading is complete.
@@ -377,14 +380,14 @@ public class MainDashboard extends javax.swing.JFrame {
      * MODIFICATION: New helper method to format dates cleanly.
      *
      * @param date The date to format.
-     * @return A string in "yyyy-MM-dd" format, or "N/A" if the date is null.
+     * @return A string in "yyyy" format, or "N/A" if the date is null.
      */
     private String formatDate(Date date) {
         if (date == null) {
             return "N/A";
         }
         // Define the desired format
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
         return sdf.format(date);
     }
 
@@ -914,7 +917,8 @@ public class MainDashboard extends javax.swing.JFrame {
                 allCharacters, // <-- This is what you asked for
                 allWriters, // <-- Also pass writers
                 allArtists, // <-- Also pass artists
-                allComicBooks // <-- Also pass comic books
+                allComicBooks, // <-- Also pass comic books
+                allPowers // <-- NEW: Pass the loaded powers list
         );
         charEditor.setVisible(true);
 
@@ -985,6 +989,7 @@ public class MainDashboard extends javax.swing.JFrame {
                     allWriters,
                     allArtists,
                     allComicBooks,
+                    allPowers,
                     (ComicCharacter) selectedObject // <-- Pass the character to edit
             );
             charEditor.setVisible(true);

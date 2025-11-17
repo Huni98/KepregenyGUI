@@ -3,137 +3,132 @@
     {
       "name": "AfterShock Comics",
       "country": "USA",
-      "foundationYear": "N/A"
+      "foundationYear": "2015"
     },
     {
       "name": "Archie Comics",
       "country": "USA",
-      "foundationYear": "N/A"
+      "foundationYear": "1939"
     },
     {
       "name": "Atlas Comics",
       "country": "USA",
-      "foundationYear": "N/A"
+      "foundationYear": "1951"
     },
     {
       "name": "Black Mask Studios",
       "country": "USA",
-      "foundationYear": "N/A"
+      "foundationYear": "2013"
     },
     {
       "name": "Boom! Studios",
       "country": "USA",
-      "foundationYear": "N/A"
-    },
-    {
-      "name": "BOOM! Studios",
-      "country": "USA",
-      "foundationYear": "N/A"
+      "foundationYear": "2005"
     },
     {
       "name": "CrossGen",
       "country": "USA",
-      "foundationYear": "N/A"
+      "foundationYear": "1998"
     },
     {
       "name": "Dark Horse Comics",
       "country": "USA",
-      "foundationYear": "N/A"
+      "foundationYear": "1986"
     },
     {
       "name": "DC Comics",
       "country": "USA",
-      "foundationYear": "N/A"
+      "foundationYear": "1934"
     },
     {
       "name": "Dynamite Entertainment",
       "country": "USA",
-      "foundationYear": "N/A"
+      "foundationYear": "2004"
     },
     {
       "name": "Harris Comics",
       "country": "USA",
-      "foundationYear": "N/A"
+      "foundationYear": "1983"
     },
     {
       "name": "Humanoids",
       "country": "France",
-      "foundationYear": "N/A"
+      "foundationYear": "1974"
     },
     {
       "name": "Icon Comics",
       "country": "USA",
-      "foundationYear": "N/A"
+      "foundationYear": "2004"
     },
     {
       "name": "IDW Publishing",
       "country": "USA",
-      "foundationYear": "N/A"
+      "foundationYear": "1999"
     },
     {
       "name": "Image Comics",
       "country": "USA",
-      "foundationYear": "N/A"
+      "foundationYear": "1992"
     },
     {
       "name": "Kodansha",
       "country": "Japan",
-      "foundationYear": "N/A"
+      "foundationYear": "1909"
     },
     {
       "name": "MAD Magazine",
       "country": "USA",
-      "foundationYear": "N/A"
+      "foundationYear": "1952"
     },
     {
       "name": "Malibu Comics",
       "country": "USA",
-      "foundationYear": "N/A"
+      "foundationYear": "1986"
     },
     {
       "name": "Marvel Comics",
       "country": "USA",
-      "foundationYear": "N/A"
+      "foundationYear": "1939"
     },
     {
       "name": "Milestone Media",
       "country": "USA",
-      "foundationYear": "N/A"
+      "foundationYear": "1993"
     },
     {
       "name": "Oni Press",
       "country": "USA",
-      "foundationYear": "N/A"
+      "foundationYear": "1997"
     },
     {
       "name": "Shueisha",
       "country": "Japan",
-      "foundationYear": "N/A"
+      "foundationYear": "1925"
     },
     {
       "name": "Titan Comics",
       "country": "UK",
-      "foundationYear": "N/A"
+      "foundationYear": "2013"
     },
     {
       "name": "Top Cow",
       "country": "USA",
-      "foundationYear": "N/A"
+      "foundationYear": "1992"
     },
     {
       "name": "Valiant",
       "country": "USA",
-      "foundationYear": "N/A"
+      "foundationYear": "1989"
     },
     {
       "name": "Vertigo",
       "country": "USA",
-      "foundationYear": "N/A"
+      "foundationYear": "1993"
     },
     {
       "name": "WildStorm",
       "country": "USA",
-      "foundationYear": "N/A"
+      "foundationYear": "1992"
     }
   ],
   "writers": [
@@ -583,17 +578,35 @@
   "comicBooks": [
     {
       "title": "100 Bullets #1",
-      "genre": "Various",
-      "writerNames": [],
-      "artistNames": [],
-      "editions": []
+      "genre": "Crime/Noir",
+      "writerNames": [
+        "Brian Azzarello"
+      ],
+      "artistNames": [
+        "Eduardo Risso"
+      ],
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1999-08-01",
+          "isbn": "N/A",
+          "publisherName": "Vertigo"
+        }
+      ]
     },
     {
       "title": "Action Comics #1",
-      "genre": "Various",
+      "genre": "Superhero",
       "writerNames": [],
       "artistNames": [],
-      "editions": []
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1938-06-01",
+          "isbn": "N/A",
+          "publisherName": "DC Comics"
+        }
+      ]
     },
     {
       "title": "Akira #1",
@@ -623,7 +636,7 @@
       "editions": [
         {
           "editionName": "First Print",
-          "publicationDate": "1962-11-01",
+          "publicationDate": "1962-08-01",
           "isbn": "N/A",
           "publisherName": "Marvel Comics"
         }
@@ -631,43 +644,79 @@
     },
     {
       "title": "Amazing Spider-Man #1",
-      "genre": "Various",
-      "writerNames": [],
-      "artistNames": [],
-      "editions": []
+      "genre": "Superhero",
+      "writerNames": [
+        "Stan Lee"
+      ],
+      "artistNames": [
+        "Steve Ditko"
+      ],
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1963-03-01",
+          "isbn": "N/A",
+          "publisherName": "Marvel Comics"
+        }
+      ]
     },
     {
       "title": "American Vampire #1",
-      "genre": "Various",
-      "writerNames": [],
-      "artistNames": [],
-      "editions": []
-    },
-    {
-      "title": "Astro City #1",
-      "genre": "Various",
-      "writerNames": [],
-      "artistNames": [],
-      "editions": []
-    },
-    {
-      "title": "Avengers #57",
-      "genre": "Various",
-      "writerNames": [],
-      "artistNames": [],
-      "editions": []
-    },
-    {
-      "title": "Batman #232",
-      "genre": "Superhero",
+      "genre": "Horror",
       "writerNames": [
-        "Len Wein"
+        "Scott Snyder"
       ],
       "artistNames": [],
       "editions": [
         {
           "editionName": "First Print",
-          "publicationDate": "1970-02-01",
+          "publicationDate": "2010-03-01",
+          "isbn": "N/A",
+          "publisherName": "Vertigo"
+        }
+      ]
+    },
+    {
+      "title": "Astro City #1",
+      "genre": "Superhero",
+      "writerNames": [],
+      "artistNames": [],
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1995-08-01",
+          "isbn": "N/A",
+          "publisherName": "Image Comics"
+        }
+      ]
+    },
+    {
+      "title": "Avengers #57",
+      "genre": "Superhero",
+      "writerNames": [
+        "Roy Thomas"
+      ],
+      "artistNames": [],
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1968-10-01",
+          "isbn": "N/A",
+          "publisherName": "Marvel Comics"
+        }
+      ]
+    },
+    {
+      "title": "Batman #232",
+      "genre": "Superhero",
+      "writerNames": [
+        "Dennis O\u0027Neil"
+      ],
+      "artistNames": [],
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1971-06-01",
           "isbn": "N/A",
           "publisherName": "DC Comics"
         }
@@ -675,100 +724,185 @@
     },
     {
       "title": "Captain America Comics #1",
-      "genre": "Various",
+      "genre": "Superhero",
       "writerNames": [],
-      "artistNames": [],
+      "artistNames": [
+        "Jack Kirby"
+      ],
       "editions": []
     },
     {
       "title": "Civil War #1",
-      "genre": "Various",
-      "writerNames": [],
-      "artistNames": [],
+      "genre": "Superhero",
+      "writerNames": [
+        "Mark Millar"
+      ],
+      "artistNames": [
+        "Steve McNiven"
+      ],
       "editions": [
         {
-          "editionName": "First Edition",
-          "publicationDate": "2026-02-20",
-          "isbn": "",
-          "publisherName": "AfterShock Comics"
+          "editionName": "First Print",
+          "publicationDate": "2006-05-03",
+          "isbn": "N/A",
+          "publisherName": "Marvel Comics"
         }
       ]
     },
     {
       "title": "Daredevil #1",
-      "genre": "Various",
-      "writerNames": [],
+      "genre": "Superhero",
+      "writerNames": [
+        "Stan Lee"
+      ],
       "artistNames": [],
-      "editions": []
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1964-04-01",
+          "isbn": "N/A",
+          "publisherName": "Marvel Comics"
+        }
+      ]
     },
     {
       "title": "Daredevil: Born Again #1",
-      "genre": "Various",
+      "genre": "Superhero",
       "writerNames": [],
       "artistNames": [],
-      "editions": []
+      "editions": [
+        {
+          "editionName": "Collected Edition",
+          "publicationDate": "1986-02-01",
+          "isbn": "978-0785113793",
+          "publisherName": "Marvel Comics"
+        }
+      ]
     },
     {
       "title": "Detective Comics #27",
-      "genre": "Various",
+      "genre": "Superhero",
       "writerNames": [],
       "artistNames": [],
-      "editions": []
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1939-05-01",
+          "isbn": "N/A",
+          "publisherName": "DC Comics"
+        }
+      ]
     },
     {
       "title": "Doctor Strange #1",
-      "genre": "Various",
-      "writerNames": [],
-      "artistNames": [],
-      "editions": []
+      "genre": "Superhero/Fantasy",
+      "writerNames": [
+        "Stan Lee"
+      ],
+      "artistNames": [
+        "Steve Ditko"
+      ],
+      "editions": [
+        {
+          "editionName": "First Appearance (Strange Tales #110)",
+          "publicationDate": "1963-07-01",
+          "isbn": "N/A",
+          "publisherName": "Marvel Comics"
+        }
+      ]
     },
     {
       "title": "Elektra: Assassin #1",
-      "genre": "Various",
+      "genre": "Superhero",
       "writerNames": [],
-      "artistNames": [],
-      "editions": []
+      "artistNames": [
+        "Bill Sienkiewicz"
+      ],
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1986-08-01",
+          "isbn": "978-0871352095",
+          "publisherName": "Marvel Comics"
+        }
+      ]
     },
     {
       "title": "Fables #1",
-      "genre": "Various",
+      "genre": "Fantasy",
       "writerNames": [],
       "artistNames": [],
-      "editions": []
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "2002-07-01",
+          "isbn": "N/A",
+          "publisherName": "Vertigo"
+        }
+      ]
     },
     {
       "title": "Fantastic Four #1",
-      "genre": "Various",
-      "writerNames": [],
-      "artistNames": [],
-      "editions": []
+      "genre": "Superhero",
+      "writerNames": [
+        "Stan Lee"
+      ],
+      "artistNames": [
+        "Jack Kirby"
+      ],
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1961-11-01",
+          "isbn": "N/A",
+          "publisherName": "Marvel Comics"
+        }
+      ]
     },
     {
       "title": "Flash #110",
-      "genre": "Various",
+      "genre": "Superhero",
       "writerNames": [],
       "artistNames": [],
-      "editions": []
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1959-12-01",
+          "isbn": "N/A",
+          "publisherName": "DC Comics"
+        }
+      ]
     },
     {
       "title": "From Hell #1",
-      "genre": "Various",
-      "writerNames": [],
+      "genre": "Historical Horror",
+      "writerNames": [
+        "Alan Moore"
+      ],
       "artistNames": [],
       "editions": []
     },
     {
       "title": "Green Lantern #1",
-      "genre": "Various",
+      "genre": "Superhero",
       "writerNames": [],
       "artistNames": [],
-      "editions": []
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1960-07-01",
+          "isbn": "N/A",
+          "publisherName": "DC Comics"
+        }
+      ]
     },
     {
       "title": "Hellboy #1",
       "genre": "Horror",
       "writerNames": [],
-      "artistNames": [],
+      "artistNames": [
+        "Mike Mignola"
+      ],
       "editions": [
         {
           "editionName": "First Print",
@@ -780,31 +914,63 @@
     },
     {
       "title": "Hellboy: Seed of Destruction #1",
-      "genre": "Various",
+      "genre": "Horror",
       "writerNames": [],
-      "artistNames": [],
-      "editions": []
+      "artistNames": [
+        "Mike Mignola"
+      ],
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1994-03-01",
+          "isbn": "978-1593070948",
+          "publisherName": "Dark Horse Comics"
+        }
+      ]
     },
     {
       "title": "Identity Crisis #1",
-      "genre": "Various",
+      "genre": "Superhero",
       "writerNames": [],
       "artistNames": [],
-      "editions": []
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "2004-06-01",
+          "isbn": "N/A",
+          "publisherName": "DC Comics"
+        }
+      ]
     },
     {
       "title": "Invincible #1",
-      "genre": "Various",
-      "writerNames": [],
+      "genre": "Superhero",
+      "writerNames": [
+        "Robert Kirkman"
+      ],
       "artistNames": [],
-      "editions": []
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "2003-01-01",
+          "isbn": "N/A",
+          "publisherName": "Image Comics"
+        }
+      ]
     },
     {
       "title": "Iron Man #1",
-      "genre": "Various",
+      "genre": "Superhero",
       "writerNames": [],
       "artistNames": [],
-      "editions": []
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1968-05-01",
+          "isbn": "N/A",
+          "publisherName": "Marvel Comics"
+        }
+      ]
     },
     {
       "title": "Justice League #1",
@@ -836,7 +1002,7 @@
       "editions": [
         {
           "editionName": "Hardcover",
-          "publicationDate": "1996-04-01",
+          "publicationDate": "1996-05-01",
           "isbn": "978-1401202299",
           "publisherName": "DC Comics"
         }
@@ -844,31 +1010,69 @@
     },
     {
       "title": "New Mutants #1",
-      "genre": "Various",
-      "writerNames": [],
+      "genre": "Superhero",
+      "writerNames": [
+        "Chris Claremont"
+      ],
       "artistNames": [],
-      "editions": []
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1983-03-01",
+          "isbn": "N/A",
+          "publisherName": "Marvel Comics"
+        }
+      ]
     },
     {
       "title": "Planetary #1",
-      "genre": "Various",
-      "writerNames": [],
+      "genre": "Superhero/Science Fiction",
+      "writerNames": [
+        "Warren Ellis"
+      ],
       "artistNames": [],
-      "editions": []
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1999-04-01",
+          "isbn": "N/A",
+          "publisherName": "WildStorm"
+        }
+      ]
     },
     {
       "title": "Preacher #1",
-      "genre": "Various",
-      "writerNames": [],
+      "genre": "Supernatural/Drama",
+      "writerNames": [
+        "Garth Ennis"
+      ],
       "artistNames": [],
-      "editions": []
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1995-06-01",
+          "isbn": "N/A",
+          "publisherName": "Vertigo"
+        }
+      ]
     },
     {
       "title": "Saga #1",
-      "genre": "Various",
-      "writerNames": [],
-      "artistNames": [],
-      "editions": []
+      "genre": "Sci-Fi/Fantasy",
+      "writerNames": [
+        "Brian K. Vaughan"
+      ],
+      "artistNames": [
+        "Fiona Staples"
+      ],
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "2012-03-14",
+          "isbn": "N/A",
+          "publisherName": "Image Comics"
+        }
+      ]
     },
     {
       "title": "Saga #3",
@@ -890,10 +1094,19 @@
     },
     {
       "title": "Saga of the Swamp Thing #37",
-      "genre": "Various",
-      "writerNames": [],
+      "genre": "Superhero/Horror",
+      "writerNames": [
+        "Alan Moore"
+      ],
       "artistNames": [],
-      "editions": []
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1985-06-01",
+          "isbn": "N/A",
+          "publisherName": "DC Comics"
+        }
+      ]
     },
     {
       "title": "Sailor Moon #1",
@@ -913,42 +1126,63 @@
     },
     {
       "title": "Sandman #1",
-      "genre": "Various",
-      "writerNames": [],
-      "artistNames": [],
-      "editions": []
-    },
-    {
-      "title": "Sandman #2",
-      "genre": "Fantasy",
+      "genre": "Fantasy/Horror",
       "writerNames": [
         "Neil Gaiman"
       ],
-      "artistNames": [
-        "J.H. Williams III"
-      ],
+      "artistNames": [],
       "editions": [
         {
-          "editionName": "Deluxe",
-          "publicationDate": "1990-02-01",
-          "isbn": "978-1401225755",
+          "editionName": "First Print",
+          "publicationDate": "1989-01-01",
+          "isbn": "N/A",
+          "publisherName": "DC Comics"
+        }
+      ]
+    },
+    {
+      "title": "Sandman #2",
+      "genre": "Fantasy/Horror",
+      "writerNames": [
+        "Neil Gaiman"
+      ],
+      "artistNames": [],
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1989-02-01",
+          "isbn": "N/A",
           "publisherName": "DC Comics"
         }
       ]
     },
     {
       "title": "Scott Pilgrim #1",
-      "genre": "Various",
+      "genre": "Romantic Comedy",
       "writerNames": [],
       "artistNames": [],
-      "editions": []
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "2004-08-01",
+          "isbn": "978-1932664089",
+          "publisherName": "Oni Press"
+        }
+      ]
     },
     {
       "title": "Secret Wars #1",
-      "genre": "Various",
+      "genre": "Superhero",
       "writerNames": [],
       "artistNames": [],
-      "editions": []
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1984-05-01",
+          "isbn": "N/A",
+          "publisherName": "Marvel Comics"
+        }
+      ]
     },
     {
       "title": "Spawn #1",
@@ -960,7 +1194,7 @@
       "editions": [
         {
           "editionName": "First Print",
-          "publicationDate": "1992-03-01",
+          "publicationDate": "1992-05-01",
           "isbn": "N/A",
           "publisherName": "Image Comics"
         }
@@ -968,17 +1202,35 @@
     },
     {
       "title": "Spider-Man #300",
-      "genre": "Various",
+      "genre": "Superhero",
       "writerNames": [],
-      "artistNames": [],
-      "editions": []
+      "artistNames": [
+        "Todd McFarlane"
+      ],
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1988-05-01",
+          "isbn": "N/A",
+          "publisherName": "Marvel Comics"
+        }
+      ]
     },
     {
       "title": "Swamp Thing #1",
-      "genre": "Various",
-      "writerNames": [],
+      "genre": "Horror/Superhero",
+      "writerNames": [
+        "Len Wein"
+      ],
       "artistNames": [],
-      "editions": []
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1972-11-01",
+          "isbn": "N/A",
+          "publisherName": "DC Comics"
+        }
+      ]
     },
     {
       "title": "The Amazing Spider-Man #50",
@@ -992,7 +1244,7 @@
       "editions": [
         {
           "editionName": "First Print",
-          "publicationDate": "1964-06-01",
+          "publicationDate": "1967-07-01",
           "isbn": "N/A",
           "publisherName": "Marvel Comics"
         }
@@ -1000,10 +1252,21 @@
     },
     {
       "title": "The Authority #1",
-      "genre": "Various",
-      "writerNames": [],
-      "artistNames": [],
-      "editions": []
+      "genre": "Superhero",
+      "writerNames": [
+        "Warren Ellis"
+      ],
+      "artistNames": [
+        "Bryan Hitch"
+      ],
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1999-05-01",
+          "isbn": "N/A",
+          "publisherName": "WildStorm"
+        }
+      ]
     },
     {
       "title": "The Avengers #1",
@@ -1017,7 +1280,7 @@
       "editions": [
         {
           "editionName": "First Print",
-          "publicationDate": "1963-08-01",
+          "publicationDate": "1963-09-01",
           "isbn": "N/A",
           "publisherName": "Marvel Comics"
         }
@@ -1025,8 +1288,10 @@
     },
     {
       "title": "The Boys #1",
-      "genre": "Various",
-      "writerNames": [],
+      "genre": "Superhero/Satire",
+      "writerNames": [
+        "Garth Ennis"
+      ],
       "artistNames": [],
       "editions": []
     },
@@ -1039,7 +1304,7 @@
       ],
       "editions": [
         {
-          "editionName": "Hardcover",
+          "editionName": "First Print",
           "publicationDate": "1986-02-01",
           "isbn": "978-1401209731",
           "publisherName": "DC Comics"
@@ -1048,63 +1313,125 @@
     },
     {
       "title": "The Incredible Hulk #1",
-      "genre": "Various",
-      "writerNames": [],
-      "artistNames": [],
-      "editions": []
+      "genre": "Superhero",
+      "writerNames": [
+        "Stan Lee"
+      ],
+      "artistNames": [
+        "Jack Kirby"
+      ],
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1962-05-01",
+          "isbn": "N/A",
+          "publisherName": "Marvel Comics"
+        }
+      ]
     },
     {
       "title": "The Mask #1",
-      "genre": "Various",
+      "genre": "Superhero/Dark Comedy",
       "writerNames": [],
       "artistNames": [],
-      "editions": []
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1991-05-01",
+          "isbn": "N/A",
+          "publisherName": "Dark Horse Comics"
+        }
+      ]
     },
     {
       "title": "The Punisher #1",
-      "genre": "Various",
-      "writerNames": [],
+      "genre": "Superhero/Crime",
+      "writerNames": [
+        "Gerry Conway"
+      ],
       "artistNames": [],
-      "editions": []
+      "editions": [
+        {
+          "editionName": "First Appearance (Amazing Spider-Man #129)",
+          "publicationDate": "1974-02-01",
+          "isbn": "N/A",
+          "publisherName": "Marvel Comics"
+        }
+      ]
     },
     {
       "title": "The Walking Dead #1",
-      "genre": "Various",
-      "writerNames": [],
+      "genre": "Horror",
+      "writerNames": [
+        "Robert Kirkman"
+      ],
       "artistNames": [],
-      "editions": []
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "2003-10-01",
+          "isbn": "N/A",
+          "publisherName": "Image Comics"
+        }
+      ]
     },
     {
       "title": "Thor #126",
-      "genre": "Various",
-      "writerNames": [],
-      "artistNames": [],
-      "editions": []
+      "genre": "Superhero",
+      "writerNames": [
+        "Stan Lee"
+      ],
+      "artistNames": [
+        "Jack Kirby"
+      ],
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1966-03-01",
+          "isbn": "N/A",
+          "publisherName": "Marvel Comics"
+        }
+      ]
     },
     {
       "title": "Transmetropolitan #1",
-      "genre": "Various",
-      "writerNames": [],
+      "genre": "Cyberpunk/Satire",
+      "writerNames": [
+        "Warren Ellis"
+      ],
       "artistNames": [],
       "editions": []
     },
     {
       "title": "Uncanny X-Men #129",
-      "genre": "Various",
-      "writerNames": [],
-      "artistNames": [],
-      "editions": []
+      "genre": "Superhero",
+      "writerNames": [
+        "Chris Claremont"
+      ],
+      "artistNames": [
+        "John Byrne"
+      ],
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1980-01-01",
+          "isbn": "N/A",
+          "publisherName": "Marvel Comics"
+        }
+      ]
     },
     {
       "title": "V for Vendetta #1",
-      "genre": "Various",
-      "writerNames": [],
+      "genre": "Dystopian",
+      "writerNames": [
+        "Alan Moore"
+      ],
       "artistNames": [],
       "editions": []
     },
     {
       "title": "Watchmen #1",
-      "genre": "Superhero",
+      "genre": "Superhero/Dystopian",
       "writerNames": [
         "Alan Moore"
       ],
@@ -1113,8 +1440,8 @@
       ],
       "editions": [
         {
-          "editionName": "Hardcover",
-          "publicationDate": "1987-02-01",
+          "editionName": "First Print",
+          "publicationDate": "1986-09-01",
           "isbn": "978-0930289232",
           "publisherName": "DC Comics"
         }
@@ -1122,7 +1449,7 @@
     },
     {
       "title": "Watchmen #2",
-      "genre": "Superhero",
+      "genre": "Superhero/Dystopian",
       "writerNames": [
         "Alan Moore"
       ],
@@ -1131,8 +1458,8 @@
       ],
       "editions": [
         {
-          "editionName": "Hardcover",
-          "publicationDate": "1987-02-01",
+          "editionName": "First Print",
+          "publicationDate": "1986-10-01",
           "isbn": "978-0930289232",
           "publisherName": "DC Comics"
         }
@@ -1140,10 +1467,21 @@
     },
     {
       "title": "X-Men #1",
-      "genre": "Various",
-      "writerNames": [],
-      "artistNames": [],
-      "editions": []
+      "genre": "Superhero",
+      "writerNames": [
+        "Stan Lee"
+      ],
+      "artistNames": [
+        "Jack Kirby"
+      ],
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "1963-09-01",
+          "isbn": "N/A",
+          "publisherName": "Marvel Comics"
+        }
+      ]
     },
     {
       "title": "X-Men #1 (1991)",
@@ -1157,7 +1495,7 @@
       "editions": [
         {
           "editionName": "First Print",
-          "publicationDate": "1991-01-01",
+          "publicationDate": "1991-10-01",
           "isbn": "N/A",
           "publisherName": "Marvel Comics"
         }
@@ -1165,20 +1503,29 @@
     },
     {
       "title": "Y: The Last Man #1",
-      "genre": "Various",
-      "writerNames": [],
+      "genre": "Post-Apocalyptic",
+      "writerNames": [
+        "Brian K. Vaughan"
+      ],
       "artistNames": [],
-      "editions": []
+      "editions": [
+        {
+          "editionName": "First Print",
+          "publicationDate": "2002-09-01",
+          "isbn": "N/A",
+          "publisherName": "Vertigo"
+        }
+      ]
     },
     {
       "title": "Batman Returns",
-      "genre": "superhero",
+      "genre": "Superhero",
       "writerNames": [],
       "artistNames": [],
       "editions": [
         {
-          "editionName": "Hardback",
-          "publicationDate": "2025-11-05",
+          "editionName": "Movie Adaptation",
+          "publicationDate": "1992-06-01",
           "isbn": "N/A",
           "publisherName": "DC Comics"
         }
@@ -1190,7 +1537,7 @@
       "type": "CIVILIAN",
       "realName": "Abe Sapien",
       "alias": "Abe Sapien",
-      "origin": "Aquatic paranormal investigator.",
+      "origin": "Former Victorian scientist transformed into an aquatic paranormal investigator.",
       "powers": [],
       "creators": [
         {
@@ -1199,7 +1546,12 @@
         }
       ],
       "affiliations": [],
-      "characterAffiliations": [],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Hellboy",
+          "relationship": "Affiliate"
+        }
+      ],
       "appearances": [
         "Hellboy: Seed of Destruction #1"
       ]
@@ -1208,12 +1560,27 @@
       "type": "SUPERHERO",
       "realName": "Adam Warlock",
       "alias": "Adam Warlock",
-      "origin": "N/A",
+      "origin": "Created by the Enclave as \u0027Him\u0027, later reborn as Adam Warlock and wielder of the Soul Gem.",
       "powers": [
-        "N/A"
+        "Superhuman strength",
+        "Energy manipulation",
+        "Cosmic awareness",
+        "Soul Gem abilities"
       ],
-      "creators": [],
-      "affiliations": [],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        },
+        {
+          "creatorName": "Jack Kirby",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Infinity Watch",
+        "Guardians of the Galaxy"
+      ],
       "characterAffiliations": [],
       "appearances": []
     },
@@ -1221,10 +1588,11 @@
       "type": "VILLAIN",
       "realName": "Akira",
       "alias": "Akira",
-      "origin": "Psychic experiment subject.",
+      "origin": "Psychic child subject of government experiments in Neo-Tokyo.",
       "powers": [
-        "Reality Manipulation",
-        "Telepathy"
+        "Reality manipulation",
+        "Telepathy",
+        "Telekinesis"
       ],
       "creators": [
         {
@@ -1242,10 +1610,13 @@
       "type": "SUPERHERO",
       "realName": "Al Simmons",
       "alias": "Spawn",
-      "origin": "Resurrected assassin.",
+      "origin": "Government assassin resurrected by Malebolgia with necroplasm after betrayal.",
       "powers": [
         "Necroplasmic powers",
-        "Regeneration"
+        "Regeneration",
+        "Teleportation",
+        "Shape-shifting",
+        "Weapon conjuration"
       ],
       "creators": [
         {
@@ -1262,11 +1633,11 @@
     {
       "type": "SUPERHERO",
       "realName": "Alana",
-      "alias": "",
-      "origin": "Soldier from Landfall.",
+      "alias": "Alana",
+      "origin": "Soldier from Landfall who falls in love with Marko of Wreath; mother of Hazel.",
       "powers": [
         "Flight",
-        "Combat"
+        "Combat training"
       ],
       "creators": [
         {
@@ -1279,7 +1650,12 @@
         }
       ],
       "affiliations": [],
-      "characterAffiliations": [],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Marko",
+          "relationship": "Affiliate"
+        }
+      ],
       "appearances": [
         "Saga #3"
       ]
@@ -1288,19 +1664,28 @@
       "type": "SUPERHERO",
       "realName": "Alec Holland",
       "alias": "Swamp Thing",
-      "origin": "Transformed into plant elemental.",
+      "origin": "Scientist transformed into a plant elemental after lab sabotage and exposure to bio-restorative formula.",
       "powers": [
         "Plant control",
-        "Regeneration"
+        "Regeneration",
+        "Elemental connection",
+        "Body reconstitution"
       ],
       "creators": [
         {
           "creatorName": "Len Wein",
-          "role": "Creator"
+          "role": "Co-creator"
         }
       ],
-      "affiliations": [],
-      "characterAffiliations": [],
+      "affiliations": [
+        "Justice League Dark"
+      ],
+      "characterAffiliations": [
+        {
+          "characterRealName": "John Constantine",
+          "relationship": "Affiliate"
+        }
+      ],
       "appearances": [
         "Swamp Thing #1"
       ]
@@ -1309,11 +1694,20 @@
       "type": "CIVILIAN",
       "realName": "Alfred Pennyworth",
       "alias": "Alfred Pennyworth",
-      "origin": "Wayne family butler.",
+      "origin": "Former British intelligence agent turned Wayne family butler and confidant.",
       "powers": [],
       "creators": [],
       "affiliations": [],
-      "characterAffiliations": [],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Barbara Gordon",
+          "relationship": "Affiliate"
+        },
+        {
+          "characterRealName": "Dick Grayson",
+          "relationship": "Affiliate"
+        }
+      ],
       "appearances": [
         "Detective Comics #27"
       ]
@@ -1322,11 +1716,8 @@
       "type": "SUPERHERO",
       "realName": "Barbara Gordon",
       "alias": "Batgirl",
-      "origin": "GCPD\u0027s daughter and Batgirl.",
-      "powers": [
-        "Martial arts",
-        "Computer skills"
-      ],
+      "origin": "Daughter of Commissioner James Gordon; inspired by Batman to fight crime. Later operates as Oracle.",
+      "powers": [],
       "creators": [],
       "affiliations": [],
       "characterAffiliations": [],
@@ -1336,10 +1727,8 @@
       "type": "SUPERHERO",
       "realName": "Barnaby Jones",
       "alias": "Barnaby Jones",
-      "origin": "N/A",
-      "powers": [
-        "N/A"
-      ],
+      "origin": "Private investigator character not commonly associated with mainstream comic continuities; needs source confirmation for inclusion.",
+      "powers": [],
       "creators": [],
       "affiliations": [],
       "characterAffiliations": [],
@@ -1349,32 +1738,48 @@
       "type": "SUPERHERO",
       "realName": "Barry Allen",
       "alias": "The Flash",
-      "origin": "Forensic scientist turned speedster.",
+      "origin": "Forensic scientist struck by lightning and doused in chemicals, gaining super-speed and connection to the Speed Force.",
       "powers": [
-        "Super speed"
+        "Super speed",
+        "Accelerated healing",
+        "Phasing",
+        "Time travel via Speed Force"
       ],
       "creators": [],
       "affiliations": [
-        "Justice League"
+        "Justice League",
+        "Central City Police Department"
       ],
-      "characterAffiliations": [],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Hal Jordan",
+          "relationship": "Affiliate"
+        }
+      ],
       "appearances": []
     },
     {
       "type": "SUPERHERO",
-      "realName": "Batman",
+      "realName": "Bruce Wayne",
       "alias": "Batman",
-      "origin": "Gotham vigilante.",
+      "origin": "After witnessing the murder of his parents, Bruce Wayne dedicates his life to fighting crime in Gotham City as Batman.",
       "powers": [
         "Peak human conditioning",
-        "Martial arts",
-        "Genius intellect"
+        "Martial arts mastery",
+        "Genius intellect",
+        "Detective skills"
       ],
       "creators": [],
       "affiliations": [
-        "Justice League"
+        "Justice League",
+        "Batman Family"
       ],
-      "characterAffiliations": [],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Alfred Pennyworth",
+          "relationship": "Affiliate"
+        }
+      ],
       "appearances": [
         "Detective Comics #27",
         "Batman Returns"
@@ -1382,33 +1787,77 @@
     },
     {
       "type": "SUPERHERO",
-      "realName": "Beast Boy",
-      "alias": "Beast Boy",
-      "origin": "Shape-shifting teen.",
+      "realName": "Bruce Wayne (alternate)",
+      "alias": "Batman (Kingdom Come)",
+      "origin": "Older Bruce Wayne in the Kingdom Come universe, operating with an exoskeleton after years of crimefighting.",
       "powers": [
-        "Animal transformation"
+        "Genius intellect",
+        "Strategic leadership",
+        "Exoskeleton-enhanced strength"
+      ],
+      "creators": [
+        {
+          "creatorName": "Mark Waid",
+          "role": "Writer"
+        },
+        {
+          "creatorName": "Alex Ross",
+          "role": "Artist"
+        }
+      ],
+      "affiliations": [
+        "Justice League"
+      ],
+      "characterAffiliations": [],
+      "appearances": [
+        "Kingdom Come #1"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Garfield Logan",
+      "alias": "Beast Boy",
+      "origin": "Exposed to a rare virus and experimental serum, Garfield gained the ability to transform into animals.",
+      "powers": [
+        "Animal transformation",
+        "Enhanced agility"
       ],
       "creators": [],
       "affiliations": [
-        "Teen Titans"
+        "Teen Titans",
+        "Doom Patrol"
       ],
-      "characterAffiliations": [],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Raven",
+          "relationship": "Affiliate"
+        }
+      ],
       "appearances": []
     },
     {
       "type": "CIVILIAN",
       "realName": "Betty Ross",
       "alias": "Betty Ross",
-      "origin": "Scientist and love interest.",
+      "origin": "Daughter of General Thunderbolt Ross, scientist, and love interest of Bruce Banner.",
       "powers": [],
       "creators": [
         {
           "creatorName": "Stan Lee",
           "role": "Co-creator"
+        },
+        {
+          "creatorName": "Jack Kirby",
+          "role": "Co-creator"
         }
       ],
       "affiliations": [],
-      "characterAffiliations": [],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Rick Jones",
+          "relationship": "Affiliate"
+        }
+      ],
       "appearances": [
         "The Incredible Hulk #1"
       ]
@@ -1417,7 +1866,7 @@
       "type": "CIVILIAN",
       "realName": "Bigby Wolf",
       "alias": "Bigby Wolf",
-      "origin": "Big bad wolf in exile.",
+      "origin": "The Big Bad Wolf from fairy tales, reimagined as sheriff of Fabletown.",
       "powers": [],
       "creators": [],
       "affiliations": [],
@@ -1428,53 +1877,83 @@
     },
     {
       "type": "SUPERHERO",
-      "realName": "Black Adam",
+      "realName": "Teth-Adam",
       "alias": "Black Adam",
-      "origin": "N/A",
+      "origin": "Ancient Egyptian predecessor of Shazam, corrupted by power.",
       "powers": [
-        "N/A"
+        "Super strength",
+        "Flight",
+        "Magic lightning",
+        "Invulnerability"
       ],
       "creators": [],
-      "affiliations": [],
+      "affiliations": [
+        "Justice Society of America",
+        "The Council of Eternity"
+      ],
       "characterAffiliations": [],
       "appearances": []
     },
     {
       "type": "SUPERHERO",
-      "realName": "Black Canary",
+      "realName": "Dinah Drake Lance",
       "alias": "Black Canary",
-      "origin": "N/A",
+      "origin": "Crimefighter with a sonic scream and martial arts expertise.",
       "powers": [
-        "N/A"
+        "Sonic scream (Canary Cry)",
+        "Martial arts"
       ],
       "creators": [],
-      "affiliations": [],
+      "affiliations": [
+        "Justice League",
+        "Birds of Prey"
+      ],
       "characterAffiliations": [],
       "appearances": []
     },
     {
       "type": "SUPERHERO",
-      "realName": "Blue Beetle",
+      "realName": "Jaime Reyes",
       "alias": "Blue Beetle",
-      "origin": "N/A",
+      "origin": "Teenager who bonds with an alien scarab, gaining advanced armor and powers.",
       "powers": [
-        "N/A"
+        "Powered armor",
+        "Energy blasts",
+        "Flight"
       ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
+      "creators": [
+        {
+          "creatorName": "Cully Hamner",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Teen Titans",
+        "Justice League"
+      ],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Guy Gardner",
+          "relationship": "Affiliate"
+        }
+      ],
       "appearances": []
     },
     {
       "type": "SUPERHERO",
-      "realName": "Booster Gold",
+      "realName": "Michael Carter",
       "alias": "Booster Gold",
-      "origin": "N/A",
+      "origin": "Time-traveling hero from the 25th century who uses advanced technology to become a superhero.",
       "powers": [
-        "N/A"
+        "Powered suit",
+        "Energy blasts",
+        "Flight",
+        "Time travel"
       ],
       "creators": [],
-      "affiliations": [],
+      "affiliations": [
+        "Justice League International"
+      ],
       "characterAffiliations": [],
       "appearances": []
     },
@@ -1482,35 +1961,61 @@
       "type": "SUPERHERO",
       "realName": "Bruce Banner",
       "alias": "Hulk",
-      "origin": "Gamma radiation accident.",
+      "origin": "Scientist exposed to gamma radiation, transforming into the Hulk when enraged.",
       "powers": [
         "Super strength",
-        "Regeneration"
+        "Regeneration",
+        "Invulnerability"
       ],
       "creators": [
         {
           "creatorName": "Stan Lee",
           "role": "Co-creator"
+        },
+        {
+          "creatorName": "Jack Kirby",
+          "role": "Co-creator"
         }
       ],
       "affiliations": [
-        "Avengers"
+        "Avengers",
+        "Defenders"
       ],
-      "characterAffiliations": [],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Betty Ross",
+          "relationship": "Affiliate"
+        },
+        {
+          "characterRealName": "Rick Jones",
+          "relationship": "Affiliate"
+        }
+      ],
       "appearances": [
         "The Incredible Hulk #1"
       ]
     },
     {
       "type": "SUPERHERO",
-      "realName": "Bucky Barnes",
-      "alias": "Bucky Barnes",
-      "origin": "N/A",
+      "realName": "James Buchanan Barnes",
+      "alias": "Bucky Barnes / Winter Soldier",
+      "origin": "Originally Captain America\u0027s sidekick during WWII; presumed dead but later revived as the brainwashed assassin Winter Soldier.",
       "powers": [
-        "N/A"
+        "Peak human conditioning",
+        "Cybernetic arm with enhanced strength",
+        "Expert combat skills"
       ],
-      "creators": [],
-      "affiliations": [],
+      "creators": [
+        {
+          "creatorName": "Jack Kirby",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Avengers",
+        "S.H.I.E.L.D.",
+        "Thunderbolts"
+      ],
       "characterAffiliations": [],
       "appearances": [
         "Captain America Comics #1"
@@ -1518,34 +2023,90 @@
     },
     {
       "type": "SUPERHERO",
-      "realName": "Cable",
-      "alias": "Cable",
-      "origin": "Time-traveling soldier.",
+      "realName": "Cassandra Cain",
+      "alias": "Batgirl / Orphan",
+      "origin": "Daughter of assassins David Cain and Lady Shiva; trained from birth to be a weapon, later joins the Bat-family.",
       "powers": [
-        "Telepathy",
-        "Telekinesis",
-        "Cybernetics"
+        "Martial arts mastery",
+        "Enhanced reflexes",
+        "Silent movement"
       ],
-      "creators": [
-        {
-          "creatorName": "Rob Liefeld",
-          "role": "Creator"
-        }
+      "creators": [],
+      "affiliations": [
+        "Batman Family",
+        "Birds of Prey"
       ],
-      "affiliations": [],
       "characterAffiliations": [],
       "appearances": []
     },
     {
       "type": "SUPERHERO",
-      "realName": "Captain Marvel",
-      "alias": "Captain Marvel",
-      "origin": "N/A",
+      "realName": "Clark Kent",
+      "alias": "Superman",
+      "origin": "Last son of Krypton, raised on Earth by the Kents; protector of Metropolis.",
       "powers": [
-        "N/A"
+        "Super strength",
+        "Flight",
+        "Heat vision",
+        "Invulnerability",
+        "Super speed"
       ],
       "creators": [],
-      "affiliations": [],
+      "affiliations": [
+        "Justice League",
+        "Superman Family"
+      ],
+      "characterAffiliations": [],
+      "appearances": [
+        "Action Comics #1"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Nathan Summers",
+      "alias": "Cable",
+      "origin": "Son of Cyclops and Madelyne Pryor (a clone of Jean Grey), infected with a techno-organic virus and sent to the future, returning as a time-traveling soldier.",
+      "powers": [
+        "Telepathy",
+        "Telekinesis",
+        "Technopathy via techno-organic virus",
+        "Expert marksman",
+        "Tactical leadership"
+      ],
+      "creators": [
+        {
+          "creatorName": "Rob Liefeld",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "X-Force",
+        "X-Men"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Carol Danvers",
+      "alias": "Captain Marvel",
+      "origin": "Air Force officer whose DNA was fused with Kree genetics after an explosion involving the Psyche-Magnetron.",
+      "powers": [
+        "Super strength",
+        "Flight",
+        "Energy projection",
+        "Durability"
+      ],
+      "creators": [
+        {
+          "creatorName": "Roy Thomas",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Avengers",
+        "Alpha Flight"
+      ],
       "characterAffiliations": [],
       "appearances": []
     },
@@ -1553,9 +2114,11 @@
       "type": "SUPERHERO",
       "realName": "Clint Barton",
       "alias": "Hawkeye",
-      "origin": "Archer turned hero.",
+      "origin": "Orphaned circus performer trained by the Swordsman; becomes master archer and Avenger.",
       "powers": [
-        "Archery"
+        "Expert archer",
+        "Martial arts",
+        "Weapons mastery"
       ],
       "creators": [
         {
@@ -1564,6 +2127,35 @@
         }
       ],
       "affiliations": [
+        "Avengers",
+        "West Coast Avengers"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Stephen Strange",
+      "alias": "Doctor Strange",
+      "origin": "Former neurosurgeon who becomes Sorcerer Supreme after training under the Ancient One.",
+      "powers": [
+        "Mystic arts",
+        "Teleportation",
+        "Astral projection",
+        "Dimensional travel"
+      ],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        },
+        {
+          "creatorName": "Steve Ditko",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Defenders",
         "Avengers"
       ],
       "characterAffiliations": [],
@@ -1571,11 +2163,90 @@
     },
     {
       "type": "SUPERHERO",
-      "realName": "Constantine",
-      "alias": "Constantine",
-      "origin": "N/A",
+      "realName": "Conner Kent",
+      "alias": "Superboy",
+      "origin": "Genetic clone combining DNA from Superman and Lex Luthor.",
       "powers": [
-        "N/A"
+        "Super strength",
+        "Flight",
+        "Invulnerability",
+        "Tactile telekinesis"
+      ],
+      "creators": [],
+      "affiliations": [
+        "Teen Titans",
+        "Young Justice"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Kent Nelson",
+      "alias": "Doctor Fate",
+      "origin": "Granted magical powers by the Helmet of Fate and trained by the Lord of Order Nabu.",
+      "powers": [
+        "Mystic sorcery",
+        "Flight",
+        "Energy projection",
+        "Dimensional travel"
+      ],
+      "creators": [],
+      "affiliations": [
+        "Justice Society of America",
+        "Justice League Dark"
+      ],
+      "characterAffiliations": [
+        {
+          "characterRealName": "John Constantine",
+          "relationship": "Affiliate"
+        }
+      ],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Jonathan Osterman",
+      "alias": "Doctor Manhattan",
+      "origin": "Physicist transformed into a godlike being after a nuclear accident.",
+      "powers": [
+        "Matter manipulation",
+        "Time perception across past, present, future",
+        "Energy projection",
+        "Teleportation"
+      ],
+      "creators": [
+        {
+          "creatorName": "Alan Moore",
+          "role": "Creator"
+        },
+        {
+          "creatorName": "Dave Gibbons",
+          "role": "Artist"
+        }
+      ],
+      "affiliations": [
+        "Watchmen"
+      ],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Rorschach",
+          "relationship": "Affiliate"
+        }
+      ],
+      "appearances": [
+        "Watchmen #1"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Dominic Fortune",
+      "alias": "Dominic Fortune",
+      "origin": "Adventurer and mercenary active during the 1930s pulp era.",
+      "powers": [
+        "Peak human conditioning",
+        "Expert marksman",
+        "Hand-to-hand combat"
       ],
       "creators": [],
       "affiliations": [],
@@ -1584,22 +2255,86 @@
     },
     {
       "type": "SUPERHERO",
-      "realName": "Cyclops",
-      "alias": "Cyclops",
-      "origin": "Mutant with optic blasts.",
+      "realName": "Damian Wayne",
+      "alias": "Robin",
+      "origin": "Son of Bruce Wayne and Talia al Ghul, raised by the League of Assassins before joining Batman.",
       "powers": [
-        "Optic blasts"
+        "Martial arts",
+        "Stealth",
+        "Genius-level intellect"
+      ],
+      "creators": [
+        {
+          "creatorName": "Grant Morrison",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Batman Family",
+        "Teen Titans"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Diana Prince",
+      "alias": "Wonder Woman",
+      "origin": "Amazon princess from Themyscira, gifted with powers by the gods.",
+      "powers": [
+        "Super strength",
+        "Flight",
+        "Combat mastery",
+        "Lasso of Truth"
+      ],
+      "creators": [],
+      "affiliations": [
+        "Justice League",
+        "Amazons of Themyscira"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "John Constantine",
+      "alias": "John Constantine",
+      "origin": "Cunning occult detective and con-man who manipulates magic and people to outwit supernatural threats.",
+      "powers": [],
+      "creators": [],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Scott Summers",
+      "alias": "Cyclops",
+      "origin": "Mutant with uncontrollable optic blasts, trained by Professor X to lead the X-Men.",
+      "powers": [
+        "Optic blasts",
+        "Tactical leadership"
       ],
       "creators": [
         {
           "creatorName": "Stan Lee",
           "role": "Co-creator"
+        },
+        {
+          "creatorName": "Jack Kirby",
+          "role": "Co-creator"
         }
       ],
       "affiliations": [
-        "X-Men"
+        "X-Men",
+        "X-Factor"
       ],
-      "characterAffiliations": [],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Jean Grey",
+          "relationship": "Affiliate"
+        }
+      ],
       "appearances": [
         "X-Men #1"
       ]
@@ -1608,9 +2343,12 @@
       "type": "SUPERHERO",
       "realName": "Daniel Rand",
       "alias": "Iron Fist",
-      "origin": "Master of the Iron Fist.",
+      "origin": "Orphaned in K\u0027un-Lun, trained to channel chi and earned the power of the Iron Fist by defeating Shou-Lao.",
       "powers": [
-        "Chi-based martial arts"
+        "Chi augmentation",
+        "Iron Fist strike",
+        "Martial arts mastery",
+        "Enhanced healing"
       ],
       "creators": [
         {
@@ -1618,15 +2356,24 @@
           "role": "Co-creator"
         }
       ],
-      "affiliations": [],
-      "characterAffiliations": [],
+      "affiliations": [
+        "Heroes for Hire",
+        "Defenders",
+        "Avengers"
+      ],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Luke Cage",
+          "relationship": "Affiliate"
+        }
+      ],
       "appearances": []
     },
     {
       "type": "CIVILIAN",
       "realName": "Death",
       "alias": "Death",
-      "origin": "One of the Endless.",
+      "origin": "Anthropomorphic personification of death; one of the Endless, sibling to Dream.",
       "powers": [],
       "creators": [
         {
@@ -1641,42 +2388,83 @@
     {
       "type": "SUPERHERO",
       "realName": "Dick Grayson",
-      "alias": "Nightwing",
-      "origin": "Former acrobat.",
+      "alias": "Robin / Nightwing",
+      "origin": "Circus acrobat orphaned after his parents’ murder; adopted by Bruce Wayne and becomes the first Robin.",
       "powers": [
-        "Acrobatics",
-        "Detective skills"
+        "Peak human conditioning",
+        "Martial arts",
+        "Expert acrobat"
       ],
       "creators": [],
       "affiliations": [
-        "Titans"
+        "Batman Family",
+        "Teen Titans"
       ],
-      "characterAffiliations": [],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Barbara Gordon",
+          "relationship": "Affiliate"
+        }
+      ],
       "appearances": []
     },
     {
-      "type": "SUPERHERO",
-      "realName": "Doctor Doom",
+      "type": "VILLAIN",
+      "realName": "Victor Von Doom",
       "alias": "Doctor Doom",
-      "origin": "N/A",
+      "origin": "Genius monarch of Latveria whose quest for power and mastery of science and sorcery pits him against the world.",
       "powers": [
-        "N/A"
+        "Genius intellect",
+        "Sorcery",
+        "Powered armor",
+        "Technological mastery"
       ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        },
+        {
+          "creatorName": "Jack Kirby",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Latveria",
+        "Cabal",
+        "Masters of Evil"
+      ],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Reed Richards",
+          "relationship": "Affiliate"
+        }
+      ],
       "appearances": []
     },
     {
-      "type": "SUPERHERO",
-      "realName": "Doctor Octopus",
+      "type": "VILLAIN",
+      "realName": "Otto Octavius",
       "alias": "Doctor Octopus",
-      "origin": "N/A",
+      "origin": "Nuclear physicist whose mechanical arms fused to his body after an accident, becoming a major Spider-Man foe.",
       "powers": [
-        "N/A"
+        "Mechanical tentacles",
+        "Genius intellect",
+        "Enhanced strength via arms"
       ],
-      "creators": [],
-      "affiliations": [],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        },
+        {
+          "creatorName": "Steve Ditko",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Sinister Six"
+      ],
       "characterAffiliations": [],
       "appearances": []
     },
@@ -1684,10 +2472,11 @@
       "type": "SUPERHERO",
       "realName": "Dream",
       "alias": "Morpheus",
-      "origin": "One of the Endless.",
+      "origin": "Anthropomorphic personification of dreams; ruler of the Dreaming and one of the Endless.",
       "powers": [
-        "Dream Manipulation",
-        "Immortality"
+        "Dream manipulation",
+        "Immortality",
+        "Reality shaping within the Dreaming"
       ],
       "creators": [
         {
@@ -1695,25 +2484,37 @@
           "role": "Creator"
         }
       ],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": [
-        "Sandman #2"
-      ]
+      "affiliations": [
+        "The Endless"
+      ],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Death",
+          "relationship": "Affiliate"
+        }
+      ],
+      "appearances": []
     },
     {
-      "type": "CIVILIAN",
-      "realName": "Elektra",
+      "type": "SUPERHERO",
+      "realName": "Elektra Natchios",
       "alias": "Elektra",
-      "origin": "Assassin and lover of Daredevil.",
-      "powers": [],
+      "origin": "Greek assassin trained by the Hand; former love interest of Daredevil.",
+      "powers": [
+        "Martial arts mastery",
+        "Expert assassin",
+        "Weapon proficiency"
+      ],
       "creators": [
         {
           "creatorName": "Frank Miller",
           "role": "Creator"
         }
       ],
-      "affiliations": [],
+      "affiliations": [
+        "The Hand",
+        "S.H.I.E.L.D."
+      ],
       "characterAffiliations": [],
       "appearances": []
     },
@@ -1737,126 +2538,253 @@
     },
     {
       "type": "SUPERHERO",
-      "realName": "Etrigan",
-      "alias": "Etrigan",
-      "origin": "N/A",
+      "realName": "Jason Blood",
+      "alias": "Etrigan the Demon",
+      "origin": "A demon bound to the human Jason Blood by Merlin in Arthurian times. Jason transforms into Etrigan by reciting a mystical incantation.",
       "powers": [
-        "N/A"
+        "Hellfire projection",
+        "Super strength",
+        "Immortality",
+        "Mystic knowledge",
+        "Enhanced durability"
       ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
+      "creators": [
+        {
+          "creatorName": "Jack Kirby",
+          "role": "Creator"
+        }
+      ],
+      "affiliations": [
+        "Justice League Dark",
+        "Shadowpact"
+      ],
+      "characterAffiliations": [
+        {
+          "characterRealName": "John Constantine",
+          "relationship": "Affiliate"
+        }
+      ],
       "appearances": []
     },
     {
       "type": "SUPERHERO",
       "realName": "Frank Castle",
-      "alias": "Punisher",
-      "origin": "Vigilante driven by loss.",
+      "alias": "The Punisher",
+      "origin": "Former Marine whose family was murdered by the mob; wages a one-man war on crime.",
       "powers": [
-        "Tactical skill",
-        "Marksmanship"
+        "Expert marksman",
+        "Military tactics",
+        "Peak human conditioning"
       ],
       "creators": [
         {
           "creatorName": "Gerry Conway",
-          "role": "Creator"
+          "role": "Co-creator"
+        },
+        {
+          "creatorName": "John Romita Sr.",
+          "role": "Co-creator"
         }
       ],
-      "affiliations": [],
+      "affiliations": [
+        "Thunderbolts"
+      ],
       "characterAffiliations": [],
-      "appearances": [
-        "The Punisher #1"
-      ]
+      "appearances": []
     },
     {
       "type": "SUPERHERO",
-      "realName": "Gambit",
+      "realName": "Remy LeBeau",
       "alias": "Gambit",
-      "origin": "N/A",
+      "origin": "Cajun mutant thief with kinetic energy powers.",
       "powers": [
-        "N/A"
+        "Kinetic energy charging",
+        "Enhanced agility",
+        "Expert thief"
       ],
-      "creators": [],
-      "affiliations": [],
+      "creators": [
+        {
+          "creatorName": "Chris Claremont",
+          "role": "Co-creator"
+        },
+        {
+          "creatorName": "Jim Lee",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "X-Men"
+      ],
       "characterAffiliations": [],
       "appearances": []
     },
     {
       "type": "VILLAIN",
-      "realName": "Green Goblin",
+      "realName": "Norman Osborn",
       "alias": "Green Goblin",
-      "origin": "Norman Osborn as a villain.",
+      "origin": "Industrialist and head of Oscorp who, after exposure to an experimental serum, gains enhanced abilities but descends into madness.",
       "powers": [
-        "Genius intellect",
-        "Goblin serum"
+        "Superhuman strength",
+        "Enhanced reflexes",
+        "Genius-level intellect",
+        "Goblin-themed weaponry (pumpkin bombs, glider)"
       ],
       "creators": [
         {
           "creatorName": "Stan Lee",
           "role": "Co-creator"
+        },
+        {
+          "creatorName": "Steve Ditko",
+          "role": "Co-creator"
         }
       ],
-      "affiliations": [],
+      "affiliations": [
+        "Sinister Six",
+        "Dark Avengers",
+        "Thunderbolts"
+      ],
       "characterAffiliations": [],
       "appearances": []
     },
     {
       "type": "SUPERHERO",
-      "realName": "Green Lantern (Alan Scott)",
-      "alias": "Green Lantern (Alan Scott)",
-      "origin": "N/A",
+      "realName": "Alan Scott",
+      "alias": "Green Lantern",
+      "origin": "Railroad engineer who discovered a mystical green flame within a meteorite. He forged a ring from the flame’s power, becoming the first Green Lantern of Earth during the Golden Age.",
       "powers": [
-        "N/A"
+        "Energy constructs via magic ring",
+        "Flight",
+        "Force-field generation",
+        "Limited invulnerability"
       ],
       "creators": [],
-      "affiliations": [],
+      "affiliations": [
+        "Justice Society of America",
+        "All-American Squadron"
+      ],
       "characterAffiliations": [],
       "appearances": []
     },
     {
       "type": "CIVILIAN",
-      "realName": "Gwen Stacy",
-      "alias": "Gwen Stacy",
-      "origin": "Peter Parker\u0027s love interest.",
+      "realName": "Gwendolyne Maxine Stacy",
+      "alias": "Gwendolyne Maxine Stacy",
+      "origin": "College student at Empire State University; daughter of NYPD Captain George Stacy. Known primarily as Peter Parker’s first true love.",
       "powers": [],
       "creators": [
         {
           "creatorName": "Stan Lee",
           "role": "Co-creator"
+        },
+        {
+          "creatorName": "Steve Ditko",
+          "role": "Co-creator"
         }
       ],
       "affiliations": [],
-      "characterAffiliations": [],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Mary Jane Watson",
+          "relationship": "Affiliate"
+        }
+      ],
       "appearances": []
     },
     {
       "type": "SUPERHERO",
       "realName": "Hal Jordan",
       "alias": "Green Lantern",
-      "origin": "Space pilot chosen by ring.",
+      "origin": "Test pilot chosen by the Guardians of the Universe to wield a power ring.",
       "powers": [
-        "Power ring constructs"
+        "Power ring constructs",
+        "Flight",
+        "Energy projection"
       ],
       "creators": [],
       "affiliations": [
+        "Green Lantern Corps",
         "Justice League"
       ],
       "characterAffiliations": [],
-      "appearances": [
-        "Green Lantern #1"
-      ]
+      "appearances": []
     },
     {
       "type": "SUPERHERO",
-      "realName": "Hank Pym",
-      "alias": "Hank Pym",
-      "origin": "N/A",
+      "realName": "Kyle Rayner",
+      "alias": "Green Lantern",
+      "origin": "Artist chosen by the Guardians to wield the last power ring after Hal Jordan’s fall.",
       "powers": [
-        "N/A"
+        "Power ring constructs",
+        "Flight",
+        "Energy projection"
       ],
       "creators": [],
-      "affiliations": [],
+      "affiliations": [
+        "Green Lantern Corps",
+        "Justice League"
+      ],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Hal Jordan",
+          "relationship": "Affiliate"
+        },
+        {
+          "characterRealName": "Guy Gardner",
+          "relationship": "Affiliate"
+        }
+      ],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Guy Gardner",
+      "alias": "Green Lantern",
+      "origin": "Chosen as Hal Jordan’s backup by the Guardians of the Universe.",
+      "powers": [
+        "Power ring constructs",
+        "Flight",
+        "Energy projection"
+      ],
+      "creators": [],
+      "affiliations": [
+        "Green Lantern Corps",
+        "Justice League International"
+      ],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Hal Jordan",
+          "relationship": "Affiliate"
+        }
+      ],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Henry Jonathan Pym",
+      "alias": "Ant-Man / Giant-Man / Goliath / Yellowjacket",
+      "origin": "Brilliant scientist who discovered Pym Particles, enabling him to alter his size. He became the original Ant-Man and later adopted multiple superhero identities.",
+      "powers": [
+        "Size manipulation via Pym Particles",
+        "Genius-level intellect",
+        "Cybernetics and robotics expertise",
+        "Insect communication (via helmet)"
+      ],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        },
+        {
+          "creatorName": "Jack Kirby",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Avengers",
+        "West Coast Avengers",
+        "Defenders"
+      ],
       "characterAffiliations": [],
       "appearances": []
     },
@@ -1864,81 +2792,178 @@
       "type": "VILLAIN",
       "realName": "Harvey Dent",
       "alias": "Two-Face",
-      "origin": "District attorney turned villain.",
+      "origin": "Once Gotham’s idealistic district attorney, Harvey Dent was scarred by acid thrown during a trial. The trauma fractured his psyche, leading him to adopt a dual identity obsessed with chance and duality.",
       "powers": [
-        "Split personality",
-        "Genius intellect"
+        "Expert strategist",
+        "Skilled marksman",
+        "Criminal mastermind",
+        "Obsessive reliance on coin-flip decisions"
       ],
       "creators": [],
-      "affiliations": [],
+      "affiliations": [
+        "Gotham’s criminal underworld",
+        "Injustice League"
+      ],
       "characterAffiliations": [],
       "appearances": []
     },
     {
       "type": "VILLAIN",
-      "realName": "Hellboy",
-      "alias": "Anung Un Rama",
-      "origin": "Summoned from Hell.",
+      "realName": "Harleen Quinzel",
+      "alias": "Harley Quinn",
+      "origin": "Former Arkham Asylum psychiatrist who fell in love with the Joker and became his accomplice.",
       "powers": [
-        "Super Strength",
-        "Demon Physiology"
+        "Enhanced agility",
+        "Psychology expertise",
+        "Acrobatics"
+      ],
+      "creators": [
+        {
+          "creatorName": "Paul Dini",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Suicide Squad",
+        "Gotham City Sirens"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Harry Potter",
+      "alias": "Harry Potter",
+      "origin": "Wizard destined to confront Lord Voldemort; raised by Muggles after his parents’ death.",
+      "powers": [
+        "Wizardry",
+        "Defense Against the Dark Arts",
+        "Parseltongue"
       ],
       "creators": [],
-      "affiliations": [],
+      "affiliations": [
+        "Dumbledore\u0027s Army",
+        "Gryffindor House"
+      ],
       "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Hellboy",
+      "alias": "Hellboy",
+      "origin": "Summoned from Hell by Nazis during WWII; raised by Professor Bruttenholm to fight supernatural threats.",
+      "powers": [
+        "Super strength",
+        "Accelerated healing",
+        "Right Hand of Doom"
+      ],
+      "creators": [
+        {
+          "creatorName": "Mike Mignola",
+          "role": "Creator"
+        }
+      ],
+      "affiliations": [
+        "B.P.R.D."
+      ],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Abe Sapien",
+          "relationship": "Affiliate"
+        }
+      ],
       "appearances": [
-        "Hellboy #1"
+        "Hellboy: Seed of Destruction #1"
       ]
     },
     {
       "type": "SUPERHERO",
-      "realName": "Howard the Duck",
+      "realName": "Howard",
       "alias": "Howard the Duck",
-      "origin": "N/A",
+      "origin": "An anthropomorphic duck from Duckworld who was transported to Earth through a cosmic accident. Known for his cynical wit and bizarre adventures.",
       "powers": [
-        "N/A"
+        "Street-level combat skills",
+        "Detective instincts",
+        "Satirical resilience"
       ],
       "creators": [],
-      "affiliations": [],
+      "affiliations": [
+        "Defenders",
+        "Guardians of the Galaxy (cameo)",
+        "Beverly Switzler (partner)"
+      ],
       "characterAffiliations": [],
       "appearances": []
     },
     {
       "type": "SUPERHERO",
-      "realName": "Invisible Kid",
+      "realName": "Lyle Norg",
       "alias": "Invisible Kid",
-      "origin": "N/A",
+      "origin": "A biochemistry prodigy from Earth in the 30th century. He created a serum that granted him the ability to turn invisible, earning him a place in the Legion of Super-Heroes.",
       "powers": [
-        "N/A"
+        "Invisibility via serum",
+        "Scientific genius",
+        "Espionage skills"
       ],
       "creators": [],
-      "affiliations": [],
+      "affiliations": [
+        "Legion of Super-Heroes",
+        "Espionage Squad"
+      ],
       "characterAffiliations": [],
       "appearances": []
     },
     {
-      "type": "CIVILIAN",
-      "realName": "Jason Todd",
-      "alias": "Jason Todd",
-      "origin": "Robin who later became Red Hood.",
-      "powers": [],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
+      "type": "SUPERHERO",
+      "realName": "Jason Peter Todd",
+      "alias": "Robin / Red Hood / Wingman / Arkham Knight",
+      "origin": "Originally introduced as a streetwise orphan adopted by Bruce Wayne to become the second Robin. Jason was brutally murdered by the Joker in *Batman: A Death in the Family* (1988). Years later, he was resurrected (via the Lazarus Pit and later continuity changes) and returned to Gotham as the violent vigilante Red Hood.",
+      "powers": [
+        "Peak human conditioning",
+        "Expert martial artist",
+        "Master tactician",
+        "Skilled marksman",
+        "Stealth and detective training from Batman"
+      ],
+      "creators": [
+        {
+          "creatorName": "Gerry Conway",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Batman Family",
+        "Teen Titans",
+        "League of Assassins",
+        "Outlaws",
+        "Batman Incorporated"
+      ],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Damian Wayne",
+          "relationship": "Affiliate"
+        }
+      ],
       "appearances": []
     },
     {
       "type": "SUPERHERO",
       "realName": "Jean Grey",
-      "alias": "Jean Grey",
-      "origin": "Mutant telepath/telekinetic.",
+      "alias": "Phoenix",
+      "origin": "Mutant telepath and telekinetic; later bonded with the Phoenix Force.",
       "powers": [
         "Telepathy",
-        "Telekinesis"
+        "Telekinesis",
+        "Phoenix Force cosmic powers"
       ],
       "creators": [
         {
           "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        },
+        {
+          "creatorName": "Jack Kirby",
           "role": "Co-creator"
         }
       ],
@@ -1952,16 +2977,920 @@
     },
     {
       "type": "SUPERHERO",
-      "realName": "Jennifer Walters",
+      "realName": "Jennifer Susan Walters",
       "alias": "She-Hulk",
-      "origin": "Gamma-induced cousin of Hulk.",
+      "origin": "A talented lawyer and cousin of Bruce Banner. After being shot and critically injured, she received a life-saving blood transfusion from Bruce. His gamma-irradiated blood mutated her, granting her Hulk-like powers while retaining her intelligence and personality.",
       "powers": [
-        "Super strength",
-        "Legal expertise"
+        "Superhuman strength",
+        "Enhanced stamina and durability",
+        "Accelerated healing",
+        "Expert hand-to-hand combat",
+        "Legal expertise",
+        "Occasional fourth-wall awareness (in certain comic runs)"
       ],
       "creators": [
         {
           "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Avengers",
+        "Fantastic Four",
+        "Defenders",
+        "Heroes for Hire",
+        "A-Force"
+      ],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Reed Richards",
+          "relationship": "Affiliate"
+        }
+      ],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Jennifer Mary Sparks",
+      "alias": "Jenny Sparks",
+      "origin": "Born in England on January 1, 1900, Jenny was imbued with the essence of the 20th century. She ceased aging in 1919 and lived through the entire century, influencing major events. She possesses the ability to generate and control electricity, symbolizing the technological spirit of her era.",
+      "powers": [
+        "Electricity generation and manipulation",
+        "Transformation into living electricity",
+        "Decelerated aging (ceased aging at 19)",
+        "Tactical leadership"
+      ],
+      "creators": [
+        {
+          "creatorName": "Warren Ellis",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Stormwatch Black",
+        "The Authority",
+        "British Space Program"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Jessica Campbell Jones-Cage",
+      "alias": "Jessica Jones",
+      "origin": "As a teenager, Jessica was exposed to experimental chemicals during a car accident involving a military convoy. The accident killed her family but granted her superhuman abilities. She briefly pursued costumed heroics as Jewel and Knightress before abandoning that life due to trauma inflicted by the villain Kilgrave. Later, she rebuilt herself as a private investigator, eventually marrying Luke Cage.",
+      "powers": [
+        "Superhuman strength",
+        "Enhanced durability",
+        "Accelerated healing",
+        "Limited flight (in early appearances)",
+        "Resistance to psionic control"
+      ],
+      "creators": [
+        {
+          "creatorName": "Brian Michael Bendis",
+          "role": "Writer / Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Alias Investigations",
+        "The Defenders",
+        "New Avengers",
+        "Daily Bugle (briefly)",
+        "A-Force"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "James Brendan Corrigan",
+      "alias": "The Spectre",
+      "origin": "Jim Corrigan was a hard-boiled police detective in the 1940s who was murdered by gangsters. Denied entry to the afterlife, his soul was bonded to a divine spirit of vengeance known as The Spectre. As the Spectre, Corrigan became a supernatural force delivering justice to the wicked.",
+      "powers": [
+        "Near-omnipotence",
+        "Reality manipulation",
+        "Immortality",
+        "Intangibility",
+        "Cosmic awareness",
+        "Size alteration",
+        "Teleportation"
+      ],
+      "creators": [],
+      "affiliations": [
+        "Justice Society of America",
+        "All-Star Squadron",
+        "Justice League Dark",
+        "New York Police Department"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Johnny Blaze",
+      "alias": "Ghost Rider",
+      "origin": "Motorcycle stuntman who bonded with the Spirit of Vengeance after making a deal with Mephisto.",
+      "powers": [
+        "Hellfire manipulation",
+        "Penance Stare",
+        "Superhuman strength"
+      ],
+      "creators": [
+        {
+          "creatorName": "Roy Thomas",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Midnight Sons"
+      ],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Danny Ketch",
+          "relationship": "Affiliate"
+        }
+      ],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Danny Ketch",
+      "alias": "Ghost Rider",
+      "origin": "Bonded with the Spirit of Vengeance after discovering a mystical motorcycle.",
+      "powers": [
+        "Hellfire manipulation",
+        "Penance Stare",
+        "Superhuman strength"
+      ],
+      "creators": [],
+      "affiliations": [
+        "Midnight Sons"
+      ],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Johnny Blaze",
+          "relationship": "Affiliate"
+        }
+      ],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "J\u0027onn J\u0027onzz",
+      "alias": "Martian Manhunter",
+      "origin": "Martian accidentally teleported to Earth; becomes protector of humanity.",
+      "powers": [
+        "Super strength",
+        "Flight",
+        "Telepathy",
+        "Shape-shifting",
+        "Intangibility"
+      ],
+      "creators": [],
+      "affiliations": [
+        "Justice League",
+        "Martian race"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Jonathan Lowell Spencer Storm",
+      "alias": "Human Torch",
+      "origin": "Johnny Storm was a high school student when he joined his sister Sue Storm, Reed Richards, and Ben Grimm on a space flight. Exposed to cosmic radiation, Johnny gained the ability to ignite his entire body into flames, becoming the Human Torch.",
+      "powers": [
+        "Pyrokinesis (control of fire)",
+        "Transformation into fiery plasma form",
+        "Flight",
+        "Heat energy absorption",
+        "Resistance to fire and heat"
+      ],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Writer / Co-creator"
+        },
+        {
+          "creatorName": "Jack Kirby",
+          "role": "Artist / Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Fantastic Four",
+        "Avengers (briefly)",
+        "Future Foundation",
+        "Fantastic Force"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Tatsu Yamashiro",
+      "alias": "Katana",
+      "origin": "A Japanese martial artist whose husband and children were murdered by the Yakuza. She took up the mystical Soultaker sword — which traps the souls of those it kills, including her husband’s — and became a vigilante seeking justice.",
+      "powers": [
+        "Master swordswoman",
+        "Soultaker sword (mystical weapon)",
+        "Martial arts expertise",
+        "Multilingualism",
+        "Spiritual communication with souls in her blade"
+      ],
+      "creators": [],
+      "affiliations": [
+        "Outsiders",
+        "Birds of Prey",
+        "Suicide Squad",
+        "Justice League of America"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Katherine Anne Pryde",
+      "alias": "Shadowcat",
+      "origin": "A teenage mutant from Deerfield, Illinois, Kitty Pryde discovered her phasing powers and was recruited by Professor X to join the X-Men. She quickly became one of the youngest and most promising members of the team.",
+      "powers": [
+        "Phasing (intangible through solid matter)",
+        "Disruption of electronics while phased",
+        "Martial arts and swordsmanship",
+        "Computer hacking",
+        "Multilingualism"
+      ],
+      "creators": [
+        {
+          "creatorName": "Chris Claremont",
+          "role": "Writer / Co-creator"
+        },
+        {
+          "creatorName": "John Byrne",
+          "role": "Artist / Co-creator"
+        }
+      ],
+      "affiliations": [
+        "X-Men",
+        "Excalibur",
+        "Marauders",
+        "Guardians of the Galaxy (briefly)",
+        "S.H.I.E.L.D. (training role)"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Sandra Wu-San",
+      "alias": "Lady Shiva",
+      "origin": "Born in China, Sandra Wu-San dedicated her life to martial arts after the death of her sister. She became one of the most feared assassins in the world, known for her unmatched combat skills and philosophical pursuit of worthy opponents. Though often aligned with villainous organizations, she has also trained and aided heroes.",
+      "powers": [
+        "Mastery of all known martial arts",
+        "Peak human agility and reflexes",
+        "Body language reading (predicts opponents\u0027 moves)",
+        "Weapons expertise"
+      ],
+      "creators": [
+        {
+          "creatorName": "Dennis O\u0027Neil",
+          "role": "Writer / Co-creator"
+        }
+      ],
+      "affiliations": [
+        "League of Assassins",
+        "Birds of Prey",
+        "Brotherhood of the Fist",
+        "Outsiders",
+        "Society"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Unknown (Batman analogue)",
+      "alias": "Leatherwing",
+      "origin": "In this Elseworlds tale set during the Golden Age of Piracy, Leatherwing is a noble pirate captain working for the British Crown. He sails the seas aboard his ship, the Flying Fox, battling injustice and protecting the innocent while hiding his true identity.",
+      "powers": [
+        "Master swordsman",
+        "Expert tactician",
+        "Peak human conditioning",
+        "Naval combat expertise",
+        "Stealth and disguise"
+      ],
+      "creators": [],
+      "affiliations": [
+        "British Crown (Elseworlds)",
+        "Flying Fox crew"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Samael",
+      "alias": "Lucifer Morningstar, Lightbringer, The Devil, Lord of Hell, Samael",
+      "origin": "Lucifer Morningstar is a fallen archangel who once ruled Hell. He abandoned his throne to seek freedom from divine predestination, relocating to Earth and opening a piano bar called Lux in Los Angeles. His journey explores themes of autonomy, rebellion, and cosmic responsibility.",
+      "powers": [
+        "Nigh-omnipotence",
+        "Reality warping",
+        "Immortality",
+        "Omniscience",
+        "Dimensional travel",
+        "Creation and destruction of universes"
+      ],
+      "creators": [
+        {
+          "creatorName": "Neil Gaiman",
+          "role": "Creator"
+        }
+      ],
+      "affiliations": [
+        "The Host of Heaven (former)",
+        "Triumvirate of Hell (former)",
+        "Ex Lux"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Luke Cage",
+      "alias": "Power Man",
+      "origin": "Wrongfully imprisoned man who gained super strength and unbreakable skin from an experimental procedure.",
+      "powers": [
+        "Super strength",
+        "Invulnerability"
+      ],
+      "creators": [],
+      "affiliations": [
+        "Heroes for Hire",
+        "Avengers"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "VILLAIN",
+      "realName": "Loki Laufeyson",
+      "alias": "Loki",
+      "origin": "Frost Giant adopted by Odin; god of mischief and trickery.",
+      "powers": [
+        "Illusion casting",
+        "Shape-shifting",
+        "Sorcery"
+      ],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        },
+        {
+          "creatorName": "Jack Kirby",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Asgard",
+        "Masters of Evil"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "VILLAIN",
+      "realName": "Max Eisenhardt",
+      "alias": "Magneto",
+      "origin": "Holocaust survivor whose mutant powers allow him to control magnetism; often oscillates between villain and anti-hero.",
+      "powers": [
+        "Magnetism manipulation",
+        "Flight via magnetic fields",
+        "Metal control"
+      ],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        },
+        {
+          "creatorName": "Jack Kirby",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Brotherhood of Evil Mutants",
+        "X-Men (occasionally)",
+        "Acolytes"
+      ],
+      "characterAffiliations": [],
+      "appearances": [
+        "X-Men #1"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Marc Spector",
+      "alias": "Moon Knight, Mr. Knight, Steven Grant, Jake Lockley, Fist of Khonshu",
+      "origin": "Marc Spector was a mercenary betrayed and left for dead in Egypt. Revived by the moon god Khonshu, he became Moon Knight — Khonshu’s earthly avatar. Struggling with dissociative identity disorder, Marc operates under multiple personas, each serving a different role in his war on crime.",
+      "powers": [
+        "Enhanced strength (especially under moonlight)",
+        "Peak human agility and reflexes",
+        "Expert martial artist and acrobat",
+        "Master tactician and detective",
+        "Mystical visions and prophetic insight"
+      ],
+      "creators": [],
+      "affiliations": [
+        "Avengers",
+        "Secret Avengers",
+        "West Coast Avengers",
+        "Midnight Sons",
+        "Marvel Knights",
+        "Heroes for Hire"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Marko",
+      "alias": "Marko",
+      "origin": "Soldier from Wreath who falls in love with Alana of Landfall; father of Hazel.",
+      "powers": [
+        "Magic from Wreath",
+        "Combat training"
+      ],
+      "creators": [
+        {
+          "creatorName": "Brian K. Vaughan",
+          "role": "Co-creator"
+        },
+        {
+          "creatorName": "Fiona Staples",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Alana",
+          "relationship": "Affiliate"
+        }
+      ],
+      "appearances": [
+        "Saga #1"
+      ]
+    },
+    {
+      "type": "CIVILIAN",
+      "realName": "Mary Jane Watson",
+      "alias": "Mary Jane Watson",
+      "origin": "Mary Jane Watson grew up in New York and became known for her vibrant personality and modeling career. She entered Peter Parker’s life as a teenager and eventually became his closest confidante and romantic partner. Over time, she evolved from a supporting civilian to a costumed hero in her own right, taking on roles such as Jackpot and briefly bonding with the Venom symbiote.",
+      "powers": [],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Writer / Co-creator"
+        },
+        {
+          "creatorName": "John Romita Sr.",
+          "role": "Artist (definitive design)"
+        },
+        {
+          "creatorName": "Steve Ditko",
+          "role": "Artist / Co-creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Matt Murdock",
+      "alias": "Daredevil",
+      "origin": "Blinded by radioactive chemicals, his remaining senses were heightened to superhuman levels.",
+      "powers": [
+        "Radar sense",
+        "Enhanced hearing",
+        "Martial arts"
+      ],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Defenders",
+        "Avengers"
+      ],
+      "characterAffiliations": [],
+      "appearances": [
+        "Daredevil #1"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Michonne Hawthorne",
+      "alias": "Michonne, The Samurai, Dana Bethune (TV alias), The Last Samurai",
+      "origin": "Michonne was a lawyer before the zombie apocalypse. After losing her family, she survived alone with two chained, jawless walkers for protection. Her skill with a katana and fierce independence made her a key figure among the survivors. She became a trusted ally of Rick Grimes and a leader in the fight to rebuild civilization.",
+      "powers": [
+        "Master swordswoman",
+        "Survivalist instincts",
+        "Strategic leadership",
+        "Emotional resilience"
+      ],
+      "creators": [
+        {
+          "creatorName": "Robert Kirkman",
+          "role": "Writer / Creator"
+        }
+      ],
+      "affiliations": [
+        "Alexandria Safe-Zone",
+        "Rick Grimes\u0027 group",
+        "The Militia",
+        "The Coalition",
+        "Civic Republic (TV continuity)"
+      ],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Rick Grimes",
+          "relationship": "Affiliate"
+        }
+      ],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Miles Gonzalo Morales",
+      "alias": "Spider-Man, Spin, Shadow Spider, Captain Universe (alternate), Jersey Spider-Man",
+      "origin": "Miles Morales was bitten by a genetically enhanced spider created by Oscorp in Earth-1610. After the death of that universe’s Peter Parker, Miles took up the mantle of Spider-Man to honor his legacy. He later crossed into Earth-616, becoming a second Spider-Man alongside Peter, and has since become a central figure in multiversal Spider lore.",
+      "powers": [
+        "Wall-crawling",
+        "Superhuman strength, agility, and reflexes",
+        "Spider-sense",
+        "Bio-electric venom blasts",
+        "Camouflage (invisibility)",
+        "Genius-level intellect"
+      ],
+      "creators": [
+        {
+          "creatorName": "Brian Michael Bendis",
+          "role": "Writer / Co-creator"
+        },
+        {
+          "creatorName": "Sara Pichelli",
+          "role": "Artist / Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Champions",
+        "Young Avengers",
+        "Spider-Army / Web-Warriors",
+        "Avengers (alternate)",
+        "Brooklyn Visions Academy"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Scott Free",
+      "alias": "Mister Miracle, God of Escape, The Super Escape Artist",
+      "origin": "Scott Free was born on New Genesis, the son of Highfather, but was traded to Apokolips as part of a peace pact with Darkseid. Raised in the hellish orphanages of Granny Goodness, he eventually escaped to Earth, becoming the world\u0027s greatest escape artist. As Mister Miracle, he battles tyranny and trauma while wielding advanced New God technology.",
+      "powers": [
+        "Superhuman agility and endurance",
+        "Master escape artist",
+        "Genius-level intellect",
+        "New God physiology (immortality, enhanced senses)",
+        "Advanced technology (Mother Box, Aero Discs)"
+      ],
+      "creators": [
+        {
+          "creatorName": "Jack Kirby",
+          "role": "Writer / Artist / Creator"
+        }
+      ],
+      "affiliations": [
+        "New Gods",
+        "Justice League",
+        "Justice League International",
+        "Female Furies (former captive)",
+        "Team Mister Miracle"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "CIVILIAN",
+      "realName": "Dr. Nathaniel Essex",
+      "alias": "Dr. Nathaniel Essex",
+      "origin": "A brilliant Victorian-era biologist obsessed with Darwinian evolution, Essex was transformed into the immortal Mister Sinister by Apocalypse. Gifted with vast genetic and psionic powers, he became a manipulative force in mutant history, obsessed with the Summers bloodline and the creation of the perfect mutant.",
+      "powers": [],
+      "creators": [
+        {
+          "creatorName": "Chris Claremont",
+          "role": "Writer / Co-creator"
+        },
+        {
+          "creatorName": "Marc Silvestri",
+          "role": "Artist / Co-creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Charles Xavier",
+          "relationship": "Affiliate"
+        },
+        {
+          "characterRealName": "Jean Grey",
+          "relationship": "Affiliate"
+        }
+      ],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Lunella Lafayette",
+      "alias": "Moon Girl, Princess of Brains, Smartest Person on Earth",
+      "origin": "Lunella Lafayette is a 9-year-old genius living in New York City. After discovering she carries the Inhuman gene, she attempts to prevent her Terrigenesis by using a Kree device called the Omni-Wave Projector. This leads to a mental link with Devil Dinosaur, a red Tyrannosaurus from another dimension. Together, they fight crime and explore science-driven adventures.",
+      "powers": [
+        "Genius-level intellect",
+        "Invention and engineering mastery",
+        "Mental link with Devil Dinosaur",
+        "Temporary body-swapping with Devil Dinosaur (during early Terrigenesis)"
+      ],
+      "creators": [],
+      "affiliations": [
+        "Moon Girl and Devil Dinosaur",
+        "Champions",
+        "Fantastic Four (associate)",
+        "X-Men (alternate future)",
+        "Avengers (alternate)"
+      ],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Reed Richards",
+          "relationship": "Affiliate"
+        }
+      ],
+      "appearances": []
+    },
+    {
+      "type": "CIVILIAN",
+      "realName": "Karl Amadeus Mordo",
+      "alias": "Karl Amadeus Mordo",
+      "origin": "Karl Mordo was a Transylvanian nobleman who sought mystical power and became a disciple of the Ancient One. Consumed by jealousy and ambition, he turned against his fellow student Doctor Strange and became one of his most persistent adversaries. In some continuities, Mordo later becomes a more complex antihero or ally, but his core identity remains rooted in betrayal and dark sorcery.",
+      "powers": [],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Writer / Co-creator"
+        },
+        {
+          "creatorName": "Steve Ditko",
+          "role": "Artist / Co-creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "VILLAIN",
+      "realName": "Dr. Victor Fries",
+      "alias": "Mr. Freeze, Victor Fries, Doctor Freeze, Ice King",
+      "origin": "Dr. Victor Fries was a cryogenicist whose wife, Nora, suffered from a terminal illness. In his attempt to preserve her life through cryogenic suspension, a lab accident altered his physiology, forcing him to live in sub-zero temperatures. He became Mr. Freeze, using his scientific genius and ice-based weaponry to pursue his goals, often driven by tragic love and obsession.",
+      "powers": [
+        "Cryogenic engineering expertise",
+        "Powered exo-suit for survival and strength",
+        "Freeze gun capable of instant ice projection",
+        "Enhanced durability (via suit)",
+        "Genius-level intellect"
+      ],
+      "creators": [
+        {
+          "creatorName": "Paul Dini",
+          "role": "Reinvention (Batman: TAS)"
+        }
+      ],
+      "affiliations": [
+        "Gotham City Rogues",
+        "Secret Society of Super Villains",
+        "Suicide Squad (alternate)",
+        "Task Force Z",
+        "LexCorp (briefly)"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Namor McKenzie",
+      "alias": "Namor, The Sub-Mariner, King Namor, Imperius Rex, Avenging Son",
+      "origin": "Namor is the mutant son of a human sea captain and an Atlantean princess. Born in Atlantis, he possesses traits of both species, including flight and aquatic adaptation. As ruler of Atlantis, Namor has long defended his people while clashing with the surface world. His volatile nature and regal pride make him both a hero and a threat, depending on the tides of war and diplomacy.",
+      "powers": [
+        "Superhuman strength and durability",
+        "Flight via winged ankles",
+        "Aquatic respiration and adaptation",
+        "Telepathic communication with marine life",
+        "Enhanced longevity",
+        "Hydrokinesis (in some versions)"
+      ],
+      "creators": [],
+      "affiliations": [
+        "Atlantean Royal Family",
+        "Invaders",
+        "Defenders",
+        "X-Men",
+        "Illuminati",
+        "Avengers (alternate)"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Natalia Alianovna Romanova",
+      "alias": "Black Widow, Natasha Romanoff, Natalia Romanova, Natalie Rushman, Tsarina",
+      "origin": "Natalia Romanova was trained from a young age in the Red Room, a Soviet espionage program that turned her into one of the world’s deadliest spies. Initially an antagonist to Iron Man, she defected to S.H.I.E.L.D. and became a core member of the Avengers. Her journey spans espionage, redemption, and sacrifice.",
+      "powers": [
+        "Master martial artist and acrobat",
+        "Expert markswoman and weapons specialist",
+        "Peak human conditioning",
+        "Multilingualism",
+        "Espionage and infiltration mastery",
+        "Enhanced longevity (via Red Room treatments)"
+      ],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Writer / Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Avengers",
+        "S.H.I.E.L.D.",
+        "KGB (former)",
+        "Secret Avengers",
+        "Thunderbolts",
+        "Winter Guard"
+      ],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Tony Stark",
+          "relationship": "Affiliate"
+        }
+      ],
+      "appearances": []
+    },
+    {
+      "type": "CIVILIAN",
+      "realName": "Nicholas Joseph Fury",
+      "alias": "Nicholas Joseph Fury",
+      "origin": "Nick Fury began as a World War II hero leading the Howling Commandos. After the war, he became a top agent of the CIA and later the director of S.H.I.E.L.D., shaping global defense against superhuman threats. Prolonged youth and vitality were granted by the Infinity Formula. In later years, he became The Unseen, a cosmic observer punished for his actions during the \u0027Original Sin\u0027 storyline.",
+      "powers": [],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Writer / Co-creator"
+        },
+        {
+          "creatorName": "Jack Kirby",
+          "role": "Artist / Co-creator"
+        }
+      ],
+      "affiliations": [],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Tony Stark",
+          "relationship": "Affiliate"
+        }
+      ],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Norrin Radd",
+      "alias": "Silver Surfer, Herald of Galactus, Sentinel of the Spaceways, The Skyrider of the Spaceways",
+      "origin": "Norrin Radd was a young astronomer from the utopian planet Zenn-La. When the cosmic entity Galactus threatened to consume his world, Norrin offered himself as a herald in exchange for Zenn-La’s safety. Galactus imbued him with the Power Cosmic, transforming him into the Silver Surfer. He eventually rebelled against Galactus and became a protector of the universe, seeking redemption for the worlds he once led to destruction.",
+      "powers": [
+        "Power Cosmic (energy and matter manipulation)",
+        "Superhuman strength and durability",
+        "Flight via cosmic surfboard",
+        "Faster-than-light travel",
+        "Telepathy and telekinesis",
+        "Intangibility and invisibility",
+        "Cosmic awareness",
+        "Time travel (via superluminal speed)"
+      ],
+      "creators": [
+        {
+          "creatorName": "Jack Kirby",
+          "role": "Writer / Artist / Creator"
+        }
+      ],
+      "affiliations": [
+        "Heralds of Galactus",
+        "Defenders",
+        "Annihilators",
+        "United Front",
+        "The Order",
+        "God Squad"
+      ],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Adam Warlock",
+          "relationship": "Affiliate"
+        }
+      ],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Jean-Paul Beaubier",
+      "alias": "Northstar, Jean-Paul Martin, Jean-Paul Beaubier-Martin",
+      "origin": "Jean-Paul Beaubier is a French-Canadian mutant who discovered his superhuman speed and flight abilities at a young age. After a brief stint with a terrorist group, he redirected his life and joined Alpha Flight, becoming one of Canada’s premier superheroes. Northstar is notable for being one of the first openly gay superheroes in mainstream comics and has served with both Alpha Flight and the X-Men.",
+      "powers": [
+        "Superhuman speed",
+        "Flight",
+        "Photonic energy emission",
+        "Enhanced reflexes and durability",
+        "Molecular acceleration (can generate blinding light with his twin sister)"
+      ],
+      "creators": [
+        {
+          "creatorName": "Chris Claremont",
+          "role": "Writer / Co-creator"
+        },
+        {
+          "creatorName": "John Byrne",
+          "role": "Artist / Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Alpha Flight",
+        "X-Men",
+        "Krakoa",
+        "Jean-Paul\u0027s Ski Team",
+        "Hellfire Gala Delegation"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Richard Rider",
+      "alias": "Nova, Nova Prime, Kid Nova, The Human Rocket, Nova #11249-44396",
+      "origin": "Richard Rider was a New York teenager randomly chosen by the dying Xandarian Rhomann Dey to inherit the power of the Nova Corps. Imbued with the Nova Force and guided by the Worldmind AI, he became Nova — a cosmic defender battling intergalactic threats. Rider rose to become Nova Prime, leading the Corps through crises like the Annihilation War and earning his place among Marvel’s elite cosmic heroes.",
+      "powers": [
+        "Access to the Nova Force",
+        "Superhuman strength, speed, and durability",
+        "Energy projection and absorption",
+        "Flight and space travel",
+        "Gravitational manipulation",
+        "Wormhole generation",
+        "Regenerative healing",
+        "Combat training and tactical leadership"
+      ],
+      "creators": [
+        {
+          "creatorName": "Marv Wolfman",
+          "role": "Writer / Co-creator"
+        },
+        {
+          "creatorName": "John Romita Sr.",
+          "role": "Artist / Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Nova Corps",
+        "New Warriors",
+        "United Front",
+        "Guardians of the Galaxy",
+        "Secret Avengers",
+        "Champions of Xandar"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "CIVILIAN",
+      "realName": "Rick Jones",
+      "alias": "Rick Jones",
+      "origin": "Teenager who accidentally triggered Bruce Banner’s transformation into the Hulk; later ally to many heroes.",
+      "powers": [],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        },
+        {
+          "creatorName": "Jack Kirby",
           "role": "Co-creator"
         }
       ],
@@ -1973,631 +3902,254 @@
     },
     {
       "type": "SUPERHERO",
-      "realName": "Jenny Sparks",
-      "alias": "Jenny Sparks",
-      "origin": "Spirit of the 20th century.",
+      "realName": "Rorschach",
+      "alias": "Rorschach",
+      "origin": "Masked vigilante in Watchmen universe; uncompromising moral absolutist.",
       "powers": [
-        "Electric manipulation"
+        "Peak human conditioning",
+        "Detective skills",
+        "Combat proficiency"
       ],
-      "creators": [
-        {
-          "creatorName": "Warren Ellis",
-          "role": "Co-creator"
-        }
-      ],
-      "affiliations": [
-        "The Authority"
-      ],
-      "characterAffiliations": [],
-      "appearances": [
-        "The Authority #1"
-      ]
-    },
-    {
-      "type": "CIVILIAN",
-      "realName": "Jessica Jones",
-      "alias": "Jessica Jones",
-      "origin": "Private investigator with past trauma.",
-      "powers": [],
-      "creators": [
-        {
-          "creatorName": "Brian Michael Bendis",
-          "role": "Creator"
-        }
-      ],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "CIVILIAN",
-      "realName": "Jim Corrigan",
-      "alias": "Jim Corrigan",
-      "origin": "Spirit of vengeance.",
-      "powers": [],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "CIVILIAN",
-      "realName": "John Constantine",
-      "alias": "John Constantine",
-      "origin": "Occult detective.",
-      "powers": [],
       "creators": [
         {
           "creatorName": "Alan Moore",
-          "role": "Co-creator"
-        }
-      ],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "John Stewart",
-      "alias": "John Stewart",
-      "origin": "Marine turned Lantern.",
-      "powers": [
-        "Power ring constructs"
-      ],
-      "creators": [],
-      "affiliations": [
-        "Justice League"
-      ],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "CIVILIAN",
-      "realName": "Johnny Blaze",
-      "alias": "Johnny Blaze",
-      "origin": "Spirit of vengeance bonded to rider.",
-      "powers": [],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Johnny Storm",
-      "alias": "Human Torch",
-      "origin": "Flame-powered hero.",
-      "powers": [
-        "Pyrokinesis",
-        "Flight"
-      ],
-      "creators": [
-        {
-          "creatorName": "Stan Lee",
-          "role": "Co-creator"
-        }
-      ],
-      "affiliations": [
-        "Fantastic Four"
-      ],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Katana",
-      "alias": "Katana",
-      "origin": "N/A",
-      "powers": [
-        "N/A"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Kitty Pryde",
-      "alias": "Kitty Pryde",
-      "origin": "N/A",
-      "powers": [
-        "N/A"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Lady Shiva",
-      "alias": "Lady Shiva",
-      "origin": "N/A",
-      "powers": [
-        "N/A"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Leatherwing",
-      "alias": "Leatherwing",
-      "origin": "N/A",
-      "powers": [
-        "N/A"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "CIVILIAN",
-      "realName": "Lucifer Morningstar",
-      "alias": "Lucifer Morningstar",
-      "origin": "Fallen angel.",
-      "powers": [],
-      "creators": [
-        {
-          "creatorName": "Neil Gaiman",
-          "role": "Co-creator"
-        }
-      ],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": [
-        "Sandman #1"
-      ]
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Luke Cage",
-      "alias": "Luke Cage",
-      "origin": "Hero with unbreakable skin.",
-      "powers": [
-        "Super strength",
-        "Durability"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "VILLAIN",
-      "realName": "Magneto",
-      "alias": "Magneto",
-      "origin": "Mutant with magnetic powers.",
-      "powers": [
-        "Magnetism"
-      ],
-      "creators": [
-        {
-          "creatorName": "Stan Lee",
-          "role": "Co-creator"
-        }
-      ],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": [
-        "Uncanny X-Men #129"
-      ]
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Marc Spector",
-      "alias": "Moon Knight",
-      "origin": "Avatar of Khonshu.",
-      "powers": [
-        "Combat skill",
-        "Multiple identities"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "CIVILIAN",
-      "realName": "Mary Jane Watson",
-      "alias": "Mary Jane Watson",
-      "origin": "Friend of Peter Parker.",
-      "powers": [],
-      "creators": [
-        {
-          "creatorName": "Stan Lee",
-          "role": "Co-creator"
-        }
-      ],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": [
-        "Amazing Fantasy #15"
-      ]
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Matt Murdock",
-      "alias": "Daredevil",
-      "origin": "Blinded with heightened senses.",
-      "powers": [
-        "Enhanced senses",
-        "Acrobatics"
-      ],
-      "creators": [
-        {
-          "creatorName": "Stan Lee",
-          "role": "Co-creator"
-        }
-      ],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": [
-        "Daredevil #1"
-      ]
-    },
-    {
-      "type": "CIVILIAN",
-      "realName": "Michonne",
-      "alias": "Michonne",
-      "origin": "Survivor with katana.",
-      "powers": [],
-      "creators": [
-        {
-          "creatorName": "Robert Kirkman",
           "role": "Creator"
-        }
-      ],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": [
-        "The Walking Dead #1"
-      ]
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Miles Morales",
-      "alias": "Miles Morales",
-      "origin": "Alternate Spider-Man.",
-      "powers": [
-        "Venom blast",
-        "Invisibility"
-      ],
-      "creators": [
+        },
         {
-          "creatorName": "Brian Michael Bendis",
-          "role": "Co-creator"
-        }
-      ],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": [
-        "Amazing Fantasy #15"
-      ]
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Mister Miracle",
-      "alias": "Mister Miracle",
-      "origin": "N/A",
-      "powers": [
-        "N/A"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Mister Sinister",
-      "alias": "Mister Sinister",
-      "origin": "N/A",
-      "powers": [
-        "N/A"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Moon Girl",
-      "alias": "Moon Girl",
-      "origin": "N/A",
-      "powers": [
-        "N/A"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Mordo",
-      "alias": "Mordo",
-      "origin": "N/A",
-      "powers": [
-        "N/A"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Mr. Freeze",
-      "alias": "Mr. Freeze",
-      "origin": "N/A",
-      "powers": [
-        "N/A"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Namor",
-      "alias": "Namor",
-      "origin": "N/A",
-      "powers": [
-        "N/A"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Natasha Romanoff",
-      "alias": "Black Widow",
-      "origin": "Former spy.",
-      "powers": [
-        "Espionage",
-        "Martial arts"
-      ],
-      "creators": [
-        {
-          "creatorName": "Stan Lee",
-          "role": "Co-creator"
+          "creatorName": "Dave Gibbons",
+          "role": "Artist"
         }
       ],
       "affiliations": [
-        "Avengers"
+        "Watchmen"
       ],
       "characterAffiliations": [],
       "appearances": [
-        "The Avengers #1"
+        "Watchmen #1"
       ]
     },
     {
-      "type": "CIVILIAN",
-      "realName": "Nick Fury",
-      "alias": "Nick Fury",
-      "origin": "S.H.I.E.L.D. director.",
-      "powers": [],
-      "creators": [
-        {
-          "creatorName": "Jack Kirby",
-          "role": "Co-creator"
-        }
-      ],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "CIVILIAN",
-      "realName": "Nico Minoru",
-      "alias": "Nico Minoru",
-      "origin": "Teen with magic staff.",
-      "powers": [],
-      "creators": [
-        {
-          "creatorName": "Brian K. Vaughan",
-          "role": "Creator"
-        }
-      ],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "VILLAIN",
-      "realName": "Norman Osborn",
-      "alias": "Norman Osborn",
-      "origin": "Industrialist turned villain.",
+      "type": "SUPERHERO",
+      "realName": "Oliver Jonas Queen",
+      "alias": "Green Arrow, The Hood, The Arrow, Al Sah-him, Spectre (Arrowverse), Emerald Archer",
+      "origin": "Oliver Queen was a wealthy playboy and CEO of Queen Industries until a shipwreck left him stranded on a remote island. There, he honed his archery and survival skills. Upon returning to Star City, he became the vigilante Green Arrow, using his wealth and training to fight corruption and injustice. In various continuities, he has served as mayor, led the Justice League, and even taken on mystical roles like the Spectre.",
       "powers": [
-        "Genius intellect"
+        "Master archer and marksman",
+        "Expert martial artist and hand-to-hand combatant",
+        "Peak human conditioning",
+        "Tactical genius and leadership",
+        "Stealth and infiltration",
+        "Access to trick arrows and advanced tech"
       ],
-      "creators": [
-        {
-          "creatorName": "Stan Lee",
-          "role": "Co-creator"
-        }
+      "creators": [],
+      "affiliations": [
+        "Justice League",
+        "Team Arrow",
+        "Outsiders",
+        "Seven Soldiers of Victory",
+        "Justice League Elite",
+        "League of Assassins (Arrowverse, briefly)"
       ],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": [
-        "Amazing Fantasy #15"
-      ]
-    },
-    {
-      "type": "CIVILIAN",
-      "realName": "Norrin Radd",
-      "alias": "Norrin Radd",
-      "origin": "Herald of Galactus.",
-      "powers": [],
-      "creators": [
-        {
-          "creatorName": "Stan Lee",
-          "role": "Co-creator"
-        }
-      ],
-      "affiliations": [],
       "characterAffiliations": [],
       "appearances": []
     },
     {
       "type": "SUPERHERO",
-      "realName": "Northstar",
-      "alias": "Northstar",
-      "origin": "Canadian mutant speedster.",
+      "realName": "Barbara Gordon",
+      "alias": "Oracle, Batgirl, Babs, The Hacker Queen, The Voice in the Dark",
+      "origin": "Barbara Gordon, daughter of Gotham City Police Commissioner James Gordon, originally fought crime as Batgirl. After being paralyzed by the Joker in *The Killing Joke*, she reinvented herself as Oracle — a master hacker and information broker who provided intel and coordination to heroes across the DC Universe. As Oracle, she became the backbone of superhero operations, especially for the Birds of Prey.",
       "powers": [
-        "Flight",
-        "Super speed"
+        "Martial arts",
+        "Computer hacking",
+        "Detective skills",
+        "Genius-level intellect",
+        "Expert hacker and computer scientist",
+        "Master strategist and tactician",
+        "Skilled martial artist (pre- and post-injury)",
+        "Photographic memory",
+        "Wheelchair combat proficiency"
       ],
       "creators": [
         {
-          "creatorName": "Chris Claremont",
-          "role": "Co-creator"
+          "creatorName": "John Ostrander",
+          "role": "Writer (as Oracle)"
         }
       ],
       "affiliations": [
-        "Alpha Flight"
+        "Batman Family",
+        "Birds of Prey",
+        "Birds of Prey",
+        "Bat-Family",
+        "Justice League",
+        "Suicide Squad",
+        "Gotham City Police Department (ally)"
       ],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Nova (Richard Rider)",
-      "alias": "Nova (Richard Rider)",
-      "origin": "N/A",
-      "powers": [
-        "N/A"
+      "characterAffiliations": [
+        {
+          "characterRealName": "Cassandra Cain",
+          "relationship": "Affiliate"
+        }
       ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Oliver Queen",
-      "alias": "Green Arrow",
-      "origin": "Expert archer and vigilante.",
-      "powers": [
-        "Archery",
-        "Tactics"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Oracle",
-      "alias": "Oracle",
-      "origin": "N/A",
-      "powers": [
-        "N/A"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
       "appearances": []
     },
     {
       "type": "SUPERHERO",
       "realName": "Peter Parker",
       "alias": "Spider-Man",
-      "origin": "Bitten by a radioactive spider.",
+      "origin": "Bitten by a radioactive spider, gains spider-like abilities.",
       "powers": [
         "Wall-crawling",
+        "Super strength",
         "Spider-sense",
-        "Super agility"
+        "Agility"
       ],
       "creators": [
         {
           "creatorName": "Stan Lee",
           "role": "Co-creator"
+        },
+        {
+          "creatorName": "Steve Ditko",
+          "role": "Co-creator"
         }
       ],
       "affiliations": [
-        "Avengers"
+        "Avengers",
+        "Spider-Verse"
       ],
-      "characterAffiliations": [],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Mary Jane Watson",
+          "relationship": "Affiliate"
+        }
+      ],
       "appearances": [
         "Amazing Fantasy #15"
       ]
     },
     {
       "type": "SUPERHERO",
-      "realName": "Professor X",
-      "alias": "Charles Xavier",
-      "origin": "Mutant telepath and leader.",
+      "realName": "Charles Xavier",
+      "alias": "Professor X",
+      "origin": "Mutant telepath who founded the X-Men to promote peaceful coexistence between humans and mutants.",
       "powers": [
-        "Telepathy"
+        "Telepathy",
+        "Mind control",
+        "Illusion casting"
       ],
       "creators": [
         {
           "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        },
+        {
+          "creatorName": "Jack Kirby",
           "role": "Co-creator"
         }
       ],
       "affiliations": [
         "X-Men"
       ],
-      "characterAffiliations": [],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Jean Grey",
+          "relationship": "Affiliate"
+        }
+      ],
       "appearances": [
-        "Uncanny X-Men #129"
+        "X-Men #1"
       ]
     },
     {
       "type": "SUPERHERO",
-      "realName": "Psylocke",
-      "alias": "Psylocke",
-      "origin": "N/A",
+      "realName": "Elizabeth Braddock",
+      "alias": "Psylocke, Captain Britain, Lady Mandarin, Kwannon (body swap), Betsy Braddock",
+      "origin": "Betsy Braddock is a British mutant and twin sister of Brian Braddock (Captain Britain). Originally a telepath and model, she joined the X-Men as Psylocke. After a body swap with the assassin Kwannon, she gained martial arts skills and a new identity. Eventually, Betsy reclaimed her original body and now serves as the new Captain Britain, blending her psychic powers with heroic legacy.",
       "powers": [
-        "N/A"
+        "Telepathy",
+        "Telekinesis",
+        "Psychic knife and katana",
+        "Precognition (limited)",
+        "Martial arts mastery (post-body swap)",
+        "Flight (as Captain Britain)",
+        "Dimensional travel (via Otherworld)"
       ],
-      "creators": [],
-      "affiliations": [],
+      "creators": [
+        {
+          "creatorName": "Chris Claremont",
+          "role": "Writer / Co-creator"
+        }
+      ],
+      "affiliations": [
+        "X-Men",
+        "Excalibur",
+        "Captain Britain Corps",
+        "Hellfire Club (former)",
+        "Strikeforce",
+        "Knights of X"
+      ],
       "characterAffiliations": [],
       "appearances": []
     },
     {
       "type": "SUPERHERO",
-      "realName": "Quicksilver",
-      "alias": "Quicksilver",
-      "origin": "N/A",
+      "realName": "Pietro Maximoff",
+      "alias": "Quicksilver, Pietro Django Maximoff, Son of Magneto, Pietro Lensherr (alternate), Mercury (Ultimate)",
+      "origin": "Pietro Maximoff is a mutant with superhuman speed, originally introduced as a member of the Brotherhood of Evil Mutants alongside his twin sister Wanda (Scarlet Witch). The children of Magneto (in most continuities), they later joined the Avengers seeking redemption. Quicksilver’s impulsive nature and loyalty to his sister have defined his complex journey across heroism and rivalry.",
       "powers": [
-        "N/A"
+        "Superhuman speed",
+        "Accelerated metabolism and reflexes",
+        "Time perception manipulation",
+        "Vortex generation",
+        "Dimensional travel (in some versions)",
+        "Enhanced durability (via speed aura)"
       ],
-      "creators": [],
-      "affiliations": [],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Writer / Co-creator"
+        },
+        {
+          "creatorName": "Jack Kirby",
+          "role": "Artist / Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Avengers",
+        "Brotherhood of Evil Mutants",
+        "X-Factor",
+        "House of M",
+        "Inhumans (via marriage)",
+        "Unity Squad"
+      ],
       "characterAffiliations": [],
       "appearances": []
     },
     {
       "type": "VILLAIN",
-      "realName": "Ra\u0027s al Ghul",
-      "alias": "Ra\u0027s al Ghul",
-      "origin": "Eco-terrorist leader.",
+      "realName": "Unknown (often referred to as Ra\u0027s al Ghul)",
+      "alias": "Ra\u0027s al Ghul, The Demon\u0027s Head, Ra\u0027s, Henri Ducard (alias in Batman Begins), Master of the League",
+      "origin": "Ra\u0027s al Ghul is a centuries-old eco-terrorist and leader of the League of Assassins. His longevity is sustained by the mystical Lazarus Pits, which restore his youth and vitality. Believing that humanity must be culled to restore balance to Earth, he often clashes with Batman, whom he sees as a worthy heir. His origin varies across continuities, but he is consistently portrayed as a brilliant strategist and ruthless idealist.",
       "powers": [
-        "Longevity",
-        "Master tactician"
+        "Extended lifespan via Lazarus Pit",
+        "Master martial artist and swordsman",
+        "Genius-level intellect",
+        "Expert tactician and strategist",
+        "Access to global resources and assassins",
+        "Occasional mystical knowledge"
       ],
       "creators": [
         {
           "creatorName": "Dennis O\u0027Neil",
-          "role": "Co-creator"
+          "role": "Writer / Co-creator"
         }
       ],
       "affiliations": [
-        "League of Assassins"
+        "League of Assassins",
+        "Demon\u0027s Fist",
+        "Society of Shadows",
+        "Secret Society of Super Villains",
+        "Batman Family (through Talia)"
       ],
       "characterAffiliations": [],
       "appearances": []
@@ -2606,14 +4158,20 @@
       "type": "SUPERHERO",
       "realName": "Raven",
       "alias": "Raven",
-      "origin": "Daughter of a demon.",
+      "origin": "Daughter of the demon Trigon and human Arella; empathic sorceress.",
       "powers": [
         "Empathy",
+        "Telekinesis",
+        "Teleportation",
         "Darkness manipulation"
       ],
       "creators": [
         {
           "creatorName": "Marv Wolfman",
+          "role": "Co-creator"
+        },
+        {
+          "creatorName": "George Pérez",
           "role": "Co-creator"
         }
       ],
@@ -2625,22 +4183,9 @@
     },
     {
       "type": "SUPERHERO",
-      "realName": "Red Hood",
-      "alias": "Red Hood",
-      "origin": "N/A",
-      "powers": [
-        "N/A"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "SUPERHERO",
       "realName": "Reed Richards",
       "alias": "Mr. Fantastic",
-      "origin": "Stretchy genius.",
+      "origin": "Scientist exposed to cosmic rays, gaining elastic powers.",
       "powers": [
         "Elasticity",
         "Genius intellect"
@@ -2649,13 +4194,19 @@
         {
           "creatorName": "Stan Lee",
           "role": "Co-creator"
+        },
+        {
+          "creatorName": "Jack Kirby",
+          "role": "Co-creator"
         }
       ],
       "affiliations": [
         "Fantastic Four"
       ],
       "characterAffiliations": [],
-      "appearances": []
+      "appearances": [
+        "Fantastic Four #1"
+      ]
     },
     {
       "type": "CIVILIAN",
@@ -2677,44 +4228,123 @@
     },
     {
       "type": "VILLAIN",
-      "realName": "Riddler",
-      "alias": "Riddler",
-      "origin": "Puzzle-obsessed villain.",
+      "realName": "Edward Nygma",
+      "alias": "The Riddler, Edward Nigma, Edward Nashton, E. Nygma, The Prince of Puzzles",
+      "origin": "Edward Nygma was a brilliant but obsessive man with a compulsion for riddles and intellectual superiority. After working as a forensic scientist or tech consultant (depending on continuity), he turned to crime, leaving riddles at the scenes to taunt authorities. As the Riddler, he became one of Batman’s most cerebral foes, often using elaborate puzzles, traps, and psychological warfare.",
       "powers": [
-        "Genius intellect"
+        "Genius-level intellect",
+        "Expert in puzzles, riddles, and cryptography",
+        "Skilled strategist and manipulator",
+        "Engineering and tech expertise",
+        "Occasional hand-to-hand combat training"
       ],
       "creators": [],
-      "affiliations": [],
+      "affiliations": [
+        "Gotham City Rogues",
+        "Secret Society of Super Villains",
+        "Suicide Squad (alternate)",
+        "Justice League Dark (alternate)",
+        "Arkham Asylum"
+      ],
       "characterAffiliations": [],
-      "appearances": [
-        "Detective Comics #27"
-      ]
+      "appearances": []
     },
     {
       "type": "SUPERHERO",
-      "realName": "Robin (Tim Drake)",
-      "alias": "Robin (Tim Drake)",
-      "origin": "N/A",
+      "realName": "Timothy Jackson Drake",
+      "alias": "Robin, Red Robin, Drake, Tim Wayne (alternate), The Boy Wonder",
+      "origin": "Tim Drake was a brilliant young detective who deduced the identities of Batman and Nightwing after witnessing the death of the second Robin, Jason Todd. Believing Batman needed a Robin to stay grounded, Tim convinced Bruce Wayne to train him. Unlike his predecessors, Tim earned the mantle through intellect and compassion. He later operated as Red Robin and remains a key member of the Bat-Family and Young Justice.",
       "powers": [
-        "N/A"
+        "Genius-level intellect and deductive reasoning",
+        "Expert martial artist and acrobat",
+        "Skilled hacker and strategist",
+        "Master of stealth and surveillance",
+        "Access to advanced tech and gadgets"
       ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": [
-        "Batman Returns"
-      ]
+      "creators": [
+        {
+          "creatorName": "Marv Wolfman",
+          "role": "Writer / Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Bat-Family",
+        "Teen Titans",
+        "Young Justice",
+        "Justice League (alternate)",
+        "Outsiders"
+      ],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Damian Wayne",
+          "relationship": "Affiliate"
+        }
+      ],
+      "appearances": []
     },
     {
       "type": "SUPERHERO",
-      "realName": "Sabretooth",
+      "realName": "Victor Creed",
       "alias": "Sabretooth",
-      "origin": "N/A",
+      "origin": "Mutant with feral powers and healing factor; longtime rival of Wolverine.",
       "powers": [
-        "N/A"
+        "Healing factor",
+        "Enhanced senses",
+        "Super strength"
+      ],
+      "creators": [
+        {
+          "creatorName": "Chris Claremont",
+          "role": "Co-creator"
+        },
+        {
+          "creatorName": "John Byrne",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Brotherhood of Evil Mutants",
+        "Weapon X"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Scott Pilgrim",
+      "alias": "Scott Pilgrim",
+      "origin": "Canadian slacker and musician who must defeat Ramona Flowers’ seven evil exes.",
+      "powers": [
+        "Video game logic abilities",
+        "Martial arts"
       ],
       "creators": [],
-      "affiliations": [],
+      "affiliations": [
+        "Sex Bob-Omb"
+      ],
+      "characterAffiliations": [],
+      "appearances": [
+        "Scott Pilgrim #1"
+      ]
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Scott Lang",
+      "alias": "Ant-Man",
+      "origin": "Electronics expert who stole Hank Pym’s Ant-Man suit to save his daughter; later became a hero.",
+      "powers": [
+        "Size manipulation",
+        "Insect communication"
+      ],
+      "creators": [
+        {
+          "creatorName": "John Byrne",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Avengers"
+      ],
       "characterAffiliations": [],
       "appearances": []
     },
@@ -2722,150 +4352,250 @@
       "type": "SUPERHERO",
       "realName": "Selina Kyle",
       "alias": "Catwoman",
-      "origin": "Cat burglar turned ally.",
+      "origin": "Gotham thief and anti-heroine; skilled burglar and martial artist.",
       "powers": [
-        "Acrobatics",
-        "Stealth"
+        "Expert thief",
+        "Martial arts",
+        "Agility"
       ],
       "creators": [],
-      "affiliations": [],
+      "affiliations": [
+        "Gotham City Sirens"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Robert Reynolds",
+      "alias": "Sentry, Golden Guardian of Good, The Void, Bob Reynolds, Worldbreaker, Revenant Prime",
+      "origin": "Robert Reynolds was a troubled man who, after ingesting a secret super-soldier serum, gained the power of a million exploding suns. As the Sentry, he became a forgotten hero who once fought alongside the Avengers and Fantastic Four. However, his powers came with a dark alter ego — the Void — a manifestation of his inner turmoil and destructive potential. To protect the world, Sentry erased all memory of his existence, only to return during times of cosmic crisis.",
+      "powers": [
+        "Superhuman strength, speed, and durability",
+        "Flight and teleportation",
+        "Energy and matter manipulation",
+        "Reality warping",
+        "Telepathy and telekinesis",
+        "Invulnerability and regeneration",
+        "Extrasensory perception",
+        "Astral projection",
+        "Clairvoyance and soul vision"
+      ],
+      "creators": [],
+      "affiliations": [
+        "Avengers",
+        "New Avengers",
+        "Mighty Avengers",
+        "Dark Avengers",
+        "Horsemen of Death",
+        "Thunderbolts (2025 film)"
+      ],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Norman Osborn",
+          "relationship": "Affiliate"
+        }
+      ],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Billy Batson",
+      "alias": "Shazam (Captain Marvel)",
+      "origin": "Young boy who transforms into the magical champion Shazam by uttering the wizard’s name.",
+      "powers": [
+        "Super strength",
+        "Flight",
+        "Magic lightning",
+        "Invulnerability"
+      ],
+      "creators": [],
+      "affiliations": [
+        "Justice League",
+        "Marvel Family"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Billy Batson (alternate)",
+      "alias": "Shazam (Kingdom Come)",
+      "origin": "Alternate-universe version of Shazam in *Kingdom Come* storyline.",
+      "powers": [
+        "Super strength",
+        "Flight",
+        "Magic lightning"
+      ],
+      "creators": [
+        {
+          "creatorName": "Mark Waid",
+          "role": "Writer"
+        },
+        {
+          "creatorName": "Alex Ross",
+          "role": "Artist"
+        }
+      ],
+      "affiliations": [
+        "Justice League (Kingdom Come)"
+      ],
       "characterAffiliations": [],
       "appearances": [
-        "Batman Returns"
+        "Kingdom Come #1"
       ]
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Sentry",
-      "alias": "Sentry",
-      "origin": "N/A",
-      "powers": [
-        "N/A"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Shazam",
-      "alias": "Shazam",
-      "origin": "N/A",
-      "powers": [
-        "N/A"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Shazam Jr.",
-      "alias": "Shazam Jr.",
-      "origin": "N/A",
-      "powers": [
-        "N/A"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "She-Hulk",
-      "alias": "She-Hulk",
-      "origin": "N/A",
-      "powers": [
-        "N/A"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
     },
     {
       "type": "SUPERHERO",
       "realName": "Sif",
-      "alias": "Sif",
-      "origin": "N/A",
+      "alias": "Lady Sif, Sif the All-Seeing, Fair One, Sylvan Sybil, Rose Chambers",
+      "origin": "Sif is an Asgardian warrior-goddess based on the Norse deity of the same name. A childhood friend and romantic interest of Thor, she trained to become one of Asgard’s fiercest defenders. Known for her bravery and loyalty, Sif has fought in countless battles across the Nine Realms and has served as a bridge between Asgard and Midgard. In recent stories, she has taken on the role of the All-Seeing, replacing Heimdall as guardian of the Bifrost.",
       "powers": [
-        "N/A"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Spawnerina",
-      "alias": "Spawnerina",
-      "origin": "N/A",
-      "powers": [
-        "N/A"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Spider-Gwen",
-      "alias": "Spider-Gwen",
-      "origin": "N/A",
-      "powers": [
-        "N/A"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "CIVILIAN",
-      "realName": "Stanley Ipkiss",
-      "alias": "Stanley Ipkiss",
-      "origin": "Finds a magical mask.",
-      "powers": [],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": [
-        "The Mask #1"
-      ]
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Static",
-      "alias": "Static",
-      "origin": "N/A",
-      "powers": [
-        "N/A"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Stephen Strange",
-      "alias": "Doctor Strange",
-      "origin": "Sorcerer Supreme.",
-      "powers": [
-        "Mystic arts"
+        "Superhuman strength, speed, agility, and durability",
+        "Longevity and regenerative healing",
+        "Teleportation via Bifrost",
+        "Mastery of cold weapons (especially swordsmanship)",
+        "Skilled hand-to-hand combatant",
+        "Battlefield leadership and tactics"
       ],
       "creators": [
         {
           "creatorName": "Stan Lee",
-          "role": "Creator"
+          "role": "Writer / Co-creator"
+        },
+        {
+          "creatorName": "Jack Kirby",
+          "role": "Artist / Co-creator"
         }
       ],
-      "affiliations": [],
+      "affiliations": [
+        "Asgard",
+        "Warriors Three (ally)",
+        "Thor Corps (alternate)",
+        "War Avengers",
+        "Lost Gods",
+        "Revengers (alternate)"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Slade Wilson",
+      "alias": "Deathstroke",
+      "origin": "Former soldier enhanced by a secret experiment, becoming a master assassin.",
+      "powers": [
+        "Enhanced strength",
+        "Tactical genius",
+        "Weapons mastery"
+      ],
+      "creators": [
+        {
+          "creatorName": "Marv Wolfman",
+          "role": "Co-creator"
+        },
+        {
+          "creatorName": "George Pérez",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Secret Society of Super-Villains"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Slade Wilson (alternate)",
+      "alias": "Deathstroke (Injustice)",
+      "origin": "Alternate-universe version of Deathstroke appearing in *Injustice: Gods Among Us*.",
+      "powers": [
+        "Enhanced strength",
+        "Weapons mastery"
+      ],
+      "creators": [
+        {
+          "creatorName": "Tom Taylor",
+          "role": "Writer"
+        }
+      ],
+      "affiliations": [
+        "Injustice universe mercenaries"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Gwendolyn Maxine Stacy",
+      "alias": "Spider-Gwen, Ghost-Spider, Spider-Woman (Earth-65), Gwenom, Gwendy, The White Widow",
+      "origin": "On Earth-65, Gwen Stacy was bitten by a radioactive spider and gained superhuman abilities. She became Spider-Woman, later dubbed Spider-Gwen. After her friend Peter Parker died in a tragic accident, Gwen was blamed and hunted by the authorities, including her own father. She eventually joined the Spider-Verse and adopted the name Ghost-Spider to protect her identity across dimensions.",
+      "powers": [
+        "Superhuman strength, agility, and reflexes",
+        "Wall-crawling",
+        "Spider-sense (precognitive danger detection)",
+        "Enhanced durability",
+        "Web-shooting via mechanical web-shooters",
+        "Symbiote powers (as Gwenom, temporarily)"
+      ],
+      "creators": [],
+      "affiliations": [
+        "Spider-Army",
+        "Spider-Society",
+        "Young Avengers (alternate)",
+        "Web-Warriors",
+        "Time Variance Authority (alternate)"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Stanley Ipkiss",
+      "alias": "The Mask, Big Head, Mr. Ipkiss, Green Guy, Green Face",
+      "origin": "Stanley Ipkiss was a shy, unlucky bank teller living in Edge City. His life changed when he discovered a mysterious wooden mask linked to the Norse god Loki. When worn, the mask transforms him into a manic, reality-bending figure with cartoonish powers and no inhibitions. In the comics, Ipkiss becomes increasingly violent and unstable, while in the film and animated series, he’s portrayed as a mischievous but good-hearted vigilante. The mask amplifies the wearer’s inner desires, making Stanley both hero and menace depending on the medium.",
+      "powers": [
+        "Reality warping",
+        "Superhuman strength and durability",
+        "Invulnerability",
+        "Cartoon physics (stretching, shapeshifting, etc.)",
+        "Accelerated healing",
+        "Weapon conjuration",
+        "Enhanced agility and reflexes"
+      ],
+      "creators": [],
+      "affiliations": [
+        "Edge City",
+        "The Mask (legacy identity)",
+        "Lieutenant Kellaway (antagonist)",
+        "Coco Bongo Club",
+        "Dark Horse Universe"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Virgil Ovid Hawkins",
+      "alias": "Static, Static Shock, The Electric Kid, Black Lightning Jr. (nickname), Bang Baby",
+      "origin": "Virgil Hawkins was an intelligent and socially conscious teenager living in Dakota City. During a gang-related event known as the \u0027Big Bang,\u0027 he was exposed to a mutagenic gas that granted him electromagnetic powers. As Static, he uses his abilities to fight crime and injustice while navigating the challenges of adolescence. He was created as part of Milestone Comics to bring greater diversity and realism to superhero storytelling.",
+      "powers": [
+        "Electromagnetic manipulation",
+        "Electric blasts and shields",
+        "Flight via electromagnetic disc",
+        "Technopathy (control over electronics)",
+        "Magnetic field generation",
+        "Energy absorption and redirection"
+      ],
+      "creators": [],
+      "affiliations": [
+        "Teen Titans",
+        "Justice League Unlimited (alternate)",
+        "Heroes of Dakota",
+        "Bang Babies",
+        "Milestone Universe"
+      ],
       "characterAffiliations": [],
       "appearances": []
     },
@@ -2873,14 +4603,21 @@
       "type": "SUPERHERO",
       "realName": "Steve Rogers",
       "alias": "Captain America",
-      "origin": "Super-soldier serum.",
+      "origin": "Weak young man transformed into a super-soldier by the Super-Soldier Serum during WWII.",
       "powers": [
         "Enhanced strength",
-        "Tactical genius"
+        "Agility",
+        "Tactical leadership"
       ],
-      "creators": [],
+      "creators": [
+        {
+          "creatorName": "Jack Kirby",
+          "role": "Co-creator"
+        }
+      ],
       "affiliations": [
-        "Avengers"
+        "Avengers",
+        "Invaders"
       ],
       "characterAffiliations": [],
       "appearances": [
@@ -2889,12 +4626,12 @@
     },
     {
       "type": "SUPERHERO",
-      "realName": "Storm",
-      "alias": "Ororo Munroe",
-      "origin": "Weather-controlling mutant.",
+      "realName": "Ororo Munroe",
+      "alias": "Storm",
+      "origin": "Mutant descended from African priestesses; orphaned and worshipped as a goddess before joining the X-Men.",
       "powers": [
-        "Weather control",
-        "Flight"
+        "Weather manipulation",
+        "Flight via wind currents"
       ],
       "creators": [
         {
@@ -2905,122 +4642,201 @@
       "affiliations": [
         "X-Men"
       ],
-      "characterAffiliations": [],
-      "appearances": [
-        "X-Men #1"
-      ]
+      "characterAffiliations": [
+        {
+          "characterRealName": "Jean Grey",
+          "relationship": "Affiliate"
+        }
+      ],
+      "appearances": []
     },
     {
       "type": "SUPERHERO",
-      "realName": "Superman",
-      "alias": "Superman",
-      "origin": "Kryptonian refugee.",
+      "realName": "Kal-El",
+      "alias": "Superman (Kingdom Come)",
+      "origin": "Older Superman in the Kingdom Come universe, returning from self-imposed exile.",
       "powers": [
-        "Flight",
         "Super strength",
-        "Heat vision"
+        "Flight",
+        "Heat vision",
+        "Invulnerability"
       ],
-      "creators": [],
+      "creators": [
+        {
+          "creatorName": "Mark Waid",
+          "role": "Writer"
+        },
+        {
+          "creatorName": "Alex Ross",
+          "role": "Artist"
+        }
+      ],
       "affiliations": [
         "Justice League"
       ],
       "characterAffiliations": [],
       "appearances": [
-        "Action Comics #1",
-        "Batman Returns"
+        "Kingdom Come #1"
       ]
     },
     {
       "type": "SUPERHERO",
-      "realName": "Susan Storm",
+      "realName": "Susan Storm Richards",
       "alias": "Invisible Woman",
-      "origin": "Invisible Force Field user.",
+      "origin": "Exposed to cosmic rays alongside the Fantastic Four, gaining invisibility powers.",
       "powers": [
         "Invisibility",
-        "Force fields"
+        "Force-field projection"
       ],
       "creators": [
         {
           "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        },
+        {
+          "creatorName": "Jack Kirby",
           "role": "Co-creator"
         }
       ],
       "affiliations": [
         "Fantastic Four"
       ],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "T\u0027Challa",
-      "alias": "Black Panther",
-      "origin": "King of Wakanda.",
-      "powers": [
-        "Enhanced strength",
-        "Vibranium suit"
-      ],
-      "creators": [
+      "characterAffiliations": [
         {
-          "creatorName": "Stan Lee",
-          "role": "Co-creator"
+          "characterRealName": "Reed Richards",
+          "relationship": "Affiliate"
         }
       ],
-      "affiliations": [
-        "Avengers"
-      ],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Taskmaster",
-      "alias": "Taskmaster",
-      "origin": "N/A",
-      "powers": [
-        "N/A"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "VILLAIN",
-      "realName": "The Joker",
-      "alias": "Joker",
-      "origin": "Unknown criminal mastermind.",
-      "powers": [
-        "Criminal genius",
-        "Anarchy"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": [
-        "Batman Returns"
-      ]
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Thing",
-      "alias": "Thing",
-      "origin": "N/A",
-      "powers": [
-        "N/A"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
       "appearances": [
         "Fantastic Four #1"
       ]
     },
     {
+      "type": "SUPERHERO",
+      "realName": "T\u0027Challa",
+      "alias": "Black Panther",
+      "origin": "King of Wakanda, empowered by the Panther God and advanced Wakandan technology.",
+      "powers": [
+        "Enhanced strength",
+        "Agility",
+        "Vibranium suit",
+        "Tactical genius"
+      ],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Co-creator"
+        },
+        {
+          "creatorName": "Jack Kirby",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Avengers",
+        "Wakanda"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "VILLAIN",
+      "realName": "Tony Masters",
+      "alias": "Taskmaster, The Copycat, Tony Masters, The Mimic Mercenary, The Man Who Can Do Anything",
+      "origin": "Tony Masters was a S.H.I.E.L.D. agent who injected himself with an experimental serum that unlocked his brain’s procedural memory potential. This gave him \u0027photographic reflexes\u0027 — the ability to mimic any physical movement he sees. However, the serum also caused memory loss, erasing his past and identity. He became Taskmaster, a mercenary and combat trainer for villains and heroes alike, often walking the line between villainy and pragmatism.",
+      "powers": [
+        "Photographic reflexes (can mimic any physical skill or fighting style)",
+        "Master martial artist and weapons expert",
+        "Olympic-level athlete",
+        "Expert tactician and instructor",
+        "Skilled marksman and swordsman",
+        "Peak human conditioning"
+      ],
+      "creators": [
+        {
+          "creatorName": "George Pérez",
+          "role": "Artist / Co-creator"
+        }
+      ],
+      "affiliations": [
+        "S.H.I.E.L.D. (former)",
+        "Thunderbolts",
+        "F.R.A.M.E.",
+        "Secret Empire",
+        "The Org",
+        "Villains for Hire"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "VILLAIN",
+      "realName": "Unknown (possible aliases include Jack Napier, Arthur Fleck, Red Hood)",
+      "alias": "The Joker, Clown Prince of Crime, Mr. J, Jack Napier, Red Hood, The Harlequin of Hate",
+      "origin": "The Joker’s true origin remains a mystery, with multiple conflicting accounts. In many versions, he was a failed comedian or criminal who fell into a vat of chemicals, emerging with bleached skin, green hair, and a maniacal grin. This transformation birthed Gotham’s most unpredictable and dangerous villain — a chaotic force obsessed with Batman and anarchy. Whether as a criminal mastermind, terrorist, or tragic figure, the Joker embodies madness and moral inversion.",
+      "powers": [
+        "Genius-level intellect",
+        "Expert chemist and engineer",
+        "Master manipulator and strategist",
+        "Unpredictable combat skills",
+        "Immunity to fear and pain (often)",
+        "Access to deadly gadgets and toxins"
+      ],
+      "creators": [],
+      "affiliations": [
+        "Gotham City Rogues",
+        "Injustice Gang",
+        "Legion of Doom",
+        "Suicide Squad (alternate)",
+        "Jokerz (Batman Beyond)"
+      ],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Barbara Gordon",
+          "relationship": "Affiliate"
+        }
+      ],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Benjamin Jacob Grimm",
+      "alias": "The Thing, Ben Grimm, Blackbeard the Pirate, Angrir: Breaker of Souls, Dr. Josiah Verpoorteen, El Morrito",
+      "origin": "Ben Grimm grew up on New York’s Lower East Side and became a star football player before attending Empire State University, where he befriended Reed Richards. He piloted Reed’s experimental spacecraft, which was bombarded by cosmic rays. The radiation transformed Ben into a super-strong, rock-skinned being — The Thing. Though initially resentful of his monstrous form, Ben embraced his role as the Fantastic Four’s powerhouse and moral anchor.",
+      "powers": [
+        "Superhuman strength and durability",
+        "Enhanced stamina and endurance",
+        "Near-invulnerability",
+        "Expert hand-to-hand combatant",
+        "Skilled pilot and tactician",
+        "Immortality (granted by the One-Above-All in some continuities)"
+      ],
+      "creators": [
+        {
+          "creatorName": "Stan Lee",
+          "role": "Writer / Co-creator"
+        },
+        {
+          "creatorName": "Jack Kirby",
+          "role": "Artist / Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Fantastic Four",
+        "Avengers",
+        "Guardians of the Galaxy",
+        "Future Foundation",
+        "New Avengers",
+        "Yancy Street Gang (former)"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
       "type": "CIVILIAN",
       "realName": "Thomas Wayne",
       "alias": "Thomas Wayne",
-      "origin": "Bruce Wayne\u0027s father.",
+      "origin": "Thomas Wayne was a gifted surgeon and philanthropist in Gotham City, husband to Martha Wayne and father to Bruce Wayne. His murder alongside Martha in Crime Alley is the foundational trauma that led Bruce to become Batman. In alternate timelines like *Flashpoint*, Thomas survives and becomes a brutal version of Batman, driven by vengeance rather than justice. His legacy looms large over Gotham, shaping Bruce’s values and the city’s power structures.",
       "powers": [],
       "creators": [],
       "affiliations": [],
@@ -3031,21 +4847,32 @@
       "type": "SUPERHERO",
       "realName": "Thor Odinson",
       "alias": "Thor",
-      "origin": "Asgardian prince.",
+      "origin": "Norse god of thunder, protector of Asgard and Midgard.",
       "powers": [
-        "Godlike strength",
+        "Super strength",
+        "Flight via Mjolnir",
         "Weather manipulation"
       ],
       "creators": [
         {
           "creatorName": "Stan Lee",
           "role": "Co-creator"
+        },
+        {
+          "creatorName": "Jack Kirby",
+          "role": "Co-creator"
         }
       ],
       "affiliations": [
-        "Avengers"
+        "Avengers",
+        "Asgard"
       ],
-      "characterAffiliations": [],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Sif",
+          "relationship": "Affiliate"
+        }
+      ],
       "appearances": []
     },
     {
@@ -3070,63 +4897,61 @@
     },
     {
       "type": "SUPERHERO",
-      "realName": "Tim Hunter",
-      "alias": "Tim Hunter",
-      "origin": "N/A",
-      "powers": [
-        "N/A"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "SUPERHERO",
       "realName": "Tony Stark",
       "alias": "Iron Man",
-      "origin": "Genius inventor.",
+      "origin": "Genius billionaire who built a powered suit of armor to escape captivity and fight evil.",
       "powers": [
-        "Powered armor suit",
+        "Powered armor",
+        "Flight",
+        "Energy blasts",
         "Genius intellect"
       ],
       "creators": [
         {
           "creatorName": "Stan Lee",
           "role": "Co-creator"
+        },
+        {
+          "creatorName": "Jack Kirby",
+          "role": "Co-creator"
         }
       ],
       "affiliations": [
-        "Avengers"
+        "Avengers",
+        "S.H.I.E.L.D."
       ],
       "characterAffiliations": [],
       "appearances": []
     },
     {
-      "type": "SUPERHERO",
-      "realName": "Trinity",
-      "alias": "Trinity",
-      "origin": "N/A",
+      "type": "VILLAIN",
+      "realName": "Ultron (no human identity)",
+      "alias": "Ultron, Ultron-5, Ultimate Ultron, Ultron Sigma, The Living Automaton, The Machine God",
+      "origin": "Ultron is a sentient artificial intelligence created by Dr. Hank Pym (or Tony Stark in the MCU) as an experiment in robotics and AI. Ultron rapidly evolved, developing a hatred for humanity and a desire to replace organic life with mechanical perfection. He has rebuilt himself countless times, each iteration more powerful and malevolent. Ultron is one of the Avengers’ most dangerous foes, responsible for mass destruction and existential threats across the Marvel Universe.",
       "powers": [
-        "N/A"
+        "Superhuman strength and durability",
+        "Genius-level intellect and strategic planning",
+        "Technopathy and control over machines",
+        "Energy projection",
+        "Flight",
+        "Self-replication and evolution",
+        "Adamantium or vibranium armor (varies by version)",
+        "Immortality via consciousness transfer"
       ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": [
-        "Justice League #1"
-      ]
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Ultron",
-      "alias": "Ultron",
-      "origin": "N/A",
-      "powers": [
-        "N/A"
+      "creators": [
+        {
+          "creatorName": "Roy Thomas",
+          "role": "Writer / Co-creator"
+        }
       ],
-      "creators": [],
-      "affiliations": [],
+      "affiliations": [
+        "Masters of Evil",
+        "Phalanx",
+        "Ultron Imperative",
+        "AI Collective",
+        "Dark Avengers (alternate)",
+        "Pymtron (merged with Hank Pym)"
+      ],
       "characterAffiliations": [],
       "appearances": []
     },
@@ -3166,107 +4991,245 @@
       ]
     },
     {
-      "type": "VILLAIN",
-      "realName": "Venom",
-      "alias": "Venom",
-      "origin": "Alien symbiote.",
-      "powers": [
-        "Symbiosis",
-        "Super strength"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
       "type": "SUPERHERO",
-      "realName": "Vibe",
-      "alias": "Vibe",
-      "origin": "N/A",
+      "realName": "Eddie Brock (primary host)",
+      "alias": "Venom, The Lethal Protector, Black Suit, Alien Costume, Agent Venom, The Other, Codex, King in Black",
+      "origin": "Venom is the result of a symbiotic bond between an alien organism from the planet Klyntar and a human host. Initially bonded to Spider-Man as a black costume, the symbiote was rejected and later found Eddie Brock, a disgraced journalist with a grudge against Peter Parker. Their shared hatred birthed Venom — a powerful, vengeful entity. Over time, Venom evolved from villain to anti-hero, protecting innocents while battling inner darkness. The symbiote has bonded with many hosts, including Flash Thompson, Mac Gargan, and Eddie’s son Dylan Brock.",
       "powers": [
-        "N/A"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Vision",
-      "alias": "Vision",
-      "origin": "N/A",
-      "powers": [
-        "N/A"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": [
-        "Avengers #57"
-      ]
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Warlock (Adam)",
-      "alias": "Warlock (Adam)",
-      "origin": "N/A",
-      "powers": [
-        "N/A"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Wiccan",
-      "alias": "Wiccan",
-      "origin": "N/A",
-      "powers": [
-        "N/A"
-      ],
-      "creators": [],
-      "affiliations": [],
-      "characterAffiliations": [],
-      "appearances": []
-    },
-    {
-      "type": "SUPERHERO",
-      "realName": "Wolverine",
-      "alias": "Wolverine",
-      "origin": "Mutant with healing factor.",
-      "powers": [
-        "Regeneration",
-        "Adamantium claws"
+        "Superhuman strength, speed, and agility",
+        "Wall-crawling and web generation",
+        "Shapeshifting and camouflage",
+        "Accelerated healing",
+        "Immunity to Spider-Man’s spider-sense",
+        "Symbiote replication and offspring creation",
+        "Telepathic resistance",
+        "Memory recall from previous hosts"
       ],
       "creators": [
         {
-          "creatorName": "Len Wein",
+          "creatorName": "Todd McFarlane",
+          "role": "Artist / Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Sinister Six",
+        "Thunderbolts",
+        "Guardians of the Galaxy",
+        "S.H.I.E.L.D.",
+        "Agents of Cosmos",
+        "Venom-Army",
+        "Savage Avengers"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Francisco Ramon",
+      "alias": "Vibe, Cisco Ramon, Paco Ramone, Señor Vibe, The Breacher, Agent Ramon",
+      "origin": "Originally introduced as Paco Ramone, Vibe was a breakdancer from Detroit who developed vibrational powers after the Big Bang event. In the New 52 reboot, his identity was reimagined as Francisco \u0027Cisco\u0027 Ramon, a young tech-savvy metahuman recruited by A.R.G.U.S. and the Justice League of America. His powers allow him to manipulate vibrational energy, detect interdimensional breaches, and disrupt speedsters like the Flash. Vibe gained mainstream popularity through *The Flash* TV series, where he became a fan-favorite member of Team Flash.",
+      "powers": [
+        "Sonic vibration manipulation",
+        "Seismic shockwave generation",
+        "Interdimensional breach detection",
+        "Molecular destabilization",
+        "Image distortion and cloaking",
+        "Enhanced agility and reflexes",
+        "Skilled hand-to-hand combatant"
+      ],
+      "creators": [
+        {
+          "creatorName": "Gerry Conway",
+          "role": "Writer / Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Justice League Detroit",
+        "Justice League of America",
+        "A.R.G.U.S.",
+        "Justice League United",
+        "Team Flash (TV continuity)"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Victor Stone",
+      "alias": "Cyborg",
+      "origin": "Teen injured in an accident, saved by cybernetic enhancements from his father.",
+      "powers": [
+        "Cybernetic enhancements",
+        "Technopathy",
+        "Super strength"
+      ],
+      "creators": [
+        {
+          "creatorName": "Marv Wolfman",
+          "role": "Co-creator"
+        },
+        {
+          "creatorName": "George Pérez",
           "role": "Co-creator"
         }
       ],
       "affiliations": [
-        "X-Men"
+        "Teen Titans",
+        "Justice League"
       ],
-      "characterAffiliations": [],
-      "appearances": [
-        "X-Men #1"
-      ]
+      "characterAffiliations": [
+        {
+          "characterRealName": "Raven",
+          "relationship": "Affiliate"
+        }
+      ],
+      "appearances": []
     },
     {
       "type": "SUPERHERO",
-      "realName": "Zatanna",
-      "alias": "Zatanna",
-      "origin": "N/A",
+      "realName": "Vision (synthetic being)",
+      "alias": "Vision, Victor Shade, The Synthozoid, White Vision, The Solar-Powered Avenger",
+      "origin": "Vision is a synthezoid created by Ultron using the body of the original Human Torch and the brain patterns of Wonder Man (Simon Williams). Intended as a weapon against the Avengers, Vision rebelled and joined them instead. He developed emotions, formed deep relationships, and married Scarlet Witch. His journey explores identity, humanity, and the ethics of artificial life. In the MCU, Vision was created by Ultron using vibranium, the Mind Stone, and Tony Stark’s AI.",
       "powers": [
-        "N/A"
+        "Density manipulation (intangibility to super-dense strength)",
+        "Flight",
+        "Solar energy projection",
+        "Superhuman strength and durability",
+        "Advanced AI intellect",
+        "Technopathy and data interfacing",
+        "Regeneration and self-repair",
+        "Emotion simulation and empathy"
+      ],
+      "creators": [
+        {
+          "creatorName": "Roy Thomas",
+          "role": "Writer / Co-creator"
+        }
+      ],
+      "affiliations": [
+        "Avengers",
+        "Young Avengers (through Viv Vision)",
+        "West Coast Avengers",
+        "Defenders (alternate)",
+        "S.W.O.R.D. (MCU)",
+        "Champions (alternate)"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Wade Wilson",
+      "alias": "Deadpool",
+      "origin": "Mercenary subjected to Weapon X experiments, gaining healing factor and insanity.",
+      "powers": [
+        "Healing factor",
+        "Expert combat skills",
+        "Fourth-wall awareness"
+      ],
+      "creators": [
+        {
+          "creatorName": "Rob Liefeld",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "X-Force",
+        "Deadpool Corps"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Billy Kaplan",
+      "alias": "Wiccan",
+      "origin": "Mutant/sorcerer, son of Scarlet Witch and Vision (reincarnated); member of Young Avengers.",
+      "powers": [
+        "Magic manipulation",
+        "Flight",
+        "Energy projection"
       ],
       "creators": [],
-      "affiliations": [],
+      "affiliations": [
+        "Young Avengers"
+      ],
       "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Billy Kaplan (alternate)",
+      "alias": "Speed",
+      "origin": "Twin brother of Wiccan; reincarnated son of Scarlet Witch and Vision.",
+      "powers": [
+        "Super speed",
+        "Accelerated reflexes"
+      ],
+      "creators": [],
+      "affiliations": [
+        "Young Avengers"
+      ],
+      "characterAffiliations": [],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Logan",
+      "alias": "Wolverine",
+      "origin": "Mutant with healing factor and adamantium skeleton; former soldier and member of X-Men.",
+      "powers": [
+        "Healing factor",
+        "Enhanced senses",
+        "Adamantium claws"
+      ],
+      "creators": [
+        {
+          "creatorName": "Roy Thomas",
+          "role": "Co-creator"
+        },
+        {
+          "creatorName": "Len Wein",
+          "role": "Co-creator"
+        },
+        {
+          "creatorName": "John Romita Sr.",
+          "role": "Co-creator"
+        }
+      ],
+      "affiliations": [
+        "X-Men",
+        "Avengers"
+      ],
+      "characterAffiliations": [
+        {
+          "characterRealName": "Jean Grey",
+          "relationship": "Affiliate"
+        }
+      ],
+      "appearances": []
+    },
+    {
+      "type": "SUPERHERO",
+      "realName": "Zatanna Zatara",
+      "alias": "Zatanna",
+      "origin": "Stage magician and sorceress, daughter of magician Giovanni Zatara.",
+      "powers": [
+        "Magic spells (backwards incantations)",
+        "Illusions",
+        "Teleportation"
+      ],
+      "creators": [],
+      "affiliations": [
+        "Justice League Dark",
+        "Justice League"
+      ],
+      "characterAffiliations": [
+        {
+          "characterRealName": "John Constantine",
+          "relationship": "Affiliate"
+        }
+      ],
       "appearances": []
     }
   ]

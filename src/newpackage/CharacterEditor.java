@@ -36,6 +36,7 @@ public class CharacterEditor extends javax.swing.JDialog {
     private List<Writer> allWriters;
     private List<Artist> allArtists;
     private List<ComicBook> allComicBooks;
+    private List<String> allPowers; // <-- NEW: Store master powers list
 
     // --- NEW: Field to store the character being edited ---
     private ComicCharacter characterToEdit;
@@ -47,7 +48,8 @@ public class CharacterEditor extends javax.swing.JDialog {
             List<ComicCharacter> allCharacters,
             List<Writer> allWriters,
             List<Artist> allArtists,
-            List<ComicBook> allComicBooks) {
+            List<ComicBook> allComicBooks,
+            List<String> allPowers) { // <-- NEW: Added allPowers parameter
 
         super(parent, modal);
 
@@ -56,6 +58,7 @@ public class CharacterEditor extends javax.swing.JDialog {
         this.allWriters = allWriters;
         this.allArtists = allArtists;
         this.allComicBooks = allComicBooks;
+        this.allPowers = allPowers; // <-- NEW: Save the powers list
 
         // We are in "Create" mode
         this.characterToEdit = null;
@@ -79,10 +82,11 @@ public class CharacterEditor extends javax.swing.JDialog {
             List<Writer> allWriters,
             List<Artist> allArtists,
             List<ComicBook> allComicBooks,
+            List<String> allPowers, // <-- NEW: Added allPowers parameter
             ComicCharacter characterToEdit) { // <-- Extra parameter
 
         // Call the "Create" constructor to set everything up
-        this(parent, modal, allCharacters, allWriters, allArtists, allComicBooks);
+        this(parent, modal, allCharacters, allWriters, allArtists, allComicBooks, allPowers); // <-- NEW: Pass powers
 
         // Set the character to edit
         this.characterToEdit = characterToEdit;
@@ -137,65 +141,15 @@ public class CharacterEditor extends javax.swing.JDialog {
     }
 
     private void loadAvailableListsData() {
-        // --- Dummy Power Data ---
+        // --- 1. Load Powers (from JSON) ---
         allPowersModel.clear();
-
-        allPowersModel.addElement("Acid Spit");
-        allPowersModel.addElement("Agility (Superhuman)");
-        allPowersModel.addElement("Animal Communication");
-        allPowersModel.addElement("Astral Projection");
-        allPowersModel.addElement("Atmokinesis (Weather Control)");
-        allPowersModel.addElement("Camouflage/Invisibility");
-        allPowersModel.addElement("Cryokinesis (Ice Control)");
-        allPowersModel.addElement("Density Control");
-        allPowersModel.addElement("Durability (Superhuman)");
-        allPowersModel.addElement("Elasticity");
-        allPowersModel.addElement("Electrokinesis (Electricity Control)");
-        allPowersModel.addElement("Energy Absorption");
-        allPowersModel.addElement("Energy Blasts");
-        allPowersModel.addElement("Explosion Manipulation");
-        allPowersModel.addElement("Flight");
-        allPowersModel.addElement("Force Fields");
-        allPowersModel.addElement("Gadgets (High-Tech)");
-        allPowersModel.addElement("Geokinesis (Earth Control)");
-        allPowersModel.addElement("Gravity Manipulation");
-        allPowersModel.addElement("Healing Factor (Regeneration)");
-        allPowersModel.addElement("Heat Vision");
-        allPowersModel.addElement("Hydrokinesis (Water Control)");
-        allPowersModel.addElement("Illusion Casting");
-        allPowersModel.addElement("Intangibility (Phasing)");
-        allPowersModel.addElement("Invisibility");
-        allPowersModel.addElement("Invulnerability");
-        allPowersModel.addElement("Light Manipulation (Photokinesis)");
-        allPowersModel.addElement("Magic/Sorcery");
-        allPowersModel.addElement("Magnetism Manipulation");
-        allPowersModel.addElement("Marksmanship (Superhuman)");
-        allPowersModel.addElement("Mind Control");
-        allPowersModel.addElement("Pheromone Control");
-        allPowersModel.addElement("Plant Control");
-        allPowersModel.addElement("Power Absorption");
-        allPowersModel.addElement("Power Mimicry");
-        allPowersModel.addElement("Precognition (Future Sight)");
-        allPowersModel.addElement("Psychic Blasts");
-        allPowersModel.addElement("Pyrokinesis (Fire Control)");
-        allPowersModel.addElement("Reality Warping");
-        allPowersModel.addElement("Reflexes (Superhuman)");
-        allPowersModel.addElement("Shadow Manipulation (Umbrakinesis)");
-        allPowersModel.addElement("Shapeshifting");
-        allPowersModel.addElement("Shrinking / Size Alteration");
-        allPowersModel.addElement("Sonic Scream");
-        allPowersModel.addElement("Stamina (Superhuman)");
-        allPowersModel.addElement("Super Senses");
-        allPowersModel.addElement("Super Speed");
-        allPowersModel.addElement("Super Strength");
-        allPowersModel.addElement("Technopathy (Machine Control)");
-        allPowersModel.addElement("Telekinesis");
-        allPowersModel.addElement("Telepathy");
-        allPowersModel.addElement("Teleportation");
-        allPowersModel.addElement("Time Manipulation");
-        allPowersModel.addElement("Toxicity/Poison Generation");
-        allPowersModel.addElement("Wall-Crawling");
-        allPowersModel.addElement("X-Ray Vision");
+        if (allPowers != null) {
+            // This list now comes from MainDashboard, which got it from DataHelper
+            for (String power : allPowers) {
+                allPowersModel.addElement(power);
+            }
+        }
+        // --- End of (formerly) Dummy Power Data ---
 
         // --- 2. Load Affiliations (Characters) ---
         allAffiliationsModel.clear();

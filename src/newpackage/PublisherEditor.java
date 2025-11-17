@@ -57,7 +57,7 @@ public class PublisherEditor extends javax.swing.JDialog {
             countryField.setText(this.publisherToEdit.getCountry());
 
             if (this.publisherToEdit.getFoundationYear() != null) {
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
                 foundationTextField.setText(sdf.format(this.publisherToEdit.getFoundationYear()));
             }
         }
@@ -181,17 +181,17 @@ public class PublisherEditor extends javax.swing.JDialog {
             Date foundDate;
             if (dateStr.isBlank()) {
 
-                throw new DataValidationException("Foundation Year cannot be empty. Please use YYYY-MM-DD.");
+                throw new DataValidationException("Foundation Year cannot be empty. Please use YYYY.");
             }
 
             try {
-                // Force the user to use YYYY-MM-DD format
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-                sdf.setLenient(false); // Don't allow "2023-02-30"
+                // Force the user to use YYYY format
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy");
+                sdf.setLenient(false);
                 foundDate = sdf.parse(dateStr);
             } catch (ParseException e) {
 
-                throw new DataValidationException("Invalid date format. Please use YYYY-MM-DD.");
+                throw new DataValidationException("Invalid date format. Please use YYYY.");
             }
 
             // 3. Check if we are in "Edit Mode" or "Create Mode"
