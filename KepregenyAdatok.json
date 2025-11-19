@@ -585,6 +585,7 @@
       "artistNames": [
         "Eduardo Risso"
       ],
+      "characterNames": [],
       "editions": [
         {
           "editionName": "First Print",
@@ -599,6 +600,9 @@
       "genre": "Superhero",
       "writerNames": [],
       "artistNames": [],
+      "characterNames": [
+        "Superman"
+      ],
       "editions": [
         {
           "editionName": "First Print",
@@ -614,6 +618,9 @@
       "writerNames": [],
       "artistNames": [
         "Katsuhiro Otomo"
+      ],
+      "characterNames": [
+        "Akira"
       ],
       "editions": [
         {
@@ -633,6 +640,9 @@
       "artistNames": [
         "Steve Ditko"
       ],
+      "characterNames": [
+        "Spider-Man"
+      ],
       "editions": [
         {
           "editionName": "First Print",
@@ -651,6 +661,9 @@
       "artistNames": [
         "Steve Ditko"
       ],
+      "characterNames": [
+        "Spider-Man"
+      ],
       "editions": [
         {
           "editionName": "First Print",
@@ -667,6 +680,7 @@
         "Scott Snyder"
       ],
       "artistNames": [],
+      "characterNames": [],
       "editions": [
         {
           "editionName": "First Print",
@@ -681,6 +695,7 @@
       "genre": "Superhero",
       "writerNames": [],
       "artistNames": [],
+      "characterNames": [],
       "editions": [
         {
           "editionName": "First Print",
@@ -697,6 +712,7 @@
         "Roy Thomas"
       ],
       "artistNames": [],
+      "characterNames": [],
       "editions": [
         {
           "editionName": "First Print",
@@ -713,6 +729,7 @@
         "Dennis O\u0027Neil"
       ],
       "artistNames": [],
+      "characterNames": [],
       "editions": [
         {
           "editionName": "First Print",
@@ -729,6 +746,10 @@
       "artistNames": [
         "Jack Kirby"
       ],
+      "characterNames": [
+        "Bucky Barnes / Winter Soldier",
+        "Captain America"
+      ],
       "editions": []
     },
     {
@@ -740,6 +761,7 @@
       "artistNames": [
         "Steve McNiven"
       ],
+      "characterNames": [],
       "editions": [
         {
           "editionName": "First Print",
@@ -756,6 +778,9 @@
         "Stan Lee"
       ],
       "artistNames": [],
+      "characterNames": [
+        "Daredevil"
+      ],
       "editions": [
         {
           "editionName": "First Print",
@@ -770,6 +795,9 @@
       "genre": "Superhero",
       "writerNames": [],
       "artistNames": [],
+      "characterNames": [
+        "Daredevil"
+      ],
       "editions": [
         {
           "editionName": "Collected Edition",
@@ -784,6 +812,10 @@
       "genre": "Superhero",
       "writerNames": [],
       "artistNames": [],
+      "characterNames": [
+        "Alfred Pennyworth",
+        "Batman"
+      ],
       "editions": [
         {
           "editionName": "First Print",
@@ -802,6 +834,7 @@
       "artistNames": [
         "Steve Ditko"
       ],
+      "characterNames": [],
       "editions": [
         {
           "editionName": "First Appearance (Strange Tales #110)",
@@ -818,6 +851,9 @@
       "artistNames": [
         "Bill Sienkiewicz"
       ],
+      "characterNames": [
+        "Elektra"
+      ],
       "editions": [
         {
           "editionName": "First Print",
@@ -832,6 +868,9 @@
       "genre": "Fantasy",
       "writerNames": [],
       "artistNames": [],
+      "characterNames": [
+        "Bigby Wolf"
+      ],
       "editions": [
         {
           "editionName": "First Print",
@@ -850,6 +889,10 @@
       "artistNames": [
         "Jack Kirby"
       ],
+      "characterNames": [
+        "Mr. Fantastic",
+        "Invisible Woman"
+      ],
       "editions": [
         {
           "editionName": "First Print",
@@ -864,6 +907,9 @@
       "genre": "Superhero",
       "writerNames": [],
       "artistNames": [],
+      "characterNames": [
+        "The Flash"
+      ],
       "editions": [
         {
           "editionName": "First Print",
@@ -880,6 +926,7 @@
         "Alan Moore"
       ],
       "artistNames": [],
+      "characterNames": [],
       "editions": []
     },
     {
@@ -887,6 +934,7 @@
       "genre": "Superhero",
       "writerNames": [],
       "artistNames": [],
+      "characterNames": [],
       "editions": [
         {
           "editionName": "First Print",
@@ -903,6 +951,7 @@
       "artistNames": [
         "Mike Mignola"
       ],
+      "characterNames": [],
       "editions": [
         {
           "editionName": "First Print",
@@ -919,6 +968,10 @@
       "artistNames": [
         "Mike Mignola"
       ],
+      "characterNames": [
+        "Abe Sapien",
+        "Hellboy"
+      ],
       "editions": [
         {
           "editionName": "First Print",
@@ -933,6 +986,7 @@
       "genre": "Superhero",
       "writerNames": [],
       "artistNames": [],
+      "characterNames": [],
       "editions": [
         {
           "editionName": "First Print",
@@ -949,6 +1003,7 @@
         "Robert Kirkman"
       ],
       "artistNames": [],
+      "characterNames": [],
       "editions": [
         {
           "editionName": "First Print",
@@ -963,6 +1018,7 @@
       "genre": "Superhero",
       "writerNames": [],
       "artistNames": [],
+      "characterNames": [],
       "editions": [
         {
           "editionName": "First Print",
@@ -981,6 +1037,7 @@
       "artistNames": [
         "Jim Lee"
       ],
+      "characterNames": [],
       "editions": [
         {
           "editionName": "First Print",
@@ -999,6 +1056,11 @@
       "artistNames": [
         "Alex Ross"
       ],
+      "characterNames": [
+        "Batman (Kingdom Come)",
+        "Superman (Kingdom Come)",
+        "Shazam (Kingdom Come)"
+      ],
       "editions": [
         {
           "editionName": "Hardcover",
@@ -1015,6 +1077,7 @@
         "Chris Claremont"
       ],
       "artistNames": [],
+      "characterNames": [],
       "editions": [
         {
           "editionName": "First Print",
@@ -1031,6 +1094,9 @@
         "Warren Ellis"
       ],
       "artistNames": [],
+      "characterNames": [
+        "Elijah Snow"
+      ],
       "editions": [
         {
           "editionName": "First Print",
@@ -1047,6 +1113,7 @@
         "Garth Ennis"
       ],
       "artistNames": [],
+      "characterNames": [],
       "editions": [
         {
           "editionName": "First Print",
@@ -1064,6 +1131,9 @@
       ],
       "artistNames": [
         "Fiona Staples"
+      ],
+      "characterNames": [
+        "Marko"
       ],
       "editions": [
         {
@@ -1083,6 +1153,9 @@
       "artistNames": [
         "Fiona Staples"
       ],
+      "characterNames": [
+        "Alana"
+      ],
       "editions": [
         {
           "editionName": "First Print",
@@ -1099,6 +1172,7 @@
         "Alan Moore"
       ],
       "artistNames": [],
+      "characterNames": [],
       "editions": [
         {
           "editionName": "First Print",
@@ -1115,6 +1189,9 @@
         "Naoko Takeuchi"
       ],
       "artistNames": [],
+      "characterNames": [
+        "Sailor Moon"
+      ],
       "editions": [
         {
           "editionName": "Tankōbon",
@@ -1131,6 +1208,7 @@
         "Neil Gaiman"
       ],
       "artistNames": [],
+      "characterNames": [],
       "editions": [
         {
           "editionName": "First Print",
@@ -1147,6 +1225,7 @@
         "Neil Gaiman"
       ],
       "artistNames": [],
+      "characterNames": [],
       "editions": [
         {
           "editionName": "First Print",
@@ -1161,6 +1240,9 @@
       "genre": "Romantic Comedy",
       "writerNames": [],
       "artistNames": [],
+      "characterNames": [
+        "Scott Pilgrim"
+      ],
       "editions": [
         {
           "editionName": "First Print",
@@ -1175,6 +1257,7 @@
       "genre": "Superhero",
       "writerNames": [],
       "artistNames": [],
+      "characterNames": [],
       "editions": [
         {
           "editionName": "First Print",
@@ -1190,6 +1273,9 @@
       "writerNames": [],
       "artistNames": [
         "Todd McFarlane"
+      ],
+      "characterNames": [
+        "Spawn"
       ],
       "editions": [
         {
@@ -1207,6 +1293,7 @@
       "artistNames": [
         "Todd McFarlane"
       ],
+      "characterNames": [],
       "editions": [
         {
           "editionName": "First Print",
@@ -1223,6 +1310,9 @@
         "Len Wein"
       ],
       "artistNames": [],
+      "characterNames": [
+        "Swamp Thing"
+      ],
       "editions": [
         {
           "editionName": "First Print",
@@ -1241,6 +1331,7 @@
       "artistNames": [
         "John Romita Sr."
       ],
+      "characterNames": [],
       "editions": [
         {
           "editionName": "First Print",
@@ -1259,6 +1350,7 @@
       "artistNames": [
         "Bryan Hitch"
       ],
+      "characterNames": [],
       "editions": [
         {
           "editionName": "First Print",
@@ -1277,6 +1369,7 @@
       "artistNames": [
         "Jack Kirby"
       ],
+      "characterNames": [],
       "editions": [
         {
           "editionName": "First Print",
@@ -1293,6 +1386,7 @@
         "Garth Ennis"
       ],
       "artistNames": [],
+      "characterNames": [],
       "editions": []
     },
     {
@@ -1302,6 +1396,7 @@
       "artistNames": [
         "Frank Miller"
       ],
+      "characterNames": [],
       "editions": [
         {
           "editionName": "First Print",
@@ -1320,6 +1415,12 @@
       "artistNames": [
         "Jack Kirby"
       ],
+      "characterNames": [
+        "Hulk",
+        "Betty Ross",
+        "Red Hulk",
+        "Rick Jones"
+      ],
       "editions": [
         {
           "editionName": "First Print",
@@ -1334,6 +1435,7 @@
       "genre": "Superhero/Dark Comedy",
       "writerNames": [],
       "artistNames": [],
+      "characterNames": [],
       "editions": [
         {
           "editionName": "First Print",
@@ -1350,6 +1452,7 @@
         "Gerry Conway"
       ],
       "artistNames": [],
+      "characterNames": [],
       "editions": [
         {
           "editionName": "First Appearance (Amazing Spider-Man #129)",
@@ -1366,6 +1469,9 @@
         "Robert Kirkman"
       ],
       "artistNames": [],
+      "characterNames": [
+        "Rick Grimes"
+      ],
       "editions": [
         {
           "editionName": "First Print",
@@ -1384,6 +1490,7 @@
       "artistNames": [
         "Jack Kirby"
       ],
+      "characterNames": [],
       "editions": [
         {
           "editionName": "First Print",
@@ -1400,6 +1507,7 @@
         "Warren Ellis"
       ],
       "artistNames": [],
+      "characterNames": [],
       "editions": []
     },
     {
@@ -1411,6 +1519,7 @@
       "artistNames": [
         "John Byrne"
       ],
+      "characterNames": [],
       "editions": [
         {
           "editionName": "First Print",
@@ -1427,6 +1536,7 @@
         "Alan Moore"
       ],
       "artistNames": [],
+      "characterNames": [],
       "editions": []
     },
     {
@@ -1437,6 +1547,10 @@
       ],
       "artistNames": [
         "Dave Gibbons"
+      ],
+      "characterNames": [
+        "Doctor Manhattan",
+        "Rorschach"
       ],
       "editions": [
         {
@@ -1456,6 +1570,10 @@
       "artistNames": [
         "Dave Gibbons"
       ],
+      "characterNames": [
+        "Doctor Manhattan",
+        "Rorschach"
+      ],
       "editions": [
         {
           "editionName": "First Print",
@@ -1473,6 +1591,12 @@
       ],
       "artistNames": [
         "Jack Kirby"
+      ],
+      "characterNames": [
+        "Cyclops",
+        "Phoenix",
+        "Magneto",
+        "Professor X"
       ],
       "editions": [
         {
@@ -1492,6 +1616,7 @@
       "artistNames": [
         "Jim Lee"
       ],
+      "characterNames": [],
       "editions": [
         {
           "editionName": "First Print",
@@ -1508,6 +1633,7 @@
         "Brian K. Vaughan"
       ],
       "artistNames": [],
+      "characterNames": [],
       "editions": [
         {
           "editionName": "First Print",
@@ -1522,6 +1648,9 @@
       "genre": "Superhero",
       "writerNames": [],
       "artistNames": [],
+      "characterNames": [
+        "Batman"
+      ],
       "editions": [
         {
           "editionName": "Movie Adaptation",
@@ -1756,7 +1885,9 @@
           "relationship": "Affiliate"
         }
       ],
-      "appearances": []
+      "appearances": [
+        "Flash #110"
+      ]
     },
     {
       "type": "SUPERHERO",
@@ -1983,11 +2114,11 @@
       ],
       "characterAffiliations": [
         {
-          "characterRealName": "Betty Ross",
+          "characterRealName": "Rick Jones",
           "relationship": "Affiliate"
         },
         {
-          "characterRealName": "Rick Jones",
+          "characterRealName": "Betty Ross",
           "relationship": "Affiliate"
         }
       ],
@@ -2235,7 +2366,8 @@
         }
       ],
       "appearances": [
-        "Watchmen #1"
+        "Watchmen #1",
+        "Watchmen #2"
       ]
     },
     {
@@ -2516,7 +2648,9 @@
         "S.H.I.E.L.D."
       ],
       "characterAffiliations": [],
-      "appearances": []
+      "appearances": [
+        "Elektra: Assassin #1"
+      ]
     },
     {
       "type": "CIVILIAN",
@@ -2726,11 +2860,11 @@
       ],
       "characterAffiliations": [
         {
-          "characterRealName": "Hal Jordan",
+          "characterRealName": "Guy Gardner",
           "relationship": "Affiliate"
         },
         {
-          "characterRealName": "Guy Gardner",
+          "characterRealName": "Hal Jordan",
           "relationship": "Affiliate"
         }
       ],
@@ -3454,12 +3588,12 @@
           "role": "Writer / Co-creator"
         },
         {
-          "creatorName": "John Romita Sr.",
-          "role": "Artist (definitive design)"
-        },
-        {
           "creatorName": "Steve Ditko",
           "role": "Artist / Co-creator"
+        },
+        {
+          "creatorName": "John Romita Sr.",
+          "role": "Artist (definitive design)"
         }
       ],
       "affiliations": [],
@@ -3488,7 +3622,8 @@
       ],
       "characterAffiliations": [],
       "appearances": [
-        "Daredevil #1"
+        "Daredevil #1",
+        "Daredevil: Born Again #1"
       ]
     },
     {
@@ -3925,7 +4060,8 @@
       ],
       "characterAffiliations": [],
       "appearances": [
-        "Watchmen #1"
+        "Watchmen #1",
+        "Watchmen #2"
       ]
     },
     {
@@ -4024,7 +4160,8 @@
         }
       ],
       "appearances": [
-        "Amazing Fantasy #15"
+        "Amazing Fantasy #15",
+        "Amazing Spider-Man #1"
       ]
     },
     {
@@ -5185,11 +5322,11 @@
       ],
       "creators": [
         {
-          "creatorName": "Roy Thomas",
+          "creatorName": "Len Wein",
           "role": "Co-creator"
         },
         {
-          "creatorName": "Len Wein",
+          "creatorName": "Roy Thomas",
           "role": "Co-creator"
         },
         {

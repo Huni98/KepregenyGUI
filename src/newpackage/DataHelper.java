@@ -58,13 +58,14 @@ public class DataHelper {
         ComicDataContainer data = new ComicDataContainer();
         Gson gson = new Gson();
 
-        // Create Maps to link objects by their NAME or TITLE
+        // Maps to link objects by their NAME or TITLE
         Map<String, Publisher> publisherMap = new HashMap<>();
         Map<String, Object> creatorMap = new HashMap<>(); // Holds both Writers and Artists
         Map<String, ComicBook> comicBookMap = new HashMap<>();
         Map<String, ComicCharacter> characterMap = new HashMap<>(); // We will use realName as the key
-
-        // --- NEW: Set to store unique powers ---
+        // --- NEW: Map for linking by Alias ---
+        Map<String, ComicCharacter> characterAliasMap = new HashMap<>(); // Key: Alias
+        // Set to store unique powers ---
         Set<String> uniquePowers = new HashSet<>();
         
         try (FileReader reader = new FileReader(DATA_FILE)) { // Use FileReader
@@ -147,7 +148,6 @@ public class DataHelper {
                     String title = (String) cb.get("title");
                     String genre = (String) cb.get("genre");
                     ComicBook comic = new ComicBook(title, genre);
-
                     data.comicBooks.add(comic);
                     comicBookMap.put(comic.getTitle(), comic);
                 }
@@ -182,6 +182,11 @@ public class DataHelper {
                     }
                     data.characters.add(character);
                     characterMap.put(character.getRealName(), character);
+                    
+                    // --- NEW: Map by Alias (for Comic Book inclusions) ---
+                    // If alias is null/missing, fallback to real name to avoid errors
+                    String lookupAlias = (alias != null && !alias.isBlank()) ? alias : realName;
+                    characterAliasMap.put(lookupAlias, character);
                 }
             }
 
@@ -218,6 +223,25 @@ public class DataHelper {
                             // Check if it's an Artist before casting
                             if (creator instanceof Artist) {
                                 comic.addArtist((Artist) creator);
+                            }
+                        }
+                    }
+                    
+                    // --- NEW: Link Featured Characters (Using ALIAS Map) ---
+                    Object charNamesObj = cb.get("characterNames");
+                    if (charNamesObj instanceof List) {
+                        List<String> charNames = (List<String>) charNamesObj;
+                        for (String cAlias : charNames) {
+                            // Look up using the ALIAS map
+                            ComicCharacter cc = characterAliasMap.get(cAlias);
+                            if (cc != null) {
+                                comic.addCharacter(cc);
+                            } else {
+                                // Optional: Try fallback to real name map just in case JSON is mixed
+                                ComicCharacter ccFallback = characterMap.get(cAlias);
+                                if (ccFallback != null) {
+                                    comic.addCharacter(ccFallback);
+                                }
                             }
                         }
                     }
@@ -456,6 +480,16 @@ public class DataHelper {
                     }
                 }
                 cObj.put("artistNames", artistNames);
+                
+                // --- NEW: Save Featured Characters using ALIAS ---
+                List<String> charNames = new ArrayList<>();
+                if (c.getFeaturedCharacters() != null) {
+                    for (ComicCharacter cc : c.getFeaturedCharacters()) {
+                        // Changed from getRealName() to getDisplayName() (Alias)
+                        charNames.add(cc.getDisplayName());
+                    }
+                }
+                cObj.put("characterNames", charNames);
 
                 List<Map<String, Object>> editionsArray = new ArrayList<>();
                 if (c.getEditions() != null) { // Add null check

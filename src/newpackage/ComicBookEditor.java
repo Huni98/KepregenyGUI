@@ -175,10 +175,23 @@ public class ComicBookEditor extends javax.swing.JDialog {
             }
         }
 
+        /*
         // -- Characters --
         if (comicToEdit.getFeaturedCharacters() != null) {
             List<ComicCharacter> characters = new ArrayList<>(comicToEdit.getFeaturedCharacters());
             for (ComicCharacter c : characters) {
+                if (allCharactersModel.contains(c)) {
+                    allCharactersModel.removeElement(c);
+                    featuredCharactersModel.addElement(c);
+                }
+            }
+        }
+        */
+        
+        // -- Characters (The Logic you requested) --
+        // We check the comic's list and move matches from "Available" to "Featured"
+        if (comicToEdit.getFeaturedCharacters() != null) {
+            for (ComicCharacter c : comicToEdit.getFeaturedCharacters()) {
                 if (allCharactersModel.contains(c)) {
                     allCharactersModel.removeElement(c);
                     featuredCharactersModel.addElement(c);
@@ -534,10 +547,25 @@ public class ComicBookEditor extends javax.swing.JDialog {
             for (int i = 0; i < thisComicBookArtistModel.getSize(); i++) {
                 comicToEdit.addArtist(thisComicBookArtistModel.getElementAt(i));
             }
+// -- Characters (WITH Bi-Directional Cleanup) --
+            // 1. First, remove this comic from the "Appearances" of any character currently in the list.
+            if (comicToEdit.getFeaturedCharacters() != null) {
+                // Iterate a copy to avoid concurrent modification
+                List<ComicCharacter> oldChars = new ArrayList<>(comicToEdit.getFeaturedCharacters());
+                for (ComicCharacter c : oldChars) {
+                    // Remove the comic from the character's appearance list
+                    if (c.getComicBookAppearances() != null) {
+                        c.getComicBookAppearances().remove(comicToEdit);
+                    }
+                }
+                // 2. Clear the comic's list
+                comicToEdit.getFeaturedCharacters().clear();
+            }
 
-            comicToEdit.getFeaturedCharacters().clear(); // (Need to add getCharacters() and clear() to ComicBook.java)
+            // 3. Add new characters (addCharacter handles the bi-directional link)
             for (int i = 0; i < featuredCharactersModel.getSize(); i++) {
-                comicToEdit.addCharacter(featuredCharactersModel.getElementAt(i));
+                ComicCharacter c = featuredCharactersModel.getElementAt(i);
+                comicToEdit.addCharacter(c); 
             }
 
         } else {

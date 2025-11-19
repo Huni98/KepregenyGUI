@@ -269,6 +269,16 @@ public class MainDashboard extends javax.swing.JFrame {
                 sb.append("  - ").append(a.getName()).append("\n");
             }
         }
+        
+        // --- NEW SECTION: Featured Characters ---
+        sb.append("\nCHARACTERS:\n");
+        if (comic.getFeaturedCharacters() == null || comic.getFeaturedCharacters().isEmpty()) {
+            sb.append("  (None listed)\n");
+        } else {
+            for (ComicCharacter c : comic.getFeaturedCharacters()) {
+                sb.append("  - ").append(c.getDisplayName()).append("\n");
+            }
+        }
 
         sb.append("\nEDITIONS:\n");
         if (comic.getEditions().isEmpty()) {
