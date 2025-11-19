@@ -388,6 +388,21 @@ public class DataHelper {
             data.allPowers.addAll(uniquePowers); // Add all unique powers
             Collections.sort(data.allPowers);    // Sort them alphabetically
             
+            // Publishers (by Name)
+            Collections.sort(data.publishers, (p1, p2) -> p1.getName().compareToIgnoreCase(p2.getName()));
+
+            // Writers (by Name)
+            Collections.sort(data.writers, (w1, w2) -> w1.getName().compareToIgnoreCase(w2.getName()));
+
+            // Artists (by Name)
+            Collections.sort(data.artists, (a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
+
+            // Characters (by Display Name / Alias)
+            Collections.sort(data.characters, (c1, c2) -> c1.getDisplayName().compareToIgnoreCase(c2.getDisplayName()));
+
+            // Comic Books (by Title)
+            Collections.sort(data.comicBooks, (cb1, cb2) -> cb1.getTitle().compareToIgnoreCase(cb2.getTitle()));
+            
             return data;
 
         } catch (FileNotFoundException e) {
