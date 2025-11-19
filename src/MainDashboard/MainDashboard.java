@@ -28,7 +28,9 @@ import javax.swing.JFileChooser; // For picking the file
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.File;
 import java.text.SimpleDateFormat;
+import java.util.Collections;
 import java.util.Date;
+import java.util.Map;
 
 import ro.madarash.kepregeny_project.*;
 
@@ -174,6 +176,17 @@ public class MainDashboard extends javax.swing.JFrame {
                     JOptionPane.ERROR_MESSAGE);
             // The app will continue with empty lists
         }
+    }
+    
+    /**
+     * --- NEW: Helper method to re-sort lists after adding new items ---
+     */
+    private void sortLists() {
+        Collections.sort(allPublishers, (p1, p2) -> p1.getName().compareToIgnoreCase(p2.getName()));
+        Collections.sort(allWriters, (w1, w2) -> w1.getName().compareToIgnoreCase(w2.getName()));
+        Collections.sort(allArtists, (a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
+        Collections.sort(allCharacters, (c1, c2) -> c1.getDisplayName().compareToIgnoreCase(c2.getDisplayName()));
+        Collections.sort(allComicBooks, (cb1, cb2) -> cb1.getTitle().compareToIgnoreCase(cb2.getTitle()));
     }
 
     /**
@@ -342,8 +355,8 @@ public class MainDashboard extends javax.swing.JFrame {
             }
         }
 
-        // --- NEW: Display Affiliations (Team Names) ---
-        sb.append("\nAFFILIATIONS:\n");
+        // --- 1. TEAM AFFILIATIONS (Strings) ---
+        sb.append("\nTEAMS:\n");
         List<String> teamAffiliations = null;
         if (character instanceof Superhero) {
             teamAffiliations = ((Superhero) character).getAffiliations();
@@ -356,6 +369,17 @@ public class MainDashboard extends javax.swing.JFrame {
         } else {
             for (String team : teamAffiliations) {
                 sb.append("  - ").append(team).append("\n");
+            }
+        }
+        
+        // --- 2. RELATIONSHIPS (Other Characters) ---
+        sb.append("\nRELATIONSHIPS:\n");
+        if (character.getCharacterAffiliations() == null || character.getCharacterAffiliations().isEmpty()) {
+            sb.append("  (None listed)\n");
+        } else {
+            for (Map.Entry<ComicCharacter, String> entry : character.getCharacterAffiliations().entrySet()) {
+                sb.append("  - ").append(entry.getKey().getDisplayName());
+                sb.append(" (").append(entry.getValue()).append(")\n");
             }
         }
 
@@ -483,26 +507,31 @@ public class MainDashboard extends javax.swing.JFrame {
      */
     public void addPublisher(Publisher publisher) {
         this.allPublishers.add(publisher);
+        sortLists(); // Sort after adding
         refreshPublishersTable(); // More efficient
     }
 
     public void addWriter(Writer writer) {
         this.allWriters.add(writer);
+        sortLists(); // Sort after adding
         refreshWritersTable(); // More efficient
     }
 
     public void addArtist(Artist artist) {
         this.allArtists.add(artist);
+        sortLists(); // Sort after adding
         refreshArtistsTable(); // More efficient
     }
 
     public void addCharacter(ComicCharacter character) {
         this.allCharacters.add(character);
+        sortLists(); // Sort after adding
         refreshCharactersTable(); // More efficient
     }
 
     public void addComicBook(ComicBook comic) {
         this.allComicBooks.add(comic);
+        sortLists(); // Sort after adding
         refreshComicBooksTable(); // More efficient
     }
 
