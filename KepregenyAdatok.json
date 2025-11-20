@@ -1783,11 +1783,11 @@
       "affiliations": [],
       "characterAffiliations": [
         {
-          "characterRealName": "Dick Grayson",
+          "characterRealName": "Barbara Gordon",
           "relationship": "Affiliate"
         },
         {
-          "characterRealName": "Barbara Gordon",
+          "characterRealName": "Dick Grayson",
           "relationship": "Affiliate"
         }
       ],
@@ -2622,11 +2622,11 @@
       "affiliations": [],
       "characterAffiliations": [
         {
-          "characterRealName": "Charles Xavier",
+          "characterRealName": "Jean Grey",
           "relationship": "Affiliate"
         },
         {
-          "characterRealName": "Jean Grey",
+          "characterRealName": "Charles Xavier",
           "relationship": "Affiliate"
         }
       ],
@@ -2888,11 +2888,11 @@
       ],
       "characterAffiliations": [
         {
-          "characterRealName": "Guy Gardner",
+          "characterRealName": "Hal Jordan",
           "relationship": "Affiliate"
         },
         {
-          "characterRealName": "Hal Jordan",
+          "characterRealName": "Guy Gardner",
           "relationship": "Affiliate"
         }
       ],
@@ -3568,12 +3568,12 @@
           "role": "Writer / Co-creator"
         },
         {
-          "creatorName": "Steve Ditko",
-          "role": "Artist / Co-creator"
-        },
-        {
           "creatorName": "John Romita Sr.",
           "role": "Artist (definitive design)"
+        },
+        {
+          "creatorName": "Steve Ditko",
+          "role": "Artist / Co-creator"
         }
       ],
       "affiliations": [],
@@ -3793,10 +3793,6 @@
       "affiliations": [],
       "characterAffiliations": [
         {
-          "characterRealName": "Dick Grayson",
-          "relationship": "Ally"
-        },
-        {
           "characterRealName": "Cassandra Cain",
           "relationship": "Ally"
         },
@@ -3805,11 +3801,11 @@
           "relationship": "Ally"
         },
         {
-          "characterRealName": "Barbara Gordon",
+          "characterRealName": "Harvey Dent",
           "relationship": "Ally"
         },
         {
-          "characterRealName": "Damian Wayne",
+          "characterRealName": "Timothy Jackson Drake",
           "relationship": "Ally"
         },
         {
@@ -3821,15 +3817,15 @@
           "relationship": "Ally"
         },
         {
+          "characterRealName": "Dick Grayson",
+          "relationship": "Ally"
+        },
+        {
+          "characterRealName": "Damian Wayne",
+          "relationship": "Ally"
+        },
+        {
           "characterRealName": "Slade Wilson",
-          "relationship": "Ally"
-        },
-        {
-          "characterRealName": "Harvey Dent",
-          "relationship": "Ally"
-        },
-        {
-          "characterRealName": "Timothy Jackson Drake",
           "relationship": "Ally"
         },
         {
@@ -3842,6 +3838,10 @@
         },
         {
           "characterRealName": "Alfred Pennyworth",
+          "relationship": "Ally"
+        },
+        {
+          "characterRealName": "Barbara Gordon",
           "relationship": "Ally"
         }
       ],
@@ -5385,11 +5385,11 @@
       ],
       "creators": [
         {
-          "creatorName": "Roy Thomas",
+          "creatorName": "Len Wein",
           "role": "Co-creator"
         },
         {
-          "creatorName": "Len Wein",
+          "creatorName": "Roy Thomas",
           "role": "Co-creator"
         },
         {

@@ -47,7 +47,6 @@ public class MainDashboard extends javax.swing.JFrame {
 
     private List<Object> allItemsInTable = new ArrayList<>();
 
-    // --- NEW: Table Models for each tab ---
     // We will store a reference to each table's model
     private DefaultTableModel comicBooksModel;
     private DefaultTableModel charactersModel;
@@ -84,14 +83,14 @@ public class MainDashboard extends javax.swing.JFrame {
         // Set the window to appear in the center of the screen
         setLocationRelativeTo(null);
 
-        // --- NEW: Get the models from the 5 tables you created ---
+        // --- Get the models from the 5 tables you created ---
         comicBooksModel = (DefaultTableModel) comicBooksTable.getModel();
         charactersModel = (DefaultTableModel) charactersTable.getModel();
         writersModel = (DefaultTableModel) writersTable.getModel();
         artistsModel = (DefaultTableModel) artistsTable.getModel();
         publishersModel = (DefaultTableModel) publishersTable.getModel();
 
-        // --- NEW: Add a selection listener to EVERY table ---
+        // --- a selection listener to EVERY table ---
         // All tables will call the SAME method when their selection changes.
         comicBooksTable.getSelectionModel().addListSelectionListener(e -> {
             if (!e.getValueIsAdjusting()) {
@@ -119,15 +118,14 @@ public class MainDashboard extends javax.swing.JFrame {
             }
         });
 
-        // --- NEW: Add a listener to the tab pane itself ---
+        // --- a listener to the tab pane itself ---
         // This helps us clear selections when the user changes tabs
         mainTabbedPane.addChangeListener(e -> {
             clearAllTableSelections();
-            onTableSelectionChanged(); // Update buttons for the new tab
+            onTableSelectionChanged();
         });
 
-        // Load some initial data to start
-        loadInitialData(); // This will now call refreshAllTables()
+        loadInitialData();
 
         // Set the initial state of the buttons
         onTableSelectionChanged();
@@ -179,7 +177,7 @@ public class MainDashboard extends javax.swing.JFrame {
     }
     
     /**
-     * --- NEW: Helper method to re-sort lists after adding new items ---
+     * --- Helper method to re-sort lists after adding new items ---
      */
     private void sortLists() {
         Collections.sort(allPublishers, (p1, p2) -> p1.getName().compareToIgnoreCase(p2.getName()));
@@ -225,7 +223,7 @@ public class MainDashboard extends javax.swing.JFrame {
         // ONLY enable the "Add Edition" button if a ComicBook is selected
         addEditionButton.setEnabled(selectedObject instanceof ComicBook);
 
-        // --- NEW Details Panel Logic ---
+        // --- Details Panel Logic ---
         if (selectedObject == null) {
             detailsTextArea.setText("Select an item to see details.");
         } else if (selectedObject instanceof ComicBook) {
@@ -251,7 +249,7 @@ public class MainDashboard extends javax.swing.JFrame {
         detailsTextArea.setCaretPosition(0);
     }
 
-    // --- NEW HELPER METHODS (Add these to your class) ---
+    // --- HELPER METHODS (Add these to your class) ---
     /**
      * Builds a formatted string for a ComicBook object.
      *
@@ -283,7 +281,7 @@ public class MainDashboard extends javax.swing.JFrame {
             }
         }
         
-        // --- NEW SECTION: Featured Characters ---
+        // --- Featured Characters ---
         sb.append("\nCHARACTERS:\n");
         if (comic.getFeaturedCharacters() == null || comic.getFeaturedCharacters().isEmpty()) {
             sb.append("  (None listed)\n");
@@ -411,7 +409,7 @@ public class MainDashboard extends javax.swing.JFrame {
     }
 
     /**
-     * MODIFICATION: New helper method to format dates cleanly.
+     * helper method to format dates cleanly.
      *
      * @param date The date to format.
      * @return A string in "yyyy" format, or "N/A" if the date is null.
@@ -442,9 +440,7 @@ public class MainDashboard extends javax.swing.JFrame {
         return sb.toString();
     }
 
-    /**
-     * Helper method to get a displayable publisher name for a ComicBook.
-     */
+    
     private String getPublisherNameForComic(ComicBook comic) {
         if (comic.getEditions() != null && !comic.getEditions().isEmpty()) {
             // Get the first edition
@@ -543,7 +539,7 @@ public class MainDashboard extends javax.swing.JFrame {
         refreshComicBooksTable();
     }
 
-    // --- NEW: Specific refresh methods for each table ---
+    // --- Specific refresh methods for each table ---
     public void refreshPublishersTable() {
         publishersModel.setRowCount(0); // Clear table
         for (Publisher pub : allPublishers) {

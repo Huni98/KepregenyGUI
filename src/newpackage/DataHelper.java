@@ -63,7 +63,7 @@ public class DataHelper {
         Map<String, Object> creatorMap = new HashMap<>(); // Holds both Writers and Artists
         Map<String, ComicBook> comicBookMap = new HashMap<>();
         Map<String, ComicCharacter> characterMap = new HashMap<>(); // We will use realName as the key
-        // --- NEW: Map for linking by Alias ---
+        // --- Map for linking by Alias ---
         Map<String, ComicCharacter> characterAliasMap = new HashMap<>(); // Key: Alias
         // Set to store unique powers ---
         Set<String> uniquePowers = new HashSet<>();
@@ -183,7 +183,7 @@ public class DataHelper {
                     data.characters.add(character);
                     characterMap.put(character.getRealName(), character);
                     
-                    // --- NEW: Map by Alias (for Comic Book inclusions) ---
+                    // --- Map by Alias (for Comic Book inclusions) ---
                     // If alias is null/missing, fallback to real name to avoid errors
                     String lookupAlias = (alias != null && !alias.isBlank()) ? alias : realName;
                     characterAliasMap.put(lookupAlias, character);
@@ -199,7 +199,7 @@ public class DataHelper {
                     if (comic == null) {
                         continue; // Skip if comic wasn't created
                     }
-                    // --- THIS IS THE FIX ---
+                    
                     // Link Writers
                     Object writerNamesObj = cb.get("writerNames");
                     if (writerNamesObj instanceof List) {
@@ -213,7 +213,7 @@ public class DataHelper {
                         }
                     }
 
-                    // --- THIS IS THE FIX ---
+                    
                     // Link Artists
                     Object artistNamesObj = cb.get("artistNames");
                     if (artistNamesObj instanceof List) {
@@ -227,7 +227,7 @@ public class DataHelper {
                         }
                     }
                     
-                    // --- NEW: Link Featured Characters (Using ALIAS Map) ---
+                    // --- Link Featured Characters (Using ALIAS Map) ---
                     Object charNamesObj = cb.get("characterNames");
                     if (charNamesObj instanceof List) {
                         List<String> charNames = (List<String>) charNamesObj;
@@ -258,7 +258,7 @@ public class DataHelper {
 
                             Publisher p = publisherMap.get(publisherName);
 
-                            // FIX FOR DATE N/A
+                            
                             Date pubDate;
                             if (dateStr == null || dateStr.equals("N/A")) {
                                 pubDate = new Date(0); // Use a default epoch date
@@ -285,7 +285,7 @@ public class DataHelper {
                     }
                     // Add Powers
                     if (character instanceof Superhero || character instanceof Villain) {
-                        // FIX FOR LIST N/A
+                        
                         Object powersObj = c.get("powers");
                         if (powersObj instanceof List) {
                             List<String> powers = (List<String>) powersObj;
@@ -333,7 +333,7 @@ public class DataHelper {
                         }
                     }
 
-                    // --- THIS IS THE MISSING FIX ---
+                    
                     // Link Character Affiliations (Relationships)
                     Object charAffObj = c.get("characterAffiliations");
                     if (charAffObj instanceof List) {
@@ -384,7 +384,7 @@ public class DataHelper {
                 }
             }
             
-            // --- NEW: Finalize the powers list ---
+            // --- Finalize the powers list ---
             data.allPowers.addAll(uniquePowers); // Add all unique powers
             Collections.sort(data.allPowers);    // Sort them alphabetically
             
@@ -418,9 +418,6 @@ public class DataHelper {
     }
 
     /**
-     * --- FULLY CORRECTED GSON SAVER --- Saves all the application's data back
-     * to the JSON file in a "pretty-printed" (indented) format using Gson.
-     *
      * @param data A ComicDataContainer holding the 5 master lists from
      * MainDashboard.
      */
@@ -496,7 +493,7 @@ public class DataHelper {
                 }
                 cObj.put("artistNames", artistNames);
                 
-                // --- NEW: Save Featured Characters using ALIAS ---
+                // --- Save Featured Characters using ALIAS ---
                 List<String> charNames = new ArrayList<>();
                 if (c.getFeaturedCharacters() != null) {
                     for (ComicCharacter cc : c.getFeaturedCharacters()) {

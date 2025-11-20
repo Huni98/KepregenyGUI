@@ -28,9 +28,7 @@ public class EditionEditor extends javax.swing.JDialog {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(EditionEditor.class.getName());
 
-    /**
-     * Creates new form EditionEditor
-     */
+    
     private ComicBook parentComicBook;
 
     public EditionEditor(java.awt.Frame parent, boolean modal,
@@ -38,7 +36,7 @@ public class EditionEditor extends javax.swing.JDialog {
 
         super(parent, modal);
 
-        // --- NEW: Save the parent comic ---
+        // --- Save the parent comic ---
         if (parentComic == null) {
             throw new IllegalArgumentException("parentComic cannot be null.");
         }
@@ -49,10 +47,10 @@ public class EditionEditor extends javax.swing.JDialog {
 
         this.setSize(700, 600);
 
-        // --- NEW: Set the Custom Renderer for the JComboBox ---
+        // --- Set the Custom Renderer for the JComboBox ---
         publisherComboBox.setRenderer(new ComicObjectRenderer());
 
-        // --- NEW: Populate the JComboBox ---
+        // --- Populate the JComboBox ---
         publisherComboBox.setModel(new DefaultComboBoxModel<>(
                 allPublishers.toArray(new Publisher[0])
         ));
@@ -233,7 +231,7 @@ public class EditionEditor extends javax.swing.JDialog {
         }
 
         // 4. Create a new Edition object (from your logic JAR)
-        // ** NEW: We use this.parentComicBook instead of getting from a dropdown **
+        // ** We use this.parentComicBook instead of getting from a dropdown **
         Edition newEdition = new Edition(editionName, pubDate, isbn, selectedPublisher, this.parentComicBook);
 
         // 5. Link the edition to its parent comic
@@ -268,7 +266,7 @@ public class EditionEditor extends javax.swing.JDialog {
             public void run() {
 
                 // --- Create Dummy Data for Testing ---
-                // ** NEW: We must create a parent comic to pass to the constructor **
+                // ** We must create a parent comic to pass to the constructor **
                 ComicBook testComic = new ComicBook("The Killing Joke", "Superhero");
                 //ComicBook testComic = null; // Replace with a real object to test
 

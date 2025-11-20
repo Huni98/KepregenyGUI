@@ -18,7 +18,7 @@ public class CreatorEditor extends javax.swing.JDialog {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CreatorEditor.class.getName());
 
-    // --- NEW: Fields to store the creator being edited ---
+    // --- Fields to store the creator being edited ---
     private Writer writerToEdit;
     private Artist artistToEdit;
 
@@ -36,7 +36,7 @@ public class CreatorEditor extends javax.swing.JDialog {
     }
 
     /**
-     * --- NEW: "EDIT MODE" Constructor for WRITER ---
+     * --- "EDIT MODE" Constructor for WRITER ---
      */
     public CreatorEditor(java.awt.Frame parent, boolean modal, Writer writerToEdit) {
         this(parent, modal); // Call base constructor
@@ -46,7 +46,7 @@ public class CreatorEditor extends javax.swing.JDialog {
     }
 
     /**
-     * --- NEW: "EDIT MODE" Constructor for ARTIST ---
+     * --- "EDIT MODE" Constructor for ARTIST ---
      */
     public CreatorEditor(java.awt.Frame parent, boolean modal, Artist artistToEdit) {
         this(parent, modal); // Call base constructor
@@ -56,7 +56,7 @@ public class CreatorEditor extends javax.swing.JDialog {
     }
 
     /**
-     * --- NEW: Helper method to load data into fields ---
+     * --- Helper method to load data into fields ---
      */
     private void loadDataForEdit() {
         if (writerToEdit != null) {

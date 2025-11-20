@@ -31,14 +31,14 @@ public class CharacterEditor extends javax.swing.JDialog {
 
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(CharacterEditor.class.getName());
 
-    // --- NEW: Add fields to store the master lists ---
+    // --- Add fields to store the master lists ---
     private List<ComicCharacter> allCharacters;
     private List<Writer> allWriters;
     private List<Artist> allArtists;
     private List<ComicBook> allComicBooks;
     private List<String> allPowers; // <-- NEW: Store master powers list
 
-    // --- NEW: Field to store the character being edited ---
+    // --- Field to store the character being edited ---
     private ComicCharacter characterToEdit;
 
     /**
@@ -49,7 +49,7 @@ public class CharacterEditor extends javax.swing.JDialog {
             List<Writer> allWriters,
             List<Artist> allArtists,
             List<ComicBook> allComicBooks,
-            List<String> allPowers) { // <-- NEW: Added allPowers parameter
+            List<String> allPowers) { // <-- Added allPowers parameter
 
         super(parent, modal);
 
@@ -58,7 +58,7 @@ public class CharacterEditor extends javax.swing.JDialog {
         this.allWriters = allWriters;
         this.allArtists = allArtists;
         this.allComicBooks = allComicBooks;
-        this.allPowers = allPowers; // <-- NEW: Save the powers list
+        this.allPowers = allPowers; // <-- Save the powers list
 
         // We are in "Create" mode
         this.characterToEdit = null;
@@ -75,14 +75,14 @@ public class CharacterEditor extends javax.swing.JDialog {
     }
 
     /**
-     * --- NEW: "EDIT MODE" Constructor ---
+     * --- "EDIT MODE" Constructor ---
      */
     public CharacterEditor(java.awt.Frame parent, boolean modal,
             List<ComicCharacter> allCharacters,
             List<Writer> allWriters,
             List<Artist> allArtists,
             List<ComicBook> allComicBooks,
-            List<String> allPowers, // <-- NEW: Added allPowers parameter
+            List<String> allPowers, // <-- Added allPowers parameter
             ComicCharacter characterToEdit) { // <-- Extra parameter
 
         // Call the "Create" constructor to set everything up
@@ -129,7 +129,7 @@ public class CharacterEditor extends javax.swing.JDialog {
         allAppearancesList.setModel(allAppearancesModel);
         charAppearancesList.setModel(charAppearancesModel);
 
-        // --- NEW: Set the custom renderer ---
+        // --- Set the custom renderer ---
         // This tells the lists HOW to display your objects
         ComicObjectRenderer renderer = new ComicObjectRenderer();
         allAffiliationsList.setCellRenderer(renderer);
@@ -186,7 +186,7 @@ public class CharacterEditor extends javax.swing.JDialog {
     }
 
     /**
-     * --- NEW: Helper method to populate all fields for editing ---
+     * --- Helper method to populate all fields for editing ---
      */
     private void loadDataForEdit() {
         // 1. Populate simple text fields

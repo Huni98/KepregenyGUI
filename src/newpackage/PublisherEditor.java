@@ -37,7 +37,7 @@ public class PublisherEditor extends javax.swing.JDialog {
     }
 
     /**
-     * --- NEW: "EDIT MODE" Constructor --- Creates new form PublisherEditor to
+     * --- "EDIT MODE" Constructor --- Creates new form PublisherEditor to
      * edit an existing publisher.
      */
     public PublisherEditor(java.awt.Frame parent, boolean modal, Publisher publisherToEdit) {
